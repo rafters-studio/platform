@@ -13,8 +13,27 @@
     "compiled": false
   },
   "installed": {
-    "components": [],
-    "primitives": [],
+    "components": [
+      "card",
+      "collapsible",
+      "color-inspector",
+      "color-picker",
+      "container",
+      "grid",
+      "input",
+      "separator",
+      "tabs",
+      "typography"
+    ],
+    "primitives": [
+      "classy",
+      "color-scale",
+      "color-weight",
+      "contrast-matrix",
+      "cvd-simulation",
+      "oklch-gamut",
+      "slot"
+    ],
     "composites": []
   }
 }
