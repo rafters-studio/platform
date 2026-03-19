@@ -1,0 +1,27 @@
+{
+  "name": "rafters-studio-platform",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @rafters-studio/web dev",
+    "build": "pnpm --filter @rafters-studio/web build",
+    "test": "vitest run --config vitest.config.ts",
+    "test:spec": "vitest run --config vitest.browser.config.ts",
+    "test:e2e": "playwright test",
+    "test:all": "pnpm test && pnpm test:spec && pnpm test:e2e",
+    "lint": "oxlint .",
+    "format": "oxc-format .",
+    "format:check": "oxc-format --check .",
+    "typecheck": "tsc --build"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd",
+      "sharp"
+    ]
+  }
+}
