@@ -2,9 +2,137 @@
 import Layout from "../layouts/Base.astro";
 ---
 
-<Layout title="Rafters Studio">
-  <main>
-    <h1>Rafters</h1>
-    <p>Design intelligence protocol. From service design to shipped code.</p>
+<Layout title="Rafters - Design Intelligence Protocol">
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <section class="mb-16">
+      <h1 class="text-4xl font-bold tracking-tight mb-6">Your AI doesn't have taste.</h1>
+      <p class="text-xl leading-relaxed mb-4">
+        It never will. But it can read a designer's judgment if someone bothers to write it down
+        as structured data. That's what Rafters does.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        Every design system on the planet stores token values. Colors, spacing, type scales. Rafters
+        stores the reasoning: why that blue, when to use it, what happens when you pair it with that
+        other blue, and how much cognitive load the resulting component puts on the person staring at it.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Open source. Free. Built because nothing else does this.
+      </p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-4">The problem is simple</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        AI builds UIs that look like garbage. Not because the models are bad. Because they have no
+        design intelligence to work with. You hand an LLM a component library and it guesses.
+        It picks the wrong button variant, pairs colors that fight each other, and stacks six
+        high-cognitive-load components on a screen that should have three. It pattern matches
+        what it knows. The top 5000 websites when the learning data was created, good or not,
+        That is what it copies.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        Designers know this stuff intuitively. They spent years learning it. But that knowledge
+        lives in their heads, their Figma files, and maybe a Notion doc nobody reads.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Rafters makes it queryable.
+      </p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-4">What "design intelligence" actually means</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        Not marketing. Structured data that an AI agent or MCP server can query at build time.
+      </p>
+      <ul class="space-y-4 text-lg">
+        <li>
+          <strong>Cognitive load scoring.</strong> Every component gets a score from 0 to 10 across
+          five dimensions: decision demand, information density, interaction complexity, context
+          disruption, learning curve. A Button scores 3. An AlertDialog scores 7. A screen has a
+          budget. No existing design system measures this.
+        </li>
+        <li>
+          <strong>Color intelligence.</strong> Pick a color. Get perceptual analysis, harmonic
+          relationships, emotional associations, accessibility scoring, and conflict detection.
+          Every color in the system carries 10+ data structures. Not a picker. A knowledge system.
+          All in OKLCH because color math in sRGB is wrong and everyone knows it.
+        </li>
+        <li>
+          <strong>Do/never rules.</strong> Not documentation someone might read. Structured rules
+          an AI agent reads before generating code. "Maximum one primary button per section."
+          "Never pair a Dialog inside a Sheet." "Minimum touch target: 44px." The guardrails are
+          the API.
+        </li>
+        <li>
+          <strong>Composition-level review.</strong> Components are fine individually. Put six of them
+          together and the page is a mess. Rafters reviews compositions against attention budgets
+          and flags when the total cognitive load exceeds what a human can process.
+        </li>
+      </ul>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-4">Get started</h2>
+      <pre class="bg-neutral-900 text-neutral-100 rounded-lg p-4 mb-4 overflow-x-auto"><code>pnpx rafters init</code></pre>
+      <pre class="bg-neutral-900 text-neutral-100 rounded-lg p-4 mb-4 overflow-x-auto"><code>pnpx rafters add button</code></pre>
+      <p class="text-lg leading-relaxed mb-4">
+        You now have a design system with embedded intelligence. Components work immediately
+        with grayscale defaults. Define a Zod schema, get a form that respects your cognitive
+        budget. The MCP server gives your AI agent access to the full
+        intelligence layer: cognitive load, color science, do/never rules, composition review.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Run Studio when you are ready to make it yours. Configure spacing progressions, type scales,
+        color relationships, motion philosophy. The mathematical rules that generate your tokens,
+        not a token editor.
+      </p>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-4">How it compares</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        shadcn/ui is a component library. Tailwind is a utility framework. Neither is a design system.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        A design system encodes decisions. Why this spacing scale, when to use compact density,
+        what level of cognitive load is acceptable for an onboarding flow versus a power-user
+        dashboard. Rafters encodes all of that as structured data an AI can read.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-lg">
+          <thead>
+            <tr class="border-b">
+              <th class="text-left py-2 pr-4">What you get</th>
+              <th class="text-left py-2 pr-4">shadcn/ui</th>
+              <th class="text-left py-2 pr-4">Tokens Studio</th>
+              <th class="text-left py-2 pr-4">Knapsack</th>
+              <th class="text-left py-2">Rafters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="py-2 pr-4">Accessible components</td><td class="py-2 pr-4">Yes</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">Yes</td><td class="py-2">Yes</td></tr>
+            <tr class="border-b"><td class="py-2 pr-4">Own your code</td><td class="py-2 pr-4">Yes</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2">Yes</td></tr>
+            <tr class="border-b"><td class="py-2 pr-4">Cognitive load scores</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2">Per component + per composition</td></tr>
+            <tr class="border-b"><td class="py-2 pr-4">Color intelligence</td><td class="py-2 pr-4">CSS variables</td><td class="py-2 pr-4">Token values</td><td class="py-2 pr-4">Token values</td><td class="py-2">OKLCH analysis, harmony, conflicts</td></tr>
+            <tr class="border-b"><td class="py-2 pr-4">AI-readable rules</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2">MCP server + JSON registry</td></tr>
+            <tr class="border-b"><td class="py-2 pr-4">Composition review</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2">Attention budgets, conflict detection</td></tr>
+            <tr class="border-b"><td class="py-2 pr-4">Design decisions tracked</td><td class="py-2 pr-4">Manual</td><td class="py-2 pr-4">Token history</td><td class="py-2 pr-4">Token history</td><td class="py-2">Git-tracked structured data</td></tr>
+            <tr><td class="py-2 pr-4">Design reasoning encoded</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2">Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Open source</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        The protocol is free. The CLI, the design tokens, the components, the color utilities,
+        the math utilities, the MCP server, the Studio editor. Everything a solo practitioner
+        or a small team needs to ship interfaces with real design intelligence.
+      </p>
+      <p class="text-lg leading-relaxed">
+        <a href="https://github.com/rafters-studio/rafters" class="underline">GitHub</a>
+      </p>
+    </section>
   </main>
 </Layout>
