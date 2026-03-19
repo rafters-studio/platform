@@ -1,6 +1,6 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { apiReference } from "@scalar/hono-api-reference";
-import { createAuth } from "./auth";
+import { getAuth } from "./auth";
 import { registerColorRoutes } from "./routes/color";
 
 export type Env = {
@@ -17,7 +17,7 @@ app.get("/health", (c) => c.json({ status: "ok" }));
 
 // Mount better-auth at /auth/*
 app.on(["GET", "POST"], "/auth/**", (c) => {
-	const auth = createAuth(c.env.AUTH_DB);
+	const auth = getAuth(c.env.AUTH_DB);
 	return auth.handler(c.req.raw);
 });
 

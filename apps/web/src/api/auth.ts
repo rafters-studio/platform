@@ -1,26 +1,34 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { drizzle } from "drizzle-orm/d1";
+import * as schema from "../db/schema";
 
-export function createAuth(d1: D1Database) {
-	const db = drizzle(d1);
+const authCache = new WeakMap<D1Database, ReturnType<typeof betterAuth>>();
 
-	return betterAuth({
-		database: drizzleAdapter(db, {
-			provider: "sqlite",
-		}),
-		baseURL: "https://rafters.studio",
-		basePath: "/api/auth",
-		emailAndPassword: {
-			enabled: true,
-		},
-		session: {
-			cookieCache: {
+export function getAuth(d1: D1Database) {
+	let auth = authCache.get(d1);
+	if (!auth) {
+		const db = drizzle(d1, { schema });
+		auth = betterAuth({
+			database: drizzleAdapter(db, {
+				provider: "sqlite",
+				schema,
+			}),
+			baseURL: "https://rafters.studio",
+			basePath: "/api/auth",
+			emailAndPassword: {
 				enabled: true,
-				maxAge: 5 * 60,
 			},
-		},
-	});
+			session: {
+				cookieCache: {
+					enabled: true,
+					maxAge: 5 * 60,
+				},
+			},
+		});
+		authCache.set(d1, auth);
+	}
+	return auth;
 }
 
-export type Auth = ReturnType<typeof createAuth>;
+export type Auth = ReturnType<typeof getAuth>;
