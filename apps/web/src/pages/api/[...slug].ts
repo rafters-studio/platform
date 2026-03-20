@@ -12,7 +12,7 @@ const app = new OpenAPIHono<{ Bindings: Env }>().basePath("/api");
 
 app.get("/health", (c) => c.json({ status: "ok" }));
 
-app.on(["GET", "POST"], "/auth/*", (c) => {
+app.on(["GET", "POST", "PUT", "PATCH", "DELETE"], "/auth/*", (c) => {
 	return createAuth(c.env).handler(c.req.raw);
 });
 
@@ -22,3 +22,6 @@ const handle: APIRoute = (context) => app.fetch(context.request, env);
 
 export const GET = handle;
 export const POST = handle;
+export const PUT = handle;
+export const PATCH = handle;
+export const DELETE = handle;

@@ -1,7 +1,6 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins/admin";
-import { emailOTP } from "better-auth/plugins/email-otp";
 import { organization } from "better-auth/plugins/organization";
 import { passkey } from "@better-auth/passkey";
 import { checkout, polar, webhooks } from "@polar-sh/better-auth";
@@ -58,14 +57,8 @@ export function createAuth(env: Env) {
 		},
 		plugins: [
 			passkey({
-				rpID: "rafters.studio",
+				rpID: new URL(env.BETTER_AUTH_URL).hostname,
 				rpName: "Rafters Studio",
-			}),
-			emailOTP({
-				sendVerificationOTP: async () => {
-					// TODO: wire to email provider (Resend, SES, etc.)
-					throw new Error("OTP email delivery not implemented");
-				},
 			}),
 			polar({
 				client: polarClient,
