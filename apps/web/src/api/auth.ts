@@ -9,14 +9,18 @@ import { Polar } from "@polar-sh/sdk";
 import { drizzle } from "drizzle-orm/d1";
 import { uuidv7 } from "uuidv7";
 
-export function createAuth(env: Env) {
-	const db = drizzle(env.AUTH_DB);
+const authCache = new WeakMap<D1Database, ReturnType<typeof betterAuth>>();
 
+export function createAuth(env: Env) {
+	let auth = authCache.get(env.AUTH_DB);
+	if (auth) return auth;
+
+	const db = drizzle(env.AUTH_DB);
 	const polarClient = new Polar({
 		accessToken: env.POLAR_ACCESS_TOKEN,
 	});
 
-	return betterAuth({
+	auth = betterAuth({
 		database: drizzleAdapter(db, {
 			provider: "sqlite",
 		}),
@@ -30,13 +34,12 @@ export function createAuth(env: Env) {
 		baseURL: env.BETTER_AUTH_URL,
 		basePath: "/api/auth",
 		secondaryStorage: {
-			get: async (key) => await env.SESSION_KV.get(key),
-			set: async (key, value, ttl) => {
-				await env.SESSION_KV.put(key, value, {
+			get: (key) => env.SESSION_KV.get(key),
+			set: (key, value, ttl) =>
+				env.SESSION_KV.put(key, value, {
 					expirationTtl: Math.max(ttl ?? 604800, 60),
-				});
-			},
-			delete: async (key) => await env.SESSION_KV.delete(key),
+				}),
+			delete: (key) => env.SESSION_KV.delete(key),
 		},
 		session: {
 			cookieCache: {
@@ -78,6 +81,9 @@ export function createAuth(env: Env) {
 			organization(),
 		],
 	});
+
+	authCache.set(env.AUTH_DB, auth);
+	return auth;
 }
 
 export type Auth = ReturnType<typeof createAuth>;
