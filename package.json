@@ -19,9 +19,10 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@ezmode-games/drizzle-ledger",
       "esbuild",
-      "workerd",
-      "sharp"
+      "sharp",
+      "workerd"
     ]
   }
 }

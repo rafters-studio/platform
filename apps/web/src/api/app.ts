@@ -1,11 +1,11 @@
 import { Hono } from "hono";
+import { loadSession } from "./middleware/auth";
+import { authRoutes } from "./routes/auth";
 
-export type Env = {
-	Bindings: Record<string, unknown>;
-};
+const app = new Hono<{ Bindings: Env }>()
+	.get("/health", (c) => c.json({ status: "ok" }))
+	.route("/auth", authRoutes)
+	.use("/*", loadSession);
 
-const app = new Hono<Env>();
-
-app.get("/health", (c) => c.json({ status: "ok" }));
-
+export type AppType = typeof app;
 export default app;
