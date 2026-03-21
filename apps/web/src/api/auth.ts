@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins/admin";
+import { emailOTP } from "better-auth/plugins/email-otp";
 import { organization } from "better-auth/plugins/organization";
 import { passkey } from "@better-auth/passkey";
 import { checkout, polar, webhooks } from "@polar-sh/better-auth";
@@ -56,6 +57,12 @@ export function createAuth(env: Env) {
 			},
 		},
 		plugins: [
+			emailOTP({
+				sendVerificationOTP: async ({ email, otp, type }) => {
+					// TODO: Wire @rafters/better-auth-resend when mail repo ships
+					console.log(`[OTP] ${type} code ${otp} -> ${email}`);
+				},
+			}),
 			passkey({
 				rpID: new URL(env.BETTER_AUTH_URL).hostname,
 				rpName: "Rafters Studio",
