@@ -13,8 +13,8 @@
     "test:e2e": "playwright test",
     "test:all": "pnpm test && pnpm test:spec && pnpm test:e2e",
     "lint": "oxlint .",
-    "format": "oxc-format .",
-    "format:check": "oxc-format --check .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
     "typecheck": "tsc --build"
   },
   "pnpm": {
@@ -24,5 +24,8 @@
       "sharp",
       "workerd"
     ]
+  },
+  "devDependencies": {
+    "oxfmt": "^0.41.0"
   }
 }
