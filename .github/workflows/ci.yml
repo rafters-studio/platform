@@ -19,6 +19,8 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+        env:
+          LEFTHOOK: "0"
 
       - name: Lint
         run: pnpm lint
