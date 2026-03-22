@@ -1,2 +1,48 @@
 @import "tailwindcss";
 @import "../../.rafters/output/rafters.css";
+
+@layer base {
+  html {
+    font-family: "IBM Plex Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    color: var(--foreground);
+    background-color: var(--background);
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  code,
+  pre {
+    font-family: "IBM Plex Mono", monospace;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  ::selection {
+    background-color: var(--muted);
+    color: var(--foreground);
+  }
+}

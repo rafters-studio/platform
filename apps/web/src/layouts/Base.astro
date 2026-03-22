@@ -1,11 +1,14 @@
 ---
 import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "Design Intelligence Protocol for AI agents" } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,26 +16,18 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="min-h-screen bg-white text-neutral-900">
-    <header class="border-b border-neutral-200">
-      <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center gap-8">
-        <a href="/" class="text-lg font-bold tracking-tight">Rafters</a>
-        <div class="flex gap-6 text-sm">
-          <a href="/docs" class="hover:underline">Docs</a>
-          <a href="/reference" class="hover:underline">Reference</a>
-          <a href="/playground/color" class="hover:underline">Playground</a>
-          <a href="/studio" class="hover:underline">Studio</a>
-          <a href="/api/docs" class="hover:underline">API</a>
-        </div>
-      </nav>
-    </header>
+  <body class="flex flex-col min-h-screen">
+    <Nav />
     <slot />
-    <footer class="border-t border-neutral-200 mt-16">
-      <div class="max-w-5xl mx-auto px-6 py-8 text-sm text-neutral-500">
-        <p>Rafters is open source. Built by ezmode games.</p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

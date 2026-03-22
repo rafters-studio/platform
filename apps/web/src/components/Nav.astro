@@ -1,0 +1,24 @@
+---
+const links = [
+  { href: "/docs", label: "Docs" },
+  { href: "/reference", label: "Reference" },
+  { href: "/playground/color", label: "Playground" },
+];
+---
+
+<header class="border-b border-border">
+  <nav class="flex items-center gap-8 max-w-prose mx-auto px-6 py-4">
+    <a href="/" class="text-foreground" aria-label="Rafters home">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 374 227" class="h-5 w-auto" aria-hidden="true">
+        <g fill="currentColor">
+          <path d="m373.584 101.144-5.244 12.98L209.155 49.81l.07.17-203.98 82.414L0 119.413l190.715-77.055L118 12.981 123.244 0l250.34 101.144Z"/>
+        </g>
+      </svg>
+    </a>
+    <div class="flex gap-6 text-sm text-muted-foreground">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>
