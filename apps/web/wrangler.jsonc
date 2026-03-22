@@ -21,6 +21,11 @@
       "id": "placeholder",
     },
   ],
+  "vars": {
+    "FROM_EMAIL": "hello@rafters.studio",
+    "RESEND_API_KEY": "",
+  },
+  // In production: wrangler secret put RESEND_API_KEY (overrides the empty var)
   "r2_buckets": [
     {
       "binding": "SNAPSHOTS",
