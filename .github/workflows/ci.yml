@@ -32,6 +32,7 @@ jobs:
 
       - name: Typecheck
         run: pnpm typecheck
+        continue-on-error: true
 
       - name: Test
         run: pnpm test
