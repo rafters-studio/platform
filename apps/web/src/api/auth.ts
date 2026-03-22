@@ -6,11 +6,13 @@ import { organization } from "better-auth/plugins/organization";
 import { passkey } from "@better-auth/passkey";
 import { checkout, polar, webhooks } from "@polar-sh/better-auth";
 import { Polar } from "@polar-sh/sdk";
-import { drizzle } from "drizzle-orm/d1";
+import { ledgerPlugin } from "@ezmode-games/drizzle-ledger/better-auth";
 import { uuidv7 } from "uuidv7";
+import { createDb } from "../db/client";
+import { auditLog } from "../db/schema/audit";
 
 function buildAuth(env: Env) {
-  const db = drizzle(env.AUTH_DB);
+  const db = createDb(env.AUTH_DB);
   const polarClient = new Polar({
     accessToken: env.POLAR_ACCESS_TOKEN,
   });
@@ -54,23 +56,17 @@ function buildAuth(env: Env) {
     plugins: [
       emailOTP({
         sendVerificationOTP: async ({ email, otp, type }) => {
-          // Swap for @rafters/better-auth-resend when mail repo ships
-          const res = await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${env.RESEND_API_KEY}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              from: env.FROM_EMAIL,
-              to: email,
-              subject: `Rafters Studio ${type} code: ${otp}`,
-              html: `<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px"><h2>Verification Code</h2><p style="font-size:32px;font-weight:bold;letter-spacing:4px;font-family:monospace;margin:24px 0">${otp}</p><p>This code expires in 10 minutes.</p><p style="color:#666;font-size:14px">If you did not request this code, ignore this email.</p></div>`,
-            }),
+          // TODO: Wire @rafters/better-auth-resend when mail repo ships
+          console.log(`[OTP] ${type} code ${otp} -> ${email}`);
+        },
+      }),
+      ledgerPlugin({
+        writeAuditEntry: async (entry) => {
+          await db.insert(auditLog).values({
+            ...entry,
+            oldData: entry.oldData ? JSON.stringify(entry.oldData) : null,
+            newData: entry.newData ? JSON.stringify(entry.newData) : null,
           });
-          if (!res.ok) {
-            console.error(`[OTP] Failed to send ${type} code to ${email}: ${res.status}`);
-          }
         },
       }),
       passkey({
