@@ -18,9 +18,7 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - run: pnpm install --frozen-lockfile
-        env:
-          LEFTHOOK: "0"
+      - run: pnpm install --frozen-lockfile --ignore-scripts && pnpm rebuild esbuild sharp workerd
 
       - name: Lint
         run: pnpm lint
