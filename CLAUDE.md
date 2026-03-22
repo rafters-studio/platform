@@ -37,6 +37,7 @@ The only workflow for schema changes:
 3. `wrangler d1 migrations apply` -- applies it
 
 NEVER:
+
 - Manually create, edit, or delete files in the migrations folder
 - Touch migration metadata or journal files
 - Use `drizzle-kit push` or `drizzle-kit migrate` against D1
@@ -89,6 +90,7 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 **Data**: Zocker generates typed mock data from Zod schemas.
 
 **What belongs here**:
+
 - Pure function logic (validation, transformation, calculation)
 - Schema correctness (does this Zod schema accept/reject what it should?)
 - Handler logic with mocked dependencies
@@ -96,12 +98,14 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 - Error path coverage
 
 **What does NOT belong here**:
+
 - DOM rendering, clicks, visual assertions (that is a `.spec.ts`)
 - Real D1/R2/KV calls (mock with Zocker or test in `.e2e.ts`)
 - HTTP request/response cycles through the full Hono app (that is a `.spec.ts` or `.e2e.ts`)
 - Anything that needs `document`, `window`, or a browser environment
 
 **Rules**:
+
 - Every test gets its data from Zocker or explicit inline fixtures. No shared mutable state.
 - No network calls. No filesystem. No D1. If your unit test needs infrastructure, it is not a unit test.
 - Test one behavior per `it()` block. Name it as a sentence: "returns 422 when email is missing."
@@ -113,6 +117,7 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 **Data**: Zocker for props and mock API responses.
 
 **What belongs here**:
+
 - Component renders with correct props
 - User interactions (click, type, submit) produce correct state changes
 - Conditional rendering based on data states (loading, error, empty, populated)
@@ -121,12 +126,14 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 - Component composition (parent passes data, child renders it)
 
 **What does NOT belong here**:
+
 - API logic, route handling, business rules (that is a `.test.ts`)
 - Multi-page flows, navigation, auth redirects (that is an `.e2e.ts`)
 - Visual regression / screenshot comparison (use Storybook or `.e2e.ts`)
 - Testing third-party library internals
 
 **Rules**:
+
 - Mount one component (or a small composition) per test file.
 - Interact like a user: query by role and label, not by CSS selector or test ID.
 - Never assert on implementation details (state variables, internal methods, hook return values).
@@ -139,6 +146,7 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 **Data**: Real services, seeded database, actual auth flows.
 
 **What belongs here**:
+
 - Complete user journeys (sign up, upload mod, get paid)
 - Auth flows (OAuth2 login, API key validation, session expiry)
 - Cross-page navigation and deep linking
@@ -147,11 +155,13 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 - Smoke tests for production deployments
 
 **What does NOT belong here**:
+
 - Testing individual functions or components (that is a `.test.ts` or `.spec.ts`)
 - Mocked data scenarios (use real or seeded data)
 - Exhaustive edge case coverage (too slow, cover those in `.test.ts`)
 
 **Rules**:
+
 - E2E tests are slow and expensive. Cover happy paths and critical failure modes only.
 - Seed the database with known state before each test suite.
 - Never depend on test execution order.
@@ -174,15 +184,15 @@ If you are unsure, it is a `.test.ts`. Unit tests are the default. You need a re
 
 ## Common Anti-Patterns
 
-| Anti-pattern | Why it is wrong | What to do instead |
-|---|---|---|
-| Unit test imports a component and renders it | That is a spec, not a unit test | Move to `.spec.ts`, use browser runner |
-| Unit test creates a real D1 database | That is integration testing | Mock with Zocker, or move to `.e2e.ts` |
-| Spec test calls `fetch()` to hit a real API | That is an E2E test | Mock the API response in the spec |
-| E2E test covers 40 edge cases for one form field | Too slow, too fragile | Cover edge cases in `.test.ts` with Zod schema tests |
-| Spec test asserts `useState` was called | Testing implementation, not behavior | Assert on what the user sees |
-| Test file has no extension convention | Nobody knows what runner to use | Pick the right extension from the decision tree |
-| Shared mutable test fixtures across files | Order-dependent failures | Zocker generates fresh data per test |
+| Anti-pattern                                     | Why it is wrong                      | What to do instead                                   |
+| ------------------------------------------------ | ------------------------------------ | ---------------------------------------------------- |
+| Unit test imports a component and renders it     | That is a spec, not a unit test      | Move to `.spec.ts`, use browser runner               |
+| Unit test creates a real D1 database             | That is integration testing          | Mock with Zocker, or move to `.e2e.ts`               |
+| Spec test calls `fetch()` to hit a real API      | That is an E2E test                  | Mock the API response in the spec                    |
+| E2E test covers 40 edge cases for one form field | Too slow, too fragile                | Cover edge cases in `.test.ts` with Zod schema tests |
+| Spec test asserts `useState` was called          | Testing implementation, not behavior | Assert on what the user sees                         |
+| Test file has no extension convention            | Nobody knows what runner to use      | Pick the right extension from the decision tree      |
+| Shared mutable test fixtures across files        | Order-dependent failures             | Zocker generates fresh data per test                 |
 
 ## Running Tests
 

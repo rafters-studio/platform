@@ -31,55 +31,55 @@
  * <Input size="lg" placeholder="Large" />
  * ```
  */
-import * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
+import * as React from "react";
+import classy from "@/src/lib/primitives/classy";
 
-export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   variant?:
-    | 'default'
-    | 'primary'
-    | 'secondary'
-    | 'destructive'
-    | 'success'
-    | 'warning'
-    | 'info'
-    | 'muted'
-    | 'accent';
+    | "default"
+    | "primary"
+    | "secondary"
+    | "destructive"
+    | "success"
+    | "warning"
+    | "info"
+    | "muted"
+    | "accent";
   /** Size variant (not the HTML size attribute) */
-  size?: 'sm' | 'default' | 'lg';
+  size?: "sm" | "default" | "lg";
 }
 
 // Variant classes per docs/COMPONENT_STYLING_REFERENCE.md
 const variantClasses: Record<string, string> = {
-  default: 'border-primary focus-visible:ring-2 focus-visible:ring-primary-ring',
-  primary: 'border-primary focus-visible:ring-2 focus-visible:ring-primary-ring',
-  secondary: 'border-secondary focus-visible:ring-2 focus-visible:ring-secondary-ring',
-  destructive: 'border-destructive focus-visible:ring-2 focus-visible:ring-destructive-ring',
-  success: 'border-success focus-visible:ring-2 focus-visible:ring-success-ring',
-  warning: 'border-warning focus-visible:ring-2 focus-visible:ring-warning-ring',
-  info: 'border-info focus-visible:ring-2 focus-visible:ring-info-ring',
-  muted: 'border-muted focus-visible:ring-2 focus-visible:ring-ring',
-  accent: 'border-accent focus-visible:ring-2 focus-visible:ring-accent-ring',
+  default: "border-primary focus-visible:ring-2 focus-visible:ring-primary-ring",
+  primary: "border-primary focus-visible:ring-2 focus-visible:ring-primary-ring",
+  secondary: "border-secondary focus-visible:ring-2 focus-visible:ring-secondary-ring",
+  destructive: "border-destructive focus-visible:ring-2 focus-visible:ring-destructive-ring",
+  success: "border-success focus-visible:ring-2 focus-visible:ring-success-ring",
+  warning: "border-warning focus-visible:ring-2 focus-visible:ring-warning-ring",
+  info: "border-info focus-visible:ring-2 focus-visible:ring-info-ring",
+  muted: "border-muted focus-visible:ring-2 focus-visible:ring-ring",
+  accent: "border-accent focus-visible:ring-2 focus-visible:ring-accent-ring",
 };
 
 const sizeClasses: Record<string, string> = {
-  sm: 'h-8 px-2 text-xs',
-  default: 'h-10 px-3 text-sm',
-  lg: 'h-12 px-4 text-base',
+  sm: "h-8 px-2 text-xs",
+  default: "h-10 px-3 text-sm",
+  lg: "h-12 px-4 text-base",
 };
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
-    { className, type = 'text', variant = 'default', size = 'default', disabled, ...props },
+    { className, type = "text", variant = "default", size = "default", disabled, ...props },
     ref,
   ) => {
     const baseClasses =
-      'flex w-full rounded-md border bg-background py-2 ' +
-      'ring-offset-background ' +
-      'file:border-0 file:bg-transparent file:text-sm file:font-medium ' +
-      'placeholder:text-muted-foreground ' +
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' +
-      'disabled:cursor-not-allowed disabled:opacity-50';
+      "flex w-full rounded-md border bg-background py-2 " +
+      "ring-offset-background " +
+      "file:border-0 file:bg-transparent file:text-sm file:font-medium " +
+      "placeholder:text-muted-foreground " +
+      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 " +
+      "disabled:cursor-not-allowed disabled:opacity-50";
 
     const cls = classy(
       baseClasses,
@@ -94,14 +94,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         className={cls}
         ref={ref}
         disabled={disabled}
-        aria-disabled={disabled ? 'true' : undefined}
-        aria-invalid={variant === 'destructive' ? 'true' : undefined}
+        aria-disabled={disabled ? "true" : undefined}
+        aria-invalid={variant === "destructive" ? "true" : undefined}
         {...props}
       />
     );
   },
 );
 
-Input.displayName = 'Input';
+Input.displayName = "Input";
 
 export default Input;

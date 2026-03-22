@@ -19,7 +19,5 @@
     "exactOptionalPropertyTypes": true,
     "jsx": "react-jsx"
   },
-  "references": [
-    { "path": "apps/web" }
-  ]
+  "references": [{ "path": "apps/web" }]
 }

@@ -10,12 +10,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "neutral color at 50 position (OKLCH L=0.985)",
@@ -28,12 +23,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "neutral color at 100 position (OKLCH L=0.967)",
@@ -46,11 +36,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "neutral color at 200 position (OKLCH L=0.92)",
@@ -63,11 +49,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "neutral color at 300 position (OKLCH L=0.869)",
@@ -80,12 +62,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "neutral color at 400 position (OKLCH L=0.707)",
@@ -98,12 +75,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "neutral color at 500 position (OKLCH L=0.552)",
@@ -116,11 +88,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "neutral color at 600 position (OKLCH L=0.442)",
@@ -133,11 +101,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "neutral color at 700 position (OKLCH L=0.37)",
@@ -150,12 +114,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "neutral color at 800 position (OKLCH L=0.269)",
@@ -168,12 +127,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "neutral color at 900 position (OKLCH L=0.2)",
@@ -186,12 +140,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "neutral shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "neutral color at 950 position (OKLCH L=0.141)",
@@ -276,14 +225,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete neutral color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Foundation neutral palette for backgrounds, borders, text, and UI chrome.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,
@@ -307,12 +249,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 50 position (OKLCH L=0.95)",
@@ -325,12 +262,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 100 position (OKLCH L=0.896)",
@@ -343,11 +275,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 200 position (OKLCH L=0.839)",
@@ -360,11 +288,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 300 position (OKLCH L=0.78)",
@@ -377,12 +301,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 400 position (OKLCH L=0.716)",
@@ -395,12 +314,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 500 position (OKLCH L=0.645)",
@@ -413,11 +327,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 600 position (OKLCH L=0.55)",
@@ -430,11 +340,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 700 position (OKLCH L=0.425)",
@@ -447,12 +353,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 800 position (OKLCH L=0.3)",
@@ -465,12 +366,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 900 position (OKLCH L=0.175)",
@@ -483,12 +379,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-glacier shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "silver-true-glacier color at 950 position (OKLCH L=0.05)",
@@ -573,14 +464,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete silver-true-glacier color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Cool cyan/teal palette - serene, balanced, calming.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,
@@ -604,12 +488,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 50 position (OKLCH L=0.95)",
@@ -622,12 +501,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 100 position (OKLCH L=0.896)",
@@ -640,11 +514,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 200 position (OKLCH L=0.839)",
@@ -657,11 +527,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 300 position (OKLCH L=0.78)",
@@ -674,12 +540,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 400 position (OKLCH L=0.716)",
@@ -692,12 +553,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 500 position (OKLCH L=0.645)",
@@ -710,11 +566,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 600 position (OKLCH L=0.55)",
@@ -727,11 +579,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 700 position (OKLCH L=0.425)",
@@ -744,12 +592,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 800 position (OKLCH L=0.3)",
@@ -762,12 +605,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 900 position (OKLCH L=0.175)",
@@ -780,12 +618,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-bold-fire-truck shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "silver-bold-fire-truck color at 950 position (OKLCH L=0.05)",
@@ -870,14 +703,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete silver-bold-fire-truck color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Bold fire-truck red palette - warm, energetic, attention-grabbing.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,
@@ -901,12 +727,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 50 position (OKLCH L=0.95)",
@@ -919,12 +740,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 100 position (OKLCH L=0.896)",
@@ -937,11 +753,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 200 position (OKLCH L=0.839)",
@@ -954,11 +766,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 300 position (OKLCH L=0.78)",
@@ -971,12 +779,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 400 position (OKLCH L=0.716)",
@@ -989,12 +792,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 500 position (OKLCH L=0.645)",
@@ -1007,11 +805,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 600 position (OKLCH L=0.55)",
@@ -1024,11 +818,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 700 position (OKLCH L=0.425)",
@@ -1041,12 +831,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 800 position (OKLCH L=0.3)",
@@ -1059,12 +844,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 900 position (OKLCH L=0.175)",
@@ -1077,12 +857,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-honey shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "silver-true-honey color at 950 position (OKLCH L=0.05)",
@@ -1167,14 +942,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete silver-true-honey color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Warm honey gold palette - inviting, refined, subtle warmth.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,
@@ -1198,12 +966,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 50 position (OKLCH L=0.95)",
@@ -1216,12 +979,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 100 position (OKLCH L=0.896)",
@@ -1234,11 +992,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 200 position (OKLCH L=0.839)",
@@ -1251,11 +1005,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 300 position (OKLCH L=0.78)",
@@ -1268,12 +1018,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 400 position (OKLCH L=0.716)",
@@ -1286,12 +1031,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 500 position (OKLCH L=0.645)",
@@ -1304,11 +1044,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 600 position (OKLCH L=0.55)",
@@ -1321,11 +1057,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 700 position (OKLCH L=0.425)",
@@ -1338,12 +1070,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 800 position (OKLCH L=0.3)",
@@ -1356,12 +1083,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 900 position (OKLCH L=0.175)",
@@ -1374,12 +1096,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-citrine shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "silver-true-citrine color at 950 position (OKLCH L=0.05)",
@@ -1464,14 +1181,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete silver-true-citrine color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Fresh citrine green palette - natural, growth, harmony.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,
@@ -1495,12 +1205,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 50 position (OKLCH L=0.95)",
@@ -1513,12 +1218,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 100 position (OKLCH L=0.896)",
@@ -1531,11 +1231,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 200 position (OKLCH L=0.839)",
@@ -1548,11 +1244,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 300 position (OKLCH L=0.78)",
@@ -1565,12 +1257,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 400 position (OKLCH L=0.716)",
@@ -1583,12 +1270,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 500 position (OKLCH L=0.645)",
@@ -1601,11 +1283,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 600 position (OKLCH L=0.55)",
@@ -1618,11 +1296,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 700 position (OKLCH L=0.425)",
@@ -1635,12 +1309,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 800 position (OKLCH L=0.3)",
@@ -1653,12 +1322,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 900 position (OKLCH L=0.175)",
@@ -1671,12 +1335,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-sky shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "silver-true-sky color at 950 position (OKLCH L=0.05)",
@@ -1761,14 +1420,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete silver-true-sky color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Calm sky blue palette - trustworthy, serene, reliable.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,
@@ -1792,12 +1444,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 50 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 0,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 50 position (OKLCH L=0.95)",
@@ -1810,12 +1457,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 100 level - light background range",
-      "usageContext": [
-        "backgrounds",
-        "cards",
-        "surfaces",
-        "light-mode-bg"
-      ],
+      "usageContext": ["backgrounds", "cards", "surfaces", "light-mode-bg"],
       "scalePosition": 1,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 100 position (OKLCH L=0.896)",
@@ -1828,11 +1470,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 200 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 2,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 200 position (OKLCH L=0.839)",
@@ -1845,11 +1483,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 300 level - light background range",
-      "usageContext": [
-        "secondary-backgrounds",
-        "hover-states",
-        "subtle-borders"
-      ],
+      "usageContext": ["secondary-backgrounds", "hover-states", "subtle-borders"],
       "scalePosition": 3,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 300 position (OKLCH L=0.78)",
@@ -1862,12 +1496,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 400 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 4,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 400 position (OKLCH L=0.716)",
@@ -1880,12 +1509,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 500 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "borders",
-        "dividers",
-        "disabled-states",
-        "placeholder-text"
-      ],
+      "usageContext": ["borders", "dividers", "disabled-states", "placeholder-text"],
       "scalePosition": 5,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 500 position (OKLCH L=0.645)",
@@ -1898,11 +1522,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 600 level - mid-tone for borders and secondary text",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 6,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 600 position (OKLCH L=0.55)",
@@ -1915,11 +1535,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 700 level - dark foreground range",
-      "usageContext": [
-        "secondary-text",
-        "icons",
-        "input-borders"
-      ],
+      "usageContext": ["secondary-text", "icons", "input-borders"],
       "scalePosition": 7,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 700 position (OKLCH L=0.425)",
@@ -1932,12 +1548,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 800 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 8,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 800 position (OKLCH L=0.3)",
@@ -1950,12 +1561,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 900 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 9,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 900 position (OKLCH L=0.175)",
@@ -1968,12 +1574,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "silver-true-violet shade at 950 level - dark foreground range",
-      "usageContext": [
-        "primary-text",
-        "headings",
-        "dark-mode-bg",
-        "high-contrast-elements"
-      ],
+      "usageContext": ["primary-text", "headings", "dark-mode-bg", "high-contrast-elements"],
       "scalePosition": 10,
       "progressionSystem": "custom",
       "description": "silver-true-violet color at 950 position (OKLCH L=0.05)",
@@ -2058,14 +1659,7 @@
       "category": "color",
       "namespace": "color",
       "semanticMeaning": "Complete silver-true-violet color family with 11-position scale",
-      "usageContext": [
-        "backgrounds",
-        "borders",
-        "text",
-        "dividers",
-        "shadows",
-        "overlays"
-      ],
+      "usageContext": ["backgrounds", "borders", "text", "dividers", "shadows", "overlays"],
       "description": "Creative violet palette - luxurious, imaginative, refined.",
       "generatedAt": "2026-03-19T00:04:06.726Z",
       "containerQueryAware": true,

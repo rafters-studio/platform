@@ -27,8 +27,8 @@
  * ```
  */
 
-import * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
+import * as React from "react";
+import classy from "@/src/lib/primitives/classy";
 
 // Context for sharing tab state
 interface TabsContextValue {
@@ -42,7 +42,7 @@ const TabsContext = React.createContext<TabsContextValue | null>(null);
 function useTabsContext() {
   const context = React.useContext(TabsContext);
   if (!context) {
-    throw new Error('Tabs components must be used within Tabs');
+    throw new Error("Tabs components must be used within Tabs");
   }
   return context;
 }
@@ -60,7 +60,7 @@ export interface TabsProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export function Tabs({
   value: controlledValue,
-  defaultValue = '',
+  defaultValue = "",
   onValueChange,
   className,
   children,
@@ -102,7 +102,7 @@ export function Tabs({
   );
 }
 
-Tabs.displayName = 'Tabs';
+Tabs.displayName = "Tabs";
 
 // ==================== TabsList ====================
 
@@ -125,16 +125,16 @@ export function TabsList({ className, children, ...props }: TabsListProps) {
     let nextIndex: number | null = null;
 
     switch (event.key) {
-      case 'ArrowLeft':
+      case "ArrowLeft":
         nextIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
         break;
-      case 'ArrowRight':
+      case "ArrowRight":
         nextIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
         break;
-      case 'Home':
+      case "Home":
         nextIndex = 0;
         break;
-      case 'End':
+      case "End":
         nextIndex = tabs.length - 1;
         break;
     }
@@ -150,7 +150,7 @@ export function TabsList({ className, children, ...props }: TabsListProps) {
       ref={listRef}
       role="tablist"
       className={classy(
-        'inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground',
+        "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
         className,
       )}
       onKeyDown={handleKeyDown}
@@ -161,7 +161,7 @@ export function TabsList({ className, children, ...props }: TabsListProps) {
   );
 }
 
-TabsList.displayName = 'TabsList';
+TabsList.displayName = "TabsList";
 
 // ==================== TabsTrigger ====================
 
@@ -192,13 +192,13 @@ export function TabsTrigger({ value, className, children, disabled, ...props }: 
       aria-controls={panelId}
       tabIndex={isSelected ? 0 : -1}
       disabled={disabled}
-      data-state={isSelected ? 'active' : 'inactive'}
+      data-state={isSelected ? "active" : "inactive"}
       className={classy(
-        'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5',
-        'text-sm font-medium ring-offset-background transition-all',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-        'disabled:pointer-events-none disabled:opacity-50',
-        'data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm',
+        "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5",
+        "text-sm font-medium ring-offset-background transition-all",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        "disabled:pointer-events-none disabled:opacity-50",
+        "data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
         className,
       )}
       onClick={handleClick}
@@ -209,7 +209,7 @@ export function TabsTrigger({ value, className, children, disabled, ...props }: 
   );
 }
 
-TabsTrigger.displayName = 'TabsTrigger';
+TabsTrigger.displayName = "TabsTrigger";
 
 // ==================== TabsContent ====================
 
@@ -245,10 +245,10 @@ export function TabsContent({
       // biome-ignore lint/a11y/noNoninteractiveTabindex: tabpanels should be focusable per WAI-ARIA authoring practices
       tabIndex={0}
       hidden={!isSelected}
-      data-state={isSelected ? 'active' : 'inactive'}
+      data-state={isSelected ? "active" : "inactive"}
       className={classy(
-        'mt-2 ring-offset-background',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        "mt-2 ring-offset-background",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className,
       )}
       {...props}
@@ -258,7 +258,7 @@ export function TabsContent({
   );
 }
 
-TabsContent.displayName = 'TabsContent';
+TabsContent.displayName = "TabsContent";
 
 // ==================== Namespaced Export ====================
 

@@ -13,7 +13,7 @@ const app = new OpenAPIHono<{ Bindings: Env }>().basePath("/api");
 app.get("/health", (c) => c.json({ status: "ok" }));
 
 app.on(["GET", "POST", "PUT", "PATCH", "DELETE"], "/auth/*", (c) => {
-	return createAuth(c.env).handler(c.req.raw);
+  return createAuth(c.env).handler(c.req.raw);
 });
 
 registerColorRoutes(app);

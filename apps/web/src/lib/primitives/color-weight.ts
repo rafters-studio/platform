@@ -27,14 +27,14 @@
  * ```
  */
 
-import type { CleanupFunction } from '@/src/lib/primitives/types';
+import type { CleanupFunction } from "@/src/lib/primitives/types";
 
 export interface ColorWeightOptions {
   perceptualWeight: {
     /** Weight score 0-1 */
     weight: number;
     /** Density classification */
-    density: 'light' | 'medium' | 'heavy';
+    density: "light" | "medium" | "heavy";
     /** Human-readable balancing recommendation */
     balancingRecommendation: string;
   };
@@ -42,18 +42,18 @@ export interface ColorWeightOptions {
     /** Distance weight 0-1 */
     distanceWeight: number;
     /** Color temperature */
-    temperature: 'warm' | 'neutral' | 'cool';
+    temperature: "warm" | "neutral" | "cool";
     /** Atmospheric role */
-    atmosphericRole: 'background' | 'midground' | 'foreground';
+    atmosphericRole: "background" | "midground" | "foreground";
   };
 }
 
 const DATA_ATTRS = [
-  'data-perceptual-weight',
-  'data-density',
-  'data-atmospheric-role',
-  'data-distance-weight',
-  'data-temperature',
+  "data-perceptual-weight",
+  "data-density",
+  "data-atmospheric-role",
+  "data-distance-weight",
+  "data-temperature",
 ] as const;
 
 /**
@@ -66,7 +66,7 @@ export function createColorWeight(
   element: HTMLElement,
   options: ColorWeightOptions,
 ): CleanupFunction {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return () => {};
   }
 
@@ -75,25 +75,25 @@ export function createColorWeight(
     previousValues.set(attr, element.getAttribute(attr));
   }
 
-  element.setAttribute('data-perceptual-weight', String(options.perceptualWeight.weight));
-  element.setAttribute('data-density', options.perceptualWeight.density);
-  element.setAttribute('data-atmospheric-role', options.atmosphericWeight.atmosphericRole);
-  element.setAttribute('data-distance-weight', String(options.atmosphericWeight.distanceWeight));
-  element.setAttribute('data-temperature', options.atmosphericWeight.temperature);
+  element.setAttribute("data-perceptual-weight", String(options.perceptualWeight.weight));
+  element.setAttribute("data-density", options.perceptualWeight.density);
+  element.setAttribute("data-atmospheric-role", options.atmosphericWeight.atmosphericRole);
+  element.setAttribute("data-distance-weight", String(options.atmosphericWeight.distanceWeight));
+  element.setAttribute("data-temperature", options.atmosphericWeight.temperature);
 
-  const perceptualSection = document.createElement('div');
-  perceptualSection.setAttribute('aria-label', 'Perceptual weight');
+  const perceptualSection = document.createElement("div");
+  perceptualSection.setAttribute("aria-label", "Perceptual weight");
   perceptualSection.textContent = `${options.perceptualWeight.weight} ${options.perceptualWeight.density}`;
   element.appendChild(perceptualSection);
 
-  const atmosphericSection = document.createElement('div');
-  atmosphericSection.setAttribute('aria-label', 'Atmospheric weight');
+  const atmosphericSection = document.createElement("div");
+  atmosphericSection.setAttribute("aria-label", "Atmospheric weight");
   atmosphericSection.textContent = `${options.atmosphericWeight.atmosphericRole} ${options.atmosphericWeight.distanceWeight}`;
   element.appendChild(atmosphericSection);
 
-  const recommendation = document.createElement('div');
-  recommendation.setAttribute('role', 'note');
-  recommendation.setAttribute('aria-label', 'Balancing recommendation');
+  const recommendation = document.createElement("div");
+  recommendation.setAttribute("role", "note");
+  recommendation.setAttribute("aria-label", "Balancing recommendation");
   recommendation.textContent = options.perceptualWeight.balancingRecommendation;
   element.appendChild(recommendation);
 

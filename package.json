@@ -1,10 +1,6 @@
 {
   "name": "rafters-studio-platform",
   "private": true,
-  "packageManager": "pnpm@10.32.1",
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
     "dev": "pnpm --filter @rafters-studio/web dev",
     "build": "pnpm --filter @rafters-studio/web build",
@@ -17,6 +13,14 @@
     "format:check": "oxfmt --check .",
     "typecheck": "tsc --build"
   },
+  "devDependencies": {
+    "oxfmt": "^0.41.0",
+    "oxlint": "^1.56.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.32.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@ezmode-games/drizzle-ledger",
@@ -24,9 +28,5 @@
       "sharp",
       "workerd"
     ]
-  },
-  "devDependencies": {
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0"
   }
 }

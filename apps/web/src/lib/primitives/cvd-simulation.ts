@@ -28,9 +28,9 @@
  * ```
  */
 
-import type { CleanupFunction, OklchColor } from '@/src/lib/primitives/types';
+import type { CleanupFunction, OklchColor } from "@/src/lib/primitives/types";
 
-export type CvdType = 'deuteranopia' | 'protanopia' | 'tritanopia';
+export type CvdType = "deuteranopia" | "protanopia" | "tritanopia";
 
 export interface CvdSimulationOptions {
   /** Array of 11 OKLCH values mapping to scale positions 50-950 */
@@ -45,12 +45,12 @@ export interface CvdSimulationOptions {
   showOriginal?: boolean;
 }
 
-const CVD_TYPES: CvdType[] = ['deuteranopia', 'protanopia', 'tritanopia'];
+const CVD_TYPES: CvdType[] = ["deuteranopia", "protanopia", "tritanopia"];
 
 const CVD_DESCRIPTIONS: Record<CvdType, string> = {
-  deuteranopia: 'red-green color blindness',
-  protanopia: 'red-green color blindness',
-  tritanopia: 'blue-yellow color blindness',
+  deuteranopia: "red-green color blindness",
+  protanopia: "red-green color blindness",
+  tritanopia: "blue-yellow color blindness",
 };
 
 /**
@@ -89,17 +89,17 @@ function createStrip(
   ariaLabel: string,
   swatchColors: OklchColor[],
 ): HTMLElement {
-  const strip = document.createElement('div');
-  strip.setAttribute('data-cvd-type', cvdType);
-  strip.setAttribute('role', 'img');
-  strip.setAttribute('aria-label', ariaLabel);
+  const strip = document.createElement("div");
+  strip.setAttribute("data-cvd-type", cvdType);
+  strip.setAttribute("role", "img");
+  strip.setAttribute("aria-label", ariaLabel);
 
   for (const color of swatchColors) {
-    const swatch = document.createElement('div');
-    swatch.setAttribute('data-swatch', '');
+    const swatch = document.createElement("div");
+    swatch.setAttribute("data-swatch", "");
     const colorStr = toOklchString(color);
     swatch.style.backgroundColor = colorStr;
-    swatch.setAttribute('data-color', colorStr);
+    swatch.setAttribute("data-color", colorStr);
     strip.appendChild(swatch);
   }
 
@@ -115,20 +115,20 @@ export function createCvdSimulation(
   container: HTMLElement,
   options: CvdSimulationOptions,
 ): CleanupFunction {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return () => {};
   }
 
   const { scale, name, cvd, baseColor, showOriginal } = options;
   const strips: HTMLElement[] = [];
 
-  const prevRole = container.getAttribute('role');
-  const prevAriaLabel = container.getAttribute('aria-label');
-  container.setAttribute('role', 'group');
-  container.setAttribute('aria-label', `${name} color vision deficiency simulation`);
+  const prevRole = container.getAttribute("role");
+  const prevAriaLabel = container.getAttribute("aria-label");
+  container.setAttribute("role", "group");
+  container.setAttribute("aria-label", `${name} color vision deficiency simulation`);
 
   if (showOriginal) {
-    const strip = createStrip(container, 'original', `${name} original color scale`, scale);
+    const strip = createStrip(container, "original", `${name} original color scale`, scale);
     strips.push(strip);
   }
 
@@ -147,14 +147,14 @@ export function createCvdSimulation(
       strip.remove();
     }
     if (prevRole === null) {
-      container.removeAttribute('role');
+      container.removeAttribute("role");
     } else {
-      container.setAttribute('role', prevRole);
+      container.setAttribute("role", prevRole);
     }
     if (prevAriaLabel === null) {
-      container.removeAttribute('aria-label');
+      container.removeAttribute("aria-label");
     } else {
-      container.setAttribute('aria-label', prevAriaLabel);
+      container.setAttribute("aria-label", prevAriaLabel);
     }
   };
 }

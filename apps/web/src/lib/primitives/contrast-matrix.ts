@@ -15,20 +15,20 @@
  * ```
  */
 
-import type { CleanupFunction } from '@/src/lib/primitives/types';
+import type { CleanupFunction } from "@/src/lib/primitives/types";
 
 const SCALE_KEYS = [
-  '50',
-  '100',
-  '200',
-  '300',
-  '400',
-  '500',
-  '600',
-  '700',
-  '800',
-  '900',
-  '950',
+  "50",
+  "100",
+  "200",
+  "300",
+  "400",
+  "500",
+  "600",
+  "700",
+  "800",
+  "900",
+  "950",
 ] as const;
 type ScalePosition = (typeof SCALE_KEYS)[number];
 
@@ -92,11 +92,11 @@ function classifyCell(
   col: number,
   aaSet: Set<string>,
   aaaSet: Set<string>,
-): 'aaa' | 'aa' | 'fail' {
+): "aaa" | "aa" | "fail" {
   const key = pairKey(row, col);
-  if (aaaSet.has(key)) return 'aaa';
-  if (aaSet.has(key)) return 'aa';
-  return 'fail';
+  if (aaaSet.has(key)) return "aaa";
+  if (aaSet.has(key)) return "aa";
+  return "fail";
 }
 
 /**
@@ -105,12 +105,12 @@ function classifyCell(
 function cellLabel(
   rowPos: ScalePosition,
   colPos: ScalePosition,
-  level: 'aaa' | 'aa' | 'fail',
+  level: "aaa" | "aa" | "fail",
 ): string {
-  if (level === 'aaa') {
+  if (level === "aaa") {
     return `${rowPos} on ${colPos}: WCAG AAA pass`;
   }
-  if (level === 'aa') {
+  if (level === "aa") {
     return `${rowPos} on ${colPos}: WCAG AA pass`;
   }
   return `${rowPos} on ${colPos}: WCAG fail`;
@@ -121,18 +121,18 @@ function cellLabel(
  */
 function summaryLabel(background: string, data: ContrastOnBackground): string {
   const parts = [`Contrast on ${background}: ${data.contrastRatio.toFixed(1)}:1`];
-  if (data.wcagAA) parts.push('AA pass');
-  else parts.push('AA fail');
-  if (data.wcagAAA) parts.push('AAA pass');
-  else parts.push('AAA fail');
-  return parts.join(', ');
+  if (data.wcagAA) parts.push("AA pass");
+  else parts.push("AA fail");
+  if (data.wcagAAA) parts.push("AAA pass");
+  else parts.push("AAA fail");
+  return parts.join(", ");
 }
 
 export function createContrastMatrix(
   container: HTMLElement,
   options: ContrastMatrixOptions,
 ): CleanupFunction {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return () => {};
   }
 
@@ -146,14 +146,14 @@ export function createContrastMatrix(
     ? buildPairSet(accessibility.wcagAAA.normal)
     : new Set<string>();
 
-  const prevRole = container.getAttribute('role');
-  const prevAriaLabel = container.getAttribute('aria-label');
-  container.setAttribute('role', 'group');
-  container.setAttribute('aria-label', `${scaleName} contrast data`);
+  const prevRole = container.getAttribute("role");
+  const prevAriaLabel = container.getAttribute("aria-label");
+  container.setAttribute("role", "group");
+  container.setAttribute("aria-label", `${scaleName} contrast data`);
 
-  const gridEl = document.createElement('div');
-  gridEl.setAttribute('role', 'grid');
-  gridEl.setAttribute('aria-label', `${scaleName} contrast pairing matrix`);
+  const gridEl = document.createElement("div");
+  gridEl.setAttribute("role", "grid");
+  gridEl.setAttribute("aria-label", `${scaleName} contrast pairing matrix`);
   createdElements.push(gridEl);
   container.appendChild(gridEl);
 
@@ -161,16 +161,16 @@ export function createContrastMatrix(
   let focusCol = 0;
   const cellElements: HTMLElement[][] = [];
 
-  const headerRow = document.createElement('div');
-  headerRow.setAttribute('role', 'row');
+  const headerRow = document.createElement("div");
+  headerRow.setAttribute("role", "row");
 
-  const cornerCell = document.createElement('div');
-  cornerCell.setAttribute('role', 'presentation');
+  const cornerCell = document.createElement("div");
+  cornerCell.setAttribute("role", "presentation");
   headerRow.appendChild(cornerCell);
 
   for (const pos of SCALE_KEYS) {
-    const header = document.createElement('div');
-    header.setAttribute('role', 'columnheader');
+    const header = document.createElement("div");
+    header.setAttribute("role", "columnheader");
     header.textContent = pos;
     headerRow.appendChild(header);
   }
@@ -180,13 +180,13 @@ export function createContrastMatrix(
     const rowPos = SCALE_KEYS[i];
     if (!rowPos) continue;
 
-    const row = document.createElement('div');
-    row.setAttribute('role', 'row');
+    const row = document.createElement("div");
+    row.setAttribute("role", "row");
     createdElements.push(row);
 
     // Row header
-    const rowHeader = document.createElement('div');
-    rowHeader.setAttribute('role', 'rowheader');
+    const rowHeader = document.createElement("div");
+    rowHeader.setAttribute("role", "rowheader");
     rowHeader.textContent = rowPos;
     row.appendChild(rowHeader);
 
@@ -197,13 +197,13 @@ export function createContrastMatrix(
       if (!colPos) continue;
 
       const level = classifyCell(i, j, aaSet, aaaSet);
-      const cell = document.createElement('div');
-      cell.setAttribute('role', 'gridcell');
-      cell.setAttribute('data-wcag-level', level);
-      cell.setAttribute('data-row', rowPos);
-      cell.setAttribute('data-col', colPos);
-      cell.setAttribute('aria-label', cellLabel(rowPos, colPos, level));
-      cell.setAttribute('tabindex', i === 0 && j === 0 ? '0' : '-1');
+      const cell = document.createElement("div");
+      cell.setAttribute("role", "gridcell");
+      cell.setAttribute("data-wcag-level", level);
+      cell.setAttribute("data-row", rowPos);
+      cell.setAttribute("data-col", colPos);
+      cell.setAttribute("aria-label", cellLabel(rowPos, colPos, level));
+      cell.setAttribute("tabindex", i === 0 && j === 0 ? "0" : "-1");
 
       rowCells.push(cell);
       row.appendChild(cell);
@@ -213,26 +213,26 @@ export function createContrastMatrix(
     gridEl.appendChild(row);
   }
 
-  const onWhiteSummary = document.createElement('div');
-  onWhiteSummary.setAttribute('data-contrast-summary', 'on-white');
-  onWhiteSummary.setAttribute('aria-label', summaryLabel('white', accessibility.onWhite));
-  onWhiteSummary.textContent = summaryLabel('white', accessibility.onWhite);
+  const onWhiteSummary = document.createElement("div");
+  onWhiteSummary.setAttribute("data-contrast-summary", "on-white");
+  onWhiteSummary.setAttribute("aria-label", summaryLabel("white", accessibility.onWhite));
+  onWhiteSummary.textContent = summaryLabel("white", accessibility.onWhite);
   createdElements.push(onWhiteSummary);
   container.appendChild(onWhiteSummary);
 
-  const onBlackSummary = document.createElement('div');
-  onBlackSummary.setAttribute('data-contrast-summary', 'on-black');
-  onBlackSummary.setAttribute('aria-label', summaryLabel('black', accessibility.onBlack));
-  onBlackSummary.textContent = summaryLabel('black', accessibility.onBlack);
+  const onBlackSummary = document.createElement("div");
+  onBlackSummary.setAttribute("data-contrast-summary", "on-black");
+  onBlackSummary.setAttribute("aria-label", summaryLabel("black", accessibility.onBlack));
+  onBlackSummary.textContent = summaryLabel("black", accessibility.onBlack);
   createdElements.push(onBlackSummary);
   container.appendChild(onBlackSummary);
 
   if (accessibility.apca) {
     const apca = accessibility.apca;
-    const apcaEl = document.createElement('div');
-    apcaEl.setAttribute('data-apca', '');
+    const apcaEl = document.createElement("div");
+    apcaEl.setAttribute("data-apca", "");
     apcaEl.setAttribute(
-      'aria-label',
+      "aria-label",
       `APCA: on white ${apca.onWhite.toFixed(1)}, on black ${apca.onBlack.toFixed(1)}, min font size ${apca.minFontSize}px`,
     );
     apcaEl.textContent = `APCA: Lc ${apca.onWhite.toFixed(1)} (white), Lc ${apca.onBlack.toFixed(1)} (black), min ${apca.minFontSize}px`;
@@ -245,8 +245,8 @@ export function createContrastMatrix(
     const nextCell = cellElements[newRow]?.[newCol];
     if (!prevCell || !nextCell) return;
 
-    prevCell.setAttribute('tabindex', '-1');
-    nextCell.setAttribute('tabindex', '0');
+    prevCell.setAttribute("tabindex", "-1");
+    nextCell.setAttribute("tabindex", "0");
     nextCell.focus();
     focusRow = newRow;
     focusCol = newCol;
@@ -257,23 +257,23 @@ export function createContrastMatrix(
     let newCol = focusCol;
 
     switch (event.key) {
-      case 'ArrowRight':
+      case "ArrowRight":
         newCol = focusCol < SCALE_KEYS.length - 1 ? focusCol + 1 : 0;
         break;
-      case 'ArrowLeft':
+      case "ArrowLeft":
         newCol = focusCol > 0 ? focusCol - 1 : SCALE_KEYS.length - 1;
         break;
-      case 'ArrowDown':
+      case "ArrowDown":
         newRow = focusRow < SCALE_KEYS.length - 1 ? focusRow + 1 : 0;
         break;
-      case 'ArrowUp':
+      case "ArrowUp":
         newRow = focusRow > 0 ? focusRow - 1 : SCALE_KEYS.length - 1;
         break;
-      case 'Home':
+      case "Home":
         newRow = 0;
         newCol = 0;
         break;
-      case 'End':
+      case "End":
         newRow = SCALE_KEYS.length - 1;
         newCol = SCALE_KEYS.length - 1;
         break;
@@ -285,15 +285,15 @@ export function createContrastMatrix(
     moveFocus(newRow, newCol);
   }
 
-  gridEl.addEventListener('keydown', handleKeydown);
+  gridEl.addEventListener("keydown", handleKeydown);
 
   return () => {
-    gridEl.removeEventListener('keydown', handleKeydown);
+    gridEl.removeEventListener("keydown", handleKeydown);
     for (const el of createdElements) {
       el.remove();
     }
-    restoreAttribute(container, 'role', prevRole);
-    restoreAttribute(container, 'aria-label', prevAriaLabel);
+    restoreAttribute(container, "role", prevRole);
+    restoreAttribute(container, "aria-label", prevAriaLabel);
   };
 }
 

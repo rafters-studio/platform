@@ -10,13 +10,9 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Base unit for shadow calculations - tied to spacing for consistency",
-      "usageContext": [
-        "calculation-reference"
-      ],
+      "usageContext": ["calculation-reference"],
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "spacing-base"
-      ],
+      "dependsOn": ["spacing-base"],
       "description": "Shadows derive from spacing base (0.25rem) for visual consistency.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false
@@ -27,11 +23,7 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "No shadow - flat appearance",
-      "usageContext": [
-        "flat-elements",
-        "inline",
-        "disabled"
-      ],
+      "usageContext": ["flat-elements", "inline", "disabled"],
       "scalePosition": 0,
       "progressionSystem": "minor-third",
       "dependsOn": [],
@@ -39,13 +31,8 @@
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for flat elements",
-          "Use for disabled states"
-        ],
-        "never": [
-          "Use on interactive elements that need depth feedback"
-        ]
+        "do": ["Use for flat elements", "Use for disabled states"],
+        "never": ["Use on interactive elements that need depth feedback"]
       }
     },
     {
@@ -54,27 +41,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Extra small shadow - subtle depth hint",
-      "usageContext": [
-        "subtle-cards",
-        "list-items",
-        "hover-states"
-      ],
+      "usageContext": ["subtle-cards", "list-items", "hover-states"],
       "scalePosition": 1,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow xs: Extra small shadow - subtle depth hint. Y: 0.25×base, Blur: 0.5×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for subtle depth",
-          "Use for cards at rest"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for subtle depth", "Use for cards at rest"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -83,27 +59,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Small shadow - slight elevation",
-      "usageContext": [
-        "cards",
-        "buttons",
-        "inputs"
-      ],
+      "usageContext": ["cards", "buttons", "inputs"],
       "scalePosition": 2,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow sm: Small shadow - slight elevation. Y: 0.25×base, Blur: 1×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for subtle depth",
-          "Use for cards at rest"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for subtle depth", "Use for cards at rest"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -112,27 +77,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Default shadow - standard elevation",
-      "usageContext": [
-        "cards",
-        "dropdowns",
-        "floating-elements"
-      ],
+      "usageContext": ["cards", "dropdowns", "floating-elements"],
       "scalePosition": 3,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow DEFAULT: Default shadow - standard elevation. Y: 0.5×base, Blur: 1.5×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for hovering elements",
-          "Use for focus states"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for hovering elements", "Use for focus states"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -141,27 +95,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Medium shadow - noticeable elevation",
-      "usageContext": [
-        "hovering-cards",
-        "active-elements",
-        "focus-states"
-      ],
+      "usageContext": ["hovering-cards", "active-elements", "focus-states"],
       "scalePosition": 4,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow md: Medium shadow - noticeable elevation. Y: 1×base, Blur: 2×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for hovering elements",
-          "Use for focus states"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for hovering elements", "Use for focus states"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -170,27 +113,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Large shadow - significant elevation",
-      "usageContext": [
-        "modals",
-        "dialogs",
-        "floating-panels"
-      ],
+      "usageContext": ["modals", "dialogs", "floating-panels"],
       "scalePosition": 5,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow lg: Large shadow - significant elevation. Y: 2×base, Blur: 4×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for floating elements",
-          "Use for modals"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for floating elements", "Use for modals"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -199,27 +131,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Extra large shadow - high elevation",
-      "usageContext": [
-        "large-modals",
-        "sheet-dialogs",
-        "command-palettes"
-      ],
+      "usageContext": ["large-modals", "sheet-dialogs", "command-palettes"],
       "scalePosition": 6,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow xl: Extra large shadow - high elevation. Y: 5×base, Blur: 6×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for floating elements",
-          "Use for modals"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for floating elements", "Use for modals"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -228,27 +149,16 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Maximum shadow - highest elevation",
-      "usageContext": [
-        "critical-modals",
-        "overlays",
-        "drawer-panels"
-      ],
+      "usageContext": ["critical-modals", "overlays", "drawer-panels"],
       "scalePosition": 7,
       "progressionSystem": "minor-third",
-      "dependsOn": [
-        "shadow-base-unit"
-      ],
+      "dependsOn": ["shadow-base-unit"],
       "description": "Shadow 2xl: Maximum shadow - highest elevation. Y: 6×base, Blur: 12×base",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false,
       "usagePatterns": {
-        "do": [
-          "Use for floating elements",
-          "Use for modals"
-        ],
-        "never": [
-          "Use shadows that don't match element's semantic depth"
-        ]
+        "do": ["Use for floating elements", "Use for modals"],
+        "never": ["Use shadows that don't match element's semantic depth"]
       }
     },
     {
@@ -257,14 +167,8 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Primary colored shadow for emphasis",
-      "usageContext": [
-        "branded-elements",
-        "emphasis"
-      ],
-      "dependsOn": [
-        "shadow",
-        "primary"
-      ],
+      "usageContext": ["branded-elements", "emphasis"],
+      "dependsOn": ["shadow", "primary"],
       "description": "Primary colored shadow for emphasis. Uses color-mix for proper OKLCH blending.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false
@@ -275,14 +179,8 @@
       "category": "shadow",
       "namespace": "shadow",
       "semanticMeaning": "Destructive colored shadow for warnings",
-      "usageContext": [
-        "branded-elements",
-        "emphasis"
-      ],
-      "dependsOn": [
-        "shadow",
-        "destructive"
-      ],
+      "usageContext": ["branded-elements", "emphasis"],
+      "dependsOn": ["shadow", "destructive"],
       "description": "Destructive colored shadow for warnings. Uses color-mix for proper OKLCH blending.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": false

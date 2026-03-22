@@ -8,11 +8,5 @@
     "prefer-const": "error",
     "no-explicit-any": "error"
   },
-  "ignorePatterns": [
-    "node_modules",
-    "dist",
-    ".wrangler",
-    ".astro",
-    "coverage"
-  ]
+  "ignorePatterns": ["node_modules", "dist", ".wrangler", ".astro", "coverage"]
 }

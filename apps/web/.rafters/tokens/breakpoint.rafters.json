@@ -10,10 +10,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Small screens - landscape phones, small tablets",
-      "usageContext": [
-        "mobile-first",
-        "compact-layouts"
-      ],
+      "usageContext": ["mobile-first", "compact-layouts"],
       "scalePosition": 0,
       "viewportAware": true,
       "containerQueryAware": false,
@@ -36,9 +33,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for sm breakpoint",
-      "dependsOn": [
-        "breakpoint-sm"
-      ],
+      "dependsOn": ["breakpoint-sm"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Media query: @media (min-width: 640px)",
@@ -50,10 +45,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Medium screens - tablets, small laptops",
-      "usageContext": [
-        "tablet-layouts",
-        "sidebar-visible"
-      ],
+      "usageContext": ["tablet-layouts", "sidebar-visible"],
       "scalePosition": 1,
       "viewportAware": true,
       "containerQueryAware": false,
@@ -76,9 +68,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for md breakpoint",
-      "dependsOn": [
-        "breakpoint-md"
-      ],
+      "dependsOn": ["breakpoint-md"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Media query: @media (min-width: 768px)",
@@ -90,10 +80,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Large screens - laptops, small desktops",
-      "usageContext": [
-        "desktop-layouts",
-        "multi-column"
-      ],
+      "usageContext": ["desktop-layouts", "multi-column"],
       "scalePosition": 2,
       "viewportAware": true,
       "containerQueryAware": false,
@@ -116,9 +103,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for lg breakpoint",
-      "dependsOn": [
-        "breakpoint-lg"
-      ],
+      "dependsOn": ["breakpoint-lg"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Media query: @media (min-width: 1024px)",
@@ -130,10 +115,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Extra large screens - desktops",
-      "usageContext": [
-        "wide-layouts",
-        "dashboard"
-      ],
+      "usageContext": ["wide-layouts", "dashboard"],
       "scalePosition": 3,
       "viewportAware": true,
       "containerQueryAware": false,
@@ -156,9 +138,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for xl breakpoint",
-      "dependsOn": [
-        "breakpoint-xl"
-      ],
+      "dependsOn": ["breakpoint-xl"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Media query: @media (min-width: 1280px)",
@@ -170,10 +150,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Extra extra large screens - large desktops, monitors",
-      "usageContext": [
-        "ultra-wide",
-        "data-dense"
-      ],
+      "usageContext": ["ultra-wide", "data-dense"],
       "scalePosition": 4,
       "viewportAware": true,
       "containerQueryAware": false,
@@ -196,9 +173,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for 2xl breakpoint",
-      "dependsOn": [
-        "breakpoint-2xl"
-      ],
+      "dependsOn": ["breakpoint-2xl"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Media query: @media (min-width: 1536px)",
@@ -210,10 +185,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Smallest container (256px) - icons, badges",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @3xs = 16rem (256px). Smallest container (256px) - icons, badges.",
@@ -236,10 +208,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Extra extra small (288px) - compact cards",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @2xs = 18rem (288px). Extra extra small (288px) - compact cards.",
@@ -262,10 +231,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Extra small (320px) - mobile-width cards",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @xs = 20rem (320px). Extra small (320px) - mobile-width cards.",
@@ -288,10 +254,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Small (384px) - standard cards",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @sm = 24rem (384px). Small (384px) - standard cards.",
@@ -314,10 +277,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Medium (448px) - wide cards, panels",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @md = 28rem (448px). Medium (448px) - wide cards, panels.",
@@ -340,10 +300,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Large (512px) - sidebars, dialog content",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @lg = 32rem (512px). Large (512px) - sidebars, dialog content.",
@@ -366,10 +323,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Extra large (576px) - main content panels",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @xl = 36rem (576px). Extra large (576px) - main content panels.",
@@ -392,10 +346,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "2XL (672px) - wide content areas",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @2xl = 42rem (672px). 2XL (672px) - wide content areas.",
@@ -418,10 +369,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "3XL (768px) - tablet-width containers",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @3xl = 48rem (768px). 3XL (768px) - tablet-width containers.",
@@ -444,10 +392,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "4XL (896px) - wide panels",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @4xl = 56rem (896px). 4XL (896px) - wide panels.",
@@ -470,10 +415,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "5XL (1024px) - desktop content",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @5xl = 64rem (1024px). 5XL (1024px) - desktop content.",
@@ -496,10 +438,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "6XL (1152px) - wide desktop content",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @6xl = 72rem (1152px). 6XL (1152px) - wide desktop content.",
@@ -522,10 +461,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "7XL (1280px) - maximum content width",
-      "usageContext": [
-        "component-responsive",
-        "container-queries"
-      ],
+      "usageContext": ["component-responsive", "container-queries"],
       "containerQueryAware": true,
       "viewportAware": false,
       "description": "Container query size @7xl = 80rem (1280px). 7XL (1280px) - maximum content width.",
@@ -548,9 +484,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Maximum width before sm breakpoint",
-      "dependsOn": [
-        "breakpoint-sm"
-      ],
+      "dependsOn": ["breakpoint-sm"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Max-width 639px (just before sm breakpoint).",
@@ -562,9 +496,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Maximum width before md breakpoint",
-      "dependsOn": [
-        "breakpoint-md"
-      ],
+      "dependsOn": ["breakpoint-md"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Max-width 767px (just before md breakpoint).",
@@ -576,9 +508,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Maximum width before lg breakpoint",
-      "dependsOn": [
-        "breakpoint-lg"
-      ],
+      "dependsOn": ["breakpoint-lg"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Max-width 1023px (just before lg breakpoint).",
@@ -590,9 +520,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Maximum width before xl breakpoint",
-      "dependsOn": [
-        "breakpoint-xl"
-      ],
+      "dependsOn": ["breakpoint-xl"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Max-width 1279px (just before xl breakpoint).",
@@ -604,9 +532,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Maximum width before 2xl breakpoint",
-      "dependsOn": [
-        "breakpoint-2xl"
-      ],
+      "dependsOn": ["breakpoint-2xl"],
       "viewportAware": true,
       "containerQueryAware": false,
       "description": "Max-width 1535px (just before 2xl breakpoint).",
@@ -618,24 +544,15 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for reduced motion preference",
-      "usageContext": [
-        "accessibility",
-        "vestibular-safe"
-      ],
+      "usageContext": ["accessibility", "vestibular-safe"],
       "reducedMotionAware": true,
       "animationSafe": true,
       "containerQueryAware": false,
       "description": "Media query for users preferring reduced motion.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "usagePatterns": {
-        "do": [
-          "Use to disable or reduce animations",
-          "Provide alternative non-motion feedback"
-        ],
-        "never": [
-          "Ignore reduced motion preference",
-          "Remove all visual feedback"
-        ]
+        "do": ["Use to disable or reduce animations", "Provide alternative non-motion feedback"],
+        "never": ["Ignore reduced motion preference", "Remove all visual feedback"]
       }
     },
     {
@@ -644,10 +561,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for dark mode preference",
-      "usageContext": [
-        "theming",
-        "dark-mode"
-      ],
+      "usageContext": ["theming", "dark-mode"],
       "containerQueryAware": false,
       "description": "Media query for users preferring dark color scheme.",
       "generatedAt": "2026-03-19T00:04:06.727Z"
@@ -658,10 +572,7 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for high contrast preference",
-      "usageContext": [
-        "accessibility",
-        "high-contrast"
-      ],
+      "usageContext": ["accessibility", "high-contrast"],
       "accessibilityLevel": "AAA",
       "containerQueryAware": false,
       "description": "Media query for users preferring increased contrast.",
@@ -673,24 +584,14 @@
       "category": "breakpoint",
       "namespace": "breakpoint",
       "semanticMeaning": "Media query for forced colors mode (Windows High Contrast)",
-      "usageContext": [
-        "accessibility",
-        "high-contrast",
-        "windows"
-      ],
+      "usageContext": ["accessibility", "high-contrast", "windows"],
       "accessibilityLevel": "AAA",
       "containerQueryAware": false,
       "description": "Media query for Windows High Contrast Mode.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "usagePatterns": {
-        "do": [
-          "Use system color keywords",
-          "Ensure visible focus indicators"
-        ],
-        "never": [
-          "Override with custom colors",
-          "Hide important visual information"
-        ]
+        "do": ["Use system color keywords", "Ensure visible focus indicators"],
+        "never": ["Override with custom colors", "Hide important visual information"]
       }
     },
     {

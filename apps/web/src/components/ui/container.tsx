@@ -27,13 +27,13 @@
  * </Container>
  * ```
  */
-import * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
+import * as React from "react";
+import classy from "@/src/lib/primitives/classy";
 
-type ContainerElement = 'div' | 'main' | 'section' | 'article' | 'aside';
+type ContainerElement = "div" | "main" | "section" | "article" | "aside";
 
 /** Background preset options for containers */
-export type ContainerBackground = 'none' | 'muted' | 'accent' | 'card';
+export type ContainerBackground = "none" | "muted" | "accent" | "card";
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
   /** Semantic element - determines behavior and accessibility role */
@@ -43,13 +43,13 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
    * Max-width constraint using Tailwind sizing
    * @default 'full' for main, undefined for others
    */
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full';
+  size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "full";
 
   /**
    * Internal padding using Tailwind spacing scale
    * Spacing happens inside containers, not via margins
    */
-  padding?: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '8' | '10' | '12' | '16' | '20' | '24';
+  padding?: "0" | "1" | "2" | "3" | "4" | "5" | "6" | "8" | "10" | "12" | "16" | "20" | "24";
 
   /**
    * Vertical flow gap between children.
@@ -57,7 +57,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
    * When a spacing value, overrides the size-derived default.
    * Applies flex flex-col gap-{n} to create a vertical stack.
    */
-  gap?: boolean | '0' | '1' | '2' | '3' | '4' | '5' | '6' | '8' | '10' | '12' | '16' | '20' | '24';
+  gap?: boolean | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "8" | "10" | "12" | "16" | "20" | "24";
 
   /**
    * Enable container queries on this element
@@ -101,49 +101,49 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const sizeClasses: Record<string, string> = {
-  sm: 'max-w-sm',
-  md: 'max-w-md',
-  lg: 'max-w-lg',
-  xl: 'max-w-xl',
-  '2xl': 'max-w-2xl',
-  '3xl': 'max-w-3xl',
-  '4xl': 'max-w-4xl',
-  '5xl': 'max-w-5xl',
-  '6xl': 'max-w-6xl',
-  '7xl': 'max-w-7xl',
-  full: 'w-full',
+  sm: "max-w-sm",
+  md: "max-w-md",
+  lg: "max-w-lg",
+  xl: "max-w-xl",
+  "2xl": "max-w-2xl",
+  "3xl": "max-w-3xl",
+  "4xl": "max-w-4xl",
+  "5xl": "max-w-5xl",
+  "6xl": "max-w-6xl",
+  "7xl": "max-w-7xl",
+  full: "w-full",
 };
 
 const paddingClasses: Record<string, string> = {
-  '0': 'p-0',
-  '1': 'p-1',
-  '2': 'p-2',
-  '3': 'p-3',
-  '4': 'p-4',
-  '5': 'p-5',
-  '6': 'p-6',
-  '8': 'p-8',
-  '10': 'p-10',
-  '12': 'p-12',
-  '16': 'p-16',
-  '20': 'p-20',
-  '24': 'p-24',
+  "0": "p-0",
+  "1": "p-1",
+  "2": "p-2",
+  "3": "p-3",
+  "4": "p-4",
+  "5": "p-5",
+  "6": "p-6",
+  "8": "p-8",
+  "10": "p-10",
+  "12": "p-12",
+  "16": "p-16",
+  "20": "p-20",
+  "24": "p-24",
 };
 
 const gapClasses: Record<string, string> = {
-  '0': 'flex flex-col gap-0',
-  '1': 'flex flex-col gap-1',
-  '2': 'flex flex-col gap-2',
-  '3': 'flex flex-col gap-3',
-  '4': 'flex flex-col gap-4',
-  '5': 'flex flex-col gap-5',
-  '6': 'flex flex-col gap-6',
-  '8': 'flex flex-col gap-8',
-  '10': 'flex flex-col gap-10',
-  '12': 'flex flex-col gap-12',
-  '16': 'flex flex-col gap-16',
-  '20': 'flex flex-col gap-20',
-  '24': 'flex flex-col gap-24',
+  "0": "flex flex-col gap-0",
+  "1": "flex flex-col gap-1",
+  "2": "flex flex-col gap-2",
+  "3": "flex flex-col gap-3",
+  "4": "flex flex-col gap-4",
+  "5": "flex flex-col gap-5",
+  "6": "flex flex-col gap-6",
+  "8": "flex flex-col gap-8",
+  "10": "flex flex-col gap-10",
+  "12": "flex flex-col gap-12",
+  "16": "flex flex-col gap-16",
+  "20": "flex flex-col gap-20",
+  "24": "flex flex-col gap-24",
 };
 
 /**
@@ -154,68 +154,68 @@ const gapClasses: Record<string, string> = {
  * baseSpacingUnit automatically.
  */
 const sizeGapScale: Record<string, string> = {
-  sm: '3',
-  md: '4',
-  lg: '5',
-  xl: '6',
-  '2xl': '6',
-  '3xl': '8',
-  '4xl': '8',
-  '5xl': '10',
-  '6xl': '10',
-  '7xl': '12',
+  sm: "3",
+  md: "4",
+  lg: "5",
+  xl: "6",
+  "2xl": "6",
+  "3xl": "8",
+  "4xl": "8",
+  "5xl": "10",
+  "6xl": "10",
+  "7xl": "12",
 };
 
 // Article typography - the magic for readable content
 const articleTypography = [
   // Base prose styling
-  '[&_p]:leading-relaxed',
-  '[&_p]:mb-4',
-  '[&_p:last-child]:mb-0',
+  "[&_p]:leading-relaxed",
+  "[&_p]:mb-4",
+  "[&_p:last-child]:mb-0",
 
   // Headings
-  '[&_h1]:text-4xl [&_h1]:font-bold [&_h1]:tracking-tight [&_h1]:mb-4 [&_h1]:mt-0 [&_h1]:text-accent-foreground',
-  '[&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mb-3 [&_h2]:mt-8 [&_h2]:first:mt-0 [&_h2]:text-accent-foreground',
-  '[&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:mb-2 [&_h3]:mt-6 [&_h3]:text-accent-foreground',
-  '[&_h4]:text-xl [&_h4]:font-semibold [&_h4]:mb-2 [&_h4]:mt-4 [&_h4]:text-accent-foreground',
+  "[&_h1]:text-4xl [&_h1]:font-bold [&_h1]:tracking-tight [&_h1]:mb-4 [&_h1]:mt-0 [&_h1]:text-accent-foreground",
+  "[&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:mb-3 [&_h2]:mt-8 [&_h2]:first:mt-0 [&_h2]:text-accent-foreground",
+  "[&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:mb-2 [&_h3]:mt-6 [&_h3]:text-accent-foreground",
+  "[&_h4]:text-xl [&_h4]:font-semibold [&_h4]:mb-2 [&_h4]:mt-4 [&_h4]:text-accent-foreground",
 
   // Lists
-  '[&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4',
-  '[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4',
-  '[&_li]:mb-1',
+  "[&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4",
+  "[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4",
+  "[&_li]:mb-1",
 
   // Links
-  '[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-primary/80',
+  "[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-primary/80",
 
   // Blockquotes
-  '[&_blockquote]:border-l-4 [&_blockquote]:border-muted [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:my-4',
+  "[&_blockquote]:border-l-4 [&_blockquote]:border-muted [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:my-4",
 
   // Code
-  '[&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono',
-  '[&_pre]:bg-muted [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:my-4',
-  '[&_pre_code]:bg-transparent [&_pre_code]:p-0',
+  "[&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono",
+  "[&_pre]:bg-muted [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:my-4",
+  "[&_pre_code]:bg-transparent [&_pre_code]:p-0",
 
   // Horizontal rules
-  '[&_hr]:border-border [&_hr]:my-8',
+  "[&_hr]:border-border [&_hr]:my-8",
 
   // Images
-  '[&_img]:rounded-lg [&_img]:my-4',
+  "[&_img]:rounded-lg [&_img]:my-4",
 
   // Tables
-  '[&_table]:w-full [&_table]:my-4',
-  '[&_th]:border [&_th]:border-border [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold',
-  '[&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2',
+  "[&_table]:w-full [&_table]:my-4",
+  "[&_th]:border [&_th]:border-border [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:font-semibold",
+  "[&_td]:border [&_td]:border-border [&_td]:px-3 [&_td]:py-2",
 
   // Optimal reading width
-  'max-w-prose',
-].join(' ');
+  "max-w-prose",
+].join(" ");
 
 /** Background class mapping */
 const backgroundClasses: Record<ContainerBackground, string> = {
-  none: '',
-  muted: 'bg-muted',
-  accent: 'bg-accent',
-  card: 'bg-card',
+  none: "",
+  muted: "bg-muted",
+  accent: "bg-accent",
+  card: "bg-card",
 };
 
 /**
@@ -232,7 +232,7 @@ function DropZonePlaceholder() {
 export const Container = React.forwardRef<HTMLElement, ContainerProps>(
   (
     {
-      as: Element = 'div',
+      as: Element = "div",
       size,
       padding,
       gap,
@@ -252,21 +252,21 @@ export const Container = React.forwardRef<HTMLElement, ContainerProps>(
     // TODO: Implement background picker UI that calls _onBackgroundChange
     void _onBackgroundChange;
 
-    const isArticle = Element === 'article';
+    const isArticle = Element === "article";
     const isEmpty = React.Children.count(children) === 0;
 
-    const resolvedGap = gap === true ? (size && sizeGapScale[size]) || '6' : gap || undefined;
+    const resolvedGap = gap === true ? (size && sizeGapScale[size]) || "6" : gap || undefined;
 
     const classes = classy(
       // Container queries - w-full prevents width collapse when container-type: inline-size
       // is applied to flex/grid children (Tailwind v4 behavior)
-      query && '@container w-full',
+      query && "@container w-full",
 
       // Size constraint
       size && sizeClasses[size],
 
       // Centering for sized containers
-      size && size !== 'full' && 'mx-auto',
+      size && size !== "full" && "mx-auto",
 
       // Padding
       padding && paddingClasses[padding],
@@ -281,7 +281,7 @@ export const Container = React.forwardRef<HTMLElement, ContainerProps>(
       isArticle && articleTypography,
 
       // Editable mode styling (R-202)
-      editable && 'outline-2 outline-dashed outline-muted-foreground/30 outline-offset-2 rounded',
+      editable && "outline-2 outline-dashed outline-muted-foreground/30 outline-offset-2 rounded",
 
       // User classes
       className,
@@ -302,8 +302,8 @@ export const Container = React.forwardRef<HTMLElement, ContainerProps>(
         ref,
         className: classes || undefined,
         style: Object.keys(containerStyle).length > 0 ? containerStyle : undefined,
-        'data-editable': editable || undefined,
-        'data-background': background || undefined,
+        "data-editable": editable || undefined,
+        "data-background": background || undefined,
         ...props,
       },
       content,
@@ -311,6 +311,6 @@ export const Container = React.forwardRef<HTMLElement, ContainerProps>(
   },
 );
 
-Container.displayName = 'Container';
+Container.displayName = "Container";
 
 export default Container;
