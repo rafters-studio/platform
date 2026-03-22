@@ -3,7 +3,7 @@ import type { ColorValue } from "@rafters/shared";
 import { classy } from "@rafters/ui/primitives/classy";
 import { Container } from "@rafters/ui/components/ui/container";
 import { Separator } from "@rafters/ui/components/ui/separator";
-import { H1, H3, H4, Lead, Muted, P } from "@rafters/ui/components/ui/typography";
+import { H1, H4, Lead, Muted, P } from "@rafters/ui/components/ui/typography";
 import { useMemo } from "react";
 
 interface ColorIntelligenceProps {

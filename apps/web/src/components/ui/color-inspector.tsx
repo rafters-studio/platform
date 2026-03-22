@@ -926,7 +926,11 @@ function ColorFamily({
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            selected ? onDeselect?.() : onSelect?.();
+            if (selected) {
+              onDeselect?.();
+            } else {
+              onSelect?.();
+            }
           } else if (e.key === "Escape" && selected) {
             e.preventDefault();
             onDeselect?.();
