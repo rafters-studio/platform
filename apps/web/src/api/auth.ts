@@ -9,18 +9,13 @@ import { Polar } from "@polar-sh/sdk";
 import { drizzle } from "drizzle-orm/d1";
 import { uuidv7 } from "uuidv7";
 
-const authCache = new WeakMap<D1Database, ReturnType<typeof betterAuth>>();
-
-export function createAuth(env: Env) {
-  let auth = authCache.get(env.AUTH_DB);
-  if (auth) return auth;
-
+function buildAuth(env: Env) {
   const db = drizzle(env.AUTH_DB);
   const polarClient = new Polar({
     accessToken: env.POLAR_ACCESS_TOKEN,
   });
 
-  auth = betterAuth({
+  return betterAuth({
     database: drizzleAdapter(db, {
       provider: "sqlite",
     }),
@@ -81,9 +76,17 @@ export function createAuth(env: Env) {
       organization(),
     ],
   });
+}
 
+export type Auth = ReturnType<typeof buildAuth>;
+
+const authCache = new WeakMap<D1Database, Auth>();
+
+export function createAuth(env: Env) {
+  const cached = authCache.get(env.AUTH_DB);
+  if (cached) return cached;
+
+  const auth = buildAuth(env);
   authCache.set(env.AUTH_DB, auth);
   return auth;
 }
-
-export type Auth = ReturnType<typeof createAuth>;

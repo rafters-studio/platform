@@ -77,8 +77,8 @@ function toOklch(color: InstanceType<typeof Color>): {
 } {
   const oklch = color.to("oklch");
   return {
-    l: Math.round(oklch.l * 1000) / 1000,
-    c: Math.round(oklch.c * 1000) / 1000,
+    l: Math.round((oklch.l ?? 0) * 1000) / 1000,
+    c: Math.round((oklch.c ?? 0) * 1000) / 1000,
     h: Math.round((oklch.h || 0) * 10) / 10,
   };
 }
@@ -131,6 +131,7 @@ const analyzeRoute = createRoute({
 });
 
 export function registerColorRoutes(app: OpenAPIHono<{ Bindings: Env }>) {
+  // @ts-expect-error -- OpenAPI route handler return type mismatch with Hono generics
   app.openapi(analyzeRoute, (c) => {
     const { color: input } = c.req.valid("query");
 

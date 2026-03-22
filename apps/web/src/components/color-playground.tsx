@@ -77,11 +77,11 @@ export default function ColorPlayground() {
     try {
       const res = await fetch(`/api/v2/color/analyze?color=${encodeURIComponent(colorValue)}`);
       if (!res.ok) {
-        const data = await res.json();
+        const data = (await res.json()) as { error?: string };
         setError(data.error ?? "Unknown error");
         setAnalysis(null);
       } else {
-        const data = await res.json();
+        const data = (await res.json()) as ColorAnalysis;
         setAnalysis(data);
         setError(null);
       }
