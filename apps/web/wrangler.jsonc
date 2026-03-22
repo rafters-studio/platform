@@ -13,6 +13,14 @@
       "database_id": ""
     }
   ],
+  // KV ID is empty until `wrangler kv namespace create SESSION_KV` is run
+  // For local dev, wrangler uses a local KV emulator automatically
+  "kv_namespaces": [
+    {
+      "binding": "SESSION_KV",
+      "id": "placeholder"
+    }
+  ],
   "r2_buckets": [
     {
       "binding": "SNAPSHOTS",

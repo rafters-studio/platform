@@ -10,9 +10,14 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.2",
+    "@astrojs/mdx": "^5.0.2",
     "@astrojs/react": "^5.0.1",
+    "@better-auth/passkey": "^1.5.5",
     "@ezmode-games/drizzle-ledger": "^0.0.1",
     "@hono/zod-openapi": "^1.2.2",
+    "@polar-sh/better-auth": "^1.8.3",
+    "@polar-sh/checkout": "^0.2.0",
+    "@polar-sh/sdk": "^0.46.6",
     "@scalar/hono-api-reference": "^0.10.4",
     "@tailwindcss/vite": "^4.2.2",
     "@tanstack/react-form": "^1.28.5",
@@ -29,6 +34,7 @@
     "react-dom": "^19.2.4",
     "stoker": "^2.0.1",
     "tailwindcss": "^4.2.2",
+    "uuidv7": "^1.1.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
