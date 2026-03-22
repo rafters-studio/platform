@@ -7,7 +7,7 @@ export type CleanupFunction = () => void;
  * Gamut tier for color swatch display
  * Caller-provided label indicating how well a color maps to a target gamut.
  */
-export type GamutTier = 'gold' | 'silver' | 'fail';
+export type GamutTier = "gold" | "silver" | "fail";
 
 export type OutsideClickHandler = (event: MouseEvent | TouchEvent | PointerEvent) => void;
 
@@ -16,31 +16,31 @@ export type EscapeKeyHandler = (event: KeyboardEvent) => void;
 /**
  * Orientation for navigation primitives
  */
-export type Orientation = 'horizontal' | 'vertical' | 'both';
+export type Orientation = "horizontal" | "vertical" | "both";
 
 /**
  * Text direction for RTL support
  */
-export type Direction = 'ltr' | 'rtl';
+export type Direction = "ltr" | "rtl";
 
 /**
  * Keyboard event key names for type-safe handlers
  */
 export type KeyboardKey =
-  | 'Enter'
-  | 'Space'
-  | 'Escape'
-  | 'Tab'
-  | 'ArrowUp'
-  | 'ArrowDown'
-  | 'ArrowLeft'
-  | 'ArrowRight'
-  | 'Home'
-  | 'End'
-  | 'PageUp'
-  | 'PageDown'
-  | 'Backspace'
-  | 'Delete';
+  | "Enter"
+  | "Space"
+  | "Escape"
+  | "Tab"
+  | "ArrowUp"
+  | "ArrowDown"
+  | "ArrowLeft"
+  | "ArrowRight"
+  | "Home"
+  | "End"
+  | "PageUp"
+  | "PageDown"
+  | "Backspace"
+  | "Delete";
 
 /**
  * Modifier keys for keyboard handlers
@@ -60,22 +60,22 @@ export type KeyboardHandlerCallback = (event: KeyboardEvent) => void;
 /**
  * Live region politeness for screen reader announcements
  */
-export type LiveRegionPoliteness = 'polite' | 'assertive' | 'off';
+export type LiveRegionPoliteness = "polite" | "assertive" | "off";
 
 /**
  * Live region role for screen reader announcements
  */
-export type LiveRegionRole = 'status' | 'alert' | 'log';
+export type LiveRegionRole = "status" | "alert" | "log";
 
 /**
  * Side positioning for floating elements
  */
-export type Side = 'top' | 'right' | 'bottom' | 'left';
+export type Side = "top" | "right" | "bottom" | "left";
 
 /**
  * Alignment for floating elements
  */
-export type Align = 'start' | 'center' | 'end';
+export type Align = "start" | "center" | "end";
 
 /**
  * Position result from collision detection
@@ -107,53 +107,53 @@ export type NavigationCallback = (element: HTMLElement, index: number) => void;
  */
 export interface AriaAttributes {
   // Widget attributes
-  'aria-autocomplete'?: 'none' | 'inline' | 'list' | 'both';
-  'aria-checked'?: boolean | 'mixed';
-  'aria-disabled'?: boolean;
-  'aria-expanded'?: boolean;
-  'aria-haspopup'?: boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
-  'aria-hidden'?: boolean;
-  'aria-invalid'?: boolean | 'grammar' | 'spelling';
-  'aria-label'?: string;
-  'aria-level'?: number;
-  'aria-modal'?: boolean;
-  'aria-multiline'?: boolean;
-  'aria-multiselectable'?: boolean;
-  'aria-orientation'?: 'horizontal' | 'vertical';
-  'aria-placeholder'?: string;
-  'aria-pressed'?: boolean | 'mixed';
-  'aria-readonly'?: boolean;
-  'aria-required'?: boolean;
-  'aria-selected'?: boolean;
-  'aria-sort'?: 'none' | 'ascending' | 'descending' | 'other';
-  'aria-valuemax'?: number;
-  'aria-valuemin'?: number;
-  'aria-valuenow'?: number;
-  'aria-valuetext'?: string;
+  "aria-autocomplete"?: "none" | "inline" | "list" | "both";
+  "aria-checked"?: boolean | "mixed";
+  "aria-disabled"?: boolean;
+  "aria-expanded"?: boolean;
+  "aria-haspopup"?: boolean | "menu" | "listbox" | "tree" | "grid" | "dialog";
+  "aria-hidden"?: boolean;
+  "aria-invalid"?: boolean | "grammar" | "spelling";
+  "aria-label"?: string;
+  "aria-level"?: number;
+  "aria-modal"?: boolean;
+  "aria-multiline"?: boolean;
+  "aria-multiselectable"?: boolean;
+  "aria-orientation"?: "horizontal" | "vertical";
+  "aria-placeholder"?: string;
+  "aria-pressed"?: boolean | "mixed";
+  "aria-readonly"?: boolean;
+  "aria-required"?: boolean;
+  "aria-selected"?: boolean;
+  "aria-sort"?: "none" | "ascending" | "descending" | "other";
+  "aria-valuemax"?: number;
+  "aria-valuemin"?: number;
+  "aria-valuenow"?: number;
+  "aria-valuetext"?: string;
 
   // Live region attributes
-  'aria-atomic'?: boolean;
-  'aria-busy'?: boolean;
-  'aria-live'?: 'off' | 'polite' | 'assertive';
-  'aria-relevant'?: 'additions' | 'removals' | 'text' | 'all' | 'additions text';
+  "aria-atomic"?: boolean;
+  "aria-busy"?: boolean;
+  "aria-live"?: "off" | "polite" | "assertive";
+  "aria-relevant"?: "additions" | "removals" | "text" | "all" | "additions text";
 
   // Relationship attributes
-  'aria-activedescendant'?: string;
-  'aria-controls'?: string;
-  'aria-describedby'?: string;
-  'aria-details'?: string;
-  'aria-errormessage'?: string;
-  'aria-flowto'?: string;
-  'aria-labelledby'?: string;
-  'aria-owns'?: string;
-  'aria-posinset'?: number;
-  'aria-setsize'?: number;
-  'aria-colcount'?: number;
-  'aria-colindex'?: number;
-  'aria-colspan'?: number;
-  'aria-rowcount'?: number;
-  'aria-rowindex'?: number;
-  'aria-rowspan'?: number;
+  "aria-activedescendant"?: string;
+  "aria-controls"?: string;
+  "aria-describedby"?: string;
+  "aria-details"?: string;
+  "aria-errormessage"?: string;
+  "aria-flowto"?: string;
+  "aria-labelledby"?: string;
+  "aria-owns"?: string;
+  "aria-posinset"?: number;
+  "aria-setsize"?: number;
+  "aria-colcount"?: number;
+  "aria-colindex"?: number;
+  "aria-colspan"?: number;
+  "aria-rowcount"?: number;
+  "aria-rowindex"?: number;
+  "aria-rowspan"?: number;
 
   // Role attribute
   role?: string;
@@ -166,7 +166,7 @@ export interface AriaAttributes {
 /**
  * Inline formatting mark types for rich text editing
  */
-export type InlineMark = 'bold' | 'italic' | 'code' | 'strikethrough' | 'link';
+export type InlineMark = "bold" | "italic" | "code" | "strikethrough" | "link";
 
 /**
  * Rich text content with inline formatting marks
@@ -182,19 +182,19 @@ export interface InlineContent {
  * Input event types for contenteditable handling
  */
 export type InputType =
-  | 'insertText'
-  | 'insertParagraph'
-  | 'insertLineBreak'
-  | 'deleteContentBackward'
-  | 'deleteContentForward'
-  | 'deleteByCut'
-  | 'insertFromPaste'
-  | 'formatBold'
-  | 'formatItalic'
-  | 'formatUnderline'
-  | 'formatStrikeThrough'
-  | 'historyUndo'
-  | 'historyRedo';
+  | "insertText"
+  | "insertParagraph"
+  | "insertLineBreak"
+  | "deleteContentBackward"
+  | "deleteContentForward"
+  | "deleteByCut"
+  | "insertFromPaste"
+  | "formatBold"
+  | "formatItalic"
+  | "formatUnderline"
+  | "formatStrikeThrough"
+  | "historyUndo"
+  | "historyRedo";
 
 /**
  * Selection range for text selection primitive
@@ -258,7 +258,7 @@ export interface MoveDelta {
  * '1d-vertical' - only top axis is active (left locked to 0)
  * '2d' - both axes are active
  */
-export type InteractiveMode = '1d-horizontal' | '1d-vertical' | '2d';
+export type InteractiveMode = "1d-horizontal" | "1d-vertical" | "2d";
 
 /** OKLCH color triplet without alpha */
 export interface OklchColor {

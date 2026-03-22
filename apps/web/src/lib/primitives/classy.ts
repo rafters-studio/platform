@@ -67,7 +67,7 @@ export function token(key: string): TokenRef {
 }
 
 function isTokenRef(v: unknown): v is TokenRef {
-  return !!v && typeof v === 'object' && typeof (v as TokenRef).__classy_token === 'string';
+  return !!v && typeof v === "object" && typeof (v as TokenRef).__classy_token === "string";
 }
 
 // ============================================================================
@@ -97,11 +97,11 @@ export function parseTailwindClass(className: string): ParsedClass {
 
   for (let i = 0; i < className.length; i++) {
     const char = className[i];
-    if (char === '[') {
+    if (char === "[") {
       depth++;
-    } else if (char === ']') {
+    } else if (char === "]") {
       depth--;
-    } else if (char === ':' && depth === 0) {
+    } else if (char === ":" && depth === 0) {
       segments.push(className.slice(lastSplit, i));
       lastSplit = i + 1;
     }
@@ -128,7 +128,7 @@ export function parseTailwindClass(className: string): ParsedClass {
   }
 
   // The last segment is the utility
-  const utility = segments[segments.length - 1] || '';
+  const utility = segments[segments.length - 1] || "";
 
   // Check if utility contains brackets (arbitrary value)
   const isArbitrary = /\[.*\]/.test(utility);
@@ -159,7 +159,7 @@ export function hasArbitraryValue(className: string): boolean {
 // ============================================================================
 
 function defaultWarn(msg: string) {
-  if (typeof console !== 'undefined' && console?.warn) {
+  if (typeof console !== "undefined" && console?.warn) {
     console.warn(msg);
   }
 }
@@ -241,7 +241,7 @@ export function createClassy(options?: ClassyOptions) {
       }
 
       // Object form { 'class-name': boolean }
-      if (typeof item === 'object') {
+      if (typeof item === "object") {
         for (const k of Object.keys(item as ClassObject)) {
           if ((item as ClassObject)[k]) {
             processClassString(k, seen, out);
@@ -254,7 +254,7 @@ export function createClassy(options?: ClassyOptions) {
       processClassString(String(item), seen, out);
     }
 
-    return out.join(' ');
+    return out.join(" ");
   }
 
   // Attach utilities to the build function

@@ -31,14 +31,14 @@
  * </Grid>
  * ```
  */
-import * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
+import * as React from "react";
+import classy from "@/src/lib/primitives/classy";
 
 // ==================== Types ====================
 
-type BentoPattern = 'editorial' | 'dashboard' | 'feature' | 'portfolio';
-type GridPreset = 'linear' | 'golden' | 'bento';
-type ContentPriority = 'primary' | 'secondary' | 'tertiary';
+type BentoPattern = "editorial" | "dashboard" | "feature" | "portfolio";
+type GridPreset = "linear" | "golden" | "bento";
+type ContentPriority = "primary" | "secondary" | "tertiary";
 
 // ==================== Context ====================
 
@@ -59,8 +59,8 @@ function useGridContext() {
 
 /** Grid configuration for onConfigChange callback */
 export interface GridConfig {
-  columns?: 1 | 2 | 3 | 4 | 5 | 6 | 'auto';
-  gap?: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '8' | '10' | '12';
+  columns?: 1 | 2 | 3 | 4 | 5 | 6 | "auto";
+  gap?: "0" | "1" | "2" | "3" | "4" | "5" | "6" | "8" | "10" | "12";
   preset?: GridPreset;
 }
 
@@ -88,24 +88,24 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
    * Responsive object or single value
    * @default auto-fit based on content
    */
-  columns?: 1 | 2 | 3 | 4 | 5 | 6 | 'auto';
+  columns?: 1 | 2 | 3 | 4 | 5 | 6 | "auto";
 
   /**
    * Gap between items using Tailwind spacing
    */
-  gap?: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '8' | '10' | '12';
+  gap?: "0" | "1" | "2" | "3" | "4" | "5" | "6" | "8" | "10" | "12";
 
   /**
    * Accessibility role
    * - 'presentation': Layout-only (default)
    * - 'grid': Interactive grid with keyboard navigation
    */
-  role?: 'presentation' | 'grid';
+  role?: "presentation" | "grid";
 
   /**
    * Accessible label - required when role="grid"
    */
-  'aria-label'?: string;
+  "aria-label"?: string;
 
   // ============================================================================
   // Editable Props (R-202)
@@ -130,49 +130,49 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const gapClasses: Record<string, string> = {
-  '0': 'gap-0',
-  '1': 'gap-1',
-  '2': 'gap-2',
-  '3': 'gap-3',
-  '4': 'gap-4',
-  '5': 'gap-5',
-  '6': 'gap-6',
-  '8': 'gap-8',
-  '10': 'gap-10',
-  '12': 'gap-12',
+  "0": "gap-0",
+  "1": "gap-1",
+  "2": "gap-2",
+  "3": "gap-3",
+  "4": "gap-4",
+  "5": "gap-5",
+  "6": "gap-6",
+  "8": "gap-8",
+  "10": "gap-10",
+  "12": "gap-12",
 };
 
 const columnClasses: Record<string | number, string> = {
-  1: 'grid-cols-1',
-  2: 'grid-cols-2',
-  3: 'grid-cols-3',
-  4: 'grid-cols-4',
-  5: 'grid-cols-5',
-  6: 'grid-cols-6',
-  auto: 'grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-3 @xl:grid-cols-4',
+  1: "grid-cols-1",
+  2: "grid-cols-2",
+  3: "grid-cols-3",
+  4: "grid-cols-4",
+  5: "grid-cols-5",
+  6: "grid-cols-6",
+  auto: "grid-cols-1 @sm:grid-cols-2 @lg:grid-cols-3 @xl:grid-cols-4",
 };
 
 // Bento pattern grid definitions
 const bentoPatterns: Record<BentoPattern, string> = {
   // Hero (2x2) + 2 side items
-  editorial: 'grid-cols-3 grid-rows-2 [&>*:first-child]:col-span-2 [&>*:first-child]:row-span-2',
+  editorial: "grid-cols-3 grid-rows-2 [&>*:first-child]:col-span-2 [&>*:first-child]:row-span-2",
   // Primary metric large + supporting smaller
-  dashboard: 'grid-cols-4 grid-rows-2 [&>*:first-child]:col-span-2 [&>*:first-child]:row-span-2',
+  dashboard: "grid-cols-4 grid-rows-2 [&>*:first-child]:col-span-2 [&>*:first-child]:row-span-2",
   // Feature left + benefits right
-  feature: 'grid-cols-2 [&>*:first-child]:row-span-2',
+  feature: "grid-cols-2 [&>*:first-child]:row-span-2",
   // Featured large + gallery grid
-  portfolio: 'grid-cols-3 grid-rows-3 [&>*:first-child]:col-span-2 [&>*:first-child]:row-span-2',
+  portfolio: "grid-cols-3 grid-rows-3 [&>*:first-child]:col-span-2 [&>*:first-child]:row-span-2",
 };
 
 // Golden ratio: approximately 1.618:1, we use 2:1 for grid simplicity
-const goldenClasses = 'grid-cols-3 [&>*:first-child]:col-span-2';
+const goldenClasses = "grid-cols-3 [&>*:first-child]:col-span-2";
 
 function GridRoot({
-  preset = 'linear',
+  preset = "linear",
   pattern,
-  columns = 'auto',
-  gap = '4',
-  role = 'presentation',
+  columns = "auto",
+  gap = "4",
+  role = "presentation",
   editable,
   showColumnDropZones,
   onConfigChange: _onConfigChange,
@@ -183,21 +183,21 @@ function GridRoot({
   // TODO: Implement grid config UI that calls _onConfigChange
   void _onConfigChange;
   const classes = classy(
-    'grid',
+    "grid",
 
     // Gap
     gap && gapClasses[gap],
 
     // Preset-specific layouts
-    preset === 'linear' && columnClasses[columns],
-    preset === 'golden' && goldenClasses,
-    preset === 'bento' && pattern && bentoPatterns[pattern],
+    preset === "linear" && columnClasses[columns],
+    preset === "golden" && goldenClasses,
+    preset === "bento" && pattern && bentoPatterns[pattern],
 
     // Responsive defaults for linear
-    preset === 'linear' && columns === 'auto' && 'sm:grid-cols-2 lg:grid-cols-3',
+    preset === "linear" && columns === "auto" && "sm:grid-cols-2 lg:grid-cols-3",
 
     // Editable mode styling (R-202)
-    editable && 'outline-2 outline-dashed outline-muted-foreground/30 outline-offset-2 rounded p-2',
+    editable && "outline-2 outline-dashed outline-muted-foreground/30 outline-offset-2 rounded p-2",
 
     className,
   );
@@ -207,11 +207,11 @@ function GridRoot({
   return (
     <GridContext.Provider value={contextValue}>
       <div
-        role={role === 'grid' ? 'grid' : undefined}
+        role={role === "grid" ? "grid" : undefined}
         className={classes}
         data-editable={editable || undefined}
         data-preset={preset}
-        data-columns={typeof columns === 'number' ? columns : undefined}
+        data-columns={typeof columns === "number" ? columns : undefined}
         {...props}
       >
         {children}
@@ -241,16 +241,16 @@ export interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const colSpanClasses: Record<number, string> = {
-  1: 'col-span-1',
-  2: 'col-span-2',
-  3: 'col-span-3',
-  4: 'col-span-4',
+  1: "col-span-1",
+  2: "col-span-2",
+  3: "col-span-3",
+  4: "col-span-4",
 };
 
 const rowSpanClasses: Record<number, string> = {
-  1: 'row-span-1',
-  2: 'row-span-2',
-  3: 'row-span-3',
+  1: "row-span-1",
+  2: "row-span-2",
+  3: "row-span-3",
 };
 
 /**
@@ -274,7 +274,7 @@ function GridItem({ priority, colSpan, rowSpan, className, children, ...props }:
     rowSpan && rowSpanClasses[rowSpan],
 
     // Editable mode styling (R-202)
-    context?.editable && 'outline outline-1 outline-dashed outline-muted-foreground/20 rounded',
+    context?.editable && "outline outline-1 outline-dashed outline-muted-foreground/20 rounded",
 
     className,
   );
@@ -292,8 +292,8 @@ function GridItem({ priority, colSpan, rowSpan, className, children, ...props }:
 
 // ==================== Display Names ====================
 
-GridRoot.displayName = 'Grid';
-GridItem.displayName = 'GridItem';
+GridRoot.displayName = "Grid";
+GridItem.displayName = "GridItem";
 
 // ==================== Compound Export ====================
 

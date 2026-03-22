@@ -13,24 +13,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary page background color",
-      "usageContext": [
-        "page-bg",
-        "app-background"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["page-bg", "app-background"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Primary page background color. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for main page background"
-        ],
-        "never": [
-          "Use for interactive elements"
-        ]
+        "do": ["Use for main page background"],
+        "never": ["Use for interactive elements"]
       },
       "requiresConfirmation": false
     },
@@ -43,26 +33,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary text color",
-      "usageContext": [
-        "body-text",
-        "headings",
-        "primary-content"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["body-text", "headings", "primary-content"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Primary text color. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for main text content",
-          "Use for headings"
-        ],
-        "never": [
-          "Use on dark backgrounds without checking contrast"
-        ]
+        "do": ["Use for main text content", "Use for headings"],
+        "never": ["Use on dark backgrounds without checking contrast"]
       },
       "requiresConfirmation": false
     },
@@ -75,26 +53,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Card and contained surface background",
-      "usageContext": [
-        "cards",
-        "modals",
-        "dialogs",
-        "panels"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["cards", "modals", "dialogs", "panels"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Card and contained surface background. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for elevated surfaces"
-        ],
-        "never": [
-          "Use for page-level backgrounds"
-        ]
+        "do": ["Use for elevated surfaces"],
+        "never": ["Use for page-level backgrounds"]
       },
       "requiresConfirmation": false
     },
@@ -107,24 +73,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on card surfaces",
-      "usageContext": [
-        "card-text",
-        "modal-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["card-text", "modal-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Text on card surfaces. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text within cards"
-        ],
-        "never": [
-          "Use without card background"
-        ]
+        "do": ["Use for text within cards"],
+        "never": ["Use without card background"]
       },
       "requiresConfirmation": false
     },
@@ -137,23 +93,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Card hover state background",
-      "usageContext": [
-        "card-hover"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["card-hover"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Card hover state background. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for card hover states"
-        ],
-        "never": [
-          "Use as default card background"
-        ]
+        "do": ["Use for card hover states"],
+        "never": ["Use as default card background"]
       },
       "requiresConfirmation": false
     },
@@ -166,23 +113,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Card border color",
-      "usageContext": [
-        "card-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["card-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Card border color. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for card borders"
-        ],
-        "never": [
-          "Use for dividers within cards"
-        ]
+        "do": ["Use for card borders"],
+        "never": ["Use for dividers within cards"]
       },
       "requiresConfirmation": false
     },
@@ -195,25 +133,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Popover and dropdown background",
-      "usageContext": [
-        "dropdowns",
-        "tooltips",
-        "menus"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["dropdowns", "tooltips", "menus"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Popover and dropdown background. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for floating elements"
-        ],
-        "never": [
-          "Use for static content"
-        ]
+        "do": ["Use for floating elements"],
+        "never": ["Use for static content"]
       },
       "requiresConfirmation": false
     },
@@ -226,24 +153,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text in popovers",
-      "usageContext": [
-        "dropdown-text",
-        "menu-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["dropdown-text", "menu-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Text in popovers. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for popover content"
-        ],
-        "never": [
-          "Use outside floating elements"
-        ]
+        "do": ["Use for popover content"],
+        "never": ["Use outside floating elements"]
       },
       "requiresConfirmation": false
     },
@@ -256,23 +173,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Popover border color",
-      "usageContext": [
-        "popover-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["popover-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Popover border color. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for popover borders"
-        ],
-        "never": [
-          "Use for content borders"
-        ]
+        "do": ["Use for popover borders"],
+        "never": ["Use for content borders"]
       },
       "requiresConfirmation": false
     },
@@ -285,23 +193,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Elevated surface background",
-      "usageContext": [
-        "elevated-elements"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["elevated-elements"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Elevated surface background. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for elevated surfaces"
-        ],
-        "never": [
-          "Use for page background"
-        ]
+        "do": ["Use for elevated surfaces"],
+        "never": ["Use for page background"]
       },
       "requiresConfirmation": false
     },
@@ -314,23 +213,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on surface backgrounds",
-      "usageContext": [
-        "surface-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["surface-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Text on surface backgrounds. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on surfaces"
-        ],
-        "never": [
-          "Use without surface background"
-        ]
+        "do": ["Use for text on surfaces"],
+        "never": ["Use without surface background"]
       },
       "requiresConfirmation": false
     },
@@ -343,23 +233,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Surface hover state",
-      "usageContext": [
-        "surface-hover"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["surface-hover"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Surface hover state. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for surface hover states"
-        ],
-        "never": [
-          "Use as default surface"
-        ]
+        "do": ["Use for surface hover states"],
+        "never": ["Use as default surface"]
       },
       "requiresConfirmation": false
     },
@@ -372,23 +253,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Surface active/pressed state",
-      "usageContext": [
-        "surface-active"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["surface-active"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Surface active/pressed state. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for active surface states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for active surface states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -401,23 +273,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Surface border color",
-      "usageContext": [
-        "surface-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["surface-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Surface border color. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for surface borders"
-        ],
-        "never": [
-          "Use for content dividers"
-        ]
+        "do": ["Use for surface borders"],
+        "never": ["Use for content dividers"]
       },
       "requiresConfirmation": false
     },
@@ -430,29 +293,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary interactive elements - buttons, links, focus states",
-      "usageContext": [
-        "primary-buttons",
-        "links",
-        "active-states"
-      ],
+      "usageContext": ["primary-buttons", "links", "active-states"],
       "trustLevel": "high",
       "consequence": "reversible",
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Primary interactive elements - buttons, links, focus states. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for main CTA buttons",
-          "Use for primary links"
-        ],
-        "never": [
-          "Use multiple primary buttons competing",
-          "Use for destructive actions"
-        ]
+        "do": ["Use for main CTA buttons", "Use for primary links"],
+        "never": ["Use multiple primary buttons competing", "Use for destructive actions"]
       },
       "requiresConfirmation": false
     },
@@ -465,24 +315,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on primary color backgrounds",
-      "usageContext": [
-        "button-text",
-        "primary-action-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["button-text", "primary-action-text"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Text on primary color backgrounds. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on primary buttons"
-        ],
-        "never": [
-          "Use without primary background"
-        ]
+        "do": ["Use for text on primary buttons"],
+        "never": ["Use without primary background"]
       },
       "requiresConfirmation": false
     },
@@ -495,23 +335,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary hover state",
-      "usageContext": [
-        "primary-hover"
-      ],
-      "dependsOn": [
-        "neutral-800",
-        "neutral-200"
-      ],
+      "usageContext": ["primary-hover"],
+      "dependsOn": ["neutral-800", "neutral-200"],
       "description": "Primary hover state. Light: neutral-800, Dark: neutral-200.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary button hover"
-        ],
-        "never": [
-          "Use as default primary"
-        ]
+        "do": ["Use for primary button hover"],
+        "never": ["Use as default primary"]
       },
       "requiresConfirmation": false
     },
@@ -524,23 +355,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on primary hover",
-      "usageContext": [
-        "primary-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["primary-hover-text"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Text on primary hover. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on primary hover"
-        ],
-        "never": [
-          "Use without primary-hover background"
-        ]
+        "do": ["Use for text on primary hover"],
+        "never": ["Use without primary-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -553,23 +375,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary active/pressed state",
-      "usageContext": [
-        "primary-active"
-      ],
-      "dependsOn": [
-        "neutral-700",
-        "neutral-300"
-      ],
+      "usageContext": ["primary-active"],
+      "dependsOn": ["neutral-700", "neutral-300"],
       "description": "Primary active/pressed state. Light: neutral-700, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary button active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for primary button active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -582,23 +395,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on primary active",
-      "usageContext": [
-        "primary-active-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["primary-active-text"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Text on primary active. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on primary active"
-        ],
-        "never": [
-          "Use without primary-active background"
-        ]
+        "do": ["Use for text on primary active"],
+        "never": ["Use without primary-active background"]
       },
       "requiresConfirmation": false
     },
@@ -611,23 +415,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary focus state",
-      "usageContext": [
-        "primary-focus"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["primary-focus"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Primary focus state. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary focus states"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for primary focus states"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -640,23 +435,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary border color",
-      "usageContext": [
-        "primary-borders"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["primary-borders"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Primary border color. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for primary element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -669,23 +455,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary focus ring color",
-      "usageContext": [
-        "primary-focus-ring"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["primary-focus-ring"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Primary focus ring color. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for primary element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -698,24 +475,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Subtle primary background for badges/alerts",
-      "usageContext": [
-        "primary-badges",
-        "primary-alerts"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["primary-badges", "primary-alerts"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Subtle primary background for badges/alerts. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle primary backgrounds"
-        ],
-        "never": [
-          "Use for primary buttons"
-        ]
+        "do": ["Use for subtle primary backgrounds"],
+        "never": ["Use for primary buttons"]
       },
       "requiresConfirmation": false
     },
@@ -728,23 +495,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on subtle primary backgrounds",
-      "usageContext": [
-        "primary-subtle-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-100"
-      ],
+      "usageContext": ["primary-subtle-text"],
+      "dependsOn": ["neutral-900", "neutral-100"],
       "description": "Text on subtle primary backgrounds. Light: neutral-900, Dark: neutral-100.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on subtle primary"
-        ],
-        "never": [
-          "Use without primary-subtle background"
-        ]
+        "do": ["Use for text on subtle primary"],
+        "never": ["Use without primary-subtle background"]
       },
       "requiresConfirmation": false
     },
@@ -757,27 +515,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary interactive elements - less prominent actions",
-      "usageContext": [
-        "secondary-buttons",
-        "alternative-actions"
-      ],
+      "usageContext": ["secondary-buttons", "alternative-actions"],
       "trustLevel": "medium",
       "consequence": "reversible",
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Secondary interactive elements - less prominent actions. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary actions",
-          "Use when primary is too strong"
-        ],
-        "never": [
-          "Use for primary CTAs"
-        ]
+        "do": ["Use for secondary actions", "Use when primary is too strong"],
+        "never": ["Use for primary CTAs"]
       },
       "requiresConfirmation": false
     },
@@ -790,23 +537,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on secondary color backgrounds",
-      "usageContext": [
-        "secondary-button-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["secondary-button-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on secondary color backgrounds. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on secondary buttons"
-        ],
-        "never": [
-          "Use without secondary background"
-        ]
+        "do": ["Use for text on secondary buttons"],
+        "never": ["Use without secondary background"]
       },
       "requiresConfirmation": false
     },
@@ -819,23 +557,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary hover state",
-      "usageContext": [
-        "secondary-hover"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["secondary-hover"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Secondary hover state. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary hover"
-        ],
-        "never": [
-          "Use as default secondary"
-        ]
+        "do": ["Use for secondary hover"],
+        "never": ["Use as default secondary"]
       },
       "requiresConfirmation": false
     },
@@ -848,23 +577,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on secondary hover",
-      "usageContext": [
-        "secondary-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["secondary-hover-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on secondary hover. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on secondary hover"
-        ],
-        "never": [
-          "Use without secondary-hover background"
-        ]
+        "do": ["Use for text on secondary hover"],
+        "never": ["Use without secondary-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -877,23 +597,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary active/pressed state",
-      "usageContext": [
-        "secondary-active"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-600"
-      ],
+      "usageContext": ["secondary-active"],
+      "dependsOn": ["neutral-300", "neutral-600"],
       "description": "Secondary active/pressed state. Light: neutral-300, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for secondary active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -906,23 +617,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on secondary active",
-      "usageContext": [
-        "secondary-active-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["secondary-active-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on secondary active. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on secondary active"
-        ],
-        "never": [
-          "Use without secondary-active background"
-        ]
+        "do": ["Use for text on secondary active"],
+        "never": ["Use without secondary-active background"]
       },
       "requiresConfirmation": false
     },
@@ -935,23 +637,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary focus state",
-      "usageContext": [
-        "secondary-focus"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["secondary-focus"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Secondary focus state. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary focus states"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for secondary focus states"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -964,23 +657,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary border color",
-      "usageContext": [
-        "secondary-borders"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-700"
-      ],
+      "usageContext": ["secondary-borders"],
+      "dependsOn": ["neutral-300", "neutral-700"],
       "description": "Secondary border color. Light: neutral-300, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary element borders"
-        ],
-        "never": [
-          "Use for primary borders"
-        ]
+        "do": ["Use for secondary element borders"],
+        "never": ["Use for primary borders"]
       },
       "requiresConfirmation": false
     },
@@ -993,23 +677,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary focus ring color",
-      "usageContext": [
-        "secondary-focus-ring"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-500"
-      ],
+      "usageContext": ["secondary-focus-ring"],
+      "dependsOn": ["neutral-400", "neutral-500"],
       "description": "Secondary focus ring color. Light: neutral-400, Dark: neutral-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for secondary element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -1022,25 +697,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Muted backgrounds for subtle emphasis",
-      "usageContext": [
-        "subtle-backgrounds",
-        "inactive-tabs",
-        "disabled-areas"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["subtle-backgrounds", "inactive-tabs", "disabled-areas"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Muted backgrounds for subtle emphasis. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle background differentiation"
-        ],
-        "never": [
-          "Use for interactive elements needing visibility"
-        ]
+        "do": ["Use for subtle background differentiation"],
+        "never": ["Use for interactive elements needing visibility"]
       },
       "requiresConfirmation": false
     },
@@ -1053,27 +717,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Muted text for secondary information",
-      "usageContext": [
-        "helper-text",
-        "placeholders",
-        "metadata"
-      ],
-      "dependsOn": [
-        "neutral-500",
-        "neutral-400"
-      ],
+      "usageContext": ["helper-text", "placeholders", "metadata"],
+      "dependsOn": ["neutral-500", "neutral-400"],
       "description": "Muted text for secondary information. Light: neutral-500, Dark: neutral-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary text",
-          "Use for placeholders"
-        ],
-        "never": [
-          "Use for primary content",
-          "Use for important information"
-        ]
+        "do": ["Use for secondary text", "Use for placeholders"],
+        "never": ["Use for primary content", "Use for important information"]
       },
       "requiresConfirmation": false
     },
@@ -1086,23 +737,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Muted hover state",
-      "usageContext": [
-        "muted-hover"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["muted-hover"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Muted hover state. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for muted hover states"
-        ],
-        "never": [
-          "Use as default muted"
-        ]
+        "do": ["Use for muted hover states"],
+        "never": ["Use as default muted"]
       },
       "requiresConfirmation": false
     },
@@ -1115,23 +757,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on muted hover",
-      "usageContext": [
-        "muted-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-600",
-        "neutral-300"
-      ],
+      "usageContext": ["muted-hover-text"],
+      "dependsOn": ["neutral-600", "neutral-300"],
       "description": "Text on muted hover. Light: neutral-600, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on muted hover"
-        ],
-        "never": [
-          "Use without muted-hover background"
-        ]
+        "do": ["Use for text on muted hover"],
+        "never": ["Use without muted-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -1144,23 +777,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Muted active state",
-      "usageContext": [
-        "muted-active"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-600"
-      ],
+      "usageContext": ["muted-active"],
+      "dependsOn": ["neutral-300", "neutral-600"],
       "description": "Muted active state. Light: neutral-300, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for muted active states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for muted active states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -1173,23 +797,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Muted border color",
-      "usageContext": [
-        "muted-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["muted-borders"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Muted border color. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for muted element borders"
-        ],
-        "never": [
-          "Use for emphasized borders"
-        ]
+        "do": ["Use for muted element borders"],
+        "never": ["Use for emphasized borders"]
       },
       "requiresConfirmation": false
     },
@@ -1202,26 +817,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Accent for hover states and highlights",
-      "usageContext": [
-        "hover-states",
-        "selected-items",
-        "focus-backgrounds"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["hover-states", "selected-items", "focus-backgrounds"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Accent for hover states and highlights. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for hover backgrounds",
-          "Use for selected states"
-        ],
-        "never": [
-          "Use for primary actions"
-        ]
+        "do": ["Use for hover backgrounds", "Use for selected states"],
+        "never": ["Use for primary actions"]
       },
       "requiresConfirmation": false
     },
@@ -1234,24 +837,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on accent backgrounds",
-      "usageContext": [
-        "hover-text",
-        "selected-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["hover-text", "selected-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on accent backgrounds. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on accent backgrounds"
-        ],
-        "never": [
-          "Use without accent background"
-        ]
+        "do": ["Use for text on accent backgrounds"],
+        "never": ["Use without accent background"]
       },
       "requiresConfirmation": false
     },
@@ -1264,23 +857,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Accent hover state",
-      "usageContext": [
-        "accent-hover"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["accent-hover"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Accent hover state. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for accent hover states"
-        ],
-        "never": [
-          "Use as default accent"
-        ]
+        "do": ["Use for accent hover states"],
+        "never": ["Use as default accent"]
       },
       "requiresConfirmation": false
     },
@@ -1293,23 +877,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on accent hover",
-      "usageContext": [
-        "accent-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["accent-hover-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on accent hover. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on accent hover"
-        ],
-        "never": [
-          "Use without accent-hover background"
-        ]
+        "do": ["Use for text on accent hover"],
+        "never": ["Use without accent-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -1322,23 +897,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Accent active state",
-      "usageContext": [
-        "accent-active"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-600"
-      ],
+      "usageContext": ["accent-active"],
+      "dependsOn": ["neutral-300", "neutral-600"],
       "description": "Accent active state. Light: neutral-300, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for accent active states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for accent active states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -1351,23 +917,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on accent active",
-      "usageContext": [
-        "accent-active-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["accent-active-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on accent active. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on accent active"
-        ],
-        "never": [
-          "Use without accent-active background"
-        ]
+        "do": ["Use for text on accent active"],
+        "never": ["Use without accent-active background"]
       },
       "requiresConfirmation": false
     },
@@ -1380,23 +937,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Accent border color",
-      "usageContext": [
-        "accent-borders"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-700"
-      ],
+      "usageContext": ["accent-borders"],
+      "dependsOn": ["neutral-300", "neutral-700"],
       "description": "Accent border color. Light: neutral-300, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for accent element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for accent element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -1409,23 +957,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Accent focus ring color",
-      "usageContext": [
-        "accent-focus-ring"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-500"
-      ],
+      "usageContext": ["accent-focus-ring"],
+      "dependsOn": ["neutral-400", "neutral-500"],
       "description": "Accent focus ring color. Light: neutral-400, Dark: neutral-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for accent element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for accent element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -1438,29 +977,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive actions - delete, remove, critical warnings",
-      "usageContext": [
-        "delete-buttons",
-        "error-states",
-        "critical-alerts"
-      ],
+      "usageContext": ["delete-buttons", "error-states", "critical-alerts"],
       "trustLevel": "critical",
       "consequence": "destructive",
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-500"
-      ],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-500"],
       "description": "Destructive actions - delete, remove, critical warnings. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for irreversible actions",
-          "Always require confirmation"
-        ],
-        "never": [
-          "Use for non-destructive actions",
-          "Use without clear consequence communication"
-        ]
+        "do": ["Use for irreversible actions", "Always require confirmation"],
+        "never": ["Use for non-destructive actions", "Use without clear consequence communication"]
       },
       "requiresConfirmation": true
     },
@@ -1473,23 +999,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on destructive backgrounds",
-      "usageContext": [
-        "delete-button-text",
-        "error-message-text"
-      ],
-      "dependsOn": [
-        "neutral-50"
-      ],
+      "usageContext": ["delete-button-text", "error-message-text"],
+      "dependsOn": ["neutral-50"],
       "description": "Text on destructive backgrounds. Light: neutral-50, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on destructive buttons"
-        ],
-        "never": [
-          "Use without destructive background"
-        ]
+        "do": ["Use for text on destructive buttons"],
+        "never": ["Use without destructive background"]
       },
       "requiresConfirmation": false
     },
@@ -1502,23 +1019,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive hover state",
-      "usageContext": [
-        "destructive-hover"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-700",
-        "silver-bold-fire-truck-400"
-      ],
+      "usageContext": ["destructive-hover"],
+      "dependsOn": ["silver-bold-fire-truck-700", "silver-bold-fire-truck-400"],
       "description": "Destructive hover state. Light: silver-bold-fire-truck-700, Dark: silver-bold-fire-truck-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for destructive hover states"
-        ],
-        "never": [
-          "Use as default destructive"
-        ]
+        "do": ["Use for destructive hover states"],
+        "never": ["Use as default destructive"]
       },
       "requiresConfirmation": false
     },
@@ -1531,23 +1039,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on destructive hover",
-      "usageContext": [
-        "destructive-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["destructive-hover-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on destructive hover. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on destructive hover"
-        ],
-        "never": [
-          "Use without destructive-hover background"
-        ]
+        "do": ["Use for text on destructive hover"],
+        "never": ["Use without destructive-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -1560,23 +1059,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive active/pressed state",
-      "usageContext": [
-        "destructive-active"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-800",
-        "silver-bold-fire-truck-300"
-      ],
+      "usageContext": ["destructive-active"],
+      "dependsOn": ["silver-bold-fire-truck-800", "silver-bold-fire-truck-300"],
       "description": "Destructive active/pressed state. Light: silver-bold-fire-truck-800, Dark: silver-bold-fire-truck-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for destructive active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for destructive active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -1589,23 +1079,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on destructive active",
-      "usageContext": [
-        "destructive-active-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["destructive-active-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on destructive active. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on destructive active"
-        ],
-        "never": [
-          "Use without destructive-active background"
-        ]
+        "do": ["Use for text on destructive active"],
+        "never": ["Use without destructive-active background"]
       },
       "requiresConfirmation": false
     },
@@ -1618,23 +1099,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive focus state",
-      "usageContext": [
-        "destructive-focus"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-500"
-      ],
+      "usageContext": ["destructive-focus"],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-500"],
       "description": "Destructive focus state. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for destructive focus states"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for destructive focus states"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -1647,23 +1119,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive border color",
-      "usageContext": [
-        "destructive-borders"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-500"
-      ],
+      "usageContext": ["destructive-borders"],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-500"],
       "description": "Destructive border color. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for destructive element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for destructive element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -1676,23 +1139,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive focus ring color",
-      "usageContext": [
-        "destructive-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-400"
-      ],
+      "usageContext": ["destructive-focus-ring"],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-400"],
       "description": "Destructive focus ring color. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for destructive element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for destructive element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -1705,24 +1159,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Subtle destructive background for error alerts",
-      "usageContext": [
-        "error-alerts",
-        "validation-messages"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-50",
-        "silver-bold-fire-truck-950"
-      ],
+      "usageContext": ["error-alerts", "validation-messages"],
+      "dependsOn": ["silver-bold-fire-truck-50", "silver-bold-fire-truck-950"],
       "description": "Subtle destructive background for error alerts. Light: silver-bold-fire-truck-50, Dark: silver-bold-fire-truck-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle error backgrounds"
-        ],
-        "never": [
-          "Use for destructive buttons"
-        ]
+        "do": ["Use for subtle error backgrounds"],
+        "never": ["Use for destructive buttons"]
       },
       "requiresConfirmation": false
     },
@@ -1735,23 +1179,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on subtle destructive backgrounds",
-      "usageContext": [
-        "error-alert-text"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-700",
-        "silver-bold-fire-truck-300"
-      ],
+      "usageContext": ["error-alert-text"],
+      "dependsOn": ["silver-bold-fire-truck-700", "silver-bold-fire-truck-300"],
       "description": "Text on subtle destructive backgrounds. Light: silver-bold-fire-truck-700, Dark: silver-bold-fire-truck-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on subtle destructive"
-        ],
-        "never": [
-          "Use without destructive-subtle background"
-        ]
+        "do": ["Use for text on subtle destructive"],
+        "never": ["Use without destructive-subtle background"]
       },
       "requiresConfirmation": false
     },
@@ -1764,29 +1199,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success states - confirmations, completions, positive feedback",
-      "usageContext": [
-        "success-messages",
-        "completion-states",
-        "valid-inputs"
-      ],
+      "usageContext": ["success-messages", "completion-states", "valid-inputs"],
       "trustLevel": "high",
       "consequence": "reversible",
-      "dependsOn": [
-        "silver-true-citrine-600",
-        "silver-true-citrine-500"
-      ],
+      "dependsOn": ["silver-true-citrine-600", "silver-true-citrine-500"],
       "description": "Success states - confirmations, completions, positive feedback. Light: silver-true-citrine-600, Dark: silver-true-citrine-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for positive feedback",
-          "Use for completion confirmation"
-        ],
-        "never": [
-          "Use for neutral information",
-          "Use for warnings"
-        ]
+        "do": ["Use for positive feedback", "Use for completion confirmation"],
+        "never": ["Use for neutral information", "Use for warnings"]
       },
       "requiresConfirmation": false
     },
@@ -1799,23 +1221,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on success backgrounds",
-      "usageContext": [
-        "success-message-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["success-message-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on success backgrounds. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on success backgrounds"
-        ],
-        "never": [
-          "Use without success background"
-        ]
+        "do": ["Use for text on success backgrounds"],
+        "never": ["Use without success background"]
       },
       "requiresConfirmation": false
     },
@@ -1828,23 +1241,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success hover state",
-      "usageContext": [
-        "success-hover"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-700",
-        "silver-true-citrine-400"
-      ],
+      "usageContext": ["success-hover"],
+      "dependsOn": ["silver-true-citrine-700", "silver-true-citrine-400"],
       "description": "Success hover state. Light: silver-true-citrine-700, Dark: silver-true-citrine-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for success hover states"
-        ],
-        "never": [
-          "Use as default success"
-        ]
+        "do": ["Use for success hover states"],
+        "never": ["Use as default success"]
       },
       "requiresConfirmation": false
     },
@@ -1857,23 +1261,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on success hover",
-      "usageContext": [
-        "success-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["success-hover-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on success hover. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on success hover"
-        ],
-        "never": [
-          "Use without success-hover background"
-        ]
+        "do": ["Use for text on success hover"],
+        "never": ["Use without success-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -1886,23 +1281,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success active/pressed state",
-      "usageContext": [
-        "success-active"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-800",
-        "silver-true-citrine-300"
-      ],
+      "usageContext": ["success-active"],
+      "dependsOn": ["silver-true-citrine-800", "silver-true-citrine-300"],
       "description": "Success active/pressed state. Light: silver-true-citrine-800, Dark: silver-true-citrine-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for success active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for success active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -1915,23 +1301,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on success active",
-      "usageContext": [
-        "success-active-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["success-active-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on success active. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on success active"
-        ],
-        "never": [
-          "Use without success-active background"
-        ]
+        "do": ["Use for text on success active"],
+        "never": ["Use without success-active background"]
       },
       "requiresConfirmation": false
     },
@@ -1944,23 +1321,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success focus state",
-      "usageContext": [
-        "success-focus"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-600",
-        "silver-true-citrine-500"
-      ],
+      "usageContext": ["success-focus"],
+      "dependsOn": ["silver-true-citrine-600", "silver-true-citrine-500"],
       "description": "Success focus state. Light: silver-true-citrine-600, Dark: silver-true-citrine-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for success focus states"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for success focus states"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -1973,23 +1341,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success border color",
-      "usageContext": [
-        "success-borders"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-600",
-        "silver-true-citrine-500"
-      ],
+      "usageContext": ["success-borders"],
+      "dependsOn": ["silver-true-citrine-600", "silver-true-citrine-500"],
       "description": "Success border color. Light: silver-true-citrine-600, Dark: silver-true-citrine-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for success element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for success element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -2002,23 +1361,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success focus ring color",
-      "usageContext": [
-        "success-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-600",
-        "silver-true-citrine-400"
-      ],
+      "usageContext": ["success-focus-ring"],
+      "dependsOn": ["silver-true-citrine-600", "silver-true-citrine-400"],
       "description": "Success focus ring color. Light: silver-true-citrine-600, Dark: silver-true-citrine-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for success element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for success element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -2031,24 +1381,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Subtle success background for success alerts",
-      "usageContext": [
-        "success-alerts",
-        "validation-success"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-50",
-        "silver-true-citrine-950"
-      ],
+      "usageContext": ["success-alerts", "validation-success"],
+      "dependsOn": ["silver-true-citrine-50", "silver-true-citrine-950"],
       "description": "Subtle success background for success alerts. Light: silver-true-citrine-50, Dark: silver-true-citrine-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle success backgrounds"
-        ],
-        "never": [
-          "Use for success buttons"
-        ]
+        "do": ["Use for subtle success backgrounds"],
+        "never": ["Use for success buttons"]
       },
       "requiresConfirmation": false
     },
@@ -2061,23 +1401,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on subtle success backgrounds",
-      "usageContext": [
-        "success-alert-text"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-700",
-        "silver-true-citrine-300"
-      ],
+      "usageContext": ["success-alert-text"],
+      "dependsOn": ["silver-true-citrine-700", "silver-true-citrine-300"],
       "description": "Text on subtle success backgrounds. Light: silver-true-citrine-700, Dark: silver-true-citrine-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on subtle success"
-        ],
-        "never": [
-          "Use without success-subtle background"
-        ]
+        "do": ["Use for text on subtle success"],
+        "never": ["Use without success-subtle background"]
       },
       "requiresConfirmation": false
     },
@@ -2090,28 +1421,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning states - caution, potential issues, important notices",
-      "usageContext": [
-        "warning-messages",
-        "caution-alerts",
-        "validation-warnings"
-      ],
+      "usageContext": ["warning-messages", "caution-alerts", "validation-warnings"],
       "trustLevel": "medium",
       "consequence": "significant",
-      "dependsOn": [
-        "silver-true-honey-500"
-      ],
+      "dependsOn": ["silver-true-honey-500"],
       "description": "Warning states - caution, potential issues, important notices. Light: silver-true-honey-500, Dark: silver-true-honey-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for cautionary information",
-          "Use for potential issues"
-        ],
-        "never": [
-          "Use for critical errors",
-          "Use for success states"
-        ]
+        "do": ["Use for cautionary information", "Use for potential issues"],
+        "never": ["Use for critical errors", "Use for success states"]
       },
       "requiresConfirmation": false
     },
@@ -2124,22 +1443,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on warning backgrounds",
-      "usageContext": [
-        "warning-message-text"
-      ],
-      "dependsOn": [
-        "neutral-950"
-      ],
+      "usageContext": ["warning-message-text"],
+      "dependsOn": ["neutral-950"],
       "description": "Text on warning backgrounds. Light: neutral-950, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on warning backgrounds"
-        ],
-        "never": [
-          "Use without warning background"
-        ]
+        "do": ["Use for text on warning backgrounds"],
+        "never": ["Use without warning background"]
       },
       "requiresConfirmation": false
     },
@@ -2152,23 +1463,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning hover state",
-      "usageContext": [
-        "warning-hover"
-      ],
-      "dependsOn": [
-        "silver-true-honey-600",
-        "silver-true-honey-400"
-      ],
+      "usageContext": ["warning-hover"],
+      "dependsOn": ["silver-true-honey-600", "silver-true-honey-400"],
       "description": "Warning hover state. Light: silver-true-honey-600, Dark: silver-true-honey-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for warning hover states"
-        ],
-        "never": [
-          "Use as default warning"
-        ]
+        "do": ["Use for warning hover states"],
+        "never": ["Use as default warning"]
       },
       "requiresConfirmation": false
     },
@@ -2181,22 +1483,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on warning hover",
-      "usageContext": [
-        "warning-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-950"
-      ],
+      "usageContext": ["warning-hover-text"],
+      "dependsOn": ["neutral-950"],
       "description": "Text on warning hover. Light: neutral-950, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on warning hover"
-        ],
-        "never": [
-          "Use without warning-hover background"
-        ]
+        "do": ["Use for text on warning hover"],
+        "never": ["Use without warning-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -2209,23 +1503,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning active/pressed state",
-      "usageContext": [
-        "warning-active"
-      ],
-      "dependsOn": [
-        "silver-true-honey-700",
-        "silver-true-honey-300"
-      ],
+      "usageContext": ["warning-active"],
+      "dependsOn": ["silver-true-honey-700", "silver-true-honey-300"],
       "description": "Warning active/pressed state. Light: silver-true-honey-700, Dark: silver-true-honey-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for warning active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for warning active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -2238,23 +1523,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on warning active",
-      "usageContext": [
-        "warning-active-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["warning-active-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on warning active. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on warning active"
-        ],
-        "never": [
-          "Use without warning-active background"
-        ]
+        "do": ["Use for text on warning active"],
+        "never": ["Use without warning-active background"]
       },
       "requiresConfirmation": false
     },
@@ -2267,22 +1543,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning focus state",
-      "usageContext": [
-        "warning-focus"
-      ],
-      "dependsOn": [
-        "silver-true-honey-500"
-      ],
+      "usageContext": ["warning-focus"],
+      "dependsOn": ["silver-true-honey-500"],
       "description": "Warning focus state. Light: silver-true-honey-500, Dark: silver-true-honey-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for warning focus states"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for warning focus states"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -2295,22 +1563,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning border color",
-      "usageContext": [
-        "warning-borders"
-      ],
-      "dependsOn": [
-        "silver-true-honey-500"
-      ],
+      "usageContext": ["warning-borders"],
+      "dependsOn": ["silver-true-honey-500"],
       "description": "Warning border color. Light: silver-true-honey-500, Dark: silver-true-honey-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for warning element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for warning element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -2323,23 +1583,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning focus ring color",
-      "usageContext": [
-        "warning-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-true-honey-600",
-        "silver-true-honey-400"
-      ],
+      "usageContext": ["warning-focus-ring"],
+      "dependsOn": ["silver-true-honey-600", "silver-true-honey-400"],
       "description": "Warning focus ring color. Light: silver-true-honey-600, Dark: silver-true-honey-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for warning element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for warning element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -2352,23 +1603,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Subtle warning background for warning alerts",
-      "usageContext": [
-        "warning-alerts"
-      ],
-      "dependsOn": [
-        "silver-true-honey-50",
-        "silver-true-honey-950"
-      ],
+      "usageContext": ["warning-alerts"],
+      "dependsOn": ["silver-true-honey-50", "silver-true-honey-950"],
       "description": "Subtle warning background for warning alerts. Light: silver-true-honey-50, Dark: silver-true-honey-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle warning backgrounds"
-        ],
-        "never": [
-          "Use for warning buttons"
-        ]
+        "do": ["Use for subtle warning backgrounds"],
+        "never": ["Use for warning buttons"]
       },
       "requiresConfirmation": false
     },
@@ -2381,23 +1623,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on subtle warning backgrounds",
-      "usageContext": [
-        "warning-alert-text"
-      ],
-      "dependsOn": [
-        "silver-true-honey-800",
-        "silver-true-honey-200"
-      ],
+      "usageContext": ["warning-alert-text"],
+      "dependsOn": ["silver-true-honey-800", "silver-true-honey-200"],
       "description": "Text on subtle warning backgrounds. Light: silver-true-honey-800, Dark: silver-true-honey-200.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on subtle warning"
-        ],
-        "never": [
-          "Use without warning-subtle background"
-        ]
+        "do": ["Use for text on subtle warning"],
+        "never": ["Use without warning-subtle background"]
       },
       "requiresConfirmation": false
     },
@@ -2410,28 +1643,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Informational states - tips, help, neutral information",
-      "usageContext": [
-        "info-messages",
-        "tooltips",
-        "help-text"
-      ],
+      "usageContext": ["info-messages", "tooltips", "help-text"],
       "trustLevel": "low",
       "consequence": "reversible",
-      "dependsOn": [
-        "silver-true-sky-600",
-        "silver-true-sky-500"
-      ],
+      "dependsOn": ["silver-true-sky-600", "silver-true-sky-500"],
       "description": "Informational states - tips, help, neutral information. Light: silver-true-sky-600, Dark: silver-true-sky-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for helpful information",
-          "Use for tips and guidance"
-        ],
-        "never": [
-          "Use for warnings or errors"
-        ]
+        "do": ["Use for helpful information", "Use for tips and guidance"],
+        "never": ["Use for warnings or errors"]
       },
       "requiresConfirmation": false
     },
@@ -2444,22 +1665,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on info backgrounds",
-      "usageContext": [
-        "info-message-text"
-      ],
-      "dependsOn": [
-        "neutral-50"
-      ],
+      "usageContext": ["info-message-text"],
+      "dependsOn": ["neutral-50"],
       "description": "Text on info backgrounds. Light: neutral-50, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on info backgrounds"
-        ],
-        "never": [
-          "Use without info background"
-        ]
+        "do": ["Use for text on info backgrounds"],
+        "never": ["Use without info background"]
       },
       "requiresConfirmation": false
     },
@@ -2472,23 +1685,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Info hover state",
-      "usageContext": [
-        "info-hover"
-      ],
-      "dependsOn": [
-        "silver-true-sky-700",
-        "silver-true-sky-400"
-      ],
+      "usageContext": ["info-hover"],
+      "dependsOn": ["silver-true-sky-700", "silver-true-sky-400"],
       "description": "Info hover state. Light: silver-true-sky-700, Dark: silver-true-sky-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for info hover states"
-        ],
-        "never": [
-          "Use as default info"
-        ]
+        "do": ["Use for info hover states"],
+        "never": ["Use as default info"]
       },
       "requiresConfirmation": false
     },
@@ -2501,23 +1705,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on info hover",
-      "usageContext": [
-        "info-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["info-hover-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on info hover. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on info hover"
-        ],
-        "never": [
-          "Use without info-hover background"
-        ]
+        "do": ["Use for text on info hover"],
+        "never": ["Use without info-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -2530,23 +1725,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Info active/pressed state",
-      "usageContext": [
-        "info-active"
-      ],
-      "dependsOn": [
-        "silver-true-sky-800",
-        "silver-true-sky-300"
-      ],
+      "usageContext": ["info-active"],
+      "dependsOn": ["silver-true-sky-800", "silver-true-sky-300"],
       "description": "Info active/pressed state. Light: silver-true-sky-800, Dark: silver-true-sky-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for info active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for info active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -2559,23 +1745,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on info active",
-      "usageContext": [
-        "info-active-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["info-active-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on info active. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on info active"
-        ],
-        "never": [
-          "Use without info-active background"
-        ]
+        "do": ["Use for text on info active"],
+        "never": ["Use without info-active background"]
       },
       "requiresConfirmation": false
     },
@@ -2588,23 +1765,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Info focus state",
-      "usageContext": [
-        "info-focus"
-      ],
-      "dependsOn": [
-        "silver-true-sky-600",
-        "silver-true-sky-500"
-      ],
+      "usageContext": ["info-focus"],
+      "dependsOn": ["silver-true-sky-600", "silver-true-sky-500"],
       "description": "Info focus state. Light: silver-true-sky-600, Dark: silver-true-sky-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for info focus states"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for info focus states"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -2617,23 +1785,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Info border color",
-      "usageContext": [
-        "info-borders"
-      ],
-      "dependsOn": [
-        "silver-true-sky-600",
-        "silver-true-sky-500"
-      ],
+      "usageContext": ["info-borders"],
+      "dependsOn": ["silver-true-sky-600", "silver-true-sky-500"],
       "description": "Info border color. Light: silver-true-sky-600, Dark: silver-true-sky-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for info element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for info element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -2646,23 +1805,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Info focus ring color",
-      "usageContext": [
-        "info-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-true-sky-600",
-        "silver-true-sky-400"
-      ],
+      "usageContext": ["info-focus-ring"],
+      "dependsOn": ["silver-true-sky-600", "silver-true-sky-400"],
       "description": "Info focus ring color. Light: silver-true-sky-600, Dark: silver-true-sky-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for info element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for info element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -2675,23 +1825,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Subtle info background for info alerts",
-      "usageContext": [
-        "info-alerts"
-      ],
-      "dependsOn": [
-        "silver-true-sky-50",
-        "silver-true-sky-950"
-      ],
+      "usageContext": ["info-alerts"],
+      "dependsOn": ["silver-true-sky-50", "silver-true-sky-950"],
       "description": "Subtle info background for info alerts. Light: silver-true-sky-50, Dark: silver-true-sky-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle info backgrounds"
-        ],
-        "never": [
-          "Use for info buttons"
-        ]
+        "do": ["Use for subtle info backgrounds"],
+        "never": ["Use for info buttons"]
       },
       "requiresConfirmation": false
     },
@@ -2704,23 +1845,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on subtle info backgrounds",
-      "usageContext": [
-        "info-alert-text"
-      ],
-      "dependsOn": [
-        "silver-true-sky-700",
-        "silver-true-sky-300"
-      ],
+      "usageContext": ["info-alert-text"],
+      "dependsOn": ["silver-true-sky-700", "silver-true-sky-300"],
       "description": "Text on subtle info backgrounds. Light: silver-true-sky-700, Dark: silver-true-sky-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on subtle info"
-        ],
-        "never": [
-          "Use without info-subtle background"
-        ]
+        "do": ["Use for text on subtle info"],
+        "never": ["Use without info-subtle background"]
       },
       "requiresConfirmation": false
     },
@@ -2733,26 +1865,16 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Critical alert states",
-      "usageContext": [
-        "critical-alerts",
-        "error-banners"
-      ],
+      "usageContext": ["critical-alerts", "error-banners"],
       "trustLevel": "critical",
       "consequence": "significant",
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-500"
-      ],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-500"],
       "description": "Critical alert states. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for critical system alerts"
-        ],
-        "never": [
-          "Use for non-critical information"
-        ]
+        "do": ["Use for critical system alerts"],
+        "never": ["Use for non-critical information"]
       },
       "requiresConfirmation": false
     },
@@ -2765,22 +1887,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on alert backgrounds",
-      "usageContext": [
-        "alert-text"
-      ],
-      "dependsOn": [
-        "neutral-50"
-      ],
+      "usageContext": ["alert-text"],
+      "dependsOn": ["neutral-50"],
       "description": "Text on alert backgrounds. Light: neutral-50, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on alert backgrounds"
-        ],
-        "never": [
-          "Use without alert background"
-        ]
+        "do": ["Use for text on alert backgrounds"],
+        "never": ["Use without alert background"]
       },
       "requiresConfirmation": false
     },
@@ -2793,23 +1907,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Alert hover state",
-      "usageContext": [
-        "alert-hover"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-700",
-        "silver-bold-fire-truck-400"
-      ],
+      "usageContext": ["alert-hover"],
+      "dependsOn": ["silver-bold-fire-truck-700", "silver-bold-fire-truck-400"],
       "description": "Alert hover state. Light: silver-bold-fire-truck-700, Dark: silver-bold-fire-truck-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for alert hover states"
-        ],
-        "never": [
-          "Use as default alert"
-        ]
+        "do": ["Use for alert hover states"],
+        "never": ["Use as default alert"]
       },
       "requiresConfirmation": false
     },
@@ -2822,23 +1927,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on alert hover",
-      "usageContext": [
-        "alert-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["alert-hover-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on alert hover. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on alert hover"
-        ],
-        "never": [
-          "Use without alert-hover background"
-        ]
+        "do": ["Use for text on alert hover"],
+        "never": ["Use without alert-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -2851,23 +1947,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Alert active state",
-      "usageContext": [
-        "alert-active"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-800",
-        "silver-bold-fire-truck-300"
-      ],
+      "usageContext": ["alert-active"],
+      "dependsOn": ["silver-bold-fire-truck-800", "silver-bold-fire-truck-300"],
       "description": "Alert active state. Light: silver-bold-fire-truck-800, Dark: silver-bold-fire-truck-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for alert active states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for alert active states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -2880,23 +1967,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on alert active",
-      "usageContext": [
-        "alert-active-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["alert-active-text"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Text on alert active. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on alert active"
-        ],
-        "never": [
-          "Use without alert-active background"
-        ]
+        "do": ["Use for text on alert active"],
+        "never": ["Use without alert-active background"]
       },
       "requiresConfirmation": false
     },
@@ -2909,23 +1987,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Alert border color",
-      "usageContext": [
-        "alert-borders"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-500"
-      ],
+      "usageContext": ["alert-borders"],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-500"],
       "description": "Alert border color. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for alert element borders"
-        ],
-        "never": [
-          "Use for neutral borders"
-        ]
+        "do": ["Use for alert element borders"],
+        "never": ["Use for neutral borders"]
       },
       "requiresConfirmation": false
     },
@@ -2938,23 +2007,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Alert focus ring color",
-      "usageContext": [
-        "alert-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-400"
-      ],
+      "usageContext": ["alert-focus-ring"],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-400"],
       "description": "Alert focus ring color. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for alert element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for alert element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -2967,23 +2027,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Subtle alert background",
-      "usageContext": [
-        "subtle-alerts"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-50",
-        "silver-bold-fire-truck-950"
-      ],
+      "usageContext": ["subtle-alerts"],
+      "dependsOn": ["silver-bold-fire-truck-50", "silver-bold-fire-truck-950"],
       "description": "Subtle alert background. Light: silver-bold-fire-truck-50, Dark: silver-bold-fire-truck-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle alert backgrounds"
-        ],
-        "never": [
-          "Use for primary alerts"
-        ]
+        "do": ["Use for subtle alert backgrounds"],
+        "never": ["Use for primary alerts"]
       },
       "requiresConfirmation": false
     },
@@ -2996,23 +2047,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on subtle alert backgrounds",
-      "usageContext": [
-        "subtle-alert-text"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-700",
-        "silver-bold-fire-truck-300"
-      ],
+      "usageContext": ["subtle-alert-text"],
+      "dependsOn": ["silver-bold-fire-truck-700", "silver-bold-fire-truck-300"],
       "description": "Text on subtle alert backgrounds. Light: silver-bold-fire-truck-700, Dark: silver-bold-fire-truck-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on subtle alert"
-        ],
-        "never": [
-          "Use without alert-subtle background"
-        ]
+        "do": ["Use for text on subtle alert"],
+        "never": ["Use without alert-subtle background"]
       },
       "requiresConfirmation": false
     },
@@ -3025,27 +2067,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Highlight for search results, selected text, emphasis",
-      "usageContext": [
-        "search-highlights",
-        "text-selection",
-        "emphasis"
-      ],
-      "dependsOn": [
-        "silver-true-violet-200",
-        "silver-true-violet-800"
-      ],
+      "usageContext": ["search-highlights", "text-selection", "emphasis"],
+      "dependsOn": ["silver-true-violet-200", "silver-true-violet-800"],
       "description": "Highlight for search results, selected text, emphasis. Light: silver-true-violet-200, Dark: silver-true-violet-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for temporary highlights",
-          "Use for search result matches"
-        ],
-        "never": [
-          "Use for permanent styling",
-          "Use for interactive elements"
-        ]
+        "do": ["Use for temporary highlights", "Use for search result matches"],
+        "never": ["Use for permanent styling", "Use for interactive elements"]
       },
       "requiresConfirmation": false
     },
@@ -3058,23 +2087,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on highlight backgrounds",
-      "usageContext": [
-        "highlighted-text"
-      ],
-      "dependsOn": [
-        "silver-true-violet-900",
-        "silver-true-violet-50"
-      ],
+      "usageContext": ["highlighted-text"],
+      "dependsOn": ["silver-true-violet-900", "silver-true-violet-50"],
       "description": "Text on highlight backgrounds. Light: silver-true-violet-900, Dark: silver-true-violet-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text that is highlighted"
-        ],
-        "never": [
-          "Use without highlight background"
-        ]
+        "do": ["Use for text that is highlighted"],
+        "never": ["Use without highlight background"]
       },
       "requiresConfirmation": false
     },
@@ -3087,23 +2107,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Highlight hover state",
-      "usageContext": [
-        "highlight-hover"
-      ],
-      "dependsOn": [
-        "silver-true-violet-300",
-        "silver-true-violet-700"
-      ],
+      "usageContext": ["highlight-hover"],
+      "dependsOn": ["silver-true-violet-300", "silver-true-violet-700"],
       "description": "Highlight hover state. Light: silver-true-violet-300, Dark: silver-true-violet-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for highlight hover states"
-        ],
-        "never": [
-          "Use as default highlight"
-        ]
+        "do": ["Use for highlight hover states"],
+        "never": ["Use as default highlight"]
       },
       "requiresConfirmation": false
     },
@@ -3116,23 +2127,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on highlight hover",
-      "usageContext": [
-        "highlight-hover-text"
-      ],
-      "dependsOn": [
-        "silver-true-violet-900",
-        "silver-true-violet-50"
-      ],
+      "usageContext": ["highlight-hover-text"],
+      "dependsOn": ["silver-true-violet-900", "silver-true-violet-50"],
       "description": "Text on highlight hover. Light: silver-true-violet-900, Dark: silver-true-violet-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on highlight hover"
-        ],
-        "never": [
-          "Use without highlight-hover background"
-        ]
+        "do": ["Use for text on highlight hover"],
+        "never": ["Use without highlight-hover background"]
       },
       "requiresConfirmation": false
     },
@@ -3145,23 +2147,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Highlight active state",
-      "usageContext": [
-        "highlight-active"
-      ],
-      "dependsOn": [
-        "silver-true-violet-400",
-        "silver-true-violet-600"
-      ],
+      "usageContext": ["highlight-active"],
+      "dependsOn": ["silver-true-violet-400", "silver-true-violet-600"],
       "description": "Highlight active state. Light: silver-true-violet-400, Dark: silver-true-violet-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for highlight active states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for highlight active states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -3174,23 +2167,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on highlight active",
-      "usageContext": [
-        "highlight-active-text"
-      ],
-      "dependsOn": [
-        "silver-true-violet-950",
-        "silver-true-violet-50"
-      ],
+      "usageContext": ["highlight-active-text"],
+      "dependsOn": ["silver-true-violet-950", "silver-true-violet-50"],
       "description": "Text on highlight active. Light: silver-true-violet-950, Dark: silver-true-violet-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on highlight active"
-        ],
-        "never": [
-          "Use without highlight-active background"
-        ]
+        "do": ["Use for text on highlight active"],
+        "never": ["Use without highlight-active background"]
       },
       "requiresConfirmation": false
     },
@@ -3203,26 +2187,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Default border color",
-      "usageContext": [
-        "dividers",
-        "separators",
-        "input-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["dividers", "separators", "input-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Default border color. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for subtle borders",
-          "Use for dividers"
-        ],
-        "never": [
-          "Use for emphasized borders"
-        ]
+        "do": ["Use for subtle borders", "Use for dividers"],
+        "never": ["Use for emphasized borders"]
       },
       "requiresConfirmation": false
     },
@@ -3235,23 +2207,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Border hover state",
-      "usageContext": [
-        "border-hover"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-700"
-      ],
+      "usageContext": ["border-hover"],
+      "dependsOn": ["neutral-300", "neutral-700"],
       "description": "Border hover state. Light: neutral-300, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for border hover states"
-        ],
-        "never": [
-          "Use as default border"
-        ]
+        "do": ["Use for border hover states"],
+        "never": ["Use as default border"]
       },
       "requiresConfirmation": false
     },
@@ -3264,23 +2227,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Border focus state",
-      "usageContext": [
-        "border-focus"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-600"
-      ],
+      "usageContext": ["border-focus"],
+      "dependsOn": ["neutral-400", "neutral-600"],
       "description": "Border focus state. Light: neutral-400, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for focused element borders"
-        ],
-        "never": [
-          "Use for non-focused elements"
-        ]
+        "do": ["Use for focused element borders"],
+        "never": ["Use for non-focused elements"]
       },
       "requiresConfirmation": false
     },
@@ -3293,22 +2247,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Border active state",
-      "usageContext": [
-        "border-active"
-      ],
-      "dependsOn": [
-        "neutral-500"
-      ],
+      "usageContext": ["border-active"],
+      "dependsOn": ["neutral-500"],
       "description": "Border active state. Light: neutral-500, Dark: neutral-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for active element borders"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for active element borders"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -3321,25 +2267,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Input field border color",
-      "usageContext": [
-        "form-inputs",
-        "text-fields",
-        "selects"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["form-inputs", "text-fields", "selects"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Input field border color. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for form field borders"
-        ],
-        "never": [
-          "Use for buttons"
-        ]
+        "do": ["Use for form field borders"],
+        "never": ["Use for buttons"]
       },
       "requiresConfirmation": false
     },
@@ -3352,23 +2287,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Input text color",
-      "usageContext": [
-        "input-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["input-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Input text color. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for input text"
-        ],
-        "never": [
-          "Use for placeholders"
-        ]
+        "do": ["Use for input text"],
+        "never": ["Use for placeholders"]
       },
       "requiresConfirmation": false
     },
@@ -3381,23 +2307,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Input hover state",
-      "usageContext": [
-        "input-hover"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-700"
-      ],
+      "usageContext": ["input-hover"],
+      "dependsOn": ["neutral-300", "neutral-700"],
       "description": "Input hover state. Light: neutral-300, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for input hover states"
-        ],
-        "never": [
-          "Use as default input"
-        ]
+        "do": ["Use for input hover states"],
+        "never": ["Use as default input"]
       },
       "requiresConfirmation": false
     },
@@ -3410,23 +2327,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Input focus state",
-      "usageContext": [
-        "input-focus"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-600"
-      ],
+      "usageContext": ["input-focus"],
+      "dependsOn": ["neutral-400", "neutral-600"],
       "description": "Input focus state. Light: neutral-400, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for input focus states"
-        ],
-        "never": [
-          "Use for non-focused inputs"
-        ]
+        "do": ["Use for input focus states"],
+        "never": ["Use for non-focused inputs"]
       },
       "requiresConfirmation": false
     },
@@ -3439,23 +2347,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Disabled input background",
-      "usageContext": [
-        "disabled-inputs"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["disabled-inputs"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Disabled input background. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for disabled input backgrounds"
-        ],
-        "never": [
-          "Use for enabled inputs"
-        ]
+        "do": ["Use for disabled input backgrounds"],
+        "never": ["Use for enabled inputs"]
       },
       "requiresConfirmation": false
     },
@@ -3468,23 +2367,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Disabled input text color",
-      "usageContext": [
-        "disabled-input-text"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-600"
-      ],
+      "usageContext": ["disabled-input-text"],
+      "dependsOn": ["neutral-400", "neutral-600"],
       "description": "Disabled input text color. Light: neutral-400, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for disabled input text"
-        ],
-        "never": [
-          "Use for enabled input text"
-        ]
+        "do": ["Use for disabled input text"],
+        "never": ["Use for enabled input text"]
       },
       "requiresConfirmation": false
     },
@@ -3497,23 +2387,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Placeholder text color",
-      "usageContext": [
-        "placeholders"
-      ],
-      "dependsOn": [
-        "neutral-500",
-        "neutral-400"
-      ],
+      "usageContext": ["placeholders"],
+      "dependsOn": ["neutral-500", "neutral-400"],
       "description": "Placeholder text color. Light: neutral-500, Dark: neutral-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for placeholder text"
-        ],
-        "never": [
-          "Use for entered text"
-        ]
+        "do": ["Use for placeholder text"],
+        "never": ["Use for entered text"]
       },
       "requiresConfirmation": false
     },
@@ -3526,23 +2407,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Invalid input border",
-      "usageContext": [
-        "invalid-inputs",
-        "validation-errors"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-500"
-      ],
+      "usageContext": ["invalid-inputs", "validation-errors"],
+      "dependsOn": ["silver-bold-fire-truck-500"],
       "description": "Invalid input border. Light: silver-bold-fire-truck-500, Dark: silver-bold-fire-truck-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for invalid input borders"
-        ],
-        "never": [
-          "Use for valid inputs"
-        ]
+        "do": ["Use for invalid input borders"],
+        "never": ["Use for valid inputs"]
       },
       "requiresConfirmation": false
     },
@@ -3555,23 +2427,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Invalid input error text",
-      "usageContext": [
-        "validation-error-text"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-700",
-        "silver-bold-fire-truck-300"
-      ],
+      "usageContext": ["validation-error-text"],
+      "dependsOn": ["silver-bold-fire-truck-700", "silver-bold-fire-truck-300"],
       "description": "Invalid input error text. Light: silver-bold-fire-truck-700, Dark: silver-bold-fire-truck-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for validation error messages"
-        ],
-        "never": [
-          "Use for success messages"
-        ]
+        "do": ["Use for validation error messages"],
+        "never": ["Use for success messages"]
       },
       "requiresConfirmation": false
     },
@@ -3584,23 +2447,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Valid input border",
-      "usageContext": [
-        "valid-inputs",
-        "validation-success"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-500"
-      ],
+      "usageContext": ["valid-inputs", "validation-success"],
+      "dependsOn": ["silver-true-citrine-500"],
       "description": "Valid input border. Light: silver-true-citrine-500, Dark: silver-true-citrine-500.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for valid input borders"
-        ],
-        "never": [
-          "Use for invalid inputs"
-        ]
+        "do": ["Use for valid input borders"],
+        "never": ["Use for invalid inputs"]
       },
       "requiresConfirmation": false
     },
@@ -3613,23 +2467,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Valid input success text",
-      "usageContext": [
-        "validation-success-text"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-700",
-        "silver-true-citrine-300"
-      ],
+      "usageContext": ["validation-success-text"],
+      "dependsOn": ["silver-true-citrine-700", "silver-true-citrine-300"],
       "description": "Valid input success text. Light: silver-true-citrine-700, Dark: silver-true-citrine-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for validation success messages"
-        ],
-        "never": [
-          "Use for error messages"
-        ]
+        "do": ["Use for validation success messages"],
+        "never": ["Use for error messages"]
       },
       "requiresConfirmation": false
     },
@@ -3642,25 +2487,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Focus ring color",
-      "usageContext": [
-        "focus-states",
-        "keyboard-navigation"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-300"
-      ],
+      "usageContext": ["focus-states", "keyboard-navigation"],
+      "dependsOn": ["neutral-950", "neutral-300"],
       "description": "Focus ring color. Light: neutral-950, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for focus indicators",
-          "Ensure high contrast"
-        ],
-        "never": [
-          "Use for decorative elements"
-        ]
+        "do": ["Use for focus indicators", "Ensure high contrast"],
+        "never": ["Use for decorative elements"]
       },
       "requiresConfirmation": false
     },
@@ -3673,23 +2507,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Focus ring offset color",
-      "usageContext": [
-        "focus-ring-offset"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["focus-ring-offset"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Focus ring offset color. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for focus ring offset"
-        ],
-        "never": [
-          "Use as primary color"
-        ]
+        "do": ["Use for focus ring offset"],
+        "never": ["Use as primary color"]
       },
       "requiresConfirmation": false
     },
@@ -3702,23 +2527,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary focus ring",
-      "usageContext": [
-        "primary-focus-ring"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["primary-focus-ring"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Primary focus ring. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary element focus rings"
-        ],
-        "never": [
-          "Use for decorative rings"
-        ]
+        "do": ["Use for primary element focus rings"],
+        "never": ["Use for decorative rings"]
       },
       "requiresConfirmation": false
     },
@@ -3731,23 +2547,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Destructive focus ring",
-      "usageContext": [
-        "destructive-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-bold-fire-truck-600",
-        "silver-bold-fire-truck-400"
-      ],
+      "usageContext": ["destructive-focus-ring"],
+      "dependsOn": ["silver-bold-fire-truck-600", "silver-bold-fire-truck-400"],
       "description": "Destructive focus ring. Light: silver-bold-fire-truck-600, Dark: silver-bold-fire-truck-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for destructive element focus rings"
-        ],
-        "never": [
-          "Use for non-destructive elements"
-        ]
+        "do": ["Use for destructive element focus rings"],
+        "never": ["Use for non-destructive elements"]
       },
       "requiresConfirmation": false
     },
@@ -3760,23 +2567,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Success focus ring",
-      "usageContext": [
-        "success-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-600",
-        "silver-true-citrine-400"
-      ],
+      "usageContext": ["success-focus-ring"],
+      "dependsOn": ["silver-true-citrine-600", "silver-true-citrine-400"],
       "description": "Success focus ring. Light: silver-true-citrine-600, Dark: silver-true-citrine-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for success element focus rings"
-        ],
-        "never": [
-          "Use for non-success elements"
-        ]
+        "do": ["Use for success element focus rings"],
+        "never": ["Use for non-success elements"]
       },
       "requiresConfirmation": false
     },
@@ -3789,23 +2587,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Warning focus ring",
-      "usageContext": [
-        "warning-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-true-honey-600",
-        "silver-true-honey-400"
-      ],
+      "usageContext": ["warning-focus-ring"],
+      "dependsOn": ["silver-true-honey-600", "silver-true-honey-400"],
       "description": "Warning focus ring. Light: silver-true-honey-600, Dark: silver-true-honey-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for warning element focus rings"
-        ],
-        "never": [
-          "Use for non-warning elements"
-        ]
+        "do": ["Use for warning element focus rings"],
+        "never": ["Use for non-warning elements"]
       },
       "requiresConfirmation": false
     },
@@ -3818,23 +2607,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Info focus ring",
-      "usageContext": [
-        "info-focus-ring"
-      ],
-      "dependsOn": [
-        "silver-true-sky-600",
-        "silver-true-sky-400"
-      ],
+      "usageContext": ["info-focus-ring"],
+      "dependsOn": ["silver-true-sky-600", "silver-true-sky-400"],
       "description": "Info focus ring. Light: silver-true-sky-600, Dark: silver-true-sky-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for info element focus rings"
-        ],
-        "never": [
-          "Use for non-info elements"
-        ]
+        "do": ["Use for info element focus rings"],
+        "never": ["Use for non-info elements"]
       },
       "requiresConfirmation": false
     },
@@ -3847,24 +2627,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Link color",
-      "usageContext": [
-        "links",
-        "anchors"
-      ],
-      "dependsOn": [
-        "silver-true-sky-700",
-        "silver-true-sky-400"
-      ],
+      "usageContext": ["links", "anchors"],
+      "dependsOn": ["silver-true-sky-700", "silver-true-sky-400"],
       "description": "Link color. Light: silver-true-sky-700, Dark: silver-true-sky-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for link text"
-        ],
-        "never": [
-          "Use for non-link text"
-        ]
+        "do": ["Use for link text"],
+        "never": ["Use for non-link text"]
       },
       "requiresConfirmation": false
     },
@@ -3877,23 +2647,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Link hover color",
-      "usageContext": [
-        "link-hover"
-      ],
-      "dependsOn": [
-        "silver-true-sky-800",
-        "silver-true-sky-300"
-      ],
+      "usageContext": ["link-hover"],
+      "dependsOn": ["silver-true-sky-800", "silver-true-sky-300"],
       "description": "Link hover color. Light: silver-true-sky-800, Dark: silver-true-sky-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for link hover states"
-        ],
-        "never": [
-          "Use as default link color"
-        ]
+        "do": ["Use for link hover states"],
+        "never": ["Use as default link color"]
       },
       "requiresConfirmation": false
     },
@@ -3906,23 +2667,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Link active/pressed color",
-      "usageContext": [
-        "link-active"
-      ],
-      "dependsOn": [
-        "silver-true-sky-900",
-        "silver-true-sky-200"
-      ],
+      "usageContext": ["link-active"],
+      "dependsOn": ["silver-true-sky-900", "silver-true-sky-200"],
       "description": "Link active/pressed color. Light: silver-true-sky-900, Dark: silver-true-sky-200.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for link active states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for link active states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -3935,23 +2687,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Visited link color",
-      "usageContext": [
-        "visited-links"
-      ],
-      "dependsOn": [
-        "silver-true-violet-700",
-        "silver-true-violet-400"
-      ],
+      "usageContext": ["visited-links"],
+      "dependsOn": ["silver-true-violet-700", "silver-true-violet-400"],
       "description": "Visited link color. Light: silver-true-violet-700, Dark: silver-true-violet-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for visited links"
-        ],
-        "never": [
-          "Use for unvisited links"
-        ]
+        "do": ["Use for visited links"],
+        "never": ["Use for unvisited links"]
       },
       "requiresConfirmation": false
     },
@@ -3964,23 +2707,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Link focus color",
-      "usageContext": [
-        "link-focus"
-      ],
-      "dependsOn": [
-        "silver-true-sky-700",
-        "silver-true-sky-400"
-      ],
+      "usageContext": ["link-focus"],
+      "dependsOn": ["silver-true-sky-700", "silver-true-sky-400"],
       "description": "Link focus color. Light: silver-true-sky-700, Dark: silver-true-sky-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for link focus states"
-        ],
-        "never": [
-          "Use for non-focused links"
-        ]
+        "do": ["Use for link focus states"],
+        "never": ["Use for non-focused links"]
       },
       "requiresConfirmation": false
     },
@@ -3993,23 +2727,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text selection background",
-      "usageContext": [
-        "text-selection"
-      ],
-      "dependsOn": [
-        "silver-true-sky-200",
-        "silver-true-sky-800"
-      ],
+      "usageContext": ["text-selection"],
+      "dependsOn": ["silver-true-sky-200", "silver-true-sky-800"],
       "description": "Text selection background. Light: silver-true-sky-200, Dark: silver-true-sky-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for ::selection background"
-        ],
-        "never": [
-          "Use for other highlights"
-        ]
+        "do": ["Use for ::selection background"],
+        "never": ["Use for other highlights"]
       },
       "requiresConfirmation": false
     },
@@ -4022,23 +2747,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text selection foreground",
-      "usageContext": [
-        "text-selection-foreground"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["text-selection-foreground"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Text selection foreground. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for ::selection text color"
-        ],
-        "never": [
-          "Use without selection background"
-        ]
+        "do": ["Use for ::selection text color"],
+        "never": ["Use without selection background"]
       },
       "requiresConfirmation": false
     },
@@ -4051,24 +2767,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar background",
-      "usageContext": [
-        "navigation-sidebar",
-        "side-panels"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["navigation-sidebar", "side-panels"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Sidebar background. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar backgrounds"
-        ],
-        "never": [
-          "Use for main content areas"
-        ]
+        "do": ["Use for sidebar backgrounds"],
+        "never": ["Use for main content areas"]
       },
       "requiresConfirmation": false
     },
@@ -4081,24 +2787,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar text color",
-      "usageContext": [
-        "sidebar-text",
-        "nav-items"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["sidebar-text", "nav-items"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Sidebar text color. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar content"
-        ],
-        "never": [
-          "Use outside sidebar context"
-        ]
+        "do": ["Use for sidebar content"],
+        "never": ["Use outside sidebar context"]
       },
       "requiresConfirmation": false
     },
@@ -4111,23 +2807,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar muted text",
-      "usageContext": [
-        "sidebar-secondary-text"
-      ],
-      "dependsOn": [
-        "neutral-500",
-        "neutral-400"
-      ],
+      "usageContext": ["sidebar-secondary-text"],
+      "dependsOn": ["neutral-500", "neutral-400"],
       "description": "Sidebar muted text. Light: neutral-500, Dark: neutral-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary sidebar text"
-        ],
-        "never": [
-          "Use for primary sidebar text"
-        ]
+        "do": ["Use for secondary sidebar text"],
+        "never": ["Use for primary sidebar text"]
       },
       "requiresConfirmation": false
     },
@@ -4140,24 +2827,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar primary accent",
-      "usageContext": [
-        "active-nav-item",
-        "selected-sidebar-item"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["active-nav-item", "selected-sidebar-item"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Sidebar primary accent. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for active sidebar items"
-        ],
-        "never": [
-          "Use for inactive items"
-        ]
+        "do": ["Use for active sidebar items"],
+        "never": ["Use for inactive items"]
       },
       "requiresConfirmation": false
     },
@@ -4170,23 +2847,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on sidebar primary",
-      "usageContext": [
-        "active-nav-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["active-nav-text"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Text on sidebar primary. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for active nav item text"
-        ],
-        "never": [
-          "Use without sidebar-primary background"
-        ]
+        "do": ["Use for active nav item text"],
+        "never": ["Use without sidebar-primary background"]
       },
       "requiresConfirmation": false
     },
@@ -4199,23 +2867,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar primary hover",
-      "usageContext": [
-        "sidebar-primary-hover"
-      ],
-      "dependsOn": [
-        "neutral-800",
-        "neutral-200"
-      ],
+      "usageContext": ["sidebar-primary-hover"],
+      "dependsOn": ["neutral-800", "neutral-200"],
       "description": "Sidebar primary hover. Light: neutral-800, Dark: neutral-200.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar primary hover"
-        ],
-        "never": [
-          "Use as default sidebar primary"
-        ]
+        "do": ["Use for sidebar primary hover"],
+        "never": ["Use as default sidebar primary"]
       },
       "requiresConfirmation": false
     },
@@ -4228,23 +2887,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar primary active",
-      "usageContext": [
-        "sidebar-primary-active"
-      ],
-      "dependsOn": [
-        "neutral-700",
-        "neutral-300"
-      ],
+      "usageContext": ["sidebar-primary-active"],
+      "dependsOn": ["neutral-700", "neutral-300"],
       "description": "Sidebar primary active. Light: neutral-700, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar primary active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for sidebar primary active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -4257,24 +2907,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar hover/accent state",
-      "usageContext": [
-        "sidebar-hover",
-        "sidebar-selected"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["sidebar-hover", "sidebar-selected"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Sidebar hover/accent state. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar hover states"
-        ],
-        "never": [
-          "Use for active state"
-        ]
+        "do": ["Use for sidebar hover states"],
+        "never": ["Use for active state"]
       },
       "requiresConfirmation": false
     },
@@ -4287,23 +2927,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Text on sidebar accent",
-      "usageContext": [
-        "sidebar-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["sidebar-hover-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Text on sidebar accent. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for hovered sidebar text"
-        ],
-        "never": [
-          "Use without sidebar-accent background"
-        ]
+        "do": ["Use for hovered sidebar text"],
+        "never": ["Use without sidebar-accent background"]
       },
       "requiresConfirmation": false
     },
@@ -4316,23 +2947,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar accent hover",
-      "usageContext": [
-        "sidebar-accent-hover"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["sidebar-accent-hover"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Sidebar accent hover. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar accent hover"
-        ],
-        "never": [
-          "Use as default sidebar accent"
-        ]
+        "do": ["Use for sidebar accent hover"],
+        "never": ["Use as default sidebar accent"]
       },
       "requiresConfirmation": false
     },
@@ -4345,23 +2967,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar accent active",
-      "usageContext": [
-        "sidebar-accent-active"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-600"
-      ],
+      "usageContext": ["sidebar-accent-active"],
+      "dependsOn": ["neutral-300", "neutral-600"],
       "description": "Sidebar accent active. Light: neutral-300, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar accent active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for sidebar accent active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -4374,23 +2987,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar item background",
-      "usageContext": [
-        "sidebar-items"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["sidebar-items"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Sidebar item background. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar item backgrounds"
-        ],
-        "never": [
-          "Use for active items"
-        ]
+        "do": ["Use for sidebar item backgrounds"],
+        "never": ["Use for active items"]
       },
       "requiresConfirmation": false
     },
@@ -4403,23 +3007,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar item text",
-      "usageContext": [
-        "sidebar-item-text"
-      ],
-      "dependsOn": [
-        "neutral-700",
-        "neutral-300"
-      ],
+      "usageContext": ["sidebar-item-text"],
+      "dependsOn": ["neutral-700", "neutral-300"],
       "description": "Sidebar item text. Light: neutral-700, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar item text"
-        ],
-        "never": [
-          "Use for active item text"
-        ]
+        "do": ["Use for sidebar item text"],
+        "never": ["Use for active item text"]
       },
       "requiresConfirmation": false
     },
@@ -4432,23 +3027,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar item hover",
-      "usageContext": [
-        "sidebar-item-hover"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["sidebar-item-hover"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Sidebar item hover. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar item hover"
-        ],
-        "never": [
-          "Use as default item background"
-        ]
+        "do": ["Use for sidebar item hover"],
+        "never": ["Use as default item background"]
       },
       "requiresConfirmation": false
     },
@@ -4461,23 +3047,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar item hover text",
-      "usageContext": [
-        "sidebar-item-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["sidebar-item-hover-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Sidebar item hover text. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar item hover text"
-        ],
-        "never": [
-          "Use without hover background"
-        ]
+        "do": ["Use for sidebar item hover text"],
+        "never": ["Use without hover background"]
       },
       "requiresConfirmation": false
     },
@@ -4490,23 +3067,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar item active",
-      "usageContext": [
-        "sidebar-item-active"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["sidebar-item-active"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Sidebar item active. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar item active state"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for sidebar item active state"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -4519,23 +3087,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar item active text",
-      "usageContext": [
-        "sidebar-item-active-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["sidebar-item-active-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Sidebar item active text. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar item active text"
-        ],
-        "never": [
-          "Use without active background"
-        ]
+        "do": ["Use for sidebar item active text"],
+        "never": ["Use without active background"]
       },
       "requiresConfirmation": false
     },
@@ -4548,23 +3107,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar selected item",
-      "usageContext": [
-        "sidebar-selected-item"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["sidebar-selected-item"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Sidebar selected item. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for selected sidebar items"
-        ],
-        "never": [
-          "Use for unselected items"
-        ]
+        "do": ["Use for selected sidebar items"],
+        "never": ["Use for unselected items"]
       },
       "requiresConfirmation": false
     },
@@ -4577,23 +3127,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar selected item text",
-      "usageContext": [
-        "sidebar-selected-item-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["sidebar-selected-item-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Sidebar selected item text. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for selected item text"
-        ],
-        "never": [
-          "Use without selected background"
-        ]
+        "do": ["Use for selected item text"],
+        "never": ["Use without selected background"]
       },
       "requiresConfirmation": false
     },
@@ -4606,24 +3147,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar border/divider color",
-      "usageContext": [
-        "sidebar-dividers",
-        "nav-section-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["sidebar-dividers", "nav-section-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Sidebar border/divider color. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar dividers"
-        ],
-        "never": [
-          "Use for main content borders"
-        ]
+        "do": ["Use for sidebar dividers"],
+        "never": ["Use for main content borders"]
       },
       "requiresConfirmation": false
     },
@@ -4636,23 +3167,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Sidebar focus ring",
-      "usageContext": [
-        "sidebar-focus-states"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-300"
-      ],
+      "usageContext": ["sidebar-focus-states"],
+      "dependsOn": ["neutral-950", "neutral-300"],
       "description": "Sidebar focus ring. Light: neutral-950, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for sidebar focus indicators"
-        ],
-        "never": [
-          "Use outside sidebar"
-        ]
+        "do": ["Use for sidebar focus indicators"],
+        "never": ["Use outside sidebar"]
       },
       "requiresConfirmation": false
     },
@@ -4665,25 +3187,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation background",
-      "usageContext": [
-        "navbars",
-        "breadcrumbs",
-        "tabs"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["navbars", "breadcrumbs", "tabs"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Navigation background. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for navigation backgrounds"
-        ],
-        "never": [
-          "Use for content areas"
-        ]
+        "do": ["Use for navigation backgrounds"],
+        "never": ["Use for content areas"]
       },
       "requiresConfirmation": false
     },
@@ -4696,24 +3207,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation text",
-      "usageContext": [
-        "nav-links",
-        "nav-items"
-      ],
-      "dependsOn": [
-        "neutral-700",
-        "neutral-300"
-      ],
+      "usageContext": ["nav-links", "nav-items"],
+      "dependsOn": ["neutral-700", "neutral-300"],
       "description": "Navigation text. Light: neutral-700, Dark: neutral-300.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for navigation text"
-        ],
-        "never": [
-          "Use for active nav text"
-        ]
+        "do": ["Use for navigation text"],
+        "never": ["Use for active nav text"]
       },
       "requiresConfirmation": false
     },
@@ -4726,23 +3227,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation hover",
-      "usageContext": [
-        "nav-hover"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["nav-hover"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Navigation hover. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for nav hover states"
-        ],
-        "never": [
-          "Use as default nav background"
-        ]
+        "do": ["Use for nav hover states"],
+        "never": ["Use as default nav background"]
       },
       "requiresConfirmation": false
     },
@@ -4755,23 +3247,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation hover text",
-      "usageContext": [
-        "nav-hover-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["nav-hover-text"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Navigation hover text. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for nav hover text"
-        ],
-        "never": [
-          "Use without hover background"
-        ]
+        "do": ["Use for nav hover text"],
+        "never": ["Use without hover background"]
       },
       "requiresConfirmation": false
     },
@@ -4784,23 +3267,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation active",
-      "usageContext": [
-        "nav-active"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["nav-active"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Navigation active. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for nav active states"
-        ],
-        "never": [
-          "Use for hover states"
-        ]
+        "do": ["Use for nav active states"],
+        "never": ["Use for hover states"]
       },
       "requiresConfirmation": false
     },
@@ -4813,23 +3287,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation active text",
-      "usageContext": [
-        "nav-active-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["nav-active-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Navigation active text. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for nav active text"
-        ],
-        "never": [
-          "Use without active background"
-        ]
+        "do": ["Use for nav active text"],
+        "never": ["Use without active background"]
       },
       "requiresConfirmation": false
     },
@@ -4842,23 +3307,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation selected",
-      "usageContext": [
-        "nav-selected"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["nav-selected"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Navigation selected. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for selected nav items"
-        ],
-        "never": [
-          "Use for unselected items"
-        ]
+        "do": ["Use for selected nav items"],
+        "never": ["Use for unselected items"]
       },
       "requiresConfirmation": false
     },
@@ -4871,23 +3327,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation selected text",
-      "usageContext": [
-        "nav-selected-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["nav-selected-text"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Navigation selected text. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for selected nav text"
-        ],
-        "never": [
-          "Use without selected background"
-        ]
+        "do": ["Use for selected nav text"],
+        "never": ["Use without selected background"]
       },
       "requiresConfirmation": false
     },
@@ -4900,23 +3347,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation disabled",
-      "usageContext": [
-        "nav-disabled"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["nav-disabled"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Navigation disabled. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for disabled nav items"
-        ],
-        "never": [
-          "Use for enabled items"
-        ]
+        "do": ["Use for disabled nav items"],
+        "never": ["Use for enabled items"]
       },
       "requiresConfirmation": false
     },
@@ -4929,23 +3367,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Navigation disabled text",
-      "usageContext": [
-        "nav-disabled-text"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-600"
-      ],
+      "usageContext": ["nav-disabled-text"],
+      "dependsOn": ["neutral-400", "neutral-600"],
       "description": "Navigation disabled text. Light: neutral-400, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for disabled nav text"
-        ],
-        "never": [
-          "Use for enabled nav text"
-        ]
+        "do": ["Use for disabled nav text"],
+        "never": ["Use for enabled nav text"]
       },
       "requiresConfirmation": false
     },
@@ -4958,23 +3387,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table background",
-      "usageContext": [
-        "data-tables"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-950"
-      ],
+      "usageContext": ["data-tables"],
+      "dependsOn": ["neutral-50", "neutral-950"],
       "description": "Table background. Light: neutral-50, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for table backgrounds"
-        ],
-        "never": [
-          "Use for content areas"
-        ]
+        "do": ["Use for table backgrounds"],
+        "never": ["Use for content areas"]
       },
       "requiresConfirmation": false
     },
@@ -4987,23 +3407,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table text",
-      "usageContext": [
-        "table-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["table-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Table text. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for table text"
-        ],
-        "never": [
-          "Use without table background"
-        ]
+        "do": ["Use for table text"],
+        "never": ["Use without table background"]
       },
       "requiresConfirmation": false
     },
@@ -5016,23 +3427,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table header background",
-      "usageContext": [
-        "table-headers"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["table-headers"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Table header background. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for table header backgrounds"
-        ],
-        "never": [
-          "Use for table body"
-        ]
+        "do": ["Use for table header backgrounds"],
+        "never": ["Use for table body"]
       },
       "requiresConfirmation": false
     },
@@ -5045,23 +3447,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table header text",
-      "usageContext": [
-        "table-header-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["table-header-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Table header text. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for table header text"
-        ],
-        "never": [
-          "Use for body text"
-        ]
+        "do": ["Use for table header text"],
+        "never": ["Use for body text"]
       },
       "requiresConfirmation": false
     },
@@ -5074,23 +3467,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table row hover",
-      "usageContext": [
-        "table-row-hover"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["table-row-hover"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Table row hover. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for table row hover"
-        ],
-        "never": [
-          "Use as default row background"
-        ]
+        "do": ["Use for table row hover"],
+        "never": ["Use as default row background"]
       },
       "requiresConfirmation": false
     },
@@ -5103,23 +3487,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table row selected",
-      "usageContext": [
-        "table-row-selected"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["table-row-selected"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Table row selected. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for selected table rows"
-        ],
-        "never": [
-          "Use for unselected rows"
-        ]
+        "do": ["Use for selected table rows"],
+        "never": ["Use for unselected rows"]
       },
       "requiresConfirmation": false
     },
@@ -5132,23 +3507,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table row selected text",
-      "usageContext": [
-        "table-row-selected-text"
-      ],
-      "dependsOn": [
-        "neutral-950",
-        "neutral-50"
-      ],
+      "usageContext": ["table-row-selected-text"],
+      "dependsOn": ["neutral-950", "neutral-50"],
       "description": "Table row selected text. Light: neutral-950, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for selected row text"
-        ],
-        "never": [
-          "Use without selected background"
-        ]
+        "do": ["Use for selected row text"],
+        "never": ["Use without selected background"]
       },
       "requiresConfirmation": false
     },
@@ -5161,23 +3527,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Table border",
-      "usageContext": [
-        "table-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["table-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Table border. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for table borders"
-        ],
-        "never": [
-          "Use for content borders"
-        ]
+        "do": ["Use for table borders"],
+        "never": ["Use for content borders"]
       },
       "requiresConfirmation": false
     },
@@ -5190,23 +3547,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Tooltip background",
-      "usageContext": [
-        "tooltips"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-50"
-      ],
+      "usageContext": ["tooltips"],
+      "dependsOn": ["neutral-900", "neutral-50"],
       "description": "Tooltip background. Light: neutral-900, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for tooltip backgrounds"
-        ],
-        "never": [
-          "Use for content areas"
-        ]
+        "do": ["Use for tooltip backgrounds"],
+        "never": ["Use for content areas"]
       },
       "requiresConfirmation": false
     },
@@ -5219,23 +3567,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Tooltip text",
-      "usageContext": [
-        "tooltip-text"
-      ],
-      "dependsOn": [
-        "neutral-50",
-        "neutral-900"
-      ],
+      "usageContext": ["tooltip-text"],
+      "dependsOn": ["neutral-50", "neutral-900"],
       "description": "Tooltip text. Light: neutral-50, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for tooltip text"
-        ],
-        "never": [
-          "Use without tooltip background"
-        ]
+        "do": ["Use for tooltip text"],
+        "never": ["Use without tooltip background"]
       },
       "requiresConfirmation": false
     },
@@ -5248,24 +3587,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Overlay background",
-      "usageContext": [
-        "modals",
-        "dialogs",
-        "sheets"
-      ],
-      "dependsOn": [
-        "neutral-950"
-      ],
+      "usageContext": ["modals", "dialogs", "sheets"],
+      "dependsOn": ["neutral-950"],
       "description": "Overlay background. Light: neutral-950, Dark: neutral-950.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for modal backdrops"
-        ],
-        "never": [
-          "Use for content backgrounds"
-        ]
+        "do": ["Use for modal backdrops"],
+        "never": ["Use for content backgrounds"]
       },
       "requiresConfirmation": false
     },
@@ -5278,22 +3607,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Overlay text",
-      "usageContext": [
-        "overlay-text"
-      ],
-      "dependsOn": [
-        "neutral-50"
-      ],
+      "usageContext": ["overlay-text"],
+      "dependsOn": ["neutral-50"],
       "description": "Overlay text. Light: neutral-50, Dark: neutral-50.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for text on overlays"
-        ],
-        "never": [
-          "Use without overlay background"
-        ]
+        "do": ["Use for text on overlays"],
+        "never": ["Use without overlay background"]
       },
       "requiresConfirmation": false
     },
@@ -5306,24 +3627,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Skeleton loader background",
-      "usageContext": [
-        "loading-states",
-        "skeletons"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["loading-states", "skeletons"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Skeleton loader background. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for skeleton backgrounds"
-        ],
-        "never": [
-          "Use for content backgrounds"
-        ]
+        "do": ["Use for skeleton backgrounds"],
+        "never": ["Use for content backgrounds"]
       },
       "requiresConfirmation": false
     },
@@ -5336,23 +3647,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Skeleton loader highlight",
-      "usageContext": [
-        "skeleton-animation"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-700"
-      ],
+      "usageContext": ["skeleton-animation"],
+      "dependsOn": ["neutral-300", "neutral-700"],
       "description": "Skeleton loader highlight. Light: neutral-300, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for skeleton animation highlight"
-        ],
-        "never": [
-          "Use as static background"
-        ]
+        "do": ["Use for skeleton animation highlight"],
+        "never": ["Use as static background"]
       },
       "requiresConfirmation": false
     },
@@ -5365,25 +3667,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Primary chart color",
-      "usageContext": [
-        "charts",
-        "data-viz",
-        "primary-series"
-      ],
-      "dependsOn": [
-        "silver-true-glacier-500",
-        "silver-true-glacier-400"
-      ],
+      "usageContext": ["charts", "data-viz", "primary-series"],
+      "dependsOn": ["silver-true-glacier-500", "silver-true-glacier-400"],
       "description": "Primary chart color. Light: silver-true-glacier-500, Dark: silver-true-glacier-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for primary data series"
-        ],
-        "never": [
-          "Use more than 5 chart colors"
-        ]
+        "do": ["Use for primary data series"],
+        "never": ["Use more than 5 chart colors"]
       },
       "requiresConfirmation": false
     },
@@ -5396,25 +3687,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Secondary chart color",
-      "usageContext": [
-        "charts",
-        "data-viz",
-        "secondary-series"
-      ],
-      "dependsOn": [
-        "silver-true-sky-500",
-        "silver-true-sky-400"
-      ],
+      "usageContext": ["charts", "data-viz", "secondary-series"],
+      "dependsOn": ["silver-true-sky-500", "silver-true-sky-400"],
       "description": "Secondary chart color. Light: silver-true-sky-500, Dark: silver-true-sky-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for secondary data series"
-        ],
-        "never": [
-          "Use without chart-1"
-        ]
+        "do": ["Use for secondary data series"],
+        "never": ["Use without chart-1"]
       },
       "requiresConfirmation": false
     },
@@ -5427,25 +3707,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Tertiary chart color",
-      "usageContext": [
-        "charts",
-        "data-viz",
-        "tertiary-series"
-      ],
-      "dependsOn": [
-        "silver-true-citrine-500",
-        "silver-true-citrine-400"
-      ],
+      "usageContext": ["charts", "data-viz", "tertiary-series"],
+      "dependsOn": ["silver-true-citrine-500", "silver-true-citrine-400"],
       "description": "Tertiary chart color. Light: silver-true-citrine-500, Dark: silver-true-citrine-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for tertiary data series"
-        ],
-        "never": [
-          "Use as primary color"
-        ]
+        "do": ["Use for tertiary data series"],
+        "never": ["Use as primary color"]
       },
       "requiresConfirmation": false
     },
@@ -5458,25 +3727,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Quaternary chart color",
-      "usageContext": [
-        "charts",
-        "data-viz",
-        "quaternary-series"
-      ],
-      "dependsOn": [
-        "silver-true-honey-500",
-        "silver-true-honey-400"
-      ],
+      "usageContext": ["charts", "data-viz", "quaternary-series"],
+      "dependsOn": ["silver-true-honey-500", "silver-true-honey-400"],
       "description": "Quaternary chart color. Light: silver-true-honey-500, Dark: silver-true-honey-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for quaternary data series"
-        ],
-        "never": [
-          "Use without considering accessibility"
-        ]
+        "do": ["Use for quaternary data series"],
+        "never": ["Use without considering accessibility"]
       },
       "requiresConfirmation": false
     },
@@ -5489,25 +3747,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Quinary chart color",
-      "usageContext": [
-        "charts",
-        "data-viz",
-        "quinary-series"
-      ],
-      "dependsOn": [
-        "silver-true-violet-500",
-        "silver-true-violet-400"
-      ],
+      "usageContext": ["charts", "data-viz", "quinary-series"],
+      "dependsOn": ["silver-true-violet-500", "silver-true-violet-400"],
       "description": "Quinary chart color. Light: silver-true-violet-500, Dark: silver-true-violet-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for fifth data series"
-        ],
-        "never": [
-          "Add more series without redesigning palette"
-        ]
+        "do": ["Use for fifth data series"],
+        "never": ["Add more series without redesigning palette"]
       },
       "requiresConfirmation": false
     },
@@ -5520,23 +3767,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Scrollbar thumb color",
-      "usageContext": [
-        "scrollbars"
-      ],
-      "dependsOn": [
-        "neutral-300",
-        "neutral-700"
-      ],
+      "usageContext": ["scrollbars"],
+      "dependsOn": ["neutral-300", "neutral-700"],
       "description": "Scrollbar thumb color. Light: neutral-300, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for scrollbar thumbs"
-        ],
-        "never": [
-          "Use for content elements"
-        ]
+        "do": ["Use for scrollbar thumbs"],
+        "never": ["Use for content elements"]
       },
       "requiresConfirmation": false
     },
@@ -5549,23 +3787,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Scrollbar thumb hover",
-      "usageContext": [
-        "scrollbar-hover"
-      ],
-      "dependsOn": [
-        "neutral-400",
-        "neutral-600"
-      ],
+      "usageContext": ["scrollbar-hover"],
+      "dependsOn": ["neutral-400", "neutral-600"],
       "description": "Scrollbar thumb hover. Light: neutral-400, Dark: neutral-600.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for scrollbar thumb hover"
-        ],
-        "never": [
-          "Use as default scrollbar color"
-        ]
+        "do": ["Use for scrollbar thumb hover"],
+        "never": ["Use as default scrollbar color"]
       },
       "requiresConfirmation": false
     },
@@ -5578,23 +3807,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Scrollbar track background",
-      "usageContext": [
-        "scrollbar-tracks"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["scrollbar-tracks"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Scrollbar track background. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for scrollbar track backgrounds"
-        ],
-        "never": [
-          "Use for content backgrounds"
-        ]
+        "do": ["Use for scrollbar track backgrounds"],
+        "never": ["Use for content backgrounds"]
       },
       "requiresConfirmation": false
     },
@@ -5607,24 +3827,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Code block background",
-      "usageContext": [
-        "code-blocks",
-        "inline-code"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-900"
-      ],
+      "usageContext": ["code-blocks", "inline-code"],
+      "dependsOn": ["neutral-100", "neutral-900"],
       "description": "Code block background. Light: neutral-100, Dark: neutral-900.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for code backgrounds"
-        ],
-        "never": [
-          "Use for regular text"
-        ]
+        "do": ["Use for code backgrounds"],
+        "never": ["Use for regular text"]
       },
       "requiresConfirmation": false
     },
@@ -5637,23 +3847,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Code text color",
-      "usageContext": [
-        "code-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-100"
-      ],
+      "usageContext": ["code-text"],
+      "dependsOn": ["neutral-900", "neutral-100"],
       "description": "Code text color. Light: neutral-900, Dark: neutral-100.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for code text"
-        ],
-        "never": [
-          "Use without code background"
-        ]
+        "do": ["Use for code text"],
+        "never": ["Use without code background"]
       },
       "requiresConfirmation": false
     },
@@ -5666,23 +3867,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Code block border",
-      "usageContext": [
-        "code-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["code-borders"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Code block border. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for code block borders"
-        ],
-        "never": [
-          "Use for content borders"
-        ]
+        "do": ["Use for code block borders"],
+        "never": ["Use for content borders"]
       },
       "requiresConfirmation": false
     },
@@ -5695,24 +3887,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Badge background",
-      "usageContext": [
-        "badges",
-        "labels"
-      ],
-      "dependsOn": [
-        "neutral-100",
-        "neutral-800"
-      ],
+      "usageContext": ["badges", "labels"],
+      "dependsOn": ["neutral-100", "neutral-800"],
       "description": "Badge background. Light: neutral-100, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for badge backgrounds"
-        ],
-        "never": [
-          "Use for buttons"
-        ]
+        "do": ["Use for badge backgrounds"],
+        "never": ["Use for buttons"]
       },
       "requiresConfirmation": false
     },
@@ -5725,23 +3907,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Badge text color",
-      "usageContext": [
-        "badge-text"
-      ],
-      "dependsOn": [
-        "neutral-900",
-        "neutral-100"
-      ],
+      "usageContext": ["badge-text"],
+      "dependsOn": ["neutral-900", "neutral-100"],
       "description": "Badge text color. Light: neutral-900, Dark: neutral-100.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for badge text"
-        ],
-        "never": [
-          "Use without badge background"
-        ]
+        "do": ["Use for badge text"],
+        "never": ["Use without badge background"]
       },
       "requiresConfirmation": false
     },
@@ -5754,23 +3927,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Badge border",
-      "usageContext": [
-        "badge-borders"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-700"
-      ],
+      "usageContext": ["badge-borders"],
+      "dependsOn": ["neutral-200", "neutral-700"],
       "description": "Badge border. Light: neutral-200, Dark: neutral-700.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for badge borders"
-        ],
-        "never": [
-          "Use for content borders"
-        ]
+        "do": ["Use for badge borders"],
+        "never": ["Use for content borders"]
       },
       "requiresConfirmation": false
     },
@@ -5783,24 +3947,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Avatar fallback background",
-      "usageContext": [
-        "avatars",
-        "fallback-images"
-      ],
-      "dependsOn": [
-        "neutral-200",
-        "neutral-800"
-      ],
+      "usageContext": ["avatars", "fallback-images"],
+      "dependsOn": ["neutral-200", "neutral-800"],
       "description": "Avatar fallback background. Light: neutral-200, Dark: neutral-800.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for avatar fallback backgrounds"
-        ],
-        "never": [
-          "Use for content backgrounds"
-        ]
+        "do": ["Use for avatar fallback backgrounds"],
+        "never": ["Use for content backgrounds"]
       },
       "requiresConfirmation": false
     },
@@ -5813,24 +3967,14 @@
       "category": "color",
       "namespace": "semantic",
       "semanticMeaning": "Avatar fallback text/icon color",
-      "usageContext": [
-        "avatar-initials",
-        "avatar-icons"
-      ],
-      "dependsOn": [
-        "neutral-600",
-        "neutral-400"
-      ],
+      "usageContext": ["avatar-initials", "avatar-icons"],
+      "dependsOn": ["neutral-600", "neutral-400"],
       "description": "Avatar fallback text/icon color. Light: neutral-600, Dark: neutral-400.",
       "generatedAt": "2026-03-19T00:04:06.727Z",
       "containerQueryAware": true,
       "usagePatterns": {
-        "do": [
-          "Use for avatar initials or icons"
-        ],
-        "never": [
-          "Use without avatar background"
-        ]
+        "do": ["Use for avatar initials or icons"],
+        "never": ["Use without avatar background"]
       },
       "requiresConfirmation": false
     }

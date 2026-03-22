@@ -15,9 +15,9 @@
  * ```
  */
 
-import type * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
-import type { CleanupFunction } from '@/src/lib/primitives/types';
+import type * as React from "react";
+import classy from "@/src/lib/primitives/classy";
+import type { CleanupFunction } from "@/src/lib/primitives/types";
 
 export interface SlotMergeOptions {
   /**
@@ -62,22 +62,22 @@ export interface SlotMergeOptions {
  * Standard event handler attribute names
  */
 const EVENT_HANDLER_NAMES = [
-  'onclick',
-  'onkeydown',
-  'onkeyup',
-  'onkeypress',
-  'onfocus',
-  'onblur',
-  'onmousedown',
-  'onmouseup',
-  'onmouseover',
-  'onmouseout',
-  'onmouseenter',
-  'onmouseleave',
-  'onpointerdown',
-  'onpointerup',
-  'ontouchstart',
-  'ontouchend',
+  "onclick",
+  "onkeydown",
+  "onkeyup",
+  "onkeypress",
+  "onfocus",
+  "onblur",
+  "onmousedown",
+  "onmouseup",
+  "onmouseover",
+  "onmouseout",
+  "onmouseenter",
+  "onmouseleave",
+  "onpointerdown",
+  "onpointerup",
+  "ontouchstart",
+  "ontouchend",
 ] as const;
 
 /**
@@ -86,7 +86,7 @@ const EVENT_HANDLER_NAMES = [
 function getAriaAttributes(element: Element): Map<string, string> {
   const attrs = new Map<string, string>();
   for (const attr of element.attributes) {
-    if (attr.name.startsWith('aria-') || attr.name === 'role') {
+    if (attr.name.startsWith("aria-") || attr.name === "role") {
       attrs.set(attr.name, attr.value);
     }
   }
@@ -99,7 +99,7 @@ function getAriaAttributes(element: Element): Map<string, string> {
 function getDataAttributes(element: Element): Map<string, string> {
   const attrs = new Map<string, string>();
   for (const attr of element.attributes) {
-    if (attr.name.startsWith('data-')) {
+    if (attr.name.startsWith("data-")) {
       attrs.set(attr.name, attr.value);
     }
   }
@@ -142,7 +142,7 @@ export function mergeSlotProps(
   options: SlotMergeOptions = {},
 ): CleanupFunction {
   // SSR guard
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return () => {};
   }
 
@@ -159,7 +159,7 @@ export function mergeSlotProps(
   const originalState: OriginalState = {
     attributes: new Map(),
     className: child.className,
-    style: child.getAttribute('style') || '',
+    style: child.getAttribute("style") || "",
     eventHandlers: new Map(),
   };
 
@@ -200,11 +200,11 @@ export function mergeSlotProps(
 
   // Merge inline styles
   if (mergeStyle) {
-    const parentStyle = parent.getAttribute('style');
+    const parentStyle = parent.getAttribute("style");
     if (parentStyle) {
-      const childStyle = child.getAttribute('style') || '';
+      const childStyle = child.getAttribute("style") || "";
       // Child styles take precedence (come after parent)
-      child.setAttribute('style', `${parentStyle}; ${childStyle}`.replace(/^;\s*/, ''));
+      child.setAttribute("style", `${parentStyle}; ${childStyle}`.replace(/^;\s*/, ""));
     }
   }
 
@@ -213,13 +213,13 @@ export function mergeSlotProps(
     for (const handlerName of EVENT_HANDLER_NAMES) {
       // Check if parent has an inline handler or listener
       const parentHandler = (parent as unknown as Record<string, unknown>)[handlerName];
-      if (typeof parentHandler === 'function') {
+      if (typeof parentHandler === "function") {
         const eventType = handlerName.slice(2); // Remove 'on' prefix
         const childHandler = (child as unknown as Record<string, unknown>)[handlerName];
 
         // Compose handlers: child first, then parent
         const composedHandler = (event: Event) => {
-          if (typeof childHandler === 'function') {
+          if (typeof childHandler === "function") {
             childHandler.call(child, event);
           }
           if (!event.defaultPrevented) {
@@ -255,9 +255,9 @@ export function mergeSlotProps(
     // Restore original style
     if (mergeStyle) {
       if (originalState.style) {
-        child.setAttribute('style', originalState.style);
+        child.setAttribute("style", originalState.style);
       } else {
-        child.removeAttribute('style');
+        child.removeAttribute("style");
       }
     }
 
@@ -273,7 +273,7 @@ export function mergeSlotProps(
  * Useful for React/framework integration
  */
 export function extractSlotProps(element: Element): Record<string, string> {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return {};
   }
 
@@ -322,7 +322,7 @@ export function mergeClassNames(parentClass: string, childClass: string): string
     }
   }
 
-  return result.join(' ');
+  return result.join(" ");
 }
 
 /**
@@ -351,15 +351,15 @@ export function mergeProps(
     const childValue = childProps[key];
 
     // Handle className specially - use classy for deduplication and proper merging
-    if (key === 'className') {
+    if (key === "className") {
       merged.className = classMerger
-        ? classMerger(String(parentValue ?? ''), String(childValue ?? ''))
+        ? classMerger(String(parentValue ?? ""), String(childValue ?? ""))
         : classy(parentValue as string, childValue as string);
       continue;
     }
 
     // Handle style specially (merge objects)
-    if (key === 'style' && typeof parentValue === 'object' && typeof childValue === 'object') {
+    if (key === "style" && typeof parentValue === "object" && typeof childValue === "object") {
       merged.style = {
         ...(parentValue as Record<string, string>),
         ...(childValue as Record<string, string>),
@@ -369,9 +369,9 @@ export function mergeProps(
 
     // Handle event handlers specially (compose functions)
     if (
-      key.startsWith('on') &&
-      typeof parentValue === 'function' &&
-      typeof childValue === 'function'
+      key.startsWith("on") &&
+      typeof parentValue === "function" &&
+      typeof childValue === "function"
     ) {
       merged[key] = (...args: unknown[]) => {
         (childValue as (...args: unknown[]) => void)(...args);

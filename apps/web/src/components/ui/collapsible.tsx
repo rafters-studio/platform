@@ -25,9 +25,9 @@
  * ```
  */
 
-import * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
-import { mergeProps } from '@/src/lib/primitives/slot';
+import * as React from "react";
+import classy from "@/src/lib/primitives/classy";
+import { mergeProps } from "@/src/lib/primitives/slot";
 
 // Context for sharing collapsible state
 interface CollapsibleContextValue {
@@ -43,7 +43,7 @@ const CollapsibleContext = React.createContext<CollapsibleContextValue | null>(n
 function useCollapsibleContext() {
   const context = React.useContext(CollapsibleContext);
   if (!context) {
-    throw new Error('Collapsible components must be used within Collapsible');
+    throw new Error("Collapsible components must be used within Collapsible");
   }
   return context;
 }
@@ -109,8 +109,8 @@ export function Collapsible({
     <CollapsibleContext.Provider value={contextValue}>
       <div
         className={classy(className)}
-        data-state={open ? 'open' : 'closed'}
-        data-disabled={disabled ? '' : undefined}
+        data-state={open ? "open" : "closed"}
+        data-disabled={disabled ? "" : undefined}
         {...props}
       >
         {children}
@@ -153,10 +153,10 @@ export function CollapsibleTrigger({
 
   const triggerProps = {
     id: triggerId,
-    'aria-expanded': open,
-    'aria-controls': contentId,
-    'data-state': open ? 'open' : 'closed',
-    'data-disabled': disabled ? '' : undefined,
+    "aria-expanded": open,
+    "aria-controls": contentId,
+    "data-state": open ? "open" : "closed",
+    "data-disabled": disabled ? "" : undefined,
     disabled,
     onClick: handleClick,
     className: classy(className),
@@ -205,15 +205,15 @@ export function CollapsibleContent({
   const contentProps = {
     ref: contentRef,
     id: contentId,
-    'aria-labelledby': triggerId,
-    'data-state': open ? 'open' : 'closed',
-    'data-disabled': disabled ? '' : undefined,
+    "aria-labelledby": triggerId,
+    "data-state": open ? "open" : "closed",
+    "data-disabled": disabled ? "" : undefined,
     hidden: !open,
     className: classy(
       // Base transition styles for height animation
-      'overflow-hidden transition-all',
+      "overflow-hidden transition-all",
       // Animation states
-      'data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down',
+      "data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down",
       className,
     ),
     ...props,
@@ -231,9 +231,9 @@ export function CollapsibleContent({
 
 // ==================== Display Names ====================
 
-Collapsible.displayName = 'Collapsible';
-CollapsibleTrigger.displayName = 'CollapsibleTrigger';
-CollapsibleContent.displayName = 'CollapsibleContent';
+Collapsible.displayName = "Collapsible";
+CollapsibleTrigger.displayName = "CollapsibleTrigger";
+CollapsibleContent.displayName = "CollapsibleContent";
 
 // ==================== Namespaced Export ====================
 

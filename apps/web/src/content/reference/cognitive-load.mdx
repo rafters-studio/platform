@@ -1,0 +1,263 @@
+---
+title: "Cognitive Load Scoring"
+description: "A button costs 3. An AlertDialog costs 7. A separator costs 0. Five dimensions, each scored 0-2, summed into a single number that tells you how much mental effort a component demands before anyone ever uses it."
+order: 1
+---
+
+A button costs 3. An AlertDialog costs 7. A separator costs 0.
+
+I know this because I counted. Five dimensions, each scored 0-2, summed into a single number that tells you how much mental effort a component demands before anyone ever uses it. No design system has done this before. Every existing approach -- NASA-TLX, cognitive walkthroughs, eye tracking -- measures load _after_ the user has already struggled. Rafters measures it at design time.
+
+This is the full model: where the scores come from, why each dimension exists, and how screen-level budgets catch overloaded interfaces before they ship.
+
+## Why Cognitive Load Matters
+
+Every UI component costs the user mental effort. You feel this intuitively -- a dropdown menu is harder than a button, and a modal dialog is harder than both. But intuition does not scale. When you are composing a screen from 15 components, you cannot feel whether the total cost exceeds what a human brain can handle. You need a number.
+
+The theory comes from John Sweller, who in the late 1980s identified three types of cognitive load. He was writing about classroom instruction, but the framework maps directly to interface design:
+
+- **Intrinsic load**: the inherent complexity of the task. A login form is simpler than a spreadsheet. You cannot reduce intrinsic load without reducing the task itself.[^1]
+- **Extraneous load**: complexity introduced by bad design. A form that hides the submit button, uses ambiguous labels, or requires scrolling between related fields adds load that has nothing to do with the task. This is the load designers can eliminate.[^2]
+- **Germane load**: the effort of building understanding. A well-designed onboarding flow increases germane load deliberately -- it costs mental effort, but that effort produces learning.[^3]
+
+Rafters' per-component scoring measures something specific: the **intrinsic cognitive cost of interacting with a single component**, independent of content, context, or the user's prior experience. It is the minimum mental effort the component demands by its nature.
+
+### The Working Memory Constraint
+
+Why does cognitive load matter at all? Because human working memory is severely limited.
+
+George Miller's 1956 paper proposed that short-term memory holds approximately seven items (plus or minus two).[^4] Nelson Cowan later revised that down to about four.[^5] Four. That is how many independent things you can hold in your head at once. Look at your settings page. Count the things competing for attention. If the answer is more than four, someone is going to miss something.
+
+Baddeley and Hitch's working memory model explains why: your brain processes visual UI through the visuospatial sketchpad (limited spatial/visual capacity) and the central executive (limited attention control).[^6] [^7] Every component that demands a decision, presents information, or requires interaction draws from these pools. When the total demand exceeds capacity, you make errors, feel frustrated, and abandon the task. Not because you are bad at using software. Because the software asked too much of your biology.
+
+This is not metaphorical. It is measurable. NASA's Task Load Index (NASA-TLX), developed by Hart and Staveland, quantifies cognitive load across six dimensions through post-task surveys.[^8] But NASA-TLX measures load _after_ the user has already struggled. Rafters scores components _before_ the user ever sees them -- at design time, not evaluation time.
+
+No existing design system or academic framework provides a quantitative per-component scoring model. NN/g's CASTLE framework mentions cognitive load as one of six UX dimensions but recommends post-hoc measurement using NASA-TLX, cognitive walkthroughs, and the PURE method -- all task-level, not component-level.[^9] Rafters is, as far as we can determine, the first system to assign static, intrinsic cognitive load scores to individual UI components and enforce budgets at composition time.
+
+The theoretical grounding exists -- Sweller's element interactivity, Cowan's chunk limits, Wickens' Multiple Resource Theory[^10] -- but the specific operationalization of "this dropdown costs 4 cognitive units, this button costs 3" has no direct academic precedent.
+
+## The Five Dimensions
+
+Every component score is the sum of five dimensions, each contributing 0 to 2 points. The maximum possible score is 10.
+
+### 1. Decision Demand (0-2)
+
+How many decisions does the user need to make?
+
+| Score | Meaning                                  | Examples                                                                          |
+| ----- | ---------------------------------------- | --------------------------------------------------------------------------------- |
+| 0     | No decision required                     | Separator, Container, Skeleton                                                    |
+| 1     | Single binary or obvious choice          | Button (click or don't), Toggle (on/off), Checkbox                                |
+| 2     | Multiple options or consequential choice | AlertDialog (proceed or cancel with stakes), Combobox (search + select from many) |
+
+This dimension draws from Hick's Law: reaction time increases logarithmically with the number of choices.[^11] A component presenting two options (Button: click or don't) has lower decision demand than one presenting many (Combobox: search, filter, select from a list). The logarithmic relationship means each additional option costs less than the last, but the initial jump from zero decisions to one decision is the most expensive.
+
+William Edmund Hick's original experiment measured reaction time for selecting among equally probable alternatives. In UI, the alternatives are rarely equally probable -- a primary button is visually weighted to make one choice obvious. Good design reduces _effective_ decision demand even when multiple options exist.
+
+### 2. Information Density (0-2)
+
+How much information must the user process simultaneously?
+
+| Score | Meaning                                                | Examples                                                                                               |
+| ----- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| 0     | No information to process                              | Separator, AspectRatio                                                                                 |
+| 1     | Single piece of information                            | Badge (one label), Tooltip (one message), Spinner                                                      |
+| 2     | Multiple pieces of information competing for attention | DataTable (rows x columns), Calendar (grid of dates), Command palette (filtered list + keyboard hints) |
+
+This is where Miller's number matters most. A Badge shows one label -- well within any working memory model. A DataTable shows rows, columns, headers, sort indicators, and pagination controls simultaneously. The user must hold the column meaning in memory while scanning row values.
+
+A Button scores 0 here. The label is the entire information payload, and you already know what it says before you read it. A Combobox scores 2: the user reads the input value, scans filtered options, and compares matches simultaneously.
+
+### 3. Interaction Complexity (0-2)
+
+How many distinct interaction modes does the component support?
+
+| Score | Meaning                                                                   | Examples                                                                                                   |
+| ----- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 0     | No interaction (display only)                                             | Separator, Badge, Skeleton                                                                                 |
+| 1     | Single interaction mode (click, toggle, type)                             | Button (click), Switch (toggle), Input (type)                                                              |
+| 2     | Multiple interaction modes (type + select, drag + drop, keyboard + mouse) | Combobox (type + scan + select), DatePicker (click + navigate + select), ColorPicker (drag + click + type) |
+
+This dimension relates to Fitts's Law, which models the time required to move to a target as a function of distance and target size.[^12] But Fitts's Law only covers pointing. Components with multiple interaction modes require the user to coordinate different motor programs -- typing, clicking, and arrow-key navigation for a Combobox, for example. Each mode switch has a cognitive cost beyond the motor cost Fitts describes.
+
+A Button scores 1: you click it. A Combobox scores 2: you type to filter, arrow-key through results, and press Enter or click to select. Three distinct interaction modes the user must coordinate.
+
+### 4. Context Disruption (0-2)
+
+How much does the component disrupt the user's current task context?
+
+| Score | Meaning                                                | Examples                                                                     |
+| ----- | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| 0     | No disruption, within existing flow                    | Inline elements (Badge, Label), layout (Container, Grid)                     |
+| 1     | Partial disruption, adds a layer but preserves context | Popover, Sheet, Drawer (main content visible but dimmed)                     |
+| 2     | Full disruption, blocks everything else                | Dialog, AlertDialog (modal overlay, focus trap, no escape except resolution) |
+
+Context disruption maps to the concept of **interruption cost** in cognitive psychology. Research by Altmann and Trafton on memory for goals found that interruptions cause "goal decay" -- the longer the interruption, the harder it is to resume the previous task.[^13] A modal dialog forces a complete context switch: the user must resolve the dialog before returning to their primary task. The previous goal decays while they process the interruption.
+
+A Button scores 0: clicking it doesn't inherently change context. An AlertDialog scores 2: it blocks the entire application and forces the user into a decision before they can return to anything else.
+
+### 5. Learning Curve (0-2)
+
+How much prior knowledge does the component require to use correctly?
+
+| Score | Meaning                                                  | Examples                                                                                     |
+| ----- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 0     | Universally understood, no learning                      | Button, Checkbox, Text input                                                                 |
+| 1     | Familiar pattern with some convention to learn           | Accordion (click to expand), Tabs (spatial model), Pagination                                |
+| 2     | Requires learning specific interactions or mental models | Command palette (keyboard shortcuts, search syntax), Menubar (nested submenus, accelerators) |
+
+This dimension acknowledges that germane cognitive load (the effort of learning) is a one-time cost that diminishes with exposure. A Command palette scores 2 not because it is hard to _use_ once learned, but because the user must discover it exists, learn how to invoke it, understand the search syntax, and navigate with keyboard shortcuts. That learning investment is part of the component's intrinsic cost.
+
+Jakob Nielsen's concept of **learnability** as a usability attribute is relevant here: how easy is it for users to accomplish basic tasks the first time they encounter the design?[^14] Components scoring 0 on learning curve (Button, Checkbox) have near-universal learnability. Components scoring 2 require deliberate learning before they become usable.
+
+## Scoring Walkthroughs
+
+### Why a Button Scores 3
+
+| Dimension              | Score | Reasoning                                                                                |
+| ---------------------- | ----- | ---------------------------------------------------------------------------------------- |
+| Decision Demand        | 1     | Click or don't click. One binary decision.                                               |
+| Information Density    | 0     | The label is the entire payload. "Save", "Delete", "Submit".                             |
+| Interaction Complexity | 1     | Click. That's it. Loading states add visual feedback but no new interaction mode.        |
+| Context Disruption     | 0     | The button itself doesn't disrupt. It stays inline, doesn't overlay, doesn't trap focus. |
+| Learning Curve         | 0     | Universal. Toddlers can use buttons.                                                     |
+| **Total**              | **3** |                                                                                          |
+
+### Why an AlertDialog Scores 7
+
+| Dimension              | Score | Reasoning                                                                              |
+| ---------------------- | ----- | -------------------------------------------------------------------------------------- |
+| Decision Demand        | 2     | Consequential choice: proceed with destructive action or cancel. Stakes are high.      |
+| Information Density    | 1     | Title + description + action labels. More than a button, but focused on one question.  |
+| Interaction Complexity | 1     | Click one of two buttons. The interaction is simple even though the decision is hard.  |
+| Context Disruption     | 2     | Full modal overlay. Focus trap. All other interactions blocked.                        |
+| Learning Curve         | 1     | Most users understand dialogs, but the confirmation pattern requires cognitive effort. |
+| **Total**              | **7** |                                                                                        |
+
+The high score comes from disruption + decision stakes, not interaction complexity. The cognitive cost of an AlertDialog is about _what it does to the user's attention and workflow_, not about how hard it is to click a button.
+
+### Why Same Scores Mean Different Experiences
+
+Combobox and Command palette both score 6, but the load distributes differently:
+
+**Combobox (6)**: Decision 2 + Information 2 + Interaction 2 + Disruption 0 + Learning 0
+
+**Command Palette (6)**: Decision 1 + Information 2 + Interaction 1 + Disruption 0 + Learning 2
+
+Same total, different experience. The Combobox is immediately usable but complex in the moment. The Command palette is simple once learned but requires upfront investment. The five-dimensional breakdown reveals this difference where a single score cannot.
+
+## Screen-Level Budgets
+
+Individual component scores don't exist in isolation. When components compose into screens, their loads accumulate. But not linearly -- users don't process every component simultaneously. They focus on one region at a time, with peripheral elements fading into background awareness.
+
+### The Budget Tiers
+
+| Tier        | Budget | Context                                                    | Examples                                       |
+| ----------- | ------ | ---------------------------------------------------------- | ---------------------------------------------- |
+| **Focused** | 15     | Single-purpose interaction with clear entry/exit           | Confirmation dialog, login form, payment modal |
+| **Page**    | 30     | Standard application view with primary + secondary content | Settings page, data table view, list + detail  |
+| **App**     | 45     | Multi-panel workspace with concurrent activity zones       | IDE layout, email client, multi-panel editor   |
+
+### Why Tiers, Not One Number
+
+A flat budget fails real screens:
+
+| Screen        | Components                                                                      | Raw Sum |
+| ------------- | ------------------------------------------------------------------------------- | ------- |
+| Login form    | 2x Input(4) + Button(3) + Card(2) + 2x Label(2)                                 | 17      |
+| Settings page | Sidebar(3) + Tabs(4) + 6x Field(3) + 2x Button(3) + Card(2)                     | 36      |
+| Gmail inbox   | Sidebar(3) + Table(3) + Toolbar(4) + Tabs(4) + Nav(5) + Pagination(4) + Buttons | 37      |
+
+Raw additive scoring overcounts because:
+
+1. **Attentional focusing**: Kahneman's capacity model of attention demonstrates that humans allocate limited processing resources selectively.[^15] The sidebar's load doesn't add to the table's load when the user is focused on the table -- they're in separate visual zones, and only the attended zone consumes central processing capacity.
+
+2. **Familiarity discount**: A settings page with six fields is daunting on first visit but trivial on return visits. The learning curve dimension bakes some of this in, but screen-level familiarity provides additional reduction.
+
+3. **Progressive disclosure**: Tabs, accordions, and collapsibles gate content. Their own load contributes, but the content they hide does not -- until expanded. Research on progressive disclosure confirms it reduces perceived complexity and improves task completion rates for complex interfaces.[^16]
+
+The tiers account for this. A Focused interaction (dialog, modal) genuinely has a budget of 15 because every element competes for the same small visual space and the user must resolve everything before returning to their task. A Page budget of 30 reflects 2-3 visual zones sharing the load. An App budget of 45 reflects multi-panel layouts where 3-4 independent zones operate with their own local cognitive contexts.
+
+### Applying the Budget
+
+When evaluating a screen composition:
+
+1. **Sum the component scores** for everything visible simultaneously
+2. **Identify the tier** based on the interaction context
+3. **Compare** sum against tier budget
+4. **If over budget**: look for components scoring 4+ that could be simplified, hidden behind progressive disclosure, or moved to a separate view
+
+The budget is a lint, not a hard wall. Going 10% over is a design conversation. Going 50% over is a design problem.
+
+## What the Score Does NOT Measure
+
+The cognitive load score is an **intrinsic** property of the component. It measures the processing cost of the component itself, independent of:
+
+- **Content**: A Table is always 3/10 whether it has 5 rows or 5,000. Content density is a usage decision, not a component property.
+- **Context**: A Button in a toolbar costs the same as a Button in a dialog. The _screen budget_ accounts for context, not the component score.
+- **Frequency**: How often a user encounters the component doesn't change its intrinsic cost. Familiarity effects are captured by the learning curve dimension, which measures first-exposure cost.
+- **Aesthetic quality**: A beautifully styled Combobox costs the same as an ugly one. Visual polish affects perception and trust, not cognitive processing cost. Your Combobox does not get easier to use because you gave it a nice shadow.
+
+## Relationship to Other Intelligence Tags
+
+Each Rafters component carries four intelligence tags that work together:
+
+| Tag                    | Question It Answers      | Example (Button)                                                                |
+| ---------------------- | ------------------------ | ------------------------------------------------------------------------------- |
+| `@cognitive-load`      | How hard is this to use? | 3/10 -- simple action trigger                                                   |
+| `@attention-economics` | Where should the eye go? | Size/variant hierarchy, max 1 primary per section                               |
+| `@trust-building`      | Does this feel safe?     | Destructive variants require confirmation, loading state prevents double-submit |
+| `@accessibility`       | Can everyone use this?   | 44px touch targets, high contrast, screen reader labels                         |
+
+These four tags form a complete picture of component intelligence. Cognitive load is the foundation -- it tells you the cost. The other three tell you how to manage that cost in context.
+
+## Complete Scoring Reference
+
+All 52+ Rafters UI components with their scores and primary cost drivers:
+
+| Score | Components                                                                                                                                                    | Primary Cost Driver                              |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 0     | Separator, Container, AspectRatio                                                                                                                             | Structural only, no cognitive demand             |
+| 1     | Skeleton, Kbd                                                                                                                                                 | Display only, minimal information                |
+| 2     | Badge, Breadcrumb, Label, Checkbox, Switch, Toggle, ButtonGroup, Card, Collapsible, Avatar, ScrollArea, Tooltip, Typography, Spinner, Empty, ToggleGroup      | Simple state or single information piece         |
+| 3     | Button, Alert, Sidebar, Accordion, Slider, RadioGroup, Table, Resizable, Field, HoverCard, Image, Embed, Item                                                 | One decision + one interaction mode              |
+| 4     | Input, Textarea, InputGroup, InputOTP, Carousel, Tabs, ContextMenu, DropdownMenu, Popover, Progress, Drawer, Grid, BlockWrapper, InlineToolbar, EditorToolbar | Data entry or menu scanning                      |
+| 5     | Sheet, DatePicker, Calendar, Select, NavigationMenu, Menubar, ColorPicker, BlockCanvas                                                                        | Multi-step interaction or spatial reasoning      |
+| 6     | Dialog, Command, Combobox                                                                                                                                     | Compound interaction modes or learning curve     |
+| 7     | AlertDialog                                                                                                                                                   | Full context disruption + consequential decision |
+
+No Rafters component scores above 7. Components that would score 8-10 are too complex for a single component -- they should be decomposed into multiple lower-scoring components composed together. That decomposition is what screen-level budgeting handles.
+
+## References
+
+[^1]: Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. _Cognitive Science_, 12(2), 257-285. https://doi.org/10.1207/s15516709cog1202_4
+
+[^2]: Sweller, J. (1994). Cognitive load theory, learning difficulty, and instructional design. _Learning and Instruction_, 4(4), 295-312. https://doi.org/10.1016/0959-4752(94)90003-5
+
+[^3]: Sweller, J., Ayres, P., & Kalyuga, S. (2011). _Cognitive Load Theory_. Springer. https://doi.org/10.1007/978-1-4419-8126-4
+
+[^4]: Miller, G. A. (1956). The magical number seven, plus or minus two. _Psychological Review_, 63(2), 81-97. https://doi.org/10.1037/h0043158
+
+[^5]: Cowan, N. (2001). The magical number 4 in short-term memory. _Behavioral and Brain Sciences_, 24(1), 87-114. https://doi.org/10.1017/S0140525X01003922
+
+[^6]: Baddeley, A. D., & Hitch, G. (1974). Working memory. In _The Psychology of Learning and Motivation_ (Vol. 8, pp. 47-89). Academic Press. https://doi.org/10.1016/S0079-7421(08)60452-1
+
+[^7]: Baddeley, A. (2000). The episodic buffer. _Trends in Cognitive Sciences_, 4(11), 417-423. https://doi.org/10.1016/S1364-6613(00)01538-2
+
+[^8]: Hart, S. G., & Staveland, L. E. (1988). Development of NASA-TLX. In _Human Mental Workload_ (pp. 139-183). North-Holland. https://doi.org/10.1016/S0166-4115(08)62386-9
+
+[^9]: Nielsen Norman Group. The CASTLE Framework for UX Metrics. https://www.nngroup.com/articles/castle-framework/
+
+[^10]: Wickens, C. D. (2008). Multiple Resources and Mental Workload. _Human Factors_, 50(3), 449-455. https://doi.org/10.1518/001872008X288394
+
+[^11]: Hick, W. E. (1952). On the rate of gain of information. _Quarterly Journal of Experimental Psychology_, 4(1), 11-26. https://doi.org/10.1080/17470215208416600
+
+[^12]: Fitts, P. M. (1954). The information capacity of the human motor system. _Journal of Experimental Psychology_, 47(6), 381-391. https://doi.org/10.1037/h0055392
+
+[^13]: Altmann, E. M., & Trafton, J. G. (2002). Memory for goals: An activation-based model. _Cognitive Science_, 26(1), 39-83. https://doi.org/10.1207/s15516709cog2601_2
+
+[^14]: Nielsen, J. (1994). _Usability Engineering_. Morgan Kaufmann. ISBN: 978-0125184069.
+
+[^15]: Kahneman, D. (1973). _Attention and Effort_. Prentice-Hall. ISBN: 978-0130505187.
+
+[^16]: Nielsen, J. (2006). Progressive Disclosure. _Nielsen Norman Group_. https://www.nngroup.com/articles/progressive-disclosure/

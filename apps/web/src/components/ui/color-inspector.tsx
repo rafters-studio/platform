@@ -21,21 +21,25 @@ import type {
   ColorIntelligence,
   ColorValue,
   PerceptualWeight,
-} from '@rafters/shared';
-import * as React from 'react';
-import classy from '@/src/lib/primitives/classy';
-import type { ScalePosition } from '@/src/lib/primitives/color-scale';
-import { createColorScale } from '@/src/lib/primitives/color-scale';
-import { createColorWeight } from '@/src/lib/primitives/color-weight';
-import type { ContrastMatrixOptions } from '@/src/lib/primitives/contrast-matrix';
-import { createContrastMatrix } from '@/src/lib/primitives/contrast-matrix';
-import { createCvdSimulation } from '@/src/lib/primitives/cvd-simulation';
-import { inP3, inSrgb } from '@/src/lib/primitives/oklch-gamut';
-import type { GamutTier, OklchColor } from '@/src/lib/primitives/types';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/src/components/ui/collapsible';
-import { Container } from '@/src/components/ui/container';
-import { Grid } from '@/src/components/ui/grid';
-import { H2, Lead, Muted, P, Small } from '@/src/components/ui/typography';
+} from "@rafters/shared";
+import * as React from "react";
+import classy from "@/src/lib/primitives/classy";
+import type { ScalePosition } from "@/src/lib/primitives/color-scale";
+import { createColorScale } from "@/src/lib/primitives/color-scale";
+import { createColorWeight } from "@/src/lib/primitives/color-weight";
+import type { ContrastMatrixOptions } from "@/src/lib/primitives/contrast-matrix";
+import { createContrastMatrix } from "@/src/lib/primitives/contrast-matrix";
+import { createCvdSimulation } from "@/src/lib/primitives/cvd-simulation";
+import { inP3, inSrgb } from "@/src/lib/primitives/oklch-gamut";
+import type { GamutTier, OklchColor } from "@/src/lib/primitives/types";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/src/components/ui/collapsible";
+import { Container } from "@/src/components/ui/container";
+import { Grid } from "@/src/components/ui/grid";
+import { H2, Lead, Muted, P, Small } from "@/src/components/ui/typography";
 
 // ============================================================================
 // Shared helpers
@@ -103,24 +107,24 @@ function ColorScale({
     <div
       ref={containerRef}
       className={classy(
-        'flex gap-0.5',
-        '[&_[role=option]]:h-8 [&_[role=option]]:flex-1 [&_[role=option]]:cursor-pointer',
-        '[&_[role=option]:first-child]:rounded-l [&_[role=option]:last-child]:rounded-r',
-        '[&_[role=option]:focus-visible]:ring-2 [&_[role=option]:focus-visible]:ring-primary-ring [&_[role=option]:focus-visible]:outline-none [&_[role=option]:focus-visible]:z-10',
+        "flex gap-0.5",
+        "[&_[role=option]]:h-8 [&_[role=option]]:flex-1 [&_[role=option]]:cursor-pointer",
+        "[&_[role=option]:first-child]:rounded-l [&_[role=option]:last-child]:rounded-r",
+        "[&_[role=option]:focus-visible]:ring-2 [&_[role=option]:focus-visible]:ring-primary-ring [&_[role=option]:focus-visible]:outline-none [&_[role=option]:focus-visible]:z-10",
         className,
       )}
     />
   );
 }
 
-ColorScale.displayName = 'ColorScale';
+ColorScale.displayName = "ColorScale";
 
 // ============================================================================
 // ContrastMatrix
 // ============================================================================
 
 export interface ContrastMatrixProps {
-  accessibility: ContrastMatrixOptions['accessibility'];
+  accessibility: ContrastMatrixOptions["accessibility"];
   scaleName: string;
   className?: string;
 }
@@ -138,23 +142,23 @@ function ContrastMatrix({ accessibility, scaleName, className }: ContrastMatrixP
     <div
       ref={containerRef}
       className={classy(
-        'text-xs',
-        '[&_[role=grid]]:grid [&_[role=grid]]:gap-px',
-        '[&_[role=row]]:flex [&_[role=row]]:gap-px',
-        '[&_[role=gridcell]]:h-5 [&_[role=gridcell]]:w-5 [&_[role=gridcell]]:rounded-xs',
-        '[&_[data-wcag-level=aaa]]:bg-emerald-500/30 [&_[data-wcag-level=aa]]:bg-amber-500/30 [&_[data-wcag-level=fail]]:bg-muted/10',
-        '[&_[role=gridcell]:focus-visible]:ring-1 [&_[role=gridcell]:focus-visible]:ring-primary-ring [&_[role=gridcell]:focus-visible]:outline-none',
-        '[&_[role=columnheader]]:h-5 [&_[role=columnheader]]:w-5 [&_[role=columnheader]]:text-center [&_[role=columnheader]]:text-muted-foreground/60 [&_[role=columnheader]]:leading-5',
-        '[&_[role=rowheader]]:h-5 [&_[role=rowheader]]:w-5 [&_[role=rowheader]]:text-center [&_[role=rowheader]]:text-muted-foreground/60 [&_[role=rowheader]]:leading-5',
-        '[&_[data-contrast-summary]]:mt-3 [&_[data-contrast-summary]]:text-xs [&_[data-contrast-summary]]:text-muted-foreground',
-        '[&_[data-apca]]:text-xs [&_[data-apca]]:text-muted-foreground [&_[data-apca]]:mt-1',
+        "text-xs",
+        "[&_[role=grid]]:grid [&_[role=grid]]:gap-px",
+        "[&_[role=row]]:flex [&_[role=row]]:gap-px",
+        "[&_[role=gridcell]]:h-5 [&_[role=gridcell]]:w-5 [&_[role=gridcell]]:rounded-xs",
+        "[&_[data-wcag-level=aaa]]:bg-emerald-500/30 [&_[data-wcag-level=aa]]:bg-amber-500/30 [&_[data-wcag-level=fail]]:bg-muted/10",
+        "[&_[role=gridcell]:focus-visible]:ring-1 [&_[role=gridcell]:focus-visible]:ring-primary-ring [&_[role=gridcell]:focus-visible]:outline-none",
+        "[&_[role=columnheader]]:h-5 [&_[role=columnheader]]:w-5 [&_[role=columnheader]]:text-center [&_[role=columnheader]]:text-muted-foreground/60 [&_[role=columnheader]]:leading-5",
+        "[&_[role=rowheader]]:h-5 [&_[role=rowheader]]:w-5 [&_[role=rowheader]]:text-center [&_[role=rowheader]]:text-muted-foreground/60 [&_[role=rowheader]]:leading-5",
+        "[&_[data-contrast-summary]]:mt-3 [&_[data-contrast-summary]]:text-xs [&_[data-contrast-summary]]:text-muted-foreground",
+        "[&_[data-apca]]:text-xs [&_[data-apca]]:text-muted-foreground [&_[data-apca]]:mt-1",
         className,
       )}
     />
   );
 }
 
-ContrastMatrix.displayName = 'ContrastMatrix';
+ContrastMatrix.displayName = "ContrastMatrix";
 
 // ============================================================================
 // CVDSimulation
@@ -195,18 +199,18 @@ function CVDSimulation({
     <div
       ref={containerRef}
       className={classy(
-        'flex flex-col gap-0.5',
-        '[&_[data-cvd-type]]:flex [&_[data-cvd-type]]:gap-0.5',
-        '[&_[data-swatch]]:h-6 [&_[data-swatch]]:flex-1',
-        '[&_[data-cvd-type]:first-child_[data-swatch]:first-child]:rounded-tl [&_[data-cvd-type]:first-child_[data-swatch]:last-child]:rounded-tr',
-        '[&_[data-cvd-type]:last-child_[data-swatch]:first-child]:rounded-bl [&_[data-cvd-type]:last-child_[data-swatch]:last-child]:rounded-br',
+        "flex flex-col gap-0.5",
+        "[&_[data-cvd-type]]:flex [&_[data-cvd-type]]:gap-0.5",
+        "[&_[data-swatch]]:h-6 [&_[data-swatch]]:flex-1",
+        "[&_[data-cvd-type]:first-child_[data-swatch]:first-child]:rounded-tl [&_[data-cvd-type]:first-child_[data-swatch]:last-child]:rounded-tr",
+        "[&_[data-cvd-type]:last-child_[data-swatch]:first-child]:rounded-bl [&_[data-cvd-type]:last-child_[data-swatch]:last-child]:rounded-br",
         className,
       )}
     />
   );
 }
 
-CVDSimulation.displayName = 'CVDSimulation';
+CVDSimulation.displayName = "CVDSimulation";
 
 // ============================================================================
 // ColorWeight
@@ -215,13 +219,13 @@ CVDSimulation.displayName = 'CVDSimulation';
 export interface ColorWeightProps {
   perceptualWeight: {
     weight: number;
-    density: 'light' | 'medium' | 'heavy';
+    density: "light" | "medium" | "heavy";
     balancingRecommendation: string;
   };
   atmosphericWeight: {
     distanceWeight: number;
-    temperature: 'warm' | 'neutral' | 'cool';
-    atmosphericRole: 'background' | 'midground' | 'foreground';
+    temperature: "warm" | "neutral" | "cool";
+    atmosphericRole: "background" | "midground" | "foreground";
   };
   className?: string;
 }
@@ -239,15 +243,15 @@ function ColorWeight({ perceptualWeight, atmosphericWeight, className }: ColorWe
     <div
       ref={containerRef}
       className={classy(
-        'flex flex-col gap-1 text-xs text-muted-foreground',
-        '[&_[role=note]]:mt-2 [&_[role=note]]:text-foreground [&_[role=note]]:text-xs [&_[role=note]]:font-sans',
+        "flex flex-col gap-1 text-xs text-muted-foreground",
+        "[&_[role=note]]:mt-2 [&_[role=note]]:text-foreground [&_[role=note]]:text-xs [&_[role=note]]:font-sans",
         className,
       )}
     />
   );
 }
 
-ColorWeight.displayName = 'ColorWeight';
+ColorWeight.displayName = "ColorWeight";
 
 // ============================================================================
 // TokenIntelligence
@@ -286,13 +290,13 @@ function TokenIntelligence({
   if (!hasContent) return null;
 
   return (
-    <div className={classy('flex flex-col gap-3 text-xs', className)} data-token-intelligence="">
+    <div className={classy("flex flex-col gap-3 text-xs", className)} data-token-intelligence="">
       {usagePatterns ? (
         <div data-usage-patterns="">
           {usagePatterns.dos.length > 0 ? (
             <div data-patterns-do="">
-              <span className={classy('font-medium text-emerald-400')}>Do:</span>
-              <ul className={classy('ml-4 mt-1 list-disc text-muted-foreground')}>
+              <span className={classy("font-medium text-emerald-400")}>Do:</span>
+              <ul className={classy("ml-4 mt-1 list-disc text-muted-foreground")}>
                 {usagePatterns.dos.map((d) => (
                   <li key={d}>{d}</li>
                 ))}
@@ -300,9 +304,9 @@ function TokenIntelligence({
             </div>
           ) : null}
           {usagePatterns.nevers.length > 0 ? (
-            <div data-patterns-never="" className={classy('mt-2')}>
-              <span className={classy('font-medium text-red-400')}>Never:</span>
-              <ul className={classy('ml-4 mt-1 list-disc text-muted-foreground')}>
+            <div data-patterns-never="" className={classy("mt-2")}>
+              <span className={classy("font-medium text-red-400")}>Never:</span>
+              <ul className={classy("ml-4 mt-1 list-disc text-muted-foreground")}>
                 {usagePatterns.nevers.map((n) => (
                   <li key={n}>{n}</li>
                 ))}
@@ -314,8 +318,8 @@ function TokenIntelligence({
 
       {usageContext && usageContext.length > 0 ? (
         <div data-usage-context="">
-          <span className={classy('font-medium text-muted-foreground')}>Context:</span>
-          <ul className={classy('ml-4 mt-1 list-disc text-muted-foreground')}>
+          <span className={classy("font-medium text-muted-foreground")}>Context:</span>
+          <ul className={classy("ml-4 mt-1 list-disc text-muted-foreground")}>
             {usageContext.map((c) => (
               <li key={c}>{c}</li>
             ))}
@@ -324,32 +328,32 @@ function TokenIntelligence({
       ) : null}
 
       {trustLevel ? (
-        <div data-trust-level="" className={classy('text-muted-foreground')}>
-          <span className={classy('font-medium')}>Trust:</span> {trustLevel}
+        <div data-trust-level="" className={classy("text-muted-foreground")}>
+          <span className={classy("font-medium")}>Trust:</span> {trustLevel}
         </div>
       ) : null}
 
       {consequence ? (
-        <div data-consequence="" className={classy('text-muted-foreground')}>
-          <span className={classy('font-medium')}>Consequence:</span> {consequence}
+        <div data-consequence="" className={classy("text-muted-foreground")}>
+          <span className={classy("font-medium")}>Consequence:</span> {consequence}
         </div>
       ) : null}
 
       {dependsOn && dependsOn.length > 0 ? (
-        <div data-depends-on="" className={classy('text-muted-foreground')}>
-          <span className={classy('font-medium')}>Depends on:</span> {dependsOn.join(', ')}
+        <div data-depends-on="" className={classy("text-muted-foreground")}>
+          <span className={classy("font-medium")}>Depends on:</span> {dependsOn.join(", ")}
         </div>
       ) : null}
 
       {generationRule ? (
-        <div data-generation-rule="" className={classy('text-muted-foreground')}>
-          <span className={classy('font-medium')}>Rule:</span> {generationRule}
+        <div data-generation-rule="" className={classy("text-muted-foreground")}>
+          <span className={classy("font-medium")}>Rule:</span> {generationRule}
         </div>
       ) : null}
 
       {userOverride ? (
-        <div data-user-override="" className={classy('text-muted-foreground')}>
-          <span className={classy('font-medium')}>Override:</span> {userOverride.previousValue}{' '}
+        <div data-user-override="" className={classy("text-muted-foreground")}>
+          <span className={classy("font-medium")}>Override:</span> {userOverride.previousValue}{" "}
           changed because: {userOverride.reason}
           {userOverride.context ? ` (${userOverride.context})` : null}
         </div>
@@ -358,7 +362,7 @@ function TokenIntelligence({
   );
 }
 
-TokenIntelligence.displayName = 'TokenIntelligence';
+TokenIntelligence.displayName = "TokenIntelligence";
 
 // ============================================================================
 // ColorStory -- intelligence prose from the API
@@ -380,15 +384,15 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
     intelligence.balancingGuidance;
 
   return (
-    <article className={classy('flex flex-col gap-3', className)} data-color-story="">
+    <article className={classy("flex flex-col gap-3", className)} data-color-story="">
       <p
         data-story-emotion=""
-        className={classy('text-sm leading-snug text-foreground font-medium')}
+        className={classy("text-sm leading-snug text-foreground font-medium")}
       >
         {emotionSentence}.
       </p>
 
-      <p data-story-reasoning="" className={classy('text-xs leading-relaxed text-foreground/50')}>
+      <p data-story-reasoning="" className={classy("text-xs leading-relaxed text-foreground/50")}>
         {intelligence.reasoning}
       </p>
 
@@ -396,17 +400,17 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
         <Collapsible>
           <CollapsibleTrigger
             className={classy(
-              'text-xs text-muted-foreground/40 hover:text-muted-foreground transition-colors cursor-pointer',
+              "text-xs text-muted-foreground/40 hover:text-muted-foreground transition-colors cursor-pointer",
             )}
           >
             More context
           </CollapsibleTrigger>
           <CollapsibleContent>
-            <div data-story-context="" className={classy('flex flex-col gap-2 mt-2')}>
+            <div data-story-context="" className={classy("flex flex-col gap-2 mt-2")}>
               {intelligence.culturalContext ? (
                 <p
                   data-story-culture=""
-                  className={classy('text-xs leading-relaxed text-foreground/35')}
+                  className={classy("text-xs leading-relaxed text-foreground/35")}
                 >
                   {intelligence.culturalContext}
                 </p>
@@ -414,7 +418,7 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
               {intelligence.usageGuidance ? (
                 <p
                   data-story-usage=""
-                  className={classy('text-xs leading-relaxed text-foreground/30')}
+                  className={classy("text-xs leading-relaxed text-foreground/30")}
                 >
                   {intelligence.usageGuidance}
                 </p>
@@ -422,7 +426,7 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
               {intelligence.accessibilityNotes ? (
                 <p
                   data-story-accessibility=""
-                  className={classy('text-xs leading-relaxed text-foreground/25')}
+                  className={classy("text-xs leading-relaxed text-foreground/25")}
                 >
                   {intelligence.accessibilityNotes}
                 </p>
@@ -430,7 +434,7 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
               {intelligence.balancingGuidance ? (
                 <p
                   data-story-balancing=""
-                  className={classy('text-xs leading-relaxed text-foreground/25')}
+                  className={classy("text-xs leading-relaxed text-foreground/25")}
                 >
                   {intelligence.balancingGuidance}
                 </p>
@@ -441,9 +445,9 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
       ) : null}
 
       {intelligence.metadata ? (
-        <div data-story-confidence="" className={classy('flex items-center gap-2')}>
+        <div data-story-confidence="" className={classy("flex items-center gap-2")}>
           <meter
-            className={classy('h-1 w-12 overflow-hidden rounded-full bg-muted/30')}
+            className={classy("h-1 w-12 overflow-hidden rounded-full bg-muted/30")}
             aria-label="Confidence"
             value={intelligence.metadata.confidence}
             min={0}
@@ -451,7 +455,7 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
           >
             {Math.round(intelligence.metadata.confidence * 100)}%
           </meter>
-          <span className={classy('text-foreground/20')} style={{ fontSize: '9px' }}>
+          <span className={classy("text-foreground/20")} style={{ fontSize: "9px" }}>
             {Math.round(intelligence.metadata.confidence * 100)}%
           </span>
         </div>
@@ -460,7 +464,7 @@ function ColorStory({ intelligence, className }: ColorStoryProps) {
   );
 }
 
-ColorStory.displayName = 'ColorStory';
+ColorStory.displayName = "ColorStory";
 
 // ============================================================================
 // ColorCharacter -- analysis summary: temperature, role, character
@@ -490,45 +494,45 @@ function ColorCharacter({
 
   // Weight controls how much vertical space the band occupies — heavier = taller
   const bandHeight = perceptualWeight
-    ? perceptualWeight.density === 'heavy'
-      ? 'h-10'
-      : perceptualWeight.density === 'medium'
-        ? 'h-7'
-        : 'h-5'
-    : 'h-7';
+    ? perceptualWeight.density === "heavy"
+      ? "h-10"
+      : perceptualWeight.density === "medium"
+        ? "h-7"
+        : "h-5"
+    : "h-7";
 
   return (
     <div
       role="img"
-      className={classy('flex flex-col', className)}
+      className={classy("flex flex-col", className)}
       data-color-character=""
       data-temperature={analysis.temperature}
       data-light={analysis.isLight}
       aria-label={[
         analysis.temperature,
-        analysis.isLight ? 'light' : 'dark',
+        analysis.isLight ? "light" : "dark",
         atmosphericWeight?.atmosphericRole,
         perceptualWeight?.density,
       ]
         .filter(Boolean)
-        .join(', ')}
+        .join(", ")}
     >
       {/* Three-layer atmospheric band using the actual color at three depths */}
-      <div className={classy('flex gap-0 rounded overflow-hidden', bandHeight)}>
+      <div className={classy("flex gap-0 rounded overflow-hidden", bandHeight)}>
         <div
-          className={classy('flex-1')}
+          className={classy("flex-1")}
           style={bgColor ? { backgroundColor: toOklchCss(bgColor) } : undefined}
           data-tag="background"
           title="background"
         />
         <div
-          className={classy('flex-1')}
+          className={classy("flex-1")}
           style={midColor ? { backgroundColor: toOklchCss(midColor) } : undefined}
           data-tag="midground"
           title="midground"
         />
         <div
-          className={classy('flex-1')}
+          className={classy("flex-1")}
           style={fgColor ? { backgroundColor: toOklchCss(fgColor) } : undefined}
           data-tag="foreground"
           title="foreground"
@@ -538,7 +542,7 @@ function ColorCharacter({
   );
 }
 
-ColorCharacter.displayName = 'ColorCharacter';
+ColorCharacter.displayName = "ColorCharacter";
 
 // ============================================================================
 // ContrastPreview -- real text on real backgrounds
@@ -556,24 +560,24 @@ function ContrastPreview({ scale, className }: ContrastPreviewProps) {
   const pairs: { bg: OklchColor; fg: OklchColor; bgLabel: string; fgLabel: string }[] = [];
 
   const lightBgs = [
-    { idx: 0, label: '50' },
-    { idx: 1, label: '100' },
-    { idx: 2, label: '200' },
+    { idx: 0, label: "50" },
+    { idx: 1, label: "100" },
+    { idx: 2, label: "200" },
   ];
   const darkFgs = [
-    { idx: 7, label: '700' },
-    { idx: 8, label: '800' },
-    { idx: 9, label: '900' },
+    { idx: 7, label: "700" },
+    { idx: 8, label: "800" },
+    { idx: 9, label: "900" },
   ];
   const darkBgs = [
-    { idx: 8, label: '800' },
-    { idx: 9, label: '900' },
-    { idx: 10, label: '950' },
+    { idx: 8, label: "800" },
+    { idx: 9, label: "900" },
+    { idx: 10, label: "950" },
   ];
   const lightFgs = [
-    { idx: 0, label: '50' },
-    { idx: 1, label: '100' },
-    { idx: 2, label: '200' },
+    { idx: 0, label: "50" },
+    { idx: 1, label: "100" },
+    { idx: 2, label: "200" },
   ];
 
   // Best light-on-dark and dark-on-light pairs
@@ -601,24 +605,24 @@ function ContrastPreview({ scale, className }: ContrastPreviewProps) {
 
   return (
     <ul
-      className={classy('flex flex-col gap-1 list-none p-0 m-0', className)}
+      className={classy("flex flex-col gap-1 list-none p-0 m-0", className)}
       data-contrast-preview=""
       aria-label="Contrast preview samples"
     >
       {shown.map((pair) => (
         <li
           key={`${pair.bgLabel}-${pair.fgLabel}`}
-          className={classy('flex items-center gap-2 rounded px-2.5 py-1.5')}
+          className={classy("flex items-center gap-2 rounded px-2.5 py-1.5")}
           style={{ backgroundColor: toOklchCss(pair.bg), color: toOklchCss(pair.fg) }}
           data-bg={pair.bgLabel}
           data-fg={pair.fgLabel}
         >
-          <span className={classy('flex-1 text-xs leading-snug truncate')}>
+          <span className={classy("flex-1 text-xs leading-snug truncate")}>
             The quick brown fox jumps over the lazy dog
           </span>
           <span
-            className={classy('shrink-0')}
-            style={{ fontSize: '8px', color: 'inherit', opacity: 0.4 }}
+            className={classy("shrink-0")}
+            style={{ fontSize: "8px", color: "inherit", opacity: 0.4 }}
           >
             {pair.bgLabel}/{pair.fgLabel}
           </span>
@@ -628,7 +632,7 @@ function ContrastPreview({ scale, className }: ContrastPreviewProps) {
   );
 }
 
-ContrastPreview.displayName = 'ContrastPreview';
+ContrastPreview.displayName = "ContrastPreview";
 
 // ============================================================================
 // ColorChip -- palette specimen with vertical genie reveal
@@ -653,34 +657,34 @@ function ColorChip({ color, selected, onSelect }: ColorChipProps) {
     <button
       type="button"
       className={classy(
-        'flex w-16 flex-col items-center gap-0 p-0 outline-none',
-        'cursor-pointer select-none',
-        'focus-visible:ring-2 focus-visible:ring-primary-ring focus-visible:rounded',
+        "flex w-16 flex-col items-center gap-0 p-0 outline-none",
+        "cursor-pointer select-none",
+        "focus-visible:ring-2 focus-visible:ring-primary-ring focus-visible:rounded",
       )}
       onClick={onSelect}
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
       aria-current={selected || undefined}
-      aria-label={`${color.name}${color.token ? ` (${color.token})` : ''}`}
+      aria-label={`${color.name}${color.token ? ` (${color.token})` : ""}`}
     >
       <div
         className={classy(
-          'w-full shrink-0 transition-all duration-200 ease-out',
-          reveal ? 'h-10 rounded' : 'h-16 rounded-sm',
+          "w-full shrink-0 transition-all duration-200 ease-out",
+          reveal ? "h-10 rounded" : "h-16 rounded-sm",
         )}
         style={swatchStyle}
         aria-hidden="true"
       />
       <div
         className={classy(
-          'flex w-full flex-col items-center overflow-hidden transition-all duration-200',
-          reveal ? 'mt-1.5 max-h-12 opacity-100' : 'max-h-0 opacity-0',
+          "flex w-full flex-col items-center overflow-hidden transition-all duration-200",
+          reveal ? "mt-1.5 max-h-12 opacity-100" : "max-h-0 opacity-0",
         )}
       >
-        <span className={classy('truncate text-center text-xs font-medium text-foreground w-full')}>
+        <span className={classy("truncate text-center text-xs font-medium text-foreground w-full")}>
           {color.token ?? color.name}
         </span>
-        <span className={classy('truncate text-center text-xs text-muted-foreground/30 w-full')}>
+        <span className={classy("truncate text-center text-xs text-muted-foreground/30 w-full")}>
           {color.name}
         </span>
       </div>
@@ -711,10 +715,10 @@ function ColorDetail({ color, onClose }: ColorDetailProps) {
 
   React.useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     }
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
   return (
@@ -723,68 +727,68 @@ function ColorDetail({ color, onClose }: ColorDetailProps) {
       gap="6"
       padding="6"
       size="full"
-      className={classy('rounded-lg')}
+      className={classy("rounded-lg")}
       style={washColor ? { backgroundColor: toOklchAlpha(washColor, 0.045) } : undefined}
     >
       {/* Hero: the color speaks */}
       <Container
         as="div"
         padding="8"
-        className={classy('flex flex-col justify-end rounded-lg')}
+        className={classy("flex flex-col justify-end rounded-lg")}
         style={{
           backgroundColor: toOklchCss(baseColor),
           color: toOklchCss(overlayColor),
-          minHeight: '12rem',
+          minHeight: "12rem",
         }}
         data-color-hero=""
       >
         {emotionSentence ? (
           <Lead
-            className={classy('font-light')}
-            style={{ color: 'inherit', opacity: 0.85 }}
+            className={classy("font-light")}
+            style={{ color: "inherit", opacity: 0.85 }}
             data-hero-emotion=""
           >
             {emotionSentence}.
           </Lead>
         ) : null}
-        <div className={classy('flex items-baseline gap-3 mt-4')}>
-          <H2 className={classy('text-base')} style={{ color: 'inherit' }}>
+        <div className={classy("flex items-baseline gap-3 mt-4")}>
+          <H2 className={classy("text-base")} style={{ color: "inherit" }}>
             {color.name}
           </H2>
           {color.token ? (
-            <Small style={{ color: 'inherit', opacity: 0.5 }}>{color.token}</Small>
+            <Small style={{ color: "inherit", opacity: 0.5 }}>{color.token}</Small>
           ) : null}
-          <Muted className={classy('ml-auto')} style={{ color: 'inherit', opacity: 0.3 }}>
+          <Muted className={classy("ml-auto")} style={{ color: "inherit", opacity: 0.3 }}>
             {baseColor.l.toFixed(2)} / {baseColor.c.toFixed(3)} / {baseColor.h.toFixed(0)}
           </Muted>
         </div>
 
         {/* At-a-glance badges: WCAG, APCA, gamut */}
-        <div className={classy('flex flex-wrap gap-2 mt-4')}>
+        <div className={classy("flex flex-wrap gap-2 mt-4")}>
           {hasAccessibility && color.accessibility ? (
             <>
               <Small
-                className={classy('rounded px-2 py-0.5')}
-                style={{ backgroundColor: toOklchAlpha(overlayColor, 0.12), color: 'inherit' }}
+                className={classy("rounded px-2 py-0.5")}
+                style={{ backgroundColor: toOklchAlpha(overlayColor, 0.12), color: "inherit" }}
               >
                 White {Math.round(color.accessibility.onWhite.contrastRatio * 10) / 10}:1
-                {color.accessibility.onWhite.wcagAA ? ' AA' : ''}
-                {color.accessibility.onWhite.wcagAAA ? ' AAA' : ''}
+                {color.accessibility.onWhite.wcagAA ? " AA" : ""}
+                {color.accessibility.onWhite.wcagAAA ? " AAA" : ""}
               </Small>
               <Small
-                className={classy('rounded px-2 py-0.5')}
-                style={{ backgroundColor: toOklchAlpha(overlayColor, 0.12), color: 'inherit' }}
+                className={classy("rounded px-2 py-0.5")}
+                style={{ backgroundColor: toOklchAlpha(overlayColor, 0.12), color: "inherit" }}
               >
                 Black {Math.round(color.accessibility.onBlack.contrastRatio * 10) / 10}:1
-                {color.accessibility.onBlack.wcagAA ? ' AA' : ''}
-                {color.accessibility.onBlack.wcagAAA ? ' AAA' : ''}
+                {color.accessibility.onBlack.wcagAA ? " AA" : ""}
+                {color.accessibility.onBlack.wcagAAA ? " AAA" : ""}
               </Small>
               {color.accessibility.apca ? (
                 <Small
-                  className={classy('rounded px-2 py-0.5')}
-                  style={{ backgroundColor: toOklchAlpha(overlayColor, 0.08), color: 'inherit' }}
+                  className={classy("rounded px-2 py-0.5")}
+                  style={{ backgroundColor: toOklchAlpha(overlayColor, 0.08), color: "inherit" }}
                 >
-                  APCA {Math.round(color.accessibility.apca.onWhite * 10) / 10} /{' '}
+                  APCA {Math.round(color.accessibility.apca.onWhite * 10) / 10} /{" "}
                   {Math.round(color.accessibility.apca.onBlack * 10) / 10}
                 </Small>
               ) : null}
@@ -792,16 +796,16 @@ function ColorDetail({ color, onClose }: ColorDetailProps) {
           ) : null}
           {inSrgb(baseColor.l, baseColor.c, baseColor.h) ? (
             <Small
-              className={classy('rounded px-2 py-0.5')}
-              style={{ backgroundColor: toOklchAlpha(overlayColor, 0.08), color: 'inherit' }}
+              className={classy("rounded px-2 py-0.5")}
+              style={{ backgroundColor: toOklchAlpha(overlayColor, 0.08), color: "inherit" }}
             >
               sRGB
             </Small>
           ) : null}
           {inP3(baseColor.l, baseColor.c, baseColor.h) ? (
             <Small
-              className={classy('rounded px-2 py-0.5')}
-              style={{ backgroundColor: toOklchAlpha(overlayColor, 0.08), color: 'inherit' }}
+              className={classy("rounded px-2 py-0.5")}
+              style={{ backgroundColor: toOklchAlpha(overlayColor, 0.08), color: "inherit" }}
             >
               P3
             </Small>
@@ -827,9 +831,9 @@ function ColorDetail({ color, onClose }: ColorDetailProps) {
               }}
               scaleName={color.name}
               className={classy(
-                '[&_[role=gridcell]]:h-6 [&_[role=gridcell]]:w-6',
-                '[&_[role=columnheader]]:h-6 [&_[role=columnheader]]:w-6',
-                '[&_[role=rowheader]]:h-6 [&_[role=rowheader]]:w-6',
+                "[&_[role=gridcell]]:h-6 [&_[role=gridcell]]:w-6",
+                "[&_[role=columnheader]]:h-6 [&_[role=columnheader]]:w-6",
+                "[&_[role=rowheader]]:h-6 [&_[role=rowheader]]:w-6",
               )}
             />
           ) : null}
@@ -891,8 +895,8 @@ function ColorFamily({
   className,
 }: ColorFamilyProps) {
   const [hovered, setHovered] = React.useState(false);
-  const state = selected ? 'selected' : hovered ? 'hover' : 'resting';
-  const showScale = state === 'hover' || state === 'selected';
+  const state = selected ? "selected" : hovered ? "hover" : "resting";
+  const showScale = state === "hover" || state === "selected";
 
   const baseColor = getBaseColor(color);
   const swatchStyle = React.useMemo(
@@ -903,10 +907,10 @@ function ColorFamily({
   return (
     <article
       data-color-state={state}
-      {...(selected ? { 'aria-current': true } : {})}
-      aria-label={`${color.name}${color.token ? ` (${color.token})` : ''}`}
+      {...(selected ? { "aria-current": true } : {})}
+      aria-label={`${color.name}${color.token ? ` (${color.token})` : ""}`}
       className={classy(
-        'flex flex-col rounded-lg border border-border p-3 outline-none transition-all duration-200',
+        "flex flex-col rounded-lg border border-border p-3 outline-none transition-all duration-200",
         className,
       )}
       onPointerEnter={() => !selected && setHovered(true)}
@@ -915,38 +919,42 @@ function ColorFamily({
       <button
         type="button"
         className={classy(
-          'flex w-full items-center gap-3 text-left cursor-pointer select-none outline-none',
-          'focus-visible:ring-2 focus-visible:ring-primary-ring focus-visible:rounded-sm',
+          "flex w-full items-center gap-3 text-left cursor-pointer select-none outline-none",
+          "focus-visible:ring-2 focus-visible:ring-primary-ring focus-visible:rounded-sm",
         )}
         onClick={() => (selected ? onDeselect?.() : onSelect?.())}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
+          if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            selected ? onDeselect?.() : onSelect?.();
-          } else if (e.key === 'Escape' && selected) {
+            if (selected) {
+              onDeselect?.();
+            } else {
+              onSelect?.();
+            }
+          } else if (e.key === "Escape" && selected) {
             e.preventDefault();
             onDeselect?.();
           }
         }}
         aria-expanded={selected}
-        aria-label={`${selected ? 'Collapse' : 'Expand'} ${color.name} color family`}
+        aria-label={`${selected ? "Collapse" : "Expand"} ${color.name} color family`}
       >
         <div
-          className={classy('h-8 w-8 shrink-0 rounded-md border border-border')}
+          className={classy("h-8 w-8 shrink-0 rounded-md border border-border")}
           style={swatchStyle}
           aria-hidden="true"
         />
-        <div className={classy('flex flex-col')}>
-          <span className={classy('text-sm font-medium')}>{color.name}</span>
+        <div className={classy("flex flex-col")}>
+          <span className={classy("text-sm font-medium")}>{color.name}</span>
           {color.token ? (
-            <span className={classy('text-xs text-muted-foreground')}>{color.token}</span>
+            <span className={classy("text-xs text-muted-foreground")}>{color.token}</span>
           ) : null}
         </div>
       </button>
       <div
         className={classy(
-          'overflow-hidden transition-all duration-200',
-          showScale ? 'mt-3 max-h-96 opacity-100' : 'max-h-0 opacity-0',
+          "overflow-hidden transition-all duration-200",
+          showScale ? "mt-3 max-h-96 opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <ColorScale scale={color.scale} name={color.name} />
@@ -955,7 +963,7 @@ function ColorFamily({
   );
 }
 
-ColorFamily.displayName = 'ColorFamily';
+ColorFamily.displayName = "ColorFamily";
 
 // ============================================================================
 // ColorInspector -- specimen gallery: chip palette + immersive detail
@@ -974,7 +982,7 @@ function ColorInspector({ colors, className }: ColorInspectorProps) {
     <Container as="section" gap="0" aria-label="Color families" className={className}>
       {/* Horizontal chip palette */}
       <nav
-        className={classy('flex gap-3 overflow-x-auto px-4 py-5')}
+        className={classy("flex gap-3 overflow-x-auto px-4 py-5")}
         aria-label="Color family list"
       >
         {colors.map((color, index) => (
@@ -992,7 +1000,7 @@ function ColorInspector({ colors, className }: ColorInspectorProps) {
         {selectedColor ? (
           <ColorDetail color={selectedColor} onClose={() => setSelectedIndex(null)} />
         ) : (
-          <Muted className={classy('flex items-center justify-center py-24')}>
+          <Muted className={classy("flex items-center justify-center py-24")}>
             Select a color to inspect
           </Muted>
         )}
@@ -1001,7 +1009,7 @@ function ColorInspector({ colors, className }: ColorInspectorProps) {
   );
 }
 
-ColorInspector.displayName = 'ColorInspector';
+ColorInspector.displayName = "ColorInspector";
 
 // ============================================================================
 // Exports

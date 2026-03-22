@@ -1,9 +1,10 @@
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-	test: {
-		include: ["**/*.test.ts"],
-		exclude: ["node_modules", "dist", ".wrangler"],
-		globals: true,
-	},
+  test: {
+    include: ["**/*.test.ts"],
+    exclude: ["**/node_modules/**", "dist", ".wrangler"],
+    globals: true,
+    passWithNoTests: true,
+  },
 });

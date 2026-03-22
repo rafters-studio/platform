@@ -4,27 +4,32 @@
   "compatibility_date": "2026-03-18",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "d1_databases": [
     {
       "binding": "AUTH_DB",
       "database_name": "rafters-auth",
-      "database_id": ""
-    }
+      "database_id": "",
+    },
   ],
   // KV ID is empty until `wrangler kv namespace create SESSION_KV` is run
   // For local dev, wrangler uses a local KV emulator automatically
   "kv_namespaces": [
     {
       "binding": "SESSION_KV",
-      "id": "placeholder"
-    }
+      "id": "placeholder",
+    },
   ],
+  "vars": {
+    "FROM_EMAIL": "hello@rafters.studio",
+    "RESEND_API_KEY": "",
+  },
+  // In production: wrangler secret put RESEND_API_KEY (overrides the empty var)
   "r2_buckets": [
     {
       "binding": "SNAPSHOTS",
-      "bucket_name": "rafters-snapshots"
-    }
-  ]
+      "bucket_name": "rafters-snapshots",
+    },
+  ],
 }

@@ -16,20 +16,20 @@
  * ```
  */
 
-import type { CleanupFunction, GamutTier, OklchColor } from '@/src/lib/primitives/types';
+import type { CleanupFunction, GamutTier, OklchColor } from "@/src/lib/primitives/types";
 
 const SCALE_KEYS = [
-  '50',
-  '100',
-  '200',
-  '300',
-  '400',
-  '500',
-  '600',
-  '700',
-  '800',
-  '900',
-  '950',
+  "50",
+  "100",
+  "200",
+  "300",
+  "400",
+  "500",
+  "600",
+  "700",
+  "800",
+  "900",
+  "950",
 ] as const;
 export type ScalePosition = (typeof SCALE_KEYS)[number];
 
@@ -58,42 +58,42 @@ export function createColorScale(
   container: HTMLElement,
   options: ColorScaleOptions,
 ): CleanupFunction {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return () => {};
   }
 
   const { scale, name, tiers, onSwatchFocus, onSwatchClick } = options;
-  const prevRole = container.getAttribute('role');
-  const prevAriaLabel = container.getAttribute('aria-label');
+  const prevRole = container.getAttribute("role");
+  const prevAriaLabel = container.getAttribute("aria-label");
   const swatches: HTMLElement[] = [];
   let activeIndex = 0;
 
-  container.setAttribute('role', 'listbox');
-  container.setAttribute('aria-label', `${name} color scale`);
-  container.setAttribute('aria-orientation', 'horizontal');
+  container.setAttribute("role", "listbox");
+  container.setAttribute("aria-label", `${name} color scale`);
+  container.setAttribute("aria-orientation", "horizontal");
 
   for (let i = 0; i < SCALE_KEYS.length; i++) {
     const position = SCALE_KEYS[i];
     const value = scale[i];
     if (!position || !value) continue;
 
-    const el = document.createElement('div');
-    el.setAttribute('role', 'option');
-    el.setAttribute('aria-label', formatLabel(name, position, value));
-    el.setAttribute('data-scale-position', position);
-    el.setAttribute('tabindex', i === 0 ? '0' : '-1');
+    const el = document.createElement("div");
+    el.setAttribute("role", "option");
+    el.setAttribute("aria-label", formatLabel(name, position, value));
+    el.setAttribute("data-scale-position", position);
+    el.setAttribute("tabindex", i === 0 ? "0" : "-1");
     el.style.backgroundColor = toOklchString(value);
 
     const tier = tiers?.[i];
     if (tier) {
-      el.setAttribute('data-gamut-tier', tier);
+      el.setAttribute("data-gamut-tier", tier);
     }
 
-    el.setAttribute('data-l', value.l.toFixed(3));
-    el.setAttribute('data-c', value.c.toFixed(4));
-    el.setAttribute('data-h', value.h.toFixed(1));
+    el.setAttribute("data-l", value.l.toFixed(3));
+    el.setAttribute("data-c", value.c.toFixed(4));
+    el.setAttribute("data-h", value.h.toFixed(1));
 
-    el.addEventListener('click', () => {
+    el.addEventListener("click", () => {
       moveFocus(i);
       onSwatchClick?.(position, i);
     });
@@ -106,8 +106,8 @@ export function createColorScale(
     const prev = swatches[activeIndex];
     const next = swatches[newIndex];
     if (!prev || !next) return;
-    prev.setAttribute('tabindex', '-1');
-    next.setAttribute('tabindex', '0');
+    prev.setAttribute("tabindex", "-1");
+    next.setAttribute("tabindex", "0");
     next.focus();
     activeIndex = newIndex;
 
@@ -120,16 +120,16 @@ export function createColorScale(
   function handleKeydown(event: KeyboardEvent) {
     let newIndex = activeIndex;
     switch (event.key) {
-      case 'ArrowRight':
+      case "ArrowRight":
         newIndex = activeIndex < swatches.length - 1 ? activeIndex + 1 : 0;
         break;
-      case 'ArrowLeft':
+      case "ArrowLeft":
         newIndex = activeIndex > 0 ? activeIndex - 1 : swatches.length - 1;
         break;
-      case 'Home':
+      case "Home":
         newIndex = 0;
         break;
-      case 'End':
+      case "End":
         newIndex = swatches.length - 1;
         break;
       default:
@@ -139,16 +139,16 @@ export function createColorScale(
     moveFocus(newIndex);
   }
 
-  container.addEventListener('keydown', handleKeydown);
+  container.addEventListener("keydown", handleKeydown);
 
   return () => {
-    container.removeEventListener('keydown', handleKeydown);
+    container.removeEventListener("keydown", handleKeydown);
     for (const swatch of swatches) {
       swatch.remove();
     }
-    restoreAttribute(container, 'role', prevRole);
-    restoreAttribute(container, 'aria-label', prevAriaLabel);
-    container.removeAttribute('aria-orientation');
+    restoreAttribute(container, "role", prevRole);
+    restoreAttribute(container, "aria-label", prevAriaLabel);
+    container.removeAttribute("aria-orientation");
   };
 }
 

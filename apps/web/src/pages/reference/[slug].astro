@@ -1,0 +1,28 @@
+---
+import { getEntry, render } from "astro:content";
+import Layout from "../../layouts/Base.astro";
+
+const { slug } = Astro.params;
+
+if (!slug) {
+	return Astro.redirect("/reference");
+}
+
+const entry = await getEntry("reference", slug);
+
+if (!entry) {
+	return Astro.redirect("/reference");
+}
+
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} - Rafters`}>
+	<main class="max-w-3xl mx-auto px-6 py-16">
+		<h1 class="text-4xl font-bold tracking-tight mb-4">{entry.data.title}</h1>
+		<p class="text-xl leading-relaxed text-muted-foreground mb-12">{entry.data.description}</p>
+		<article class="prose prose-lg">
+			<Content />
+		</article>
+	</main>
+</Layout>

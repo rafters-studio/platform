@@ -38,10 +38,10 @@
  * </Blockquote>
  * ```
  */
-import * as React from 'react';
-import { useCallback, useEffect, useRef } from 'react';
-import classy from '@/src/lib/primitives/classy';
-import type { InlineContent, InlineMark } from '@/src/lib/primitives/types';
+import * as React from "react";
+import { useCallback, useEffect, useRef } from "react";
+import classy from "@/src/lib/primitives/classy";
+import type { InlineContent, InlineMark } from "@/src/lib/primitives/types";
 
 // ============================================================================
 // Editable Typography Props (R-200)
@@ -76,27 +76,27 @@ export interface EditableTypographyProps {
 
 // Typography variant classes using semantic design tokens
 const typographyClasses = {
-  h1: 'scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-foreground',
-  h2: 'scroll-m-20 text-3xl font-semibold tracking-tight text-foreground',
-  h3: 'scroll-m-20 text-2xl font-semibold tracking-tight text-foreground',
-  h4: 'scroll-m-20 text-xl font-semibold tracking-tight text-foreground',
-  p: 'leading-7 text-foreground',
-  lead: 'text-xl text-muted-foreground',
-  large: 'text-lg font-semibold text-foreground',
-  small: 'text-sm font-medium leading-none text-foreground',
-  muted: 'text-sm text-muted-foreground',
-  code: 'rounded bg-muted px-1 py-0.5 font-mono text-sm text-foreground',
-  blockquote: 'mt-6 border-l-2 border-border pl-6 italic text-foreground',
+  h1: "scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-foreground",
+  h2: "scroll-m-20 text-3xl font-semibold tracking-tight text-foreground",
+  h3: "scroll-m-20 text-2xl font-semibold tracking-tight text-foreground",
+  h4: "scroll-m-20 text-xl font-semibold tracking-tight text-foreground",
+  p: "leading-7 text-foreground",
+  lead: "text-xl text-muted-foreground",
+  large: "text-lg font-semibold text-foreground",
+  small: "text-sm font-medium leading-none text-foreground",
+  muted: "text-sm text-muted-foreground",
+  code: "rounded bg-muted px-1 py-0.5 font-mono text-sm text-foreground",
+  blockquote: "mt-6 border-l-2 border-border pl-6 italic text-foreground",
   // List classes (R-200c)
-  ul: 'my-6 ml-6 list-disc [&>li]:mt-2 text-foreground',
-  ol: 'my-6 ml-6 list-decimal [&>li]:mt-2 text-foreground',
-  li: 'leading-7',
+  ul: "my-6 ml-6 list-disc [&>li]:mt-2 text-foreground",
+  ol: "my-6 ml-6 list-decimal [&>li]:mt-2 text-foreground",
+  li: "leading-7",
   // CodeBlock classes (R-200e)
   codeblock:
-    'relative rounded-lg bg-muted p-4 font-mono text-sm overflow-x-auto text-foreground [&_code]:bg-transparent [&_code]:p-0',
+    "relative rounded-lg bg-muted p-4 font-mono text-sm overflow-x-auto text-foreground [&_code]:bg-transparent [&_code]:p-0",
   // Additional typography (Kbd is a separate component in kbd.tsx)
-  mark: 'bg-accent text-accent-foreground px-1 rounded',
-  abbr: 'cursor-help underline decoration-dotted underline-offset-4',
+  mark: "bg-accent text-accent-foreground px-1 rounded",
+  abbr: "cursor-help underline decoration-dotted underline-offset-4",
 } as const;
 
 export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
@@ -110,7 +110,8 @@ export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
  * provides simplified callback signatures for editor use.
  */
 export interface EditableHeadingProps
-  extends Omit<TypographyProps, 'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'>,
+  extends
+    Omit<TypographyProps, "onChange" | "onBlur" | "onFocus" | "onKeyDown">,
     EditableTypographyProps {
   /** Content as string for controlled editing */
   children?: React.ReactNode;
@@ -121,7 +122,8 @@ export interface EditableHeadingProps
  * Supports InlineContent[] for rich text with inline formatting.
  */
 export interface EditableParagraphProps
-  extends Omit<TypographyProps, 'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'>,
+  extends
+    Omit<TypographyProps, "onChange" | "onBlur" | "onFocus" | "onKeyDown">,
     EditableTypographyProps {
   /** Content as string or InlineContent[] for rich text */
   children?: React.ReactNode;
@@ -152,7 +154,8 @@ export interface SelectionInfo {
  * Supports InlineContent[] for the quote body and optional citation editing.
  */
 export interface EditableQuoteProps
-  extends Omit<TypographyProps, 'onChange' | 'onBlur' | 'onFocus' | 'onKeyDown'>,
+  extends
+    Omit<TypographyProps, "onChange" | "onBlur" | "onFocus" | "onKeyDown">,
     EditableTypographyProps {
   /** Quote content */
   children?: React.ReactNode;
@@ -180,7 +183,7 @@ export interface ListItem {
  * Extended props for editable list components (R-200c)
  * Supports ordered and unordered lists with item-level editing.
  */
-export interface EditableListProps extends Omit<TypographyProps, 'onChange'> {
+export interface EditableListProps extends Omit<TypographyProps, "onChange"> {
   /** List items */
   items: ListItem[];
   /** Whether the list is ordered (numbered) */
@@ -205,7 +208,7 @@ export interface EditableListProps extends Omit<TypographyProps, 'onChange'> {
  * Extended props for editable code block components (R-200e)
  * Supports multi-line code with optional syntax highlighting.
  */
-export interface EditableCodeBlockProps extends Omit<TypographyProps, 'onChange'> {
+export interface EditableCodeBlockProps extends Omit<TypographyProps, "onChange"> {
   /** Code content */
   children: string;
   /** Programming language for syntax highlighting */
@@ -242,13 +245,13 @@ function useEditableHeading({
   onBackspaceAtStart,
 }: EditableTypographyProps) {
   const elementRef = useRef<HTMLElement>(null);
-  const lastContentRef = useRef<string>('');
+  const lastContentRef = useRef<string>("");
 
   // Handle input events
   const handleInput = useCallback(() => {
     if (!elementRef.current || !onChange) return;
 
-    const content = elementRef.current.textContent ?? '';
+    const content = elementRef.current.textContent ?? "";
     if (content !== lastContentRef.current) {
       lastContentRef.current = content;
       onChange(content);
@@ -261,11 +264,11 @@ function useEditableHeading({
       onKeyDown?.(event);
       if (event.defaultPrevented) return;
 
-      if (event.key === 'Enter') {
+      if (event.key === "Enter") {
         // Prevent default line break in headings
         event.preventDefault();
         onEnter?.();
-      } else if (event.key === 'Backspace') {
+      } else if (event.key === "Backspace") {
         const selection = window.getSelection();
         const element = elementRef.current;
         if (
@@ -296,9 +299,9 @@ function useEditableHeading({
   // Handle paste - strip formatting for headings (plain text only)
   const handlePaste = useCallback((event: React.ClipboardEvent) => {
     event.preventDefault();
-    const text = event.clipboardData.getData('text/plain');
+    const text = event.clipboardData.getData("text/plain");
     // Remove line breaks from pasted text
-    const singleLine = text.replace(/[\r\n]+/g, ' ');
+    const singleLine = text.replace(/[\r\n]+/g, " ");
     insertTextAtSelection(singleLine);
   }, []);
 
@@ -307,7 +310,7 @@ function useEditableHeading({
     if (!editable || !elementRef.current) return;
 
     const element = elementRef.current;
-    const currentContent = element.textContent ?? '';
+    const currentContent = element.textContent ?? "";
     const expectedContent = lastContentRef.current;
 
     // Only update DOM if it differs (avoid cursor jumping)
@@ -326,8 +329,8 @@ function useEditableHeading({
         onFocus: handleFocus,
         onBlur: handleBlur,
         onPaste: handlePaste,
-        'data-placeholder': placeholder,
-        'aria-placeholder': placeholder,
+        "data-placeholder": placeholder,
+        "aria-placeholder": placeholder,
       }
     : {};
 
@@ -340,11 +343,11 @@ function useEditableHeading({
 
 /** Mark to HTML tag mapping for rendering InlineContent */
 const markToTag: Record<InlineMark, string> = {
-  bold: 'strong',
-  italic: 'em',
-  code: 'code',
-  strikethrough: 's',
-  link: 'a',
+  bold: "strong",
+  italic: "em",
+  code: "code",
+  strikethrough: "s",
+  link: "a",
 };
 
 /**
@@ -359,7 +362,7 @@ function inlineContentToHtml(content: InlineContent[]): string {
       const marks = segment.marks ?? [];
       for (const mark of marks) {
         const tag = markToTag[mark];
-        if (mark === 'link' && segment.href) {
+        if (mark === "link" && segment.href) {
           html = `<${tag} href="${escapeHtml(segment.href)}">${html}</${tag}>`;
         } else {
           html = `<${tag}>${html}</${tag}>`;
@@ -367,7 +370,7 @@ function inlineContentToHtml(content: InlineContent[]): string {
       }
       return html;
     })
-    .join('');
+    .join("");
 }
 
 /**
@@ -375,10 +378,10 @@ function inlineContentToHtml(content: InlineContent[]): string {
  */
 function escapeHtml(text: string): string {
   return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 /**
@@ -419,7 +422,7 @@ function insertHtmlAtSelection(html: string): void {
   range.deleteContents();
 
   // Create a temporary container to parse the HTML
-  const tempDiv = document.createElement('div');
+  const tempDiv = document.createElement("div");
   tempDiv.innerHTML = html;
 
   // Insert all child nodes from the temp container
@@ -445,7 +448,7 @@ function insertHtmlAtSelection(html: string): void {
  */
 function htmlToInlineContent(html: string): InlineContent[] {
   // Create a temporary element to parse the HTML
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   // This innerHTML is safe because we're parsing existing contenteditable content
   // and the output goes through our typed InlineContent structure
   div.innerHTML = html;
@@ -454,13 +457,13 @@ function htmlToInlineContent(html: string): InlineContent[] {
 
   function traverse(node: Node, activeMarks: InlineMark[], href?: string): void {
     if (node.nodeType === Node.TEXT_NODE) {
-      const text = node.textContent ?? '';
+      const text = node.textContent ?? "";
       if (text) {
         const content: InlineContent = { text };
         if (activeMarks.length > 0) {
           content.marks = [...activeMarks];
         }
-        if (activeMarks.includes('link') && href) {
+        if (activeMarks.includes("link") && href) {
           content.href = href;
         }
         result.push(content);
@@ -476,25 +479,25 @@ function htmlToInlineContent(html: string): InlineContent[] {
 
       // Map tags to marks
       switch (tagName) {
-        case 'strong':
-        case 'b':
-          if (!newMarks.includes('bold')) newMarks.push('bold');
+        case "strong":
+        case "b":
+          if (!newMarks.includes("bold")) newMarks.push("bold");
           break;
-        case 'em':
-        case 'i':
-          if (!newMarks.includes('italic')) newMarks.push('italic');
+        case "em":
+        case "i":
+          if (!newMarks.includes("italic")) newMarks.push("italic");
           break;
-        case 'code':
-          if (!newMarks.includes('code')) newMarks.push('code');
+        case "code":
+          if (!newMarks.includes("code")) newMarks.push("code");
           break;
-        case 's':
-        case 'strike':
-        case 'del':
-          if (!newMarks.includes('strikethrough')) newMarks.push('strikethrough');
+        case "s":
+        case "strike":
+        case "del":
+          if (!newMarks.includes("strikethrough")) newMarks.push("strikethrough");
           break;
-        case 'a':
-          if (!newMarks.includes('link')) newMarks.push('link');
-          newHref = element.getAttribute('href') ?? undefined;
+        case "a":
+          if (!newMarks.includes("link")) newMarks.push("link");
+          newHref = element.getAttribute("href") ?? undefined;
           break;
       }
 
@@ -518,7 +521,7 @@ function htmlToInlineContent(html: string): InlineContent[] {
  */
 function getActiveFormats(): InlineMark[] {
   const formats: InlineMark[] = [];
-  if (typeof document === 'undefined') return formats;
+  if (typeof document === "undefined") return formats;
 
   const selection = window.getSelection();
   if (!selection || selection.rangeCount === 0) return formats;
@@ -529,27 +532,27 @@ function getActiveFormats(): InlineMark[] {
     if (node.nodeType === Node.ELEMENT_NODE) {
       const tagName = (node as HTMLElement).tagName.toLowerCase();
       // Check for bold (strong/b)
-      if ((tagName === 'strong' || tagName === 'b') && !formats.includes('bold')) {
-        formats.push('bold');
+      if ((tagName === "strong" || tagName === "b") && !formats.includes("bold")) {
+        formats.push("bold");
       }
       // Check for italic (em/i)
-      if ((tagName === 'em' || tagName === 'i') && !formats.includes('italic')) {
-        formats.push('italic');
+      if ((tagName === "em" || tagName === "i") && !formats.includes("italic")) {
+        formats.push("italic");
       }
       // Check for strikethrough (s/strike/del)
       if (
-        (tagName === 's' || tagName === 'strike' || tagName === 'del') &&
-        !formats.includes('strikethrough')
+        (tagName === "s" || tagName === "strike" || tagName === "del") &&
+        !formats.includes("strikethrough")
       ) {
-        formats.push('strikethrough');
+        formats.push("strikethrough");
       }
       // Check for code
-      if (tagName === 'code' && !formats.includes('code')) {
-        formats.push('code');
+      if (tagName === "code" && !formats.includes("code")) {
+        formats.push("code");
       }
       // Check for link
-      if (tagName === 'a' && !formats.includes('link')) {
-        formats.push('link');
+      if (tagName === "a" && !formats.includes("link")) {
+        formats.push("link");
       }
     }
     node = node.parentNode;
@@ -569,7 +572,7 @@ function getLinkAtSelection(): string | undefined {
   while (node && node !== document.body) {
     if (
       node.nodeType === Node.ELEMENT_NODE &&
-      (node as HTMLElement).tagName.toLowerCase() === 'a'
+      (node as HTMLElement).tagName.toLowerCase() === "a"
     ) {
       return (node as HTMLAnchorElement).href;
     }
@@ -594,7 +597,7 @@ function useEditableParagraph({
   onSlashCommand,
 }: EditableParagraphProps) {
   const elementRef = useRef<HTMLElement>(null);
-  const lastHtmlRef = useRef<string>('');
+  const lastHtmlRef = useRef<string>("");
 
   // Handle input events
   const handleInput = useCallback(() => {
@@ -639,7 +642,7 @@ function useEditableParagraph({
       },
       text: selection.toString(),
       activeFormats,
-      hasLink: activeFormats.includes('link'),
+      hasLink: activeFormats.includes("link"),
       linkUrl,
     });
   }, [onSelectionChange]);
@@ -648,9 +651,9 @@ function useEditableParagraph({
   useEffect(() => {
     if (!editable || !onSelectionChange) return undefined;
 
-    document.addEventListener('selectionchange', handleSelectionChange);
+    document.addEventListener("selectionchange", handleSelectionChange);
     return () => {
-      document.removeEventListener('selectionchange', handleSelectionChange);
+      document.removeEventListener("selectionchange", handleSelectionChange);
     };
   }, [editable, onSelectionChange, handleSelectionChange]);
 
@@ -661,15 +664,15 @@ function useEditableParagraph({
       if (event.defaultPrevented) return;
 
       // Check for slash command trigger
-      if (event.key === '/' && onSlashCommand) {
+      if (event.key === "/" && onSlashCommand) {
         const selection = window.getSelection();
         if (selection?.isCollapsed) {
           // Only trigger at start of element or after whitespace
           const node = selection.anchorNode;
           const offset = selection.anchorOffset;
           if (node && node.nodeType === Node.TEXT_NODE) {
-            const textBefore = node.textContent?.slice(0, offset) ?? '';
-            if (textBefore === '' || /\s$/.test(textBefore)) {
+            const textBefore = node.textContent?.slice(0, offset) ?? "";
+            if (textBefore === "" || /\s$/.test(textBefore)) {
               onSlashCommand();
             }
           } else if (offset === 0) {
@@ -678,11 +681,11 @@ function useEditableParagraph({
         }
       }
 
-      if (event.key === 'Enter' && !event.shiftKey) {
+      if (event.key === "Enter" && !event.shiftKey) {
         // Regular Enter creates new block
         event.preventDefault();
         onEnter?.();
-      } else if (event.key === 'Backspace') {
+      } else if (event.key === "Backspace") {
         const selection = window.getSelection();
         const element = elementRef.current;
         if (selection && element && selection.isCollapsed && selection.anchorOffset === 0) {
@@ -691,7 +694,7 @@ function useEditableParagraph({
           const preRange = document.createRange();
           preRange.selectNodeContents(element);
           preRange.setEnd(range.startContainer, range.startOffset);
-          if (preRange.toString() === '') {
+          if (preRange.toString() === "") {
             onBackspaceAtStart?.();
           }
         }
@@ -716,10 +719,10 @@ function useEditableParagraph({
   const handlePaste = useCallback((event: React.ClipboardEvent) => {
     event.preventDefault();
     // Try to get HTML first, fall back to plain text
-    const html = event.clipboardData.getData('text/html');
+    const html = event.clipboardData.getData("text/html");
     if (html) {
       // Sanitize HTML - only keep inline formatting tags
-      const tempDiv = document.createElement('div');
+      const tempDiv = document.createElement("div");
       // Parse HTML in temp element for sanitization
       tempDiv.innerHTML = html;
 
@@ -727,7 +730,7 @@ function useEditableParagraph({
       const cleanHtml = sanitizeInlineHtml(tempDiv);
       insertHtmlAtSelection(cleanHtml);
     } else {
-      const text = event.clipboardData.getData('text/plain');
+      const text = event.clipboardData.getData("text/plain");
       insertTextAtSelection(text);
     }
   }, []);
@@ -742,8 +745,8 @@ function useEditableParagraph({
         onFocus: handleFocus,
         onBlur: handleBlur,
         onPaste: handlePaste,
-        'data-placeholder': placeholder,
-        'aria-placeholder': placeholder,
+        "data-placeholder": placeholder,
+        "aria-placeholder": placeholder,
       }
     : {};
 
@@ -755,21 +758,21 @@ function useEditableParagraph({
  * Returns safe HTML with only allowed inline tags
  */
 function sanitizeInlineHtml(element: HTMLElement): string {
-  const allowedTags = new Set(['strong', 'b', 'em', 'i', 'code', 's', 'strike', 'del', 'a']);
+  const allowedTags = new Set(["strong", "b", "em", "i", "code", "s", "strike", "del", "a"]);
 
   function processNode(node: Node): string {
     if (node.nodeType === Node.TEXT_NODE) {
-      return escapeHtml(node.textContent ?? '');
+      return escapeHtml(node.textContent ?? "");
     }
 
     if (node.nodeType === Node.ELEMENT_NODE) {
       const el = node as HTMLElement;
       const tagName = el.tagName.toLowerCase();
-      const children = Array.from(node.childNodes).map(processNode).join('');
+      const children = Array.from(node.childNodes).map(processNode).join("");
 
       if (allowedTags.has(tagName)) {
-        if (tagName === 'a') {
-          const href = el.getAttribute('href');
+        if (tagName === "a") {
+          const href = el.getAttribute("href");
           if (href) {
             return `<a href="${escapeHtml(href)}">${children}</a>`;
           }
@@ -781,10 +784,10 @@ function sanitizeInlineHtml(element: HTMLElement): string {
       return children;
     }
 
-    return '';
+    return "";
   }
 
-  return Array.from(element.childNodes).map(processNode).join('');
+  return Array.from(element.childNodes).map(processNode).join("");
 }
 
 // ============================================================================
@@ -806,7 +809,7 @@ function useEditableQuote({
   onSelectionChange,
 }: EditableQuoteProps) {
   const elementRef = useRef<HTMLElement>(null);
-  const lastHtmlRef = useRef<string>('');
+  const lastHtmlRef = useRef<string>("");
 
   // Handle input events
   const handleInput = useCallback(() => {
@@ -849,7 +852,7 @@ function useEditableQuote({
       },
       text: selection.toString(),
       activeFormats,
-      hasLink: activeFormats.includes('link'),
+      hasLink: activeFormats.includes("link"),
       linkUrl,
     });
   }, [onSelectionChange]);
@@ -858,9 +861,9 @@ function useEditableQuote({
   useEffect(() => {
     if (!editable || !onSelectionChange) return undefined;
 
-    document.addEventListener('selectionchange', handleSelectionChange);
+    document.addEventListener("selectionchange", handleSelectionChange);
     return () => {
-      document.removeEventListener('selectionchange', handleSelectionChange);
+      document.removeEventListener("selectionchange", handleSelectionChange);
     };
   }, [editable, onSelectionChange, handleSelectionChange]);
 
@@ -870,11 +873,11 @@ function useEditableQuote({
       onKeyDown?.(event);
       if (event.defaultPrevented) return;
 
-      if (event.key === 'Enter' && !event.shiftKey) {
+      if (event.key === "Enter" && !event.shiftKey) {
         // Enter creates new paragraph within quote
         event.preventDefault();
         onEnter?.();
-      } else if (event.key === 'Backspace') {
+      } else if (event.key === "Backspace") {
         const selection = window.getSelection();
         const element = elementRef.current;
         if (selection && element && selection.isCollapsed && selection.anchorOffset === 0) {
@@ -882,7 +885,7 @@ function useEditableQuote({
           const preRange = document.createRange();
           preRange.selectNodeContents(element);
           preRange.setEnd(range.startContainer, range.startOffset);
-          if (preRange.toString() === '') {
+          if (preRange.toString() === "") {
             onBackspaceAtStart?.();
           }
         }
@@ -903,14 +906,14 @@ function useEditableQuote({
   // Handle paste - preserve inline formatting
   const handlePaste = useCallback((event: React.ClipboardEvent) => {
     event.preventDefault();
-    const html = event.clipboardData.getData('text/html');
+    const html = event.clipboardData.getData("text/html");
     if (html) {
-      const tempDiv = document.createElement('div');
+      const tempDiv = document.createElement("div");
       tempDiv.innerHTML = html;
       const cleanHtml = sanitizeInlineHtml(tempDiv);
       insertHtmlAtSelection(cleanHtml);
     } else {
-      const text = event.clipboardData.getData('text/plain');
+      const text = event.clipboardData.getData("text/plain");
       insertTextAtSelection(text);
     }
   }, []);
@@ -924,8 +927,8 @@ function useEditableQuote({
         onFocus: handleFocus,
         onBlur: handleBlur,
         onPaste: handlePaste,
-        'data-placeholder': placeholder,
-        'aria-placeholder': placeholder,
+        "data-placeholder": placeholder,
+        "aria-placeholder": placeholder,
       }
     : {};
 
@@ -983,12 +986,12 @@ export const H1 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
       onBackspaceAtStart,
     });
 
-    const Component = as ?? 'h1';
+    const Component = as ?? "h1";
 
     // Combine refs
     const combinedRef = (element: HTMLHeadingElement | null) => {
       (elementRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLHeadingElement | null>).current = element;
@@ -1000,7 +1003,7 @@ export const H1 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
         ref={combinedRef}
         className={classy(
           typographyClasses.h1,
-          editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+          editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
           // Placeholder styling should be applied via CSS using [data-placeholder]:empty:before
           className,
         )}
@@ -1013,7 +1016,7 @@ export const H1 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
     );
   },
 );
-H1.displayName = 'H1';
+H1.displayName = "H1";
 
 /**
  * H2 - Section heading
@@ -1050,11 +1053,11 @@ export const H2 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
       onBackspaceAtStart,
     });
 
-    const Component = as ?? 'h2';
+    const Component = as ?? "h2";
 
     const combinedRef = (element: HTMLHeadingElement | null) => {
       (elementRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLHeadingElement | null>).current = element;
@@ -1066,7 +1069,7 @@ export const H2 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
         ref={combinedRef}
         className={classy(
           typographyClasses.h2,
-          editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+          editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
           // Placeholder styling should be applied via CSS using [data-placeholder]:empty:before
           className,
         )}
@@ -1079,7 +1082,7 @@ export const H2 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
     );
   },
 );
-H2.displayName = 'H2';
+H2.displayName = "H2";
 
 /**
  * H3 - Subsection heading
@@ -1116,11 +1119,11 @@ export const H3 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
       onBackspaceAtStart,
     });
 
-    const Component = as ?? 'h3';
+    const Component = as ?? "h3";
 
     const combinedRef = (element: HTMLHeadingElement | null) => {
       (elementRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLHeadingElement | null>).current = element;
@@ -1132,7 +1135,7 @@ export const H3 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
         ref={combinedRef}
         className={classy(
           typographyClasses.h3,
-          editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+          editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
           // Placeholder styling should be applied via CSS using [data-placeholder]:empty:before
           className,
         )}
@@ -1145,7 +1148,7 @@ export const H3 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
     );
   },
 );
-H3.displayName = 'H3';
+H3.displayName = "H3";
 
 /**
  * H4 - Minor heading
@@ -1182,11 +1185,11 @@ export const H4 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
       onBackspaceAtStart,
     });
 
-    const Component = as ?? 'h4';
+    const Component = as ?? "h4";
 
     const combinedRef = (element: HTMLHeadingElement | null) => {
       (elementRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLHeadingElement | null>).current = element;
@@ -1198,7 +1201,7 @@ export const H4 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
         ref={combinedRef}
         className={classy(
           typographyClasses.h4,
-          editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+          editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
           // Placeholder styling should be applied via CSS using [data-placeholder]:empty:before
           className,
         )}
@@ -1211,7 +1214,7 @@ export const H4 = React.forwardRef<HTMLHeadingElement, EditableHeadingProps>(
     );
   },
 );
-H4.displayName = 'H4';
+H4.displayName = "H4";
 
 /**
  * P - Body paragraph
@@ -1275,12 +1278,12 @@ export const P = React.forwardRef<HTMLParagraphElement, EditableParagraphProps>(
       onSlashCommand,
     });
 
-    const Component = as ?? 'p';
+    const Component = as ?? "p";
 
     // Combine refs
     const combinedRef = (element: HTMLParagraphElement | null) => {
       (elementRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLParagraphElement | null>).current = element;
@@ -1292,7 +1295,7 @@ export const P = React.forwardRef<HTMLParagraphElement, EditableParagraphProps>(
         ref={combinedRef}
         className={classy(
           typographyClasses.p,
-          editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+          editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
           className,
         )}
         data-editable={editable || undefined}
@@ -1304,7 +1307,7 @@ export const P = React.forwardRef<HTMLParagraphElement, EditableParagraphProps>(
     );
   },
 );
-P.displayName = 'P';
+P.displayName = "P";
 
 /**
  * Lead - Introductory paragraph
@@ -1312,7 +1315,7 @@ P.displayName = 'P';
  */
 export const Lead = React.forwardRef<HTMLParagraphElement, TypographyProps>(
   ({ as, className, ...props }, ref) => {
-    const Component = as ?? 'p';
+    const Component = as ?? "p";
     return (
       <Component
         ref={ref as React.Ref<HTMLParagraphElement>}
@@ -1322,7 +1325,7 @@ export const Lead = React.forwardRef<HTMLParagraphElement, TypographyProps>(
     );
   },
 );
-Lead.displayName = 'Lead';
+Lead.displayName = "Lead";
 
 /**
  * Large - Emphasized text
@@ -1330,7 +1333,7 @@ Lead.displayName = 'Lead';
  */
 export const Large = React.forwardRef<HTMLDivElement, TypographyProps>(
   ({ as, className, ...props }, ref) => {
-    const Component = as ?? 'div';
+    const Component = as ?? "div";
     return (
       <Component
         ref={ref as React.Ref<HTMLDivElement>}
@@ -1340,7 +1343,7 @@ export const Large = React.forwardRef<HTMLDivElement, TypographyProps>(
     );
   },
 );
-Large.displayName = 'Large';
+Large.displayName = "Large";
 
 /**
  * Small - Smaller text
@@ -1348,7 +1351,7 @@ Large.displayName = 'Large';
  */
 export const Small = React.forwardRef<HTMLElement, TypographyProps>(
   ({ as, className, ...props }, ref) => {
-    const Component = as ?? 'small';
+    const Component = as ?? "small";
     return (
       <Component
         ref={ref as React.Ref<HTMLElement>}
@@ -1358,7 +1361,7 @@ export const Small = React.forwardRef<HTMLElement, TypographyProps>(
     );
   },
 );
-Small.displayName = 'Small';
+Small.displayName = "Small";
 
 /**
  * Muted - Secondary text
@@ -1366,7 +1369,7 @@ Small.displayName = 'Small';
  */
 export const Muted = React.forwardRef<HTMLParagraphElement, TypographyProps>(
   ({ as, className, ...props }, ref) => {
-    const Component = as ?? 'p';
+    const Component = as ?? "p";
     return (
       <Component
         ref={ref as React.Ref<HTMLParagraphElement>}
@@ -1376,7 +1379,7 @@ export const Muted = React.forwardRef<HTMLParagraphElement, TypographyProps>(
     );
   },
 );
-Muted.displayName = 'Muted';
+Muted.displayName = "Muted";
 
 /**
  * Code - Inline code
@@ -1384,7 +1387,7 @@ Muted.displayName = 'Muted';
  */
 export const Code = React.forwardRef<HTMLElement, TypographyProps>(
   ({ as, className, ...props }, ref) => {
-    const Component = as ?? 'code';
+    const Component = as ?? "code";
     return (
       <Component
         ref={ref as React.Ref<HTMLElement>}
@@ -1394,7 +1397,7 @@ export const Code = React.forwardRef<HTMLElement, TypographyProps>(
     );
   },
 );
-Code.displayName = 'Code';
+Code.displayName = "Code";
 
 /**
  * Blockquote - Block quotation
@@ -1458,16 +1461,16 @@ export const Blockquote = React.forwardRef<HTMLQuoteElement, EditableQuoteProps>
 
     const handleCitationInput = useCallback(() => {
       if (!citationRef.current || !onCitationChange) return;
-      const text = citationRef.current.textContent ?? '';
+      const text = citationRef.current.textContent ?? "";
       onCitationChange(text);
     }, [onCitationChange]);
 
-    const Component = as ?? 'blockquote';
+    const Component = as ?? "blockquote";
 
     // Combine refs
     const combinedRef = (element: HTMLQuoteElement | null) => {
       (elementRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLQuoteElement | null>).current = element;
@@ -1479,7 +1482,7 @@ export const Blockquote = React.forwardRef<HTMLQuoteElement, EditableQuoteProps>
         ref={combinedRef}
         className={classy(
           typographyClasses.blockquote,
-          editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+          editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
           className,
         )}
         data-editable={editable || undefined}
@@ -1491,13 +1494,13 @@ export const Blockquote = React.forwardRef<HTMLQuoteElement, EditableQuoteProps>
           <cite
             ref={citationRef}
             className={classy(
-              'mt-2 block text-sm text-muted-foreground not-italic',
-              editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+              "mt-2 block text-sm text-muted-foreground not-italic",
+              editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
             )}
             contentEditable={editable}
             suppressContentEditableWarning={editable}
             onInput={editable ? handleCitationInput : undefined}
-            data-placeholder={editable ? 'Add citation...' : undefined}
+            data-placeholder={editable ? "Add citation..." : undefined}
           >
             {citation}
           </cite>
@@ -1506,7 +1509,7 @@ export const Blockquote = React.forwardRef<HTMLQuoteElement, EditableQuoteProps>
     );
   },
 );
-Blockquote.displayName = 'Blockquote';
+Blockquote.displayName = "Blockquote";
 
 // ============================================================================
 // Editable List Hook (R-200c)
@@ -1554,10 +1557,10 @@ function useEditableList({
       const item = items[index];
       if (!item) return;
 
-      if (event.key === 'Enter' && !event.shiftKey) {
+      if (event.key === "Enter" && !event.shiftKey) {
         event.preventDefault();
         onItemAdd?.(index + 1);
-      } else if (event.key === 'Backspace') {
+      } else if (event.key === "Backspace") {
         const element = itemRefs.current.get(item.id);
         if (!element) return;
 
@@ -1568,10 +1571,10 @@ function useEditableList({
           const preRange = document.createRange();
           preRange.selectNodeContents(element);
           preRange.setEnd(range.startContainer, range.startOffset);
-          if (preRange.toString() === '') {
+          if (preRange.toString() === "") {
             event.preventDefault();
             // If item is empty, remove it
-            if (element.textContent === '') {
+            if (element.textContent === "") {
               onItemRemove?.(index);
             } else if (item.indent && item.indent > 0) {
               // If indented, outdent first
@@ -1582,7 +1585,7 @@ function useEditableList({
             }
           }
         }
-      } else if (event.key === 'Tab') {
+      } else if (event.key === "Tab") {
         event.preventDefault();
         if (event.shiftKey) {
           onOutdent?.(index);
@@ -1597,14 +1600,14 @@ function useEditableList({
   // Handle paste - strip to plain text or inline formatting
   const handleItemPaste = useCallback((event: React.ClipboardEvent) => {
     event.preventDefault();
-    const html = event.clipboardData.getData('text/html');
+    const html = event.clipboardData.getData("text/html");
     if (html) {
-      const tempDiv = document.createElement('div');
+      const tempDiv = document.createElement("div");
       tempDiv.innerHTML = html;
       const cleanHtml = sanitizeInlineHtml(tempDiv);
       insertHtmlAtSelection(cleanHtml);
     } else {
-      const text = event.clipboardData.getData('text/plain');
+      const text = event.clipboardData.getData("text/plain");
       insertTextAtSelection(text);
     }
   }, []);
@@ -1630,7 +1633,7 @@ function useEditableList({
         onInput: () => handleItemInput(index),
         onKeyDown: (e: React.KeyboardEvent) => handleItemKeyDown(e, index),
         onPaste: handleItemPaste,
-        'data-placeholder': placeholder,
+        "data-placeholder": placeholder,
         ref: (el: HTMLLIElement | null) => registerItemRef(item.id, el),
       };
     },
@@ -1699,13 +1702,13 @@ export const List = React.forwardRef<HTMLUListElement | HTMLOListElement, Editab
       placeholder,
     });
 
-    const Component = ordered ? 'ol' : 'ul';
+    const Component = ordered ? "ol" : "ul";
     const listClass = ordered ? typographyClasses.ol : typographyClasses.ul;
 
     // Combine refs
     const combinedRef = (element: HTMLUListElement | HTMLOListElement | null) => {
       (listRef as React.MutableRefObject<HTMLElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element as HTMLUListElement & HTMLOListElement);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLUListElement | HTMLOListElement | null>).current =
@@ -1715,16 +1718,16 @@ export const List = React.forwardRef<HTMLUListElement | HTMLOListElement, Editab
 
     // Indent classes using Tailwind spacing scale (semantic, not arbitrary)
     const getIndentClass = (indent: number | undefined): string => {
-      if (!indent || indent <= 0) return '';
+      if (!indent || indent <= 0) return "";
       // Use standard Tailwind spacing: ml-6, ml-12, ml-18 (not available), ml-24
       // Limit to 4 levels of nesting
       const indentMap: Record<number, string> = {
-        1: 'ml-6',
-        2: 'ml-12',
-        3: 'ml-16',
-        4: 'ml-24',
+        1: "ml-6",
+        2: "ml-12",
+        3: "ml-16",
+        4: "ml-24",
       };
-      return indentMap[Math.min(indent, 4)] ?? 'ml-24';
+      return indentMap[Math.min(indent, 4)] ?? "ml-24";
     };
 
     return (
@@ -1741,7 +1744,7 @@ export const List = React.forwardRef<HTMLUListElement | HTMLOListElement, Editab
           if (editable) {
             // Content is sanitized via escapeHtml in inlineContentToHtml
             const htmlContent =
-              typeof item.content === 'string'
+              typeof item.content === "string"
                 ? escapeHtml(item.content)
                 : inlineContentToHtml(item.content);
 
@@ -1751,7 +1754,7 @@ export const List = React.forwardRef<HTMLUListElement | HTMLOListElement, Editab
                 className={classy(
                   typographyClasses.li,
                   indentClass,
-                  'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded',
+                  "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded",
                 )}
                 {...itemProps}
                 dangerouslySetInnerHTML={{ __html: htmlContent }}
@@ -1761,7 +1764,7 @@ export const List = React.forwardRef<HTMLUListElement | HTMLOListElement, Editab
 
           // For static mode with InlineContent[], use dangerouslySetInnerHTML
           // Content is sanitized via escapeHtml in inlineContentToHtml
-          if (typeof item.content !== 'string') {
+          if (typeof item.content !== "string") {
             return (
               <li
                 key={item.id}
@@ -1781,7 +1784,7 @@ export const List = React.forwardRef<HTMLUListElement | HTMLOListElement, Editab
     );
   },
 );
-List.displayName = 'List';
+List.displayName = "List";
 
 // ============================================================================
 // Editable CodeBlock Hook (R-200e)
@@ -1795,15 +1798,15 @@ function useEditableCodeBlock({
   onChange,
   tabSize = 2,
   placeholder,
-}: Pick<EditableCodeBlockProps, 'editable' | 'onChange' | 'tabSize' | 'placeholder'>) {
+}: Pick<EditableCodeBlockProps, "editable" | "onChange" | "tabSize" | "placeholder">) {
   const elementRef = useRef<HTMLPreElement>(null);
-  const lastContentRef = useRef<string>('');
+  const lastContentRef = useRef<string>("");
 
   // Handle input events
   const handleInput = useCallback(() => {
     if (!elementRef.current || !onChange) return;
 
-    const content = elementRef.current.textContent ?? '';
+    const content = elementRef.current.textContent ?? "";
     if (content !== lastContentRef.current) {
       lastContentRef.current = content;
       onChange(content);
@@ -1813,14 +1816,14 @@ function useEditableCodeBlock({
   // Handle key events
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent) => {
-      if (event.key === 'Tab') {
+      if (event.key === "Tab") {
         event.preventDefault();
-        const spaces = ' '.repeat(tabSize);
+        const spaces = " ".repeat(tabSize);
         insertTextAtSelection(spaces);
-      } else if (event.key === 'Enter') {
+      } else if (event.key === "Enter") {
         // Allow Enter for new lines in code blocks
         event.preventDefault();
-        insertTextAtSelection('\n');
+        insertTextAtSelection("\n");
       }
     },
     [tabSize],
@@ -1829,7 +1832,7 @@ function useEditableCodeBlock({
   // Handle paste - always plain text for code
   const handlePaste = useCallback((event: React.ClipboardEvent) => {
     event.preventDefault();
-    const text = event.clipboardData.getData('text/plain');
+    const text = event.clipboardData.getData("text/plain");
     insertTextAtSelection(text);
   }, []);
 
@@ -1840,8 +1843,8 @@ function useEditableCodeBlock({
         onInput: handleInput,
         onKeyDown: handleKeyDown,
         onPaste: handlePaste,
-        'data-placeholder': placeholder,
-        'aria-placeholder': placeholder,
+        "data-placeholder": placeholder,
+        "aria-placeholder": placeholder,
         spellCheck: false,
       }
     : {};
@@ -1899,14 +1902,14 @@ export const CodeBlock = React.forwardRef<HTMLPreElement, EditableCodeBlockProps
     // Combine refs
     const combinedRef = (element: HTMLPreElement | null) => {
       (elementRef as React.MutableRefObject<HTMLPreElement | null>).current = element;
-      if (typeof ref === 'function') {
+      if (typeof ref === "function") {
         ref(element);
       } else if (ref) {
         (ref as React.MutableRefObject<HTMLPreElement | null>).current = element;
       }
     };
 
-    const lines = children.split('\n');
+    const lines = children.split("\n");
 
     return (
       <div className="group" data-editable={editable || undefined}>
@@ -1914,7 +1917,7 @@ export const CodeBlock = React.forwardRef<HTMLPreElement, EditableCodeBlockProps
         {editable && onLanguageChange && (
           <div className="flex items-center justify-between bg-muted/50 px-4 py-2 rounded-t-lg border-b border-border">
             <select
-              value={language ?? ''}
+              value={language ?? ""}
               onChange={(e) => onLanguageChange(e.target.value)}
               className="bg-transparent text-xs text-muted-foreground border-none outline-none cursor-pointer"
             >
@@ -1938,8 +1941,8 @@ export const CodeBlock = React.forwardRef<HTMLPreElement, EditableCodeBlockProps
           ref={combinedRef}
           className={classy(
             typographyClasses.codeblock,
-            editable && 'outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-            editable && onLanguageChange && 'rounded-t-none',
+            editable && "outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+            editable && onLanguageChange && "rounded-t-none",
             className,
           )}
           data-language={language}
@@ -1965,7 +1968,7 @@ export const CodeBlock = React.forwardRef<HTMLPreElement, EditableCodeBlockProps
     );
   },
 );
-CodeBlock.displayName = 'CodeBlock';
+CodeBlock.displayName = "CodeBlock";
 
 // ============================================================================
 // Additional Typography Components
@@ -1982,7 +1985,7 @@ CodeBlock.displayName = 'CodeBlock';
  */
 export const Mark = React.forwardRef<HTMLElement, TypographyProps>(
   ({ as, className, ...props }, ref) => {
-    const Component = as ?? 'mark';
+    const Component = as ?? "mark";
     return (
       <Component
         ref={ref as React.Ref<HTMLElement>}
@@ -1992,7 +1995,7 @@ export const Mark = React.forwardRef<HTMLElement, TypographyProps>(
     );
   },
 );
-Mark.displayName = 'Mark';
+Mark.displayName = "Mark";
 
 /**
  * Abbr - Abbreviation with tooltip
@@ -2005,7 +2008,7 @@ Mark.displayName = 'Mark';
  */
 export const Abbr = React.forwardRef<HTMLElement, TypographyProps & { title: string }>(
   ({ as, className, title, ...props }, ref) => {
-    const Component = as ?? 'abbr';
+    const Component = as ?? "abbr";
     return (
       <Component
         ref={ref as React.Ref<HTMLElement>}
@@ -2016,7 +2019,7 @@ export const Abbr = React.forwardRef<HTMLElement, TypographyProps & { title: str
     );
   },
 );
-Abbr.displayName = 'Abbr';
+Abbr.displayName = "Abbr";
 
 // Export typography classes for direct use
 export { typographyClasses };
