@@ -6,27 +6,30 @@
   "observability": {
     "enabled": true,
   },
+  "logpush": true,
   "d1_databases": [
     {
-      "binding": "AUTH_DB",
-      "database_name": "rafters-auth",
-      "database_id": "",
+      "binding": "DB",
+      "database_name": "rafters",
+      "database_id": "cc61dd17-b939-4dbc-8ec8-347fb6b169b9",
       "migrations_dir": "src/db/migrations",
     },
   ],
-  // KV ID is empty until `wrangler kv namespace create SESSION_KV` is run
-  // For local dev, wrangler uses a local KV emulator automatically
   "kv_namespaces": [
     {
-      "binding": "SESSION_KV",
-      "id": "placeholder",
+      "binding": "rafters_session",
+      "id": "69119b2141ee4755b75a5e34364d1a2f",
     },
   ],
   // FROM_EMAIL and RESEND_API_KEY: add when wiring real OTP delivery
   "r2_buckets": [
     {
-      "binding": "SNAPSHOTS",
-      "bucket_name": "rafters-snapshots",
+      "bucket_name": "rafters-email",
+      "binding": "rafters_email",
+    },
+    {
+      "bucket_name": "rafters-logs",
+      "binding": "rafters_logs",
     },
   ],
 }
