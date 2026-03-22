@@ -1,53 +1,24 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Base.astro";
 
-const topics = [
-  {
-    title: "Cognitive Load Model",
-    href: "/reference/cognitive-load",
-    description: "How Rafters scores component and composition complexity across five dimensions. The math behind attention budgets.",
-  },
-  {
-    title: "Color Intelligence",
-    href: "/reference/color-intelligence",
-    description: "OKLCH perceptual analysis, harmonic relationships, conflict detection, and why sRGB color math is wrong for design systems.",
-  },
-  {
-    title: "Attention Economics",
-    href: "/reference/attention-economics",
-    description: "Why screens have a finite attention budget. How component choices compound into cognitive debt or surplus.",
-  },
-  {
-    title: "Motion as Emotional Safety",
-    href: "/reference/motion-safety",
-    description: "Motion is not decoration. It signals state change, builds trust, and reduces anxiety. The framework for motion decisions.",
-  },
-  {
-    title: "Type Intelligence",
-    href: "/reference/type-intelligence",
-    description: "How typography scales interact with cognitive load. Optical sizing, reading rhythm, and the math behind type decisions.",
-  },
-  {
-    title: "Do/Never Rules",
-    href: "/reference/rules",
-    description: "The structured constraint system that prevents AI agents from making common design mistakes. How rules compose and inherit.",
-  },
-];
+const entries = await getCollection("reference");
+const sorted = entries.sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 ---
 
-<Layout title="Reference - Rafters">
-  <main class="max-w-3xl mx-auto px-6 py-16">
-    <h1 class="text-4xl font-bold tracking-tight mb-4">Reference</h1>
-    <p class="text-xl leading-relaxed mb-12">
+<Layout title="Reference -- Rafters">
+  <main class="flex-1 max-w-prose mx-auto px-6 py-16">
+    <h1 class="text-3xl mb-4">Reference</h1>
+    <p class="text-muted-foreground mb-12">
       Deep dives into the design intelligence concepts behind Rafters.
       Not tutorials. Not API docs. The thinking.
     </p>
 
-    <div class="grid gap-8">
-      {topics.map((topic) => (
-        <a href={topic.href} class="block group">
-          <h2 class="text-xl font-bold mb-2 group-hover:underline">{topic.title}</h2>
-          <p class="text-lg leading-relaxed text-neutral-600">{topic.description}</p>
+    <div class="flex flex-col gap-8">
+      {sorted.map((entry) => (
+        <a href={`/reference/${entry.id}`} class="group block">
+          <h2 class="text-lg font-semibold mb-1 group-hover:underline">{entry.data.title}</h2>
+          <p class="text-sm text-muted-foreground">{entry.data.description}</p>
         </a>
       ))}
     </div>
