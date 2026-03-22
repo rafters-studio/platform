@@ -12,7 +12,7 @@ import { createDb } from "../db/client";
 import { auditLog } from "../db/schema/audit";
 
 function buildAuth(env: Env) {
-  const db = createDb(env.AUTH_DB);
+  const db = createDb(env.DB);
   const polarClient = new Polar({
     accessToken: env.POLAR_ACCESS_TOKEN,
   });
@@ -31,12 +31,12 @@ function buildAuth(env: Env) {
     baseURL: env.BETTER_AUTH_URL,
     basePath: "/api/auth",
     secondaryStorage: {
-      get: (key) => env.SESSION_KV.get(key),
+      get: (key) => env.rafters_session.get(key),
       set: (key, value, ttl) =>
-        env.SESSION_KV.put(key, value, {
+        env.rafters_session.put(key, value, {
           expirationTtl: Math.max(ttl ?? 604800, 60),
         }),
-      delete: (key) => env.SESSION_KV.delete(key),
+      delete: (key) => env.rafters_session.delete(key),
     },
     session: {
       cookieCache: {
@@ -94,10 +94,10 @@ export type Auth = ReturnType<typeof buildAuth>;
 const authCache = new WeakMap<D1Database, Auth>();
 
 export function createAuth(env: Env) {
-  const cached = authCache.get(env.AUTH_DB);
+  const cached = authCache.get(env.DB);
   if (cached) return cached;
 
   const auth = buildAuth(env);
-  authCache.set(env.AUTH_DB, auth);
+  authCache.set(env.DB, auth);
   return auth;
 }
