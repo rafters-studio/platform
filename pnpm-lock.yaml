@@ -11,6 +11,9 @@ importers:
       oxfmt:
         specifier: ^0.41.0
         version: 0.41.0
+      oxlint:
+        specifier: ^1.56.0
+        version: 1.56.0
 
   apps/web:
     dependencies:
