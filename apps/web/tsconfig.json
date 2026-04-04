@@ -5,10 +5,5 @@
       "@/*": ["./*"]
     }
   },
-  "exclude": [
-    "src/components/ui/color-intelligence.tsx",
-    "src/components/ui/color-inspector.tsx",
-    "src/lib/registry/*.ts",
-    "src/pages/registry/**"
-  ]
+  "exclude": []
 }
