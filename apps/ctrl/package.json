@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rafters/color-utils": "link:/Volumes/store/projects/rafters-studio/rafters/packages/color-utils",
+    "@rafters/shared": "link:/Volumes/store/projects/rafters-studio/rafters/packages/shared",
     "@tanstack/react-query": "^5.91.0",
     "@tanstack/react-router": "^1.168.10",
     "@tanstack/router-zod-adapter": "^1.81.5",

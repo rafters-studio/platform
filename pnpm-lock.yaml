@@ -26,6 +26,12 @@ importers:
 
   apps/ctrl:
     dependencies:
+      '@rafters/color-utils':
+        specifier: link:/Volumes/store/projects/rafters-studio/rafters/packages/color-utils
+        version: link:../../../rafters/packages/color-utils
+      '@rafters/shared':
+        specifier: link:/Volumes/store/projects/rafters-studio/rafters/packages/shared
+        version: link:../../../rafters/packages/shared
       '@tanstack/react-query':
         specifier: ^5.91.0
         version: 5.91.0(react@19.2.4)
