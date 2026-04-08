@@ -3,6 +3,7 @@ import { env } from "cloudflare:workers";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { createAuth } from "../../api/auth";
 import { registerColorRoutes } from "../../api/routes/color";
+import { registerCtrlRoutes } from "../../api/routes/ctrl/index";
 import { requestLogger } from "../../lib/logging/middleware";
 import type { HonoEnv } from "../../api/types";
 
@@ -21,6 +22,7 @@ app.on(["GET", "POST", "PUT", "PATCH", "DELETE"], "/auth/*", (c) => {
 });
 
 registerColorRoutes(app);
+registerCtrlRoutes(app);
 
 const handle: APIRoute = (context) => app.fetch(context.request, env);
 
