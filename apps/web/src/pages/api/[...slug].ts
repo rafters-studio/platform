@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { env } from "cloudflare:workers";
-import { OpenAPIHono } from "@hono/zod-openapi";
+import { Hono } from "hono";
 import { createAuth } from "../../api/auth";
 import { registerColorRoutes } from "../../api/routes/color";
 import { requestLogger } from "../../lib/logging/middleware";
@@ -10,7 +10,7 @@ export const prerender = false;
 
 // Inlined because Astro 6 dev silently drops the route when importing
 // a pre-built Hono app instance from a separate module.
-const app = new OpenAPIHono<HonoEnv>().basePath("/api");
+const app = new Hono<HonoEnv>().basePath("/api");
 
 app.use("*", requestLogger);
 
