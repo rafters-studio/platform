@@ -11,13 +11,13 @@ CREATE TABLE `ctrl_notification` (
 	`created_at` INTEGER NOT NULL
 );
 
-CREATE INDEX `idx_ctrl_notification_user_read` ON `ctrl_notification` (`user_id`, `is_read`);
+CREATE INDEX `idx_ctrl_notification_user_surface_read` ON `ctrl_notification` (`user_id`, `surface`, `is_read`);
 CREATE INDEX `idx_ctrl_notification_created` ON `ctrl_notification` (`created_at`);
 
 CREATE TABLE `ctrl_property` (
 	`id` TEXT PRIMARY KEY NOT NULL,
 	`name` TEXT NOT NULL UNIQUE,
-	`domain` TEXT NOT NULL,
+	`domain` TEXT NOT NULL UNIQUE,
 	`repo_owner` TEXT NOT NULL,
 	`repo_name` TEXT NOT NULL,
 	`content_path` TEXT,
