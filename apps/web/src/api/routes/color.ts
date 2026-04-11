@@ -8,35 +8,6 @@ const colorInputSchema = z.object({
   color: z.string(),
 });
 
-const oklchSchema = z.object({
-  l: z.number(),
-  c: z.number(),
-  h: z.number(),
-});
-
-const contrastSchema = z.object({
-  white: z.number(),
-  black: z.number(),
-  wcagAANormal: z.boolean(),
-  wcagAALarge: z.boolean(),
-  wcagAAA: z.boolean(),
-  recommendedForeground: z.enum(["white", "black"]),
-});
-
-const harmonySchema = z.object({
-  complementary: oklchSchema,
-  analogous: z.array(oklchSchema),
-  triadic: z.array(oklchSchema),
-  splitComplementary: z.array(oklchSchema),
-});
-
-const perceptionSchema = z.object({
-  temperature: z.enum(["cool", "neutral", "warm"]),
-  luminanceCategory: z.enum(["dark", "mid", "light"]),
-  saturationCategory: z.enum(["muted", "moderate", "vivid"]),
-  isNeutral: z.boolean(),
-});
-
 const WHITE = new Color("white");
 const BLACK = new Color("black");
 
