@@ -1,14 +1,8 @@
-import { OpenAPIHono } from "@hono/zod-openapi";
+import { Hono } from "hono";
 import type { HonoEnv } from "../../types";
-import { loadSession, requireAuth } from "../../middleware/auth";
 
-const ctrl = new OpenAPIHono<HonoEnv>();
+const ctrlRoutes = new Hono<HonoEnv>();
 
-ctrl.use("*", loadSession);
-ctrl.use("*", requireAuth);
+ctrlRoutes.get("/health", (c) => c.json({ status: "ok" }));
 
-ctrl.get("/health", (c) => c.json({ status: "ok" }));
-
-export function registerCtrlRoutes(app: OpenAPIHono<HonoEnv>) {
-  app.route("/ctrl", ctrl);
-}
+export { ctrlRoutes };
