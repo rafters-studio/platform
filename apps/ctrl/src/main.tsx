@@ -24,9 +24,15 @@ declare module "@tanstack/react-router" {
 }
 
 function App() {
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session, isPending, error } = authClient.useSession();
 
-  if (isPending) return null;
+  if (isPending) {
+    return <p aria-live="polite">Loading session...</p>;
+  }
+
+  if (error) {
+    return <p role="alert">Session check failed. Reload the page to retry.</p>;
+  }
 
   const auth = {
     isAuthenticated: !!session?.user,
