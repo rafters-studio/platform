@@ -12,3 +12,4 @@ test-results
 .DS_Store
 wrangler-configuration.d.ts
 .playwright-mcp/
+.claude/worktrees/
