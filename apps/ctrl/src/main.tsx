@@ -1,9 +1,10 @@
-import { StrictMode, useEffect, useState } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { routeTree } from "./routeTree.gen";
 import { queryClient } from "./lib/query-client";
+import { authClient } from "./lib/auth-client";
 import "./global.css";
 
 const router = createRouter({
@@ -22,42 +23,28 @@ declare module "@tanstack/react-router" {
   }
 }
 
-interface SessionUser {
-  id: string;
-  name: string;
-  email: string;
-  image: string | null;
-}
-
-interface SessionResponse {
-  user: SessionUser;
-  session: { id: string };
-}
-
 function App() {
-  const [auth, setAuth] = useState<{
-    isAuthenticated: boolean;
-    user: SessionUser | null;
-  }>({ isAuthenticated: false, user: null });
-  const [pending, setPending] = useState(true);
+  const { data: session, isPending, error } = authClient.useSession();
 
-  useEffect(() => {
-    fetch("/api/auth/get-session", { credentials: "include" })
-      .then(async (res) => {
-        if (res.ok) {
-          const data = (await res.json()) as SessionResponse;
-          setAuth({ isAuthenticated: true, user: data.user });
-        } else {
-          setAuth({ isAuthenticated: false, user: null });
+  if (isPending) {
+    return <p aria-live="polite">Loading session...</p>;
+  }
+
+  if (error) {
+    return <p role="alert">Session check failed. Reload the page to retry.</p>;
+  }
+
+  const auth = {
+    isAuthenticated: !!session?.user,
+    user: session?.user
+      ? {
+          id: session.user.id,
+          name: session.user.name,
+          email: session.user.email,
+          image: session.user.image ?? null,
         }
-      })
-      .catch(() => {
-        setAuth({ isAuthenticated: false, user: null });
-      })
-      .finally(() => setPending(false));
-  }, []);
-
-  if (pending) return null;
+      : null,
+  };
 
   return (
     <QueryClientProvider client={queryClient}>
