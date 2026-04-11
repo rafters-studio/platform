@@ -46,7 +46,8 @@ const colorAnalysisSchema = z.object({
   harmony: harmonySchema,
 });
 
-export type ColorAnalysis = z.infer<typeof colorAnalysisSchema>;
+const WHITE = new Color("white");
+const BLACK = new Color("black");
 
 function toOklch(color: InstanceType<typeof Color>): {
   l: number;
@@ -92,10 +93,8 @@ export function registerColorRoutes(app: Hono<HonoEnv>) {
     const oklch = toOklch(color);
     const hex = color.to("srgb").toString({ format: "hex" });
 
-    const white = new Color("white");
-    const black = new Color("black");
-    const contrastWhite = contrastRatio(color, white);
-    const contrastBlack = contrastRatio(color, black);
+    const contrastWhite = contrastRatio(color, WHITE);
+    const contrastBlack = contrastRatio(color, BLACK);
 
     const temperature =
       oklch.h >= 15 && oklch.h < 165

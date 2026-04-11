@@ -15,7 +15,8 @@ export const ctrlPreferences = sqliteTable(
       .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
     updatedAt: integer("updated_at", { mode: "timestamp_ms" })
       .notNull()
-      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`),
+      .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
+      .$onUpdate(() => new Date()),
   },
   (table) => [index("idx_ctrl_preferences_user").on(table.userId)],
 );
