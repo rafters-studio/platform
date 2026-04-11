@@ -37,15 +37,6 @@ const perceptionSchema = z.object({
   isNeutral: z.boolean(),
 });
 
-const colorAnalysisSchema = z.object({
-  input: z.string(),
-  oklch: oklchSchema,
-  hex: z.string(),
-  perception: perceptionSchema,
-  contrast: contrastSchema,
-  harmony: harmonySchema,
-});
-
 const WHITE = new Color("white");
 const BLACK = new Color("black");
 
