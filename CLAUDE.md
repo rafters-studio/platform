@@ -1,30 +1,32 @@
-# ezmode.games Platform
+# Rafters Studio Platform
+
+Infrastructure for all Rafters surfaces. Auth, database, API, middleware.
+
+## Apps
+
+| App      | Path         | What                                              |
+| -------- | ------------ | ------------------------------------------------- |
+| **web**  | `apps/web/`  | Cloudflare Worker -- Hono API, better-auth, D1    |
+| **ctrl** | `apps/ctrl/` | Internal operations SPA -- Vite + TanStack Router |
 
 ## Stack
 
 - **Runtime**: Cloudflare Workers
-- **API**: Hono + `@hono/zod-openapi` + `stoker`
-- **API Docs**: Scalar (`@scalar/hono-api-reference`)
-- **Auth**: better-auth (native D1, OAuth2 for v2, API key for v1)
+- **API**: Hono + `@hono/zod-validator`. Plain RPC, `AppType` exported for `hono/client`.
+- **Auth**: better-auth (native D1, passkeys + OAuth2). No email/password. Ever.
 - **Database**: Cloudflare D1, Drizzle as query builder only
 - **Schemas**: Zod is source of truth. `drizzle-zod` bridges DB to API schemas.
-- **Audit/Soft-delete/GDPR**: `@ezmode-games/drizzle-ledger`
-- **Client**: `openapi-typescript` + `openapi-fetch` + `openapi-react-query`
+- **Audit/Soft-delete/GDPR**: `@rafters/ledger`
+- **Client**: `hono/client` with `AppType` for end-to-end type safety
 - **State**: TanStack Query (cache/fetch), TanStack Forms (validation/submission)
-- **UI**: Rafters for all surfaces, with ezmode-specific composite library
+- **Router**: TanStack Router (ctrl SPA, file-based, type-safe)
+- **UI**: Rafters design system for all surfaces
 - **Lint/Format**: OXC (oxlint + oxc-format)
 - **TypeScript**: v6 (Go parser)
 - **Package Manager**: pnpm (never npm/yarn)
 - **IDs**: UUIDv7 for all identifiers
 
-## API Versioning
-
-Two API versions served from the same Hono app:
-
-- **v1**: Nexus-compatible endpoints. API key auth. Exists so MO2 and Wabbajack work without changes -- users swap the base URL and API key, existing mod managers just work. Thin translation layer over shared business logic.
-- **v2**: Our real API, internal and external. OAuth2 auth. OpenAPI spec published for third-party developers. Internal-only endpoints are unpublished and require session + additional headers.
-
-Both versions have their own OpenAPI spec and Scalar docs page.
+No OpenAPI. The API is internal-only, ctrl is the only consumer. Removed in PR #92.
 
 ## Migrations
 
@@ -45,6 +47,17 @@ NEVER:
 
 Drizzle schema files exist for type inference and query building. Wrangler handles all migration state. Breaking this rule corrupts wrangler's migration tracking.
 
+## Schema Pattern
+
+Every table gets two files:
+
+1. **Drizzle schema**: `apps/web/src/db/schema/*.ts` -- table definitions for query building
+2. **Zod companion**: `apps/web/src/db/schema/*.zod.ts` -- insert/select schemas via `drizzle-zod`
+
+No barrel files. Import directly from the specific schema file.
+
+`wrangler types` generates the Env type. Never manually type it.
+
 ---
 
 # Testing
@@ -58,25 +71,20 @@ Tests are tools, not theater. Every test file has one job based on its extension
 All tests live in `tests/` mirroring the source tree:
 
 ```
-src/
+apps/web/src/
+  api/routes/
+    notifications.ts
+apps/ctrl/src/
   routes/
-    mods/
-      mods.handlers.ts
-      mods.routes.ts
-  components/
-    mod-card/
-      mod-card.tsx
+    _ctrl/dashboard.tsx
 
 tests/
-  routes/
-    mods/
-      mods.handlers.test.ts      # unit
-      mods.routes.test.ts         # unit
-  components/
-    mod-card/
-      mod-card.spec.ts            # component behavior
+  api/routes/
+    notifications.test.ts         # unit
+  ctrl/
+    dashboard.spec.ts             # component behavior
   flows/
-    publish-mod.e2e.ts            # end-to-end
+    auth-login.e2e.ts             # end-to-end
 ```
 
 Tests are NEVER colocated with source files. The `tests/` folder is the single location.
@@ -147,8 +155,8 @@ Tests are NEVER colocated with source files. The `tests/` folder is the single l
 
 **What belongs here**:
 
-- Complete user journeys (sign up, upload mod, get paid)
-- Auth flows (OAuth2 login, API key validation, session expiry)
+- Complete user journeys (login, manage properties, review content)
+- Auth flows (passkey login, OAuth2, session expiry)
 - Cross-page navigation and deep linking
 - Real API calls through the full Workers stack
 - Visual regression on critical pages
@@ -214,3 +222,7 @@ pnpm test:all          # everything
 - No arbitrary Tailwind values (`-[400px]`). Use design tokens.
 - No CSS positioning (`absolute`, `relative`, `fixed`) unless no alternative. Use flexbox/grid.
 - Prefer container queries (`@container`, `@md:`) over media queries for component-level responsiveness.
+- No barrel files on the edge. Import directly from the specific file.
+- `wrangler types` generates Env. Never manually type it.
+- better-auth generates its own schema/migrations. Do not hand-write auth tables.
+- Every Drizzle schema file gets a `.zod.ts` companion.

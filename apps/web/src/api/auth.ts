@@ -6,7 +6,7 @@ import { organization } from "better-auth/plugins/organization";
 import { passkey } from "@better-auth/passkey";
 import { checkout, polar, webhooks } from "@polar-sh/better-auth";
 import { Polar } from "@polar-sh/sdk";
-import { ledgerPlugin } from "@ezmode-games/drizzle-ledger/better-auth";
+import { ledgerPlugin } from "@rafters/ledger/better-auth";
 import { uuidv7 } from "uuidv7";
 import { createDb } from "../db/client";
 import { auditLog } from "../db/schema/audit";
