@@ -7,8 +7,20 @@ import { createDb } from "../../db/client";
 import { uncertaintyCalibrationSnapshot, uncertaintyPrediction } from "../../db/schema/uncertainty";
 import { outcomeLabelSchema, surfaceSchema } from "../../db/schema/uncertainty.zod";
 import { cohortKey, DAY_MS, DEFAULT_ORPHAN_TTL_DAYS } from "../lib/uncertainty/cohort";
+import { sweepOrphans } from "../lib/uncertainty/orphan-sweep";
 import { requireAuth } from "../middleware/auth";
 import type { HonoEnv } from "../types";
+
+function authorizeCron(c: {
+  req: { header: (n: string) => string | undefined };
+  env: Env;
+}): boolean {
+  const secret = c.env.CRON_SECRET;
+  if (!secret) return false;
+  const header = c.req.header("authorization");
+  if (!header) return false;
+  return header === `Bearer ${secret}`;
+}
 
 const emitBodySchema = z.object({
   surface: surfaceSchema,
@@ -129,5 +141,16 @@ const uncertaintyRoutes = new Hono<HonoEnv>()
 
     return c.json({ surfaces: rows });
   });
+
+const internalRoutes = new Hono<HonoEnv>().post("/orphan-sweep", async (c) => {
+  if (!authorizeCron({ req: { header: (n) => c.req.header(n) }, env: c.env })) {
+    return c.json({ error: "Unauthorized" }, 401);
+  }
+  const db = createDb(c.env.DB);
+  const result = await sweepOrphans(db);
+  return c.json(result);
+});
+
+uncertaintyRoutes.route("/internal", internalRoutes);
 
 export { uncertaintyRoutes };
