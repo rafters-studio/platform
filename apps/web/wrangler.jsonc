@@ -47,11 +47,12 @@
   "vars": {
     "CRON_SECRET": "",
   },
-  // Hourly orphan sweep. The Astro adapter does not expose a scheduled()
-  // entrypoint, so the trigger calls POST /api/uncertainty/internal/orphan-sweep
-  // via an external scheduler (or a future companion worker) using the
-  // CRON_SECRET bearer token.
+  // Hourly orphan sweep + nightly calibration roll. The Astro adapter does
+  // not expose a scheduled() entrypoint, so triggers call the internal
+  // endpoints (/api/uncertainty/internal/orphan-sweep at :00 every hour,
+  // /api/uncertainty/internal/calibration-roll at 03:15 UTC daily) via an
+  // external scheduler using the CRON_SECRET bearer token.
   "triggers": {
-    "crons": ["0 * * * *"],
+    "crons": ["0 * * * *", "15 3 * * *"],
   },
 }
