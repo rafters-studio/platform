@@ -42,4 +42,16 @@
       "binding": "rafters_logs",
     },
   ],
+  // CRON_SECRET is a runtime secret. Declared here only so wrangler types
+  // includes it in Env. Set the real value with `wrangler secret put CRON_SECRET`.
+  "vars": {
+    "CRON_SECRET": "",
+  },
+  // Hourly orphan sweep. The Astro adapter does not expose a scheduled()
+  // entrypoint, so the trigger calls POST /api/uncertainty/internal/orphan-sweep
+  // via an external scheduler (or a future companion worker) using the
+  // CRON_SECRET bearer token.
+  "triggers": {
+    "crons": ["0 * * * *"],
+  },
 }
