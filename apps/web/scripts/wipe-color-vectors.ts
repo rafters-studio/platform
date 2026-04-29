@@ -7,7 +7,7 @@
  * any production vectors are written to avoid polluting nearest-neighbor lookups.
  *
  * Run via: pnpm --filter @rafters-studio/web exec wrangler vectorize delete-vectors \
- *           rafters-color-vocab --ids-file scripts/wipe-color-vectors-ids.json
+ *           rafters-color-vocab --ids '#00f' '#ff0' '#808080' '#f0f' '#0f0' '#fff' '#f80' '#80f' '#f00' '#000' '#0ff'
  *
  * Verify after run:
  *   pnpm --filter @rafters-studio/web exec wrangler vectorize list-vectors rafters-color-vocab
