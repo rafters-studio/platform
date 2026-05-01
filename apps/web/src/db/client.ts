@@ -1,8 +1,9 @@
 import { type DrizzleD1Database, drizzle } from "drizzle-orm/d1";
 import * as authSchema from "./schema/auth";
 import * as auditSchema from "./schema/audit";
+import * as uncertaintySchema from "./schema/uncertainty";
 
-const schema = { ...authSchema, ...auditSchema };
+const schema = { ...authSchema, ...auditSchema, ...uncertaintySchema };
 
 export type Database = DrizzleD1Database<typeof schema>;
 

@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rafters-studio-web",
+  "main": "src/worker-entry.ts",
   "compatibility_date": "2026-03-18",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {
@@ -31,6 +32,9 @@
       "id": "69119b2141ee4755b75a5e34364d1a2f",
     },
   ],
+  "triggers": {
+    "crons": ["0 * * * *", "0 2 * * *"],
+  },
   // FROM_EMAIL and RESEND_API_KEY: add when wiring real OTP delivery
   "r2_buckets": [
     {
