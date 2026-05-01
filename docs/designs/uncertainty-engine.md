@@ -153,6 +153,8 @@ For each cohort, bucket predictions by claimed confidence (10 buckets of 0.1 wid
 
 This is the math that makes the engine a credible audit tool. The output is publishable as-is.
 
+Brier score decomposes into three terms (Bröcker & Smith 2007): reliability (how far claimed confidence drifts from observed correctness), resolution (how much forecasts vary across buckets), and uncertainty (the base rate variance of the outcomes themselves). Orphans belong to the uncertainty term, not reliability. Feeding them into the reliability calculation as correctness=0 would bias that term downward and make the model look worse than the evidence supports. The right treatment is what the engine does: exclude orphans from the Brier calculation, count them separately, and surface the orphan rate as its own metric. Silence is not disagreement; the decomposition gives you a formal reason why.
+
 ### v2: Drift detection
 
 Compare this week's calibration snapshot against the rolling 30-day baseline per cohort. If the per-bucket actual correctness drifts more than `K` standard deviations from baseline, flag the cohort. Cheap. Effective. Catches model regressions before users do.
