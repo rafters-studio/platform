@@ -4,6 +4,7 @@ import { Hono } from "hono";
 import { createAuth } from "../../api/auth";
 import { colorRoutes } from "../../api/routes/color";
 import { ctrlRoutes } from "../../api/routes/ctrl/index";
+import { uncertaintyRoutes } from "../../api/routes/uncertainty";
 import { loadSession } from "../../api/middleware/auth";
 import { requestLogger } from "../../lib/logging/middleware";
 import type { HonoEnv } from "../../api/types";
@@ -26,6 +27,7 @@ app.use("/*", loadSession);
 
 app.route("/color", colorRoutes);
 app.route("/ctrl", ctrlRoutes);
+app.route("/uncertainty", uncertaintyRoutes);
 
 const handle: APIRoute = (context) => app.fetch(context.request, env);
 

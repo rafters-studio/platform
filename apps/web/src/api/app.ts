@@ -7,6 +7,7 @@ import { loadSession } from "./middleware/auth";
 import { authRoutes } from "./routes/auth";
 import { colorRoutes } from "./routes/color";
 import { ctrlRoutes } from "./routes/ctrl/index";
+import { uncertaintyRoutes } from "./routes/uncertainty";
 import type { HonoEnv } from "./types";
 
 const app = new Hono<HonoEnv>()
@@ -15,7 +16,8 @@ const app = new Hono<HonoEnv>()
   .route("/auth", authRoutes)
   .use("/*", loadSession)
   .route("/color", colorRoutes)
-  .route("/ctrl", ctrlRoutes);
+  .route("/ctrl", ctrlRoutes)
+  .route("/uncertainty", uncertaintyRoutes);
 
 export type AppType = typeof app;
 export default app;
