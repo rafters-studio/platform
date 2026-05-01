@@ -16,6 +16,8 @@ The ezmode lineage carried a `UncertaintyClient` in rafters that posted predicti
 
 **Positioning:** The platform does not build models. The platform audits them. Other agents own naming, classification, scoring. Platform owns the receipt trail and the calibration math. The engine produces a single posture: every confidence number Rafters publishes is grounded in a published reliability record.
 
+**Scope:** This is not a general-purpose calibration observatory. The cohort space is intentionally tiny: a handful of surfaces (rafters, eavesdrop, mail, ctrl), a small set of model choices we control, predictions types we defined. The simplicity of the algorithms -- fixed bins, plain Brier, straightforward orphan lifecycle -- is appropriate for that reality. Approaches designed for hundreds of billions of predictions across unknown models at unknown volumes solve a different problem. When the data proves the simpler approach wrong, the versioned algorithm roadmap exists for that reason.
+
 ---
 
 ## The institutional read
