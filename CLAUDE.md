@@ -2,31 +2,20 @@
 
 Infrastructure for all Rafters surfaces. Auth, database, API, middleware.
 
-## Apps
+## Bootstrap conventions
 
-| App      | Path         | What                                              |
-| -------- | ------------ | ------------------------------------------------- |
-| **web**  | `apps/web/`  | Cloudflare Worker -- Hono API, better-auth, D1    |
-| **ctrl** | `apps/ctrl/` | Internal operations SPA -- Vite + TanStack Router |
-
-## Stack
+Architecture decisions, app shapes, and consumer contracts live in legion reflections. Recall before grep. This file only covers invariants that the next agent must know before touching anything.
 
 - **Runtime**: Cloudflare Workers
-- **API**: Hono + `@hono/zod-validator`. Plain RPC, `AppType` exported for `hono/client`.
-- **Auth**: better-auth (native D1, passkeys + OAuth2). No email/password. Ever.
+- **API framework**: Hono + `@hono/zod-validator`
+- **Auth library**: better-auth (passkeys + OAuth2 + OTP). No email/password. Ever.
 - **Database**: Cloudflare D1, Drizzle as query builder only
 - **Schemas**: Zod is source of truth. `drizzle-zod` bridges DB to API schemas.
 - **Audit/Soft-delete/GDPR**: `@rafters/ledger`
-- **Client**: `hono/client` with `AppType` for end-to-end type safety
-- **State**: TanStack Query (cache/fetch), TanStack Forms (validation/submission)
-- **Router**: TanStack Router (ctrl SPA, file-based, type-safe)
-- **UI**: Rafters design system for all surfaces
 - **Lint/Format**: OXC (oxlint + oxc-format)
 - **TypeScript**: v6 (Go parser)
 - **Package Manager**: pnpm (never npm/yarn)
 - **IDs**: UUIDv7 for all identifiers
-
-No OpenAPI. The API is internal-only, ctrl is the only consumer. Removed in PR #92.
 
 ## Migrations
 
