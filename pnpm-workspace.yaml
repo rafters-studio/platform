@@ -1,2 +1,22 @@
 packages:
   - apps/*
+  - ../rafters/packages/color-utils
+  - ../rafters/packages/shared
+  - ../rafters/packages/math-utils
+
+allowBuilds:
+  "@rafters/ledger": true
+  esbuild: true
+  lefthook: true
+  sharp: true
+  workerd: true
+
+catalog:
+  "@types/node": 24.10.0
+  comment-parser: ^1.4.1
+  typescript: 5.9.3
+  vitest: ^4.1.0
+  zocker: 3.0.0
+  zod: ^4.0.0
+overrides:
+  vite: ^8.0.13

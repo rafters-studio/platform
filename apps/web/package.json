@@ -9,6 +9,7 @@
     "typecheck": "astro check && tsc --noEmit"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.96.0",
     "@astrojs/cloudflare": "^13.1.2",
     "@astrojs/mdx": "^5.0.2",
     "@astrojs/react": "^5.0.1",
@@ -17,7 +18,9 @@
     "@polar-sh/better-auth": "^1.8.3",
     "@polar-sh/checkout": "^0.2.0",
     "@polar-sh/sdk": "^0.46.6",
+    "@rafters/color-utils": "workspace:*",
     "@rafters/ledger": "^0.2.0",
+    "@rafters/shared": "workspace:*",
     "@tailwindcss/vite": "^4.2.2",
     "@tanstack/react-form": "^1.28.5",
     "@tanstack/react-query": "^5.91.0",
@@ -37,6 +40,7 @@
     "@astrojs/check": "^0.9.8",
     "@cloudflare/vitest-pool-workers": "^0.13.2",
     "@playwright/test": "^1.58.2",
+    "@types/node": "catalog:",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitest/browser": "^4.1.0",
@@ -44,6 +48,7 @@
     "oxlint": "^1.56.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.0",
-    "wrangler": "^4.75.0"
+    "wrangler": "^4.75.0",
+    "zocker": "catalog:"
   }
 }

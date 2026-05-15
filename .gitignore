@@ -13,3 +13,4 @@ test-results
 wrangler-configuration.d.ts
 .playwright-mcp/
 .claude/worktrees/
+index.scip

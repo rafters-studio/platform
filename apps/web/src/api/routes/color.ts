@@ -1,91 +1,126 @@
-import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
+import { buildColorValue } from "@rafters/color-utils";
+import { ColorValueSchema, type ColorValue, type OKLCH } from "@rafters/shared/types";
+import { Hono } from "hono";
 import { z } from "zod";
-import Color from "colorjs.io";
+import { generateColorIntelligence } from "../lib/color/intelligence";
 import type { HonoEnv } from "../types";
 
-const colorInputSchema = z.object({
-  color: z.string().min(1),
+const OKLCHParamSchema = z.string().regex(/^\d+\.\d{3}-\d+\.\d{3}-\d+$/, {
+  message: "OKLCH path must match L.LLL-C.CCC-H (e.g. 0.500-0.120-240)",
 });
 
-function toOklch(color: InstanceType<typeof Color>): { l: number; c: number; h: number } {
-  const oklch = color.to("oklch");
-  return {
-    l: Math.round((oklch.l ?? 0) * 1000) / 1000,
-    c: Math.round((oklch.c ?? 0) * 1000) / 1000,
-    h: Math.round((oklch.h || 0) * 10) / 10,
-  };
+const QuerySchema = z.object({
+  sync: z.coerce.boolean().default(false),
+  adhoc: z.coerce.boolean().default(false),
+});
+
+const ColorResponseSchema = z.object({
+  color: ColorValueSchema.nullable(),
+  status: z.enum(["found", "approximate", "generating", "queued", "error"]),
+  requestId: z.string().optional(),
+  error: z.string().optional(),
+  similarityScore: z.number().min(0).max(1).optional(),
+});
+
+type ColorResponse = z.infer<typeof ColorResponseSchema>;
+
+function parseOklchParam(raw: string): OKLCH {
+  const [l, c, h] = raw.split("-").map(Number);
+  return { l, c, h, alpha: 1 };
 }
 
-function harmonyColor(
-  base: InstanceType<typeof Color>,
-  degrees: number,
-): { l: number; c: number; h: number } {
-  const oklch = base.to("oklch");
-  const shifted = new Color("oklch", [oklch.l, oklch.c, ((oklch.h || 0) + degrees) % 360]);
-  return toOklch(shifted);
+function vectorIdFor(oklch: OKLCH): string {
+  return `${oklch.l.toFixed(3)}-${oklch.c.toFixed(3)}-${Math.round(oklch.h)}`;
 }
 
-function contrastRatio(c1: InstanceType<typeof Color>, c2: InstanceType<typeof Color>): number {
-  const l1 = c1.to("srgb").luminance;
-  const l2 = c2.to("srgb").luminance;
-  const lighter = Math.max(l1, l2);
-  const darker = Math.min(l1, l2);
-  return Math.round(((lighter + 0.05) / (darker + 0.05)) * 100) / 100;
+async function lookupExact(vectorize: VectorizeIndex, id: string): Promise<ColorValue | null> {
+  const matches = await vectorize.getByIds([id]);
+  const hit = matches?.[0];
+  if (!hit?.metadata?.color_json) return null;
+  return JSON.parse(String(hit.metadata.color_json)) as ColorValue;
+}
+
+async function persist(vectorize: VectorizeIndex, id: string, color: ColorValue): Promise<void> {
+  await vectorize.upsert([
+    {
+      id,
+      values: analyticalVector(color),
+      metadata: {
+        color_json: JSON.stringify(color),
+        l: color.scale[5]?.l ?? 0.5,
+        c: color.scale[5]?.c ?? 0,
+        h: color.scale[5]?.h ?? 0,
+      },
+    },
+  ]);
+}
+
+const VECTOR_DIMENSIONS = 384;
+
+function analyticalVector(color: ColorValue): number[] {
+  const base = color.scale[5] ?? { l: 0.5, c: 0, h: 0, alpha: 1 };
+  const hueRad = (base.h * Math.PI) / 180;
+  const features = [
+    base.l,
+    base.c,
+    Math.sin(hueRad),
+    Math.cos(hueRad),
+    color.perceptualWeight?.weight ?? 0.5,
+    color.analysis?.temperature === "warm" ? 1 : color.analysis?.temperature === "cool" ? -1 : 0,
+  ];
+  return [...features, ...new Array<number>(VECTOR_DIMENSIONS - features.length).fill(0)];
 }
 
 const colorRoutes = new Hono<HonoEnv>().get(
-  "/analyze",
-  zValidator("query", colorInputSchema),
-  (c) => {
-    const { color: input } = c.req.valid("query");
+  "/:oklch",
+  zValidator("param", z.object({ oklch: OKLCHParamSchema })),
+  zValidator("query", QuerySchema),
+  async (c) => {
+    const { oklch: raw } = c.req.valid("param");
+    const { sync, adhoc } = c.req.valid("query");
+    const oklch = parseOklchParam(raw);
 
-    let color: InstanceType<typeof Color>;
-    try {
-      color = new Color(input);
-    } catch {
-      return c.json({ error: `Invalid color: ${input}` }, 400);
+    if (adhoc) {
+      const color = buildColorValue(oklch);
+      const body: ColorResponse = { color, status: "found" };
+      return c.json(body);
     }
 
-    const oklch = toOklch(color);
-    const hex = color.to("srgb").toString({ format: "hex" });
-    const white = new Color("white");
-    const black = new Color("black");
-    const contrastWhite = contrastRatio(color, white);
-    const contrastBlack = contrastRatio(color, black);
+    const id = vectorIdFor(oklch);
+    const cached = await lookupExact(c.env.VECTORIZE, id);
+    if (cached) {
+      const body: ColorResponse = { color: cached, status: "found" };
+      return c.json(body);
+    }
 
-    const temperature =
-      oklch.h >= 15 && oklch.h < 165
-        ? "warm"
-        : oklch.h >= 165 && oklch.h < 285
-          ? "cool"
-          : "neutral";
+    const math = buildColorValue(oklch);
 
-    return c.json({
-      input,
-      oklch,
-      hex,
-      perception: {
-        temperature,
-        luminanceCategory: oklch.l < 0.35 ? "dark" : oklch.l > 0.75 ? "light" : "mid",
-        saturationCategory: oklch.c < 0.04 ? "muted" : oklch.c > 0.15 ? "vivid" : "moderate",
-        isNeutral: oklch.c < 0.02,
-      },
-      contrast: {
-        white: contrastWhite,
-        black: contrastBlack,
-        wcagAANormal: Math.max(contrastWhite, contrastBlack) >= 4.5,
-        wcagAALarge: Math.max(contrastWhite, contrastBlack) >= 3,
-        wcagAAA: Math.max(contrastWhite, contrastBlack) >= 7,
-        recommendedForeground: contrastWhite >= contrastBlack ? "white" : "black",
-      },
-      harmony: {
-        complementary: harmonyColor(color, 180),
-        analogous: [harmonyColor(color, -30), harmonyColor(color, 30)],
-        triadic: [harmonyColor(color, 120), harmonyColor(color, 240)],
-        splitComplementary: [harmonyColor(color, 150), harmonyColor(color, 210)],
-      },
-    });
+    if (!sync) {
+      const body: ColorResponse = { color: math, status: "generating" };
+      return c.json(body, 202);
+    }
+
+    let intelligence;
+    try {
+      intelligence = await generateColorIntelligence(oklch, c.env);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "intelligence generation failed";
+      const body: ColorResponse = { color: math, status: "error", error: message };
+      return c.json(body, 500);
+    }
+
+    const enriched: ColorValue = { ...math, intelligence };
+    try {
+      await persist(c.env.VECTORIZE, id, enriched);
+    } catch (err) {
+      console.warn(
+        `Vectorize persist failed for ${id}: ${err instanceof Error ? err.message : "unknown"}`,
+      );
+    }
+
+    const body: ColorResponse = { color: enriched, status: "found" };
+    return c.json(body);
   },
 );
 

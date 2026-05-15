@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "pnpm --filter @rafters-studio/web dev",
     "build": "pnpm --filter @rafters-studio/web build",
-    "test": "vitest run --config vitest.config.ts",
+    "test": "vitest run --config vitest.config.mts",
     "test:spec": "vitest run --config vitest.browser.config.ts",
     "test:e2e": "playwright test",
     "test:all": "pnpm test && pnpm test:spec && pnpm test:e2e",
@@ -14,6 +14,9 @@
     "typecheck": "NODE_OPTIONS='--max-old-space-size=4096' tsc --noEmit -p apps/web/tsconfig.json"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.16.5",
+    "@rafters/color-utils": "workspace:*",
+    "@rafters/shared": "workspace:*",
     "lefthook": "^2.1.4",
     "oxfmt": "^0.41.0",
     "oxlint": "^1.56.0",
@@ -23,13 +26,5 @@
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@10.32.1",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@rafters/ledger",
-      "esbuild",
-      "sharp",
-      "workerd"
-    ]
-  }
+  "packageManager": "pnpm@11.1.2"
 }
