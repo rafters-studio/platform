@@ -46,4 +46,16 @@
       "binding": "rafters_logs",
     },
   ],
+  "ai": {
+    "binding": "AI",
+  },
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "rafters-color-vocab",
+    },
+  ],
+  "queues": {
+    "producers": [{ "binding": "QUEUE", "queue": "color-processing-queue" }],
+  },
 }

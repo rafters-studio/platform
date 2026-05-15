@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rafters-studio-web-test",
+  "main": "src/api/test-worker.ts",
+  "compatibility_date": "2026-03-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "rafters-test",
+      "database_id": "test-db-id",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "rafters_session",
+      "id": "test-session-id",
+    },
+  ],
+}
