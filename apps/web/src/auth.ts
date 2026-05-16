@@ -6,6 +6,7 @@ import { organization } from "better-auth/plugins/organization";
 import { passkey } from "@better-auth/passkey";
 import { checkout, polar, webhooks } from "@polar-sh/better-auth";
 import { Polar } from "@polar-sh/sdk";
+import { resendOTP } from "@rafters/better-auth-resend";
 import { ledgerPlugin } from "@rafters/ledger/better-auth";
 import { uuidv7 } from "uuidv7";
 import { createDb } from "./db/client";
@@ -55,10 +56,16 @@ function buildAuth(env: Env) {
     },
     plugins: [
       emailOTP({
-        sendVerificationOTP: async ({ email, otp, type }) => {
-          // TODO: Wire @rafters/better-auth-resend when mail repo ships
-          console.log(`[OTP] ${type} code ${otp} -> ${email}`);
-        },
+        sendVerificationOTP: (() => {
+          const send = resendOTP({
+            apiKey: env.RESEND_API_KEY,
+            fromEmail: env.FROM_EMAIL,
+            brandName: "Rafters Studio",
+            expiryMinutes: 10,
+            baseUrl: "https://api.resend.com",
+          });
+          return ({ email, otp }) => send(email, otp);
+        })(),
       }),
       ledgerPlugin({
         writeAuditEntry: async (entry) => {

@@ -3,6 +3,10 @@ packages:
   - ../rafters/packages/color-utils
   - ../rafters/packages/shared
   - ../rafters/packages/math-utils
+  - ../mail/packages/core
+  - ../mail/packages/resend
+  - ../mail/packages/react-email
+  - ../mail/packages/better-auth-resend
 
 allowBuilds:
   "@rafters/ledger": true
@@ -12,11 +16,14 @@ allowBuilds:
   workerd: true
 
 catalog:
+  "@cloudflare/workers-types": ^4.20260301.0
   "@types/node": 24.10.0
   comment-parser: ^1.4.1
+  drizzle-orm: 0.44.7
+  tsup: ^8.5.0
   typescript: 5.9.3
   vitest: ^4.1.0
-  zocker: 3.0.0
+  zocker: ^3.0.0
   zod: ^4.0.0
 overrides:
   vite: ^8.0.13
