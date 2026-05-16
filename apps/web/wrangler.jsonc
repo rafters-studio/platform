@@ -11,11 +11,13 @@
   "placement": {
     "mode": "smart",
   },
+  // Path-scoped route: shingle owns rafters.studio/* (apex marketing),
+  // apps/ctrl will mount at rafters.studio/ctrl/*. Mirrors the rafters/apps/registry
+  // topology -- never custom_domain at the apex when multiple workers coexist.
   "routes": [
     {
-      "pattern": "rafters.studio",
+      "pattern": "rafters.studio/api/*",
       "zone_id": "142da5fc1cd70bb8bb80be9926f83750",
-      "custom_domain": true,
     },
   ],
   "d1_databases": [
