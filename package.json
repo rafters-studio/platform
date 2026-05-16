@@ -18,6 +18,7 @@
     "@rafters/better-auth-resend": "workspace:*",
     "@rafters/color-utils": "workspace:*",
     "@rafters/shared": "workspace:*",
+    "drizzle-orm": "^0.45.2",
     "lefthook": "^2.1.4",
     "oxfmt": "^0.41.0",
     "oxlint": "^1.56.0",
