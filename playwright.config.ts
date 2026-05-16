@@ -1,7 +1,12 @@
 import { defineConfig, devices } from "@playwright/test";
 
+// Smoke suite runs against a real deployed worker. Default targets production;
+// override via SMOKE_BASE_URL=https://staging.example.com pnpm test:e2e for staging.
+// No webServer -- this suite never spins up local dev.
+const baseURL = process.env.SMOKE_BASE_URL ?? "https://rafters.studio";
+
 export default defineConfig({
-  testDir: ".",
+  testDir: "tests/e2e",
   testMatch: "**/*.e2e.ts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -9,18 +14,13 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:4321",
+    baseURL,
     trace: "on-first-retry",
   },
   projects: [
     {
-      name: "chromium",
+      name: "smoke",
       use: { ...devices["Desktop Chrome"] },
     },
   ],
-  webServer: {
-    command: "pnpm dev",
-    url: "http://localhost:4321",
-    reuseExistingServer: !process.env.CI,
-  },
 });
