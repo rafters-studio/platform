@@ -17,6 +17,8 @@
     "@rafters/color-utils": "workspace:*",
     "@rafters/ledger": "^0.2.0",
     "@rafters/mail": "workspace:*",
+    "@rafters/mail-cloudflare": "workspace:*",
+    "@rafters/mail-drizzle": "workspace:*",
     "@rafters/mail-react-email": "workspace:*",
     "@rafters/mail-resend": "workspace:*",
     "@rafters/shared": "workspace:*",
