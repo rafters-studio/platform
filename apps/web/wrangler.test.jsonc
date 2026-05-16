@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rafters-studio-web-test",
-  "main": "src/api/test-worker.ts",
+  "main": "src/test-worker.ts",
   "compatibility_date": "2026-03-18",
   "compatibility_flags": ["nodejs_compat"],
   "d1_databases": [

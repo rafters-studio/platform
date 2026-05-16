@@ -1,6 +1,6 @@
 import { and, eq, lt } from "drizzle-orm";
-import { createDb } from "../../db/client";
-import { uncertaintyPrediction } from "../../db/schema/uncertainty";
+import { createDb } from "../db/client";
+import { uncertaintyPrediction } from "../db/schema/uncertainty";
 
 export async function runOrphanSweep(d1: D1Database): Promise<number> {
   const db = createDb(d1);

@@ -6,9 +6,9 @@ import {
   createSignedCapabilities,
   readCapabilities,
   setCapabilitiesCookie,
-} from "../../lib/capabilities";
-import { createDb } from "../../db/client";
-import { member } from "../../db/schema/auth";
+} from "../lib/capabilities";
+import { createDb } from "../db/client";
+import { member } from "../db/schema/auth";
 import { eq, and } from "drizzle-orm";
 
 export const loadSession = createMiddleware<HonoEnv>(async (c, next) => {

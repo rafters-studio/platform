@@ -1,5 +1,5 @@
 import { createMiddleware } from "hono/factory";
-import type { HonoEnv } from "../../api/types";
+import type { HonoEnv } from "../../types";
 import { createLogger } from "./logger";
 
 export const requestLogger = createMiddleware<HonoEnv>(async (c, next) => {
