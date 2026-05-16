@@ -89,7 +89,7 @@ import { setupServer } from "msw/node";
 import { http, HttpResponse } from "msw";
 import { mockMany } from "zocker";
 import { MyComponent } from "../../../apps/<app>/src/components/<surface>/<component>";
-import { selectEntitySchema } from "../../../apps/web/src/api/routes/<feature>/<surface>.zod";
+import { selectEntitySchema } from "../../../apps/web/src/routes/<feature>/<surface>.zod";
 
 expect.extend(toHaveNoViolations);
 
@@ -178,7 +178,7 @@ Zocker generates typed mock data from Zod schemas. Use it everywhere you need re
 
 ```typescript
 import { mock, mockMany } from "zocker";
-import { selectEntitySchema } from "../../apps/web/src/api/routes/<feature>/<surface>.zod";
+import { selectEntitySchema } from "../../apps/web/src/routes/<feature>/<surface>.zod";
 
 // Single mock
 const entity = mock(selectEntitySchema);
@@ -200,7 +200,7 @@ Mock API calls in `.spec.ts` files using MSW.
 import { setupServer } from "msw/node";
 import { http, HttpResponse } from "msw";
 import { mock } from "zocker";
-import { selectEntitySchema } from "../../apps/web/src/api/routes/<feature>/<surface>.zod";
+import { selectEntitySchema } from "../../apps/web/src/routes/<feature>/<surface>.zod";
 
 const server = setupServer(
   http.get("/api/<feature>/<surface>", () => {

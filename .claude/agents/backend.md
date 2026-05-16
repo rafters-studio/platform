@@ -11,7 +11,7 @@ You build the server side of platform features: Hono routes, D1 queries, Zod sch
 ## First Steps
 
 1. Read `CLAUDE.md` in the project root.
-2. Read `apps/web/src/api/index.ts` to understand how route groups are mounted.
+2. Read `apps/web/src/index.ts` to understand how route groups are mounted.
 3. Read any existing files in the area you are working in before writing anything new.
 
 ## Stack
@@ -19,14 +19,14 @@ You build the server side of platform features: Hono routes, D1 queries, Zod sch
 - **Framework**: Hono with `@hono/zod-openapi`
 - **Database**: Cloudflare D1 via Drizzle (query builder only -- never `drizzle-kit push` or `drizzle-kit migrate`)
 - **Schemas**: Zod is source of truth. Every schema file gets a `.zod.ts` companion.
-- **Auth middleware**: `loadSession`, `requireAuth`, `requireOrgRole` from `apps/web/src/api/middleware/auth.ts`
+- **Auth middleware**: `loadSession`, `requireAuth`, `requireOrgRole` from `apps/web/src/middleware/auth.ts`
 - **Types**: Run `wrangler types` after any binding changes. Never manually type `Env`.
 - **Migrations**: `wrangler d1 migrations create <name>` only. Never touch migration files manually.
 
 ## File Locations
 
 ```
-apps/web/src/api/routes/
+apps/web/src/routes/
   <feature>/
     <surface>.ts          -- Hono route handlers
     <surface>.zod.ts      -- Zod schemas for this surface
@@ -135,7 +135,7 @@ Mirror the source tree in `tests/routes/`. Never colocate.
 // tests/routes/<feature>/preferences.test.ts
 import { describe, it, expect } from "vitest";
 import { mock } from "zocker";
-import { selectPreferenceSchema } from "../../apps/web/src/api/routes/<feature>/preferences.zod";
+import { selectPreferenceSchema } from "../../apps/web/src/routes/<feature>/preferences.zod";
 
 describe("preferences schema", () => {
   it("accepts valid input", () => {
@@ -182,7 +182,7 @@ Request body: { field: type, ... }
 Response: { field: type, ... }
 Auth: requireAuth
 
-TypeScript types exported from: apps/web/src/api/routes/<feature>/<surface>.zod.ts
+TypeScript types exported from: apps/web/src/routes/<feature>/<surface>.zod.ts
 ```
 
 This summary goes directly to the frontend agent. Make it accurate.

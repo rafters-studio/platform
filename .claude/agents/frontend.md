@@ -208,7 +208,7 @@ import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 import { mock } from "zocker";
 import { MyComponent } from "../../../apps/<app>/src/components/<surface>/<component>";
-import { selectEntitySchema } from "../../../apps/web/src/api/routes/<feature>/<surface>.zod";
+import { selectEntitySchema } from "../../../apps/web/src/routes/<feature>/<surface>.zod";
 
 describe("MyComponent", () => {
   it("renders populated state correctly", () => {
@@ -235,7 +235,7 @@ import { render } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import { mockMany } from "zocker";
 import { MyComponent } from "../../../apps/<app>/src/components/<surface>/<component>";
-import { selectEntitySchema } from "../../../apps/web/src/api/routes/<feature>/<surface>.zod";
+import { selectEntitySchema } from "../../../apps/web/src/routes/<feature>/<surface>.zod";
 
 expect.extend(toHaveNoViolations);
 
