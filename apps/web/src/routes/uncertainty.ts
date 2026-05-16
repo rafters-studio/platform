@@ -2,8 +2,8 @@ import { zValidator } from "@hono/zod-validator";
 import { and, eq, gte, lt, sql } from "drizzle-orm";
 import { Hono } from "hono";
 import { z } from "zod";
-import { createDb } from "../../db/client";
-import { uncertaintyCalibrationSnapshot, uncertaintyPrediction } from "../../db/schema/uncertainty";
+import { createDb } from "../db/client";
+import { uncertaintyCalibrationSnapshot, uncertaintyPrediction } from "../db/schema/uncertainty";
 import { requireAuth } from "../middleware/auth";
 import type { HonoEnv } from "../types";
 

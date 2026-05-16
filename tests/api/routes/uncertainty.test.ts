@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { emitSchema, witnessSchema } from "../../../apps/web/src/api/routes/uncertainty";
+import { emitSchema, witnessSchema } from "../../../apps/web/src/routes/uncertainty";
 
 describe("emitSchema", () => {
   const valid = {

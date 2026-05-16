@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { computeBuckets } from "../../../apps/web/src/api/cron/calibration-roll";
+import { computeBuckets } from "../../../apps/web/src/cron/calibration-roll";
 
 describe("computeBuckets", () => {
   it("returns empty array when no predictions", () => {
