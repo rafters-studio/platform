@@ -11,6 +11,7 @@ import { ledgerPlugin } from "@rafters/ledger/better-auth";
 import { uuidv7 } from "uuidv7";
 import { createDb } from "./db/client";
 import { auditLog } from "./db/schema/audit";
+import { writePolarAudit } from "./lib/audit/polar-webhook";
 
 function buildAuth(env: Env) {
   const db = createDb(env.DB);
@@ -87,6 +88,9 @@ function buildAuth(env: Env) {
           checkout(),
           webhooks({
             secret: env.POLAR_WEBHOOK_SECRET,
+            onPayload: async (payload) => {
+              await writePolarAudit(db, payload);
+            },
           }),
         ],
       }),

@@ -51,6 +51,9 @@ importers:
       '@rafters/shared':
         specifier: workspace:*
         version: link:../rafters/packages/shared
+      drizzle-orm:
+        specifier: ^0.45.2
+        version: 0.45.2(@cloudflare/workers-types@4.20260515.1)(@types/better-sqlite3@7.6.13)(better-sqlite3@12.10.0)(kysely@0.28.17)
       lefthook:
         specifier: ^2.1.4
         version: 2.1.4
