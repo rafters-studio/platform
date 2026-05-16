@@ -1,0 +1,57 @@
+name: Smoke
+
+# Runs the post-deploy MVP smoke suite (#126) against production after every
+# push to main. Default run skips @cost-tagged tests (Anthropic + Resend
+# charges); operators run those manually with --grep @cost.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      include_cost:
+        description: "Run @cost-tagged tests (real Anthropic + Resend charges)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: |
+          mkdir -p "$(pnpm bin)"
+          printf '#!/bin/sh\nexit 0' > "$(pnpm bin)/lefthook"
+          chmod +x "$(pnpm bin)/lefthook"
+          pnpm install --frozen-lockfile
+
+      - run: pnpm exec playwright install --with-deps chromium
+
+      - name: Smoke
+        env:
+          INCLUDE_COST: ${{ inputs.include_cost }}
+        run: |
+          if [ "$INCLUDE_COST" = "true" ]; then
+            pnpm test:e2e
+          else
+            pnpm test:e2e --grep-invert @cost
+          fi
+
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
