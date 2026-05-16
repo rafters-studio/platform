@@ -35,7 +35,10 @@
   "triggers": {
     "crons": ["0 * * * *", "0 2 * * *"],
   },
-  // FROM_EMAIL and RESEND_API_KEY: add when wiring real OTP delivery
+  "vars": {
+    "FROM_EMAIL": "noreply@rafters.studio",
+  },
+  // RESEND_API_KEY is provisioned via `wrangler secret put RESEND_API_KEY`.
   "r2_buckets": [
     {
       "bucket_name": "rafters-email",
