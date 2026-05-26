@@ -34,7 +34,14 @@ export async function ingestInboundEmail(
   try {
     headers = parseEmailHeaders(parseRawHeaders(rawText));
   } catch (_err) {
-    await storage.put(`parse-failed/${hash}/raw.eml`, rawBuffer);
+    try {
+      await storage.put(`parse-failed/${hash}/raw.eml`, rawBuffer);
+    } catch (storageErr) {
+      console.error("parse-failed blob store failed; dropping", {
+        hash,
+        error: storageErr instanceof Error ? storageErr.message : String(storageErr),
+      });
+    }
     return { status: "parse-failed" };
   }
 

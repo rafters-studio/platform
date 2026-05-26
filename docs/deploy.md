@@ -82,7 +82,7 @@ pnpm exec wrangler email routing rules create rafters.studio \
   --match-type literal --match-field to --match-value inbox@rafters.studio
 ```
 
-Deploy `rafters-inbox` first so the routing rule has a real target. Mail delivered before the worker exists hits the catch-all action (default: drop).
+Deploy `rafters-inbox` before creating the routing rule. CF's behavior when a rule targets a missing worker is undocumented (best to not find out the hard way).
 
 After provisioning, send a test email to the address. Verify:
 
