@@ -3,6 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { admin } from "better-auth/plugins/admin";
 import { emailOTP } from "better-auth/plugins/email-otp";
 import { organization } from "better-auth/plugins/organization";
+import { apiKey } from "@better-auth/api-key";
 import { passkey } from "@better-auth/passkey";
 import { checkout, polar, webhooks } from "@polar-sh/better-auth";
 import { Polar } from "@polar-sh/sdk";
@@ -96,6 +97,22 @@ function buildAuth(env: Env) {
       }),
       admin(),
       organization(),
+      apiKey({
+        defaultPrefix: "rk_",
+        // Opaque random bearer per legion 019e6514 -- no PASETO inside, no signature.
+        // Permissions on the row are the source of truth; the string is just a pointer.
+        customKeyGenerator: ({ length, prefix }) => {
+          const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+          const bytes = new Uint8Array(length);
+          crypto.getRandomValues(bytes);
+          let key = "";
+          for (let i = 0; i < length; i++) {
+            key += alphabet[bytes[i] % alphabet.length];
+          }
+          return `${prefix ?? ""}${key}`;
+        },
+        defaultKeyLength: 48,
+      }),
     ],
   });
 }

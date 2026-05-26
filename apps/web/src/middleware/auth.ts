@@ -81,6 +81,57 @@ export const requireAuth = createMiddleware<HonoEnv>(async (c, next) => {
   await next();
 });
 
+// Authorization: Bearer <api-key> -- service-to-service auth.
+// Verifies via better-auth api-key plugin, attaches ApiKeyContext to c.var.apiKey on success.
+// requiredPermissions: bare strings the key must include (e.g. "uncertainty:emit").
+// Falls through to next() if a user session is present -- user sessions skip the api-key path.
+export const requireApiKeyOrSession = (...requiredPermissions: string[]) =>
+  createMiddleware<HonoEnv>(async (c, next) => {
+    if (c.var.user) {
+      await next();
+      return;
+    }
+
+    const authHeader = c.req.header("Authorization");
+    const headerKey = c.req.header("x-api-key");
+    const bearer = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : undefined;
+    const key = bearer ?? headerKey;
+    if (!key) return c.json({ error: "Unauthorized" }, 401);
+
+    const auth = createAuth(c.env);
+    const result = await auth.api.verifyApiKey({ body: { key, permissions: undefined } });
+    if (!result.valid || !result.key) {
+      return c.json({ error: "Invalid api key" }, 401);
+    }
+
+    // result.key.permissions arrives as Record<resource, action[]> from better-auth.
+    // We flatten to "resource:action" strings for scope checks.
+    const permissions: string[] = [];
+    const raw = result.key.permissions;
+    if (raw && typeof raw === "object") {
+      for (const [resource, actions] of Object.entries(raw)) {
+        if (Array.isArray(actions)) {
+          for (const action of actions) {
+            permissions.push(`${resource}:${action}`);
+          }
+        }
+      }
+    }
+    for (const required of requiredPermissions) {
+      if (!permissions.includes(required)) {
+        return c.json({ error: "Insufficient scope", required }, 403);
+      }
+    }
+
+    c.set("apiKey", {
+      id: result.key.id,
+      referenceId: result.key.referenceId,
+      name: result.key.name ?? null,
+      permissions,
+    });
+    await next();
+  });
+
 export const requireOrgMember = createMiddleware<HonoEnv>(async (c, next) => {
   if (!c.var.capabilities?.orgId) {
     return c.json({ error: "No active organization" }, 403);
