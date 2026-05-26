@@ -13,7 +13,7 @@ The platform Worker. API only -- no frontend. Lives at `rafters.studio/api/*`.
 
 Cloudflare picks the most-specific route, so the three HTTP workers coexist on the apex without conflict. Never `custom_domain: true` at the apex.
 
-**Why apps/inbox is a separate worker:** CF Email Routing's UI only lists workers whose default export is exclusively `email` -- no `fetch`, no `scheduled`. apps/inbox satisfies that constraint; apps/web cannot (it has `fetch` + `scheduled`). Both workers bind to the same D1 and R2 buckets; isolation is at the dispatch layer, not the data layer. See legion reflection 019e6522-ad66 for the full constraint.
+**Why apps/inbox is a separate worker:** CF Email Routing's UI only lists workers that do NOT serve HTTP routes -- no `routes` block in wrangler.jsonc, no Workers Routes set in the dashboard. The default export's handler shape is irrelevant; an email worker can also expose `fetch` (e.g. for a `/health` endpoint via workers.dev). apps/web has `routes: [{ pattern: "rafters.studio/api/*" }]` so it cannot be selected; apps/inbox has no routes block so it can. Both workers bind to the same D1 and R2; isolation is at the dispatch layer. See legion reflection 019e660c-1414 (which corrects an earlier wrong claim in 019e6522-ad66 about handler-shape being the constraint).
 
 ## Required production secrets
 
@@ -67,7 +67,7 @@ When adding a migration: `pnpm exec wrangler d1 migrations create rafters <name>
 
 ## CF Email Routing (inbound)
 
-Inbound mail flows through CF Email Routing into `rafters-inbox` (apps/inbox). The worker's default export is exclusively `email` -- CF's "Send to a Worker" dropdown only lists workers shaped that way.
+Inbound mail flows through CF Email Routing into `rafters-inbox` (apps/inbox). The worker has no `routes` block in its wrangler.jsonc; that's the actual eligibility test for CF's "Send to a Worker" dropdown.
 
 1. Cloudflare dashboard -> Email -> Email Routing -> Routing rules
 2. Add a custom address: `inbox@rafters.studio` (or chosen)

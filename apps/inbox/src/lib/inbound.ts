@@ -21,11 +21,11 @@ function parseRawHeaders(rawText: string): Record<string, string> {
 export async function ingestInboundEmail(
   message: ForwardableEmailMessage,
   env: Env,
+  rawBuffer: ArrayBuffer,
 ): Promise<{ status: "stored" | "duplicate" | "parse-failed"; messageId?: string }> {
   const db = drizzle(env.DB);
   const storage = createR2Storage({ bucket: env.rafters_email });
 
-  const rawBuffer = await new Response(message.raw).arrayBuffer();
   const raw = new Uint8Array(rawBuffer);
   const hash = await hashContent(rawBuffer);
   const rawText = new TextDecoder().decode(raw);
