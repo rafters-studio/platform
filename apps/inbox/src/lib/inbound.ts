@@ -1,8 +1,8 @@
 import { createR2Storage, hashContent, parseEmailHeaders } from "@rafters/mail-cloudflare";
 import { inboxMessage, inboxThread, mailbox } from "@rafters/mail-drizzle";
 import { eq } from "drizzle-orm";
+import { drizzle } from "drizzle-orm/d1";
 import { uuidv7 } from "uuidv7";
-import { createDb } from "../../db/client";
 
 const SYSTEM_MAILBOX_ID = "00000000-0000-0000-0000-000000000001";
 
@@ -21,7 +21,7 @@ export async function ingestInboundEmail(
   message: ForwardableEmailMessage,
   env: Env,
 ): Promise<{ status: "stored" | "duplicate" | "parse-failed"; messageId?: string }> {
-  const db = createDb(env.DB);
+  const db = drizzle(env.DB);
   const storage = createR2Storage({ bucket: env.rafters_email });
 
   const rawBuffer = await new Response(message.raw).arrayBuffer();
