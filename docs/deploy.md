@@ -13,7 +13,7 @@ The platform Worker. API only -- no frontend. Lives at `rafters.studio/api/*`.
 
 Cloudflare picks the most-specific route, so the three HTTP workers coexist on the apex without conflict. Never `custom_domain: true` at the apex.
 
-**Why apps/inbox is a separate worker:** CF Email Routing's UI only lists workers that do NOT serve HTTP routes -- no `routes` block in wrangler.jsonc, no Workers Routes set in the dashboard. The default export's handler shape is irrelevant; an email worker can also expose `fetch` (e.g. for a `/health` endpoint via workers.dev). apps/web has `routes: [{ pattern: "rafters.studio/api/*" }]` so it cannot be selected; apps/inbox has no routes block so it can. Both workers bind to the same D1 and R2; isolation is at the dispatch layer. See legion reflection 019e660c-1414 (which corrects an earlier wrong claim in 019e6522-ad66 about handler-shape being the constraint).
+**Why apps/inbox is a separate worker:** an Email Worker does one thing -- receive email. Its default export contains one handler: `email`. No `fetch`, no `scheduled`, no `routes` block in wrangler.jsonc. CF's Email Routing surface is purpose-built for this shape (templates ship single-handler; the dashboard treats Email Workers as a dedicated category). apps/web (API) and apps/inbox (email) share D1 and R2 bindings; isolation is at the dispatch layer. See legion reflection 019e6624 for the full doctrine and operational nuances.
 
 ## Required production secrets
 
