@@ -4,11 +4,24 @@
   "main": "src/test-worker.ts",
   "compatibility_date": "2026-03-18",
   "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "FROM_EMAIL": "test@example.invalid",
+    "BETTER_AUTH_SECRET": "test-secret-not-for-prod",
+    "BETTER_AUTH_URL": "http://localhost",
+    "RESEND_API_KEY": "re_test_placeholder",
+    "GITHUB_CLIENT_ID": "test-github-client-id",
+    "GITHUB_CLIENT_SECRET": "test-github-client-secret",
+    "POLAR_ACCESS_TOKEN": "polar_test_token",
+    "POLAR_WEBHOOK_SECRET": "polar_test_webhook_secret",
+    "CF_API_KEY": "test-cf-api-key",
+    "CF_WORKER_AI_KEY": "test-cf-worker-ai-key",
+  },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "rafters-test",
       "database_id": "test-db-id",
+      "migrations_dir": "src/db/migrations",
     },
   ],
   "kv_namespaces": [
