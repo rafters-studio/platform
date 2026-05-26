@@ -1,5 +1,6 @@
-import { createR2Storage, hashContent, parseEmailHeaders } from "@rafters/mail-cloudflare";
-import { inboxMessage, inboxThread, mailbox } from "@rafters/mail-drizzle";
+import { hashContent, parseEmailHeaders } from "@rafters/mail-cloudflare/parsing";
+import { createR2Storage } from "@rafters/mail-cloudflare/storage";
+import { inboxMessage, inboxThread, mailbox } from "@rafters/mail-drizzle/tables";
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/d1";
 import { uuidv7 } from "uuidv7";
