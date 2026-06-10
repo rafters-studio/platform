@@ -4,6 +4,7 @@ import { ColorValueSchema, type ColorValue, type OKLCH } from "@rafters/shared/t
 import { Hono } from "hono";
 import { z } from "zod";
 import { generateColorIntelligence } from "../lib/color/intelligence";
+import type { ColorSeedMessage } from "../queue/color-consumer";
 import type { HonoEnv } from "../types";
 
 const OKLCHParamSchema = z.string().regex(/^\d+\.\d{3}-\d+\.\d{3}-\d+$/, {
@@ -97,6 +98,17 @@ const colorRoutes = new Hono<HonoEnv>().get(
     const math = buildColorValue(oklch);
 
     if (!sync) {
+      try {
+        const message: ColorSeedMessage = {
+          oklch,
+          requestId: crypto.randomUUID(),
+          timestamp: Date.now(),
+        };
+        await c.env.QUEUE.send(message, { contentType: "json" });
+      } catch {
+        // Enqueue failure must not fail the read path; the next request
+        // for this color re-enqueues. The 202 contract holds either way.
+      }
       const body: ColorResponse = { color: math, status: "generating" };
       return c.json(body, 202);
     }

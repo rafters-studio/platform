@@ -2,6 +2,7 @@ import app from "./app";
 import { runCalibrationRoll } from "./cron/calibration-roll";
 import { runOrphanSweep } from "./cron/orphan-sweep";
 import { createLogger } from "./lib/logging/logger";
+import { processColorSeedBatch } from "./queue/color-consumer";
 
 type CronHandler = (db: D1Database) => Promise<number | void>;
 
@@ -34,6 +35,9 @@ export default {
       });
       throw err;
     }
+  },
+  queue: async (batch, env) => {
+    await processColorSeedBatch(batch, env, app);
   },
 } satisfies ExportedHandler<Env>;
 
