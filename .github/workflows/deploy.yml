@@ -1,0 +1,77 @@
+name: Deploy
+
+# The only path to production. Agents never run wrangler deploy; this
+# workflow ships apps/web after every gate passes on main.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/web/**"
+      - "tests/**"
+      - "pnpm-lock.yaml"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: |
+          mkdir -p "$(pnpm bin)"
+          printf '#!/bin/sh\nexit 0' > "$(pnpm bin)/lefthook"
+          chmod +x "$(pnpm bin)/lefthook"
+          pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+  deploy:
+    needs: gates
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: |
+          mkdir -p "$(pnpm bin)"
+          printf '#!/bin/sh\nexit 0' > "$(pnpm bin)/lefthook"
+          chmod +x "$(pnpm bin)/lefthook"
+          pnpm install --frozen-lockfile
+
+      - name: Deploy apps/web
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: apps/web
+          command: deploy
