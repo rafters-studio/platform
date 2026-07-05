@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rafters-studio-ctrl",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-03-18",
+  "observability": {
+    "enabled": true,
+  },
+  // Path-scoped route under the shared zone: shingle owns the apex,
+  // apps/web owns /api/*, ctrl owns /ctrl/*. Never custom_domain at the
+  // apex when multiple workers coexist.
+  "routes": [
+    {
+      "pattern": "rafters.studio/ctrl/*",
+      "zone_id": "142da5fc1cd70bb8bb80be9926f83750",
+    },
+  ],
+  // Vite builds with base /ctrl/ into dist/; the worker strips the /ctrl
+  // prefix before asset lookup so dist/ stays unprefixed.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+  },
+}
