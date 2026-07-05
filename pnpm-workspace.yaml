@@ -1,14 +1,11 @@
+# Rafters internal packages are never published (versioning IS drift). They
+# resolve as sibling-clone workspace members: Sean's machine and CI both lay
+# out rafters-studio/{rafters,platform} side by side. CI pins the rafters
+# ref in .github/workflows -- bump it there deliberately.
 packages:
   - apps/*
   - ../rafters/packages/color-utils
   - ../rafters/packages/shared
-  - ../rafters/packages/math-utils
-  - ../mail/packages/core
-  - ../mail/packages/resend
-  - ../mail/packages/react-email
-  - ../mail/packages/better-auth-resend
-  - ../mail/packages/cloudflare
-  - ../mail/packages/drizzle
 
 allowBuilds:
   "@rafters/ledger": true
