@@ -60,7 +60,11 @@
       "index_name": "rafters-color-vocab",
     },
   ],
+  // The consumer seat moves here from rafters-api. CF allows one worker
+  // consumer per queue: rafters-api must release the seat (worker deleted
+  // or redeployed without its consumers block) before this deploys.
   "queues": {
     "producers": [{ "binding": "QUEUE", "queue": "color-processing-queue" }],
+    "consumers": [{ "queue": "color-processing-queue" }],
   },
 }

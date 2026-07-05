@@ -51,6 +51,28 @@ describe("GET /api/color/:oklch", () => {
     });
   });
 
+  describe("GET /api/color/search", () => {
+    it("rejects a missing q with 400 (validated before any binding is touched)", async () => {
+      const res = await SELF.fetch("http://localhost/api/color/search");
+      expect(res.status).toBe(400);
+    });
+
+    it("rejects an unknown hue category with 400", async () => {
+      const res = await SELF.fetch("http://localhost/api/color/search?q=ocean&hue=teal");
+      expect(res.status).toBe(400);
+    });
+
+    it("rejects limit above 100 with 400", async () => {
+      const res = await SELF.fetch("http://localhost/api/color/search?q=ocean&limit=101");
+      expect(res.status).toBe(400);
+    });
+
+    it.skip("returns semantic matches (requires AI + Vectorize remote bindings)", async () => {
+      const res = await SELF.fetch("http://localhost/api/color/search?q=ocean%20blue");
+      expect(res.status).toBe(200);
+    });
+  });
+
   describe("sync=true (full AI pipeline)", () => {
     it.skip("generates intelligence and persists (requires AI Gateway + Vectorize remote bindings)", async () => {
       const res = await SELF.fetch("http://localhost/api/color/0.500-0.120-240?sync=true");
