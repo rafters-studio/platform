@@ -13,10 +13,9 @@ function payload(type: string, id: string, ts: Date) {
   };
 }
 
-// Idempotency tests require D1 migrations applied at test setup (applyD1Migrations
-// from cloudflare:test). Skipped here; verified end-to-end by #126 e2e suite against
-// a deployed worker with a Polar test event payload.
-describe.skip("writePolarAudit (D1-backed; needs migrations applied)", () => {
+// D1-backed: tests/setup.ts applies migrations via applyD1Migrations, so these
+// run against real migrated D1 in miniflare -- same pattern as calibration-roll-db.
+describe("writePolarAudit", () => {
   it("writes a row with polar_event_id keyed by type:id:timestamp", async () => {
     const db = createDb(env.DB);
     const ts = new Date("2026-05-15T12:00:00Z");

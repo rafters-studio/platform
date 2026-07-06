@@ -3,6 +3,9 @@ name: Smoke
 # Runs the post-deploy MVP smoke suite (#126) against production after every
 # push to main. Default run skips @cost-tagged tests (Anthropic + Resend
 # charges); operators run those manually with --grep @cost.
+#
+# Rafters internal packages resolve as sibling-clone workspace members
+# pinned to RAFTERS_REF -- see ci.yml for the doctrine.
 
 on:
   push:
@@ -17,19 +20,36 @@ on:
 permissions:
   contents: read
 
+env:
+  RAFTERS_REF: 9c95a6d6fca47005cb6f1d930597d4dde93f7917
+
 jobs:
   smoke:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: platform
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: platform
+
+      - uses: actions/checkout@v4
+        with:
+          repository: rafters-studio/rafters
+          ref: ${{ env.RAFTERS_REF }}
+          path: rafters
 
       - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: platform/package.json
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: platform/pnpm-lock.yaml
 
       - run: |
           mkdir -p "$(pnpm bin)"
@@ -53,5 +73,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
+          path: platform/playwright-report/
           retention-days: 7
