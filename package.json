@@ -16,7 +16,7 @@
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.16.5",
     "@playwright/test": "^1.58.2",
-    "@rafters/better-auth-resend": "workspace:*",
+    "@rafters/better-auth-resend": "^0.1.0",
     "@rafters/color-utils": "workspace:*",
     "@rafters/shared": "workspace:*",
     "drizzle-orm": "^0.45.2",
