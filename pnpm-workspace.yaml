@@ -3,12 +3,6 @@ packages:
   - ../rafters/packages/color-utils
   - ../rafters/packages/shared
   - ../rafters/packages/math-utils
-  - ../mail/packages/core
-  - ../mail/packages/resend
-  - ../mail/packages/react-email
-  - ../mail/packages/better-auth-resend
-  - ../mail/packages/cloudflare
-  - ../mail/packages/drizzle
 
 allowBuilds:
   "@rafters/ledger": true
