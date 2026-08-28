@@ -9,21 +9,9 @@ catalogs:
     '@types/node':
       specifier: 24.10.0
       version: 24.10.0
-    comment-parser:
-      specifier: ^1.4.1
-      version: 1.4.6
-    typescript:
-      specifier: 5.9.3
-      version: 5.9.3
-    vitest:
-      specifier: ^4.1.0
-      version: 4.1.6
     zocker:
       specifier: ^3.0.0
       version: 3.0.0
-    zod:
-      specifier: ^4.0.0
-      version: 4.4.3
 
 overrides:
   drizzle-orm: ^0.45.2
@@ -43,11 +31,11 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(kysely@0.28.17))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vitest@4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0)))
       '@rafters/color-utils':
-        specifier: workspace:*
-        version: link:../rafters/packages/color-utils
+        specifier: 0.3.0
+        version: 0.3.0
       '@rafters/shared':
-        specifier: workspace:*
-        version: link:../rafters/packages/shared
+        specifier: 0.3.0
+        version: 0.3.0
       drizzle-orm:
         specifier: ^0.45.2
         version: 0.45.2(kysely@0.28.17)
@@ -66,78 +54,6 @@ importers:
       vitest:
         specifier: ^4.1.0
         version: 4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0))
-
-  ../rafters/packages/color-utils:
-    dependencies:
-      '@rafters/shared':
-        specifier: workspace:*
-        version: link:../shared
-      apca-w3:
-        specifier: ^0.1.9
-        version: 0.1.9
-      colorjs.io:
-        specifier: ^0.5.2
-        version: 0.5.2
-      zod:
-        specifier: 'catalog:'
-        version: 4.4.3
-    devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.10.0
-      tsx:
-        specifier: ^4.21.0
-        version: 4.22.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0))
-      zocker:
-        specifier: 'catalog:'
-        version: 3.0.0(zod@4.4.3)
-
-  ../rafters/packages/math-utils:
-    dependencies:
-      zod:
-        specifier: 'catalog:'
-        version: 4.4.3
-    devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.10.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0))
-      zocker:
-        specifier: 'catalog:'
-        version: 3.0.0(zod@4.4.3)
-
-  ../rafters/packages/shared:
-    dependencies:
-      comment-parser:
-        specifier: 'catalog:'
-        version: 1.4.6
-      zod:
-        specifier: 'catalog:'
-        version: 4.4.3
-    devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 24.10.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0))
-      zocker:
-        specifier: 'catalog:'
-        version: 3.0.0(zod@4.4.3)
 
   apps/ctrl:
     dependencies:
@@ -240,8 +156,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(kysely@0.28.17))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vitest@4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0)))
       '@rafters/color-utils':
-        specifier: workspace:*
-        version: link:../../../rafters/packages/color-utils
+        specifier: 0.3.0
+        version: 0.3.0
       '@rafters/ledger':
         specifier: ^0.2.0
         version: 0.2.0(better-auth@1.6.11(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(kysely@0.28.17))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vitest@4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0))))(drizzle-orm@0.45.2(kysely@0.28.17))
@@ -261,8 +177,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       '@rafters/shared':
-        specifier: workspace:*
-        version: link:../../../rafters/packages/shared
+        specifier: 0.3.0
+        version: 0.3.0
       better-auth:
         specifier: ^1.6.0
         version: 1.6.11(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(kysely@0.28.17))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vitest@4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0)))
@@ -1727,6 +1643,9 @@ packages:
   '@rafters/better-auth-resend@0.1.0':
     resolution: {integrity: sha512-dG4ofSlNwJOnnKC0RD/hr2G0UW2G6Q1dgtI6KJmwuSAPAekrcZyoEGQqDDccwLwAuNMcfbIDvU5YsLRwnjmtpw==}
 
+  '@rafters/color-utils@0.3.0':
+    resolution: {integrity: sha512-S3zOy5141Znxhah+lAUJlseVuCAJbh6OAFtFRyHgM1+snBBWC4LriFS/E8jfFIUIc0Ls7w03ttvngyneOCb5Iw==}
+
   '@rafters/ledger@0.2.0':
     resolution: {integrity: sha512-inYp61hrP8cokRO8xop4FOmA9QEM7Hlxo5ZXrdzEFtkxMgCnA+cC8WD/hxsREXFhplA7eR0r0FFkrEQ36vB7TA==}
     engines: {node: '>=22'}
@@ -1753,6 +1672,9 @@ packages:
 
   '@rafters/mail@0.1.0':
     resolution: {integrity: sha512-LRVnyOJAEC0lVkh/kOVwyAuHRyieo46ab5N0difho05r6acEIm3GqW36s9OTlm/y6AhkPbBdAD8NnHlbG5Nj4g==}
+
+  '@rafters/shared@0.3.0':
+    resolution: {integrity: sha512-MlL4yFZw4PkLJZh0jjS8gY6uMNjkPSYZkTYa+OhEsum/F0EFkS3Vc2oPBXI7F8AyW1M1CypK/K3ruxlCJ4g4Ng==}
 
   '@react-email/body@0.0.11':
     resolution: {integrity: sha512-ZSD2SxVSgUjHGrB0Wi+4tu3MEpB4fYSbezsFNEJk2xCWDBkFiOeEsjTmR5dvi+CxTK691hQTQlHv0XWuP7ENTg==}
@@ -4352,6 +4274,13 @@ snapshots:
       - vitest
       - vue
 
+  '@rafters/color-utils@0.3.0':
+    dependencies:
+      '@rafters/shared': 0.3.0
+      apca-w3: 0.1.9
+      colorjs.io: 0.5.2
+      zod: 4.4.3
+
   '@rafters/ledger@0.2.0(better-auth@1.6.11(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(kysely@0.28.17))(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(vitest@4.1.6(@types/node@24.10.0)(vite@8.0.13(@types/node@24.10.0)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.0))))(drizzle-orm@0.45.2(kysely@0.28.17))':
     dependencies:
       uuidv7: 1.2.1
@@ -4419,6 +4348,11 @@ snapshots:
   '@rafters/mail@0.1.0':
     dependencies:
       uuidv7: 1.2.1
+      zod: 4.4.3
+
+  '@rafters/shared@0.3.0':
+    dependencies:
+      comment-parser: 1.4.6
       zod: 4.4.3
 
   '@react-email/body@0.0.11(react@19.2.6)':

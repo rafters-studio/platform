@@ -1,8 +1,5 @@
 packages:
   - apps/*
-  - ../rafters/packages/color-utils
-  - ../rafters/packages/shared
-  - ../rafters/packages/math-utils
 
 allowBuilds:
   "@rafters/ledger": true
