@@ -6,8 +6,7 @@
     "prepare": "vp config --no-agent"
   },
   "devDependencies": {
-    "typescript": "^7.0.2",
-    "vite-plus": "^1.0.0"
+    "vite-plus": "~1.0.0"
   },
   "packageManager": "pnpm@11.1.2"
 }
