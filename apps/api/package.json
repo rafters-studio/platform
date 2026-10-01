@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "hono": "catalog:"
+    "@hono/zod-validator": "catalog:",
+    "better-auth": "catalog:",
+    "hono": "catalog:",
+    "zod": "catalog:"
   }
 }
