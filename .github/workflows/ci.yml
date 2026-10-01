@@ -11,29 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-
-      - run: |
-          mkdir -p "$(pnpm bin)"
-          printf '#!/bin/sh\nexit 0' > "$(pnpm bin)/lefthook"
-          chmod +x "$(pnpm bin)/lefthook"
-          pnpm install --frozen-lockfile
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Format check
-        run: pnpm format:check
-
-      - name: Typecheck
-        run: pnpm typecheck
-        continue-on-error: true
-
-      - name: Test
-        run: pnpm test
-        continue-on-error: true
+      # Placeholder until the toolchain lands (#156).
+      - run: echo "No code to check yet."
