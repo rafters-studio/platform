@@ -1,0 +1,11 @@
+{
+  "name": "@platform/api",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@hono/zod-validator": "catalog:",
+    "better-auth": "catalog:",
+    "hono": "catalog:",
+    "zod": "catalog:"
+  }
+}
