@@ -11,6 +11,12 @@ each one as it is resolved.
 - cloudflare/workers-sdk PR #15993: follow-up, Vitest-5-only
 - cloudflare/workers-sdk issue #15618: Vitest 5 support
 
+## Skipped
+
+- *.spec.ts and *.e2e.ts
+  Now: not set up. Skipped because full Workers support for Vitest 5 is missing.
+  Then: add both test types.
+
 ## Workarounds
 
 - apps/api/src/index.test.ts
