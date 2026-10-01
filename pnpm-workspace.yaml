@@ -1,2 +1,9 @@
 packages:
   - "apps/*"
+
+catalog:
+  hono: ^4.13.12
+  typescript: ^7.0.2
+  vite-plus: ~1.0.0
+
+catalogMode: strict

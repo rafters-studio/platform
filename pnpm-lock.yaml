@@ -4,21 +4,33 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    hono:
+      specifier: ^4.13.12
+      version: 4.13.12
+    typescript:
+      specifier: ^7.0.2
+      version: 7.0.2
+    vite-plus:
+      specifier: ~1.0.0
+      version: 1.0.0
+
 importers:
 
   .:
     devDependencies:
       typescript:
-        specifier: ^7.0.2
+        specifier: 'catalog:'
         version: 7.0.2
       vite-plus:
-        specifier: ~1.0.0
+        specifier: 'catalog:'
         version: 1.0.0(@vitest/ui@5.0.1(vitest@5.0.1))(typescript@7.0.2)
 
   apps/api:
     dependencies:
       hono:
-        specifier: ^4.13.12
+        specifier: 'catalog:'
         version: 4.13.12
 
 packages:
