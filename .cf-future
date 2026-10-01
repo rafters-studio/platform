@@ -1,0 +1,22 @@
+# .cf-future
+
+Places that work around Cloudflare's missing Vitest 5 support. Vite+ 1.0 bundles
+Vitest 5.0.1; @cloudflare/vitest-plugin 1.3.5 supports only Vitest ^4.1.0. When
+the plugin ships Vitest 5 support, work through the entries below and delete
+each one as it is resolved.
+
+## Watch
+
+- cloudflare/workers-sdk PR #15500: [vitest-plugin] Support Vitest 5
+- cloudflare/workers-sdk PR #15993: follow-up, Vitest-5-only
+- cloudflare/workers-sdk issue #15618: Vitest 5 support
+
+## Workarounds
+
+- apps/api/src/index.test.ts
+  Now: tests the Hono app through app.request() under plain Vitest, outside workerd.
+  Then: run it in the Workers runtime via @cloudflare/vitest-plugin, with bindings.
+
+- vite.config.ts (test block)
+  Now: plain Vitest config, no Workers pool.
+  Then: add the Cloudflare Vitest plugin to the test config.
