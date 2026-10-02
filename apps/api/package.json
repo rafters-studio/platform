@@ -5,7 +5,6 @@
   "scripts": {
     "deploy": "wrangler deploy",
     "types": "wrangler types",
-    "seed:build": "tsx scripts/build-seed-list.ts",
     "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
@@ -18,23 +17,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@adobe/spectrum-tokens": "catalog:",
-    "@ant-design/colors": "catalog:",
-    "@carbon/colors": "catalog:",
-    "@chakra-ui/theme": "catalog:",
-    "@fluentui/tokens": "catalog:",
-    "@primer/primitives": "catalog:",
-    "@radix-ui/colors": "catalog:",
     "@types/node": "catalog:",
-    "bootstrap": "catalog:",
-    "color-name": "catalog:",
-    "material-colors": "catalog:",
-    "matrioshka.colors": "catalog:",
-    "open-color": "catalog:",
-    "simple-icons": "catalog:",
-    "tailwindcss": "catalog:",
     "tsx": "catalog:",
-    "wrangler": "catalog:",
-    "xkcd-colors": "catalog:"
+    "wrangler": "catalog:"
   }
 }
