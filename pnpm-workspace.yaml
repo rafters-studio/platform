@@ -2,7 +2,11 @@ packages:
   - "apps/*"
 
 catalog:
+  "@anthropic-ai/sdk": ^0.131.0
   "@hono/zod-validator": ^0.9.1
+  "@rafters/color-utils": 0.4.1
+  "@rafters/shared": 0.4.1
+  "@types/node": ^24.19.0
   better-auth: ^1.7.7
   hono: ^4.13.12
   typescript: ^7.0.2
