@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@hono/zod-validator": "catalog:",
+    "@rafters/color-utils": "catalog:",
+    "@rafters/shared": "catalog:",
     "better-auth": "catalog:",
     "hono": "catalog:",
     "zod": "catalog:"

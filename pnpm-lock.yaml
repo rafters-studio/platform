@@ -9,6 +9,12 @@ catalogs:
     '@hono/zod-validator':
       specifier: ^0.9.1
       version: 0.9.1
+    '@rafters/color-utils':
+      specifier: 0.4.1
+      version: 0.4.1
+    '@rafters/shared':
+      specifier: 0.4.1
+      version: 0.4.1
     better-auth:
       specifier: ^1.7.7
       version: 1.7.7
@@ -44,6 +50,12 @@ importers:
       '@hono/zod-validator':
         specifier: 'catalog:'
         version: 0.9.1(hono@4.13.12)(zod@4.6.5)
+      '@rafters/color-utils':
+        specifier: 'catalog:'
+        version: 0.4.1
+      '@rafters/shared':
+        specifier: 'catalog:'
+        version: 0.4.1
       better-auth:
         specifier: 'catalog:'
         version: 1.7.7(vitest@5.0.1)
@@ -853,6 +865,12 @@ packages:
   '@poppinss/exception@1.2.3':
     resolution: {integrity: sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw==}
 
+  '@rafters/color-utils@0.4.1':
+    resolution: {integrity: sha512-/CmVd5p2IZW4HjhpKm1m/zGVdSSXxiOZO/W7RQ9VQvaBJloNuc25iUozP9NAuPMZTiw+9e5XaFIibpMonJxhaw==}
+
+  '@rafters/shared@0.4.1':
+    resolution: {integrity: sha512-Xk2ESAqIMZAJxo52eCH9B4sOtget9IX6q7XLFp1+wjm58cXwlRxLjDwe3L5nYT417VWypreWr5muu+EwIDV91Q==}
+
   '@rolldown/binding-android-arm-eabi@1.2.12':
     resolution: {integrity: sha512-dB/a1214qKfHMXCpgqR4OZT+jS4kTyEXbQGJPqzobt5EwH5rX080pxE37alt3RzvR1bf1Yz/yGqRfrYAxuPw0A==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1394,6 +1412,9 @@ packages:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
     engines: {node: '>=10'}
 
+  apca-w3@0.1.9:
+    resolution: {integrity: sha512-Zrf6AeBeQjNe/fxK7U1jCo5zfdjDl6T4/kdw5Xlky3G7u+EJTZkyItjMYQGtwf9pkftsINxcYyOpuLkzKf1ITQ==}
+
   aria-query@5.3.0:
     resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
 
@@ -1474,6 +1495,16 @@ packages:
   chai@6.3.0:
     resolution: {integrity: sha512-XWAtwJ6OHO+tj0EKCs0Y2UamnyOxseZWltU4x2U2wh8g4AigdjwvtUjvLP2tqkA/avxHEtzxNaqGq/YGNwckKg==}
     engines: {node: '>=18'}
+
+  colorjs.io@0.5.2:
+    resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
+
+  colorparsley@0.1.8:
+    resolution: {integrity: sha512-rObESTTTE6G5qO5WFwFxWPggpw4KfpxnLC6Ssl8bITBnNVRhDsyCeTRAUxWQNVTx2pRknKlO2nddYTxjkdNFaw==}
+
+  comment-parser@1.4.9:
+    resolution: {integrity: sha512-+2AvZKjJaNq9GQljm3tr0utwrig5BL+jgJGvz5rDpGKNIp+ojcRXWUwBbh/sGIi1QCprR6PsKFakub+w1v+4hQ==}
+    engines: {node: '>= 12.0.0'}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -2420,6 +2451,18 @@ snapshots:
 
   '@poppinss/exception@1.2.3': {}
 
+  '@rafters/color-utils@0.4.1':
+    dependencies:
+      '@rafters/shared': 0.4.1
+      apca-w3: 0.1.9
+      colorjs.io: 0.5.2
+      zod: 4.6.5
+
+  '@rafters/shared@0.4.1':
+    dependencies:
+      comment-parser: 1.4.9
+      zod: 4.6.5
+
   '@rolldown/binding-android-arm-eabi@1.2.12':
     optional: true
 
@@ -2791,6 +2834,10 @@ snapshots:
 
   ansi-styles@5.2.0: {}
 
+  apca-w3@0.1.9:
+    dependencies:
+      colorparsley: 0.1.8
+
   aria-query@5.3.0:
     dependencies:
       dequal: 2.0.3
@@ -2833,6 +2880,12 @@ snapshots:
   blake3-wasm@2.1.5: {}
 
   chai@6.3.0: {}
+
+  colorjs.io@0.5.2: {}
+
+  colorparsley@0.1.8: {}
+
+  comment-parser@1.4.9: {}
 
   convert-source-map@2.0.0: {}
 
