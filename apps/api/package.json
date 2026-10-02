@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "deploy": "wrangler deploy",
-    "types": "wrangler types"
+    "types": "wrangler types",
+    "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "catalog:",
@@ -16,6 +17,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@types/node": "catalog:",
+    "tsx": "catalog:",
     "wrangler": "catalog:"
   }
 }

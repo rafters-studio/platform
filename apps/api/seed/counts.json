@@ -1,0 +1,141 @@
+{
+  "total": 25000,
+  "cap": 25000,
+  "sources": [
+    {
+      "source": "tailwind",
+      "name": "Tailwind CSS",
+      "license": "MIT",
+      "package": "tailwindcss@4.3.3",
+      "read": 273,
+      "base": 272,
+      "scale": 1508
+    },
+    {
+      "source": "material",
+      "name": "Material Design (2014 palette)",
+      "license": "ISC",
+      "package": "material-colors@1.2.6",
+      "read": 256,
+      "base": 256,
+      "scale": 1488
+    },
+    {
+      "source": "radix",
+      "name": "Radix Colors (light and dark)",
+      "license": "MIT",
+      "package": "@radix-ui/colors@3.0.0",
+      "read": 744,
+      "base": 712,
+      "scale": 1428
+    },
+    {
+      "source": "open-color",
+      "name": "Open Color",
+      "license": "MIT",
+      "package": "open-color@1.9.1",
+      "read": 132,
+      "base": 130,
+      "scale": 1213
+    },
+    {
+      "source": "primer",
+      "name": "Primer (light and dark)",
+      "license": "MIT",
+      "package": "@primer/primitives@11.10.0",
+      "read": 2376,
+      "base": 497,
+      "scale": 958
+    },
+    {
+      "source": "carbon",
+      "name": "IBM Carbon",
+      "license": "Apache-2.0",
+      "package": "@carbon/colors@11.59.0",
+      "read": 244,
+      "base": 235,
+      "scale": 1451
+    },
+    {
+      "source": "spectrum",
+      "name": "Adobe Spectrum",
+      "license": "Apache-2.0",
+      "package": "@adobe/spectrum-tokens@15.4.1",
+      "read": 968,
+      "base": 567,
+      "scale": 470
+    },
+    {
+      "source": "fluent",
+      "name": "Fluent UI",
+      "license": "MIT",
+      "package": "@fluentui/tokens@1.0.0-alpha.24",
+      "read": 638,
+      "base": 604,
+      "scale": 1134
+    },
+    {
+      "source": "ant",
+      "name": "Ant Design",
+      "license": "MIT",
+      "package": "@ant-design/colors@8.0.1",
+      "read": 130,
+      "base": 121,
+      "scale": 1227
+    },
+    {
+      "source": "chakra",
+      "name": "Chakra UI",
+      "license": "MIT",
+      "package": "@chakra-ui/theme@3.4.6",
+      "read": 102,
+      "base": 97,
+      "scale": 1003
+    },
+    {
+      "source": "bootstrap",
+      "name": "Bootstrap",
+      "license": "MIT",
+      "package": "bootstrap@5.3.8",
+      "read": 19,
+      "base": 8,
+      "scale": 185
+    },
+    {
+      "source": "simple-icons",
+      "name": "Simple Icons brand colors",
+      "license": "CC0-1.0",
+      "package": "simple-icons@16.33.0",
+      "read": 3463,
+      "base": 2685,
+      "scale": 1174
+    },
+    {
+      "source": "xkcd",
+      "name": "XKCD color survey",
+      "license": "CC0-1.0",
+      "package": "xkcd-colors@1.0.2",
+      "read": 949,
+      "base": 943,
+      "scale": 1496
+    },
+    {
+      "source": "css-named",
+      "name": "CSS named colors",
+      "license": "W3C CSS Color specification (names); values via color-name, MIT",
+      "package": "color-name@2.1.1",
+      "read": 148,
+      "base": 110,
+      "scale": 1286
+    },
+    {
+      "source": "iscc-nbs",
+      "name": "ISCC-NBS centroids",
+      "license": "Public domain (NBS Circular 553); centroid values via matrioshka.colors, MIT",
+      "package": "matrioshka.colors@1.0.38",
+      "read": 267,
+      "base": 265,
+      "scale": 1477
+    }
+  ]
+}
