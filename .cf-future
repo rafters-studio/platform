@@ -19,7 +19,7 @@ each one as it is resolved.
 
 ## Workarounds
 
-- apps/api/src/index.test.ts
+- apps/api/test/index.test.ts
   Now: tests the Hono app through app.request() under plain Vitest, outside workerd.
   Then: run it in the Workers runtime via @cloudflare/vitest-plugin, with bindings.
 

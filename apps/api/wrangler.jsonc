@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rafters-platform",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "observability": {
+    "enabled": true,
+  },
+  "routes": [
+    {
+      "pattern": "rafters.studio/api/*",
+      "zone_name": "rafters.studio",
+    },
+  ],
+}
