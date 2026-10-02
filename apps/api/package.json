@@ -9,6 +9,7 @@
     "seed": "tsx scripts/seed.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "catalog:",
     "@hono/zod-validator": "catalog:",
     "@rafters/color-utils": "catalog:",
     "@rafters/shared": "catalog:",
