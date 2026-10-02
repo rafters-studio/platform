@@ -26,3 +26,7 @@ each one as it is resolved.
 - vite.config.ts (test block)
   Now: plain Vitest config, no Workers pool.
   Then: add the Cloudflare Vitest plugin to the test config.
+
+- apps/api/test/helpers/d1.ts
+  Now: a D1Database stand-in over node:sqlite with the migrations applied, so cache tests run the real SQL outside workerd.
+  Then: use the real D1 binding through @cloudflare/vitest-plugin and delete the helper.

@@ -6,6 +6,13 @@
   "observability": {
     "enabled": true,
   },
+  "d1_databases": [
+    {
+      "binding": "rafters_platform",
+      "database_name": "rafters_platform",
+      "database_id": "141cae6b-a9c7-4e0e-96a8-522c08d8b0d9",
+    },
+  ],
   "routes": [
     {
       "pattern": "rafters.studio/api/*",

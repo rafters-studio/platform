@@ -10,5 +10,5 @@
     "verbatimModuleSyntax": true,
     "types": []
   },
-  "include": ["apps/*/src", "apps/*/test", "apps/*/worker-configuration.d.ts", "vite.config.ts"]
+  "include": ["apps/*/src", "apps/*/worker-configuration.d.ts", "vite.config.ts"]
 }
