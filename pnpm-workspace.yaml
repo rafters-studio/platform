@@ -2,18 +2,36 @@ packages:
   - "apps/*"
 
 catalog:
+  "@adobe/spectrum-tokens": 15.4.1
+  "@ant-design/colors": 8.0.1
+  "@carbon/colors": 11.59.0
+  "@chakra-ui/theme": 3.4.6
+  "@fluentui/tokens": 1.0.0-alpha.24
   "@hono/zod-validator": ^0.9.1
+  "@primer/primitives": 11.10.0
+  "@radix-ui/colors": 3.0.0
   "@rafters/color-utils": 0.4.1
   "@rafters/shared": 0.4.1
+  "@types/node": 24.19.1
   better-auth: ^1.7.7
+  bootstrap: 5.3.8
+  color-name: 2.1.1
   hono: ^4.13.12
+  material-colors: 1.2.6
+  matrioshka.colors: 1.0.38
+  open-color: 1.9.1
+  simple-icons: 16.33.0
+  tailwindcss: 4.3.3
+  tsx: 4.23.15
   typescript: ^7.0.2
   vite-plus: ~1.0.0
   wrangler: ^4.146.0
+  xkcd-colors: 1.0.2
   zod: ^4.6.5
 
 catalogMode: strict
 
 allowBuilds:
+  "@carbon/colors": false
   esbuild: true
   workerd: true
