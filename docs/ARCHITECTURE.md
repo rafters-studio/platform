@@ -10,14 +10,14 @@ Platform provides auth and color to the Rafters Studio surfaces. It is being reb
 
 ## Operations
 
-| Command                    | What it does                                                                   |
-| -------------------------- | ------------------------------------------------------------------------------ |
-| `pnpm install`             | Installs dependencies and, through the `prepare` script, the git hooks         |
-| `pnpm exec vp check`       | Format check, lint, and type check (tsgo)                                      |
-| `pnpm exec vp check --fix` | Formats and applies lint fixes                                                 |
-| `pnpm exec vp test`        | Runs the unit tests once (Vitest 5)                                            |
-| `pnpm -C apps/api types`   | Regenerates `Env` types from `wrangler.jsonc` into `worker-configuration.d.ts` |
-| `pnpm -C apps/api deploy`  | Deploys the worker with `wrangler deploy`; the operator runs it                |
+| Command                       | What it does                                                                   |
+| ----------------------------- | ------------------------------------------------------------------------------ |
+| `pnpm install`                | Installs dependencies and, through the `prepare` script, the git hooks         |
+| `pnpm exec vp check`          | Format check, lint, and type check (tsgo)                                      |
+| `pnpm exec vp check --fix`    | Formats and applies lint fixes                                                 |
+| `pnpm exec vp test`           | Runs the unit tests once (Vitest 5)                                            |
+| `pnpm -C apps/api run types`  | Regenerates `Env` types from `wrangler.jsonc` into `worker-configuration.d.ts` |
+| `pnpm -C apps/api run deploy` | Deploys the worker with `wrangler deploy`; the operator runs it                |
 
 Each app keeps its tests in `test/`, mirroring its `src/` (`apps/api/src/index.ts` is tested by `apps/api/test/index.test.ts`).
 
