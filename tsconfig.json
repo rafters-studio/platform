@@ -8,13 +8,7 @@
     "noEmit": true,
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "types": ["node"]
+    "types": []
   },
-  "include": [
-    "apps/*/src",
-    "apps/*/test",
-    "apps/*/scripts",
-    "apps/*/worker-configuration.d.ts",
-    "vite.config.ts"
-  ]
+  "include": ["apps/*/src", "apps/*/test", "apps/*/worker-configuration.d.ts", "vite.config.ts"]
 }

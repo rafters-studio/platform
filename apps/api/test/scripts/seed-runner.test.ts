@@ -5,33 +5,27 @@ type Reply = { status: number; body?: unknown } | Error;
 
 function harness(replies: Record<string, Reply[]>, overrides: Partial<SeedOptions> = {}) {
   let clock = 0;
-  const calls: string[] = [];
+  const calls: Array<[string, number]> = [];
   const results: Array<[string, string]> = [];
   const sleeps: number[] = [];
   const opts: SeedOptions = {
     baseUrl: "https://example.test",
     keys: Object.keys(replies),
     done: new Set(),
-    concurrency: 1,
-    attempts: 3,
-    generatedMs: 1500,
+    perMinute: 30,
+    busyWaitMs: 60_000,
     fetch: async (url) => {
       const key = url.split("/").pop() ?? "";
-      calls.push(key);
+      calls.push([key, clock]);
       const reply = replies[key]?.shift();
       if (!reply) throw new Error(`no reply left for ${key}`);
       if (reply instanceof Error) throw reply;
-      // A body of { ms } advances the fake clock to model a slow generation.
-      const ms =
-        typeof reply.body === "object" && reply.body !== null && "ms" in reply.body
-          ? Number(reply.body.ms)
-          : 10;
-      clock += ms;
       return { status: reply.status, json: async () => reply.body };
     },
     now: () => clock,
     sleep: async (ms) => {
       sleeps.push(ms);
+      clock += ms;
     },
     onResult: (key, outcome) => results.push([key, outcome]),
     ...overrides,
@@ -39,84 +33,78 @@ function harness(replies: Record<string, Reply[]>, overrides: Partial<SeedOption
   return { opts, calls, results, sleeps };
 }
 
-const found = { status: 200, body: { status: "found" } };
+const generated = { status: 200, body: { status: "found", source: "generated" } };
+const cached = { status: 200, body: { status: "found", source: "cache" } };
+const K1 = "0.500-0.100-10";
+const K2 = "0.500-0.100-20";
 
 describe("runSeed", () => {
-  it("counts a fast found response as found and a slow one as generated", async () => {
-    const h = harness({
-      "0.500-0.100-10": [found],
-      "0.500-0.100-20": [{ status: 200, body: { status: "found", ms: 4000 } }],
-    });
-    const stats = await runSeed(h.opts);
-    expect(stats).toMatchObject({ found: 1, generated: 1, near: 0, errors: 0 });
+  it("counts found with source generated as generated and source cache as found", async () => {
+    const h = harness({ [K1]: [generated], [K2]: [cached] });
+    expect(await runSeed(h.opts)).toMatchObject({ generated: 1, found: 1, near: 0, errors: 0 });
   });
 
   it("counts an approximate response as a near hit", async () => {
-    const h = harness({ "0.500-0.100-10": [{ status: 200, body: { status: "approximate" } }] });
+    const h = harness({ [K1]: [{ status: 200, body: { status: "approximate" } }] });
     expect((await runSeed(h.opts)).near).toBe(1);
   });
 
-  it("skips colors already found and does not request them", async () => {
-    const h = harness(
-      { "0.500-0.100-10": [found], "0.500-0.100-20": [found] },
-      { done: new Set(["0.500-0.100-10"]) },
-    );
+  it("counts an error status as an error", async () => {
+    const h = harness({ [K1]: [{ status: 200, body: { status: "error", error: "bad" } }] });
     const stats = await runSeed(h.opts);
-    expect(h.calls).toEqual(["0.500-0.100-20"]);
+    expect(stats.errors).toBe(1);
+    expect(h.results).toEqual([[K1, "error"]]);
+  });
+
+  it("counts a thrown fetch and a non-JSON body as errors", async () => {
+    const h = harness({ [K1]: [new Error("boom")], [K2]: [{ status: 502 }] });
+    expect((await runSeed(h.opts)).errors).toBe(2);
+  });
+
+  it("skips colors already done and does not request them", async () => {
+    const h = harness({ [K1]: [cached], [K2]: [cached] }, { done: new Set([K1]) });
+    const stats = await runSeed(h.opts);
+    expect(h.calls.map(([k]) => k)).toEqual([K2]);
     expect(stats.skipped).toBe(1);
   });
 
-  it("stops taking new colors once aborted and reports what it finished", async () => {
+  it("stops taking new colors once aborted", async () => {
     const abort = new AbortController();
-    const h = harness(
-      { "0.500-0.100-10": [found], "0.500-0.100-20": [found] },
-      { signal: abort.signal },
-    );
-    h.opts.onResult = (key) => {
-      h.results.push([key, "x"]);
-      abort.abort();
-    };
+    const h = harness({ [K1]: [cached], [K2]: [cached] }, { signal: abort.signal });
+    h.opts.onResult = () => abort.abort();
     const stats = await runSeed(h.opts);
-    expect(h.calls).toEqual(["0.500-0.100-10"]);
+    expect(h.calls.map(([k]) => k)).toEqual([K1]);
     expect(stats.found).toBe(1);
   });
 
-  it("retries a rate-limited error status after waiting, then succeeds", async () => {
+  it("starts requests no closer together than the configured rate", async () => {
+    const h = harness({ [K1]: [cached], [K2]: [cached], "0.500-0.100-30": [cached] });
+    await runSeed(h.opts);
+    expect(h.calls.map(([, t]) => t)).toEqual([0, 2000, 4000]);
+  });
+
+  it("honors a custom rate", async () => {
+    const h = harness({ [K1]: [cached], [K2]: [cached] }, { perMinute: 10 });
+    await runSeed(h.opts);
+    expect(h.calls.map(([, t]) => t)).toEqual([0, 6000]);
+  });
+
+  it("waits 60 seconds after a busy error, then continues", async () => {
     const h = harness({
-      "0.500-0.100-10": [
-        { status: 200, body: { status: "error", error: "Rate limit exceeded" } },
-        found,
-      ],
+      [K1]: [{ status: 200, body: { status: "error", error: "Service is busy, try again" } }],
+      [K2]: [cached],
     });
     const stats = await runSeed(h.opts);
-    expect(h.sleeps).toEqual([30_000]);
-    expect(stats.found).toBe(1);
+    expect(h.sleeps[0]).toBe(60_000);
+    expect(stats).toMatchObject({ errors: 1, found: 1 });
   });
 
-  it("retries a network failure and an HTTP 503", async () => {
-    const h = harness({ "0.500-0.100-10": [new Error("boom"), { status: 503 }, found] });
-    expect((await runSeed(h.opts)).found).toBe(1);
-  });
-
-  it("reports an error after the attempts are used up", async () => {
-    const h = harness({ "0.500-0.100-10": [{ status: 503 }, { status: 503 }, { status: 503 }] });
-    const stats = await runSeed(h.opts);
-    expect(stats.errors).toBe(1);
-    expect(h.results).toEqual([["0.500-0.100-10", "error"]]);
-  });
-
-  it("reports a generation failure without retrying", async () => {
+  it("does not wait 60 seconds after other errors", async () => {
     const h = harness({
-      "0.500-0.100-10": [{ status: 200, body: { status: "error", error: "validation failed" } }],
+      [K1]: [{ status: 200, body: { status: "error", error: "validation failed" } }],
+      [K2]: [cached],
     });
-    const stats = await runSeed(h.opts);
-    expect(stats.errors).toBe(1);
-    expect(h.calls).toHaveLength(1);
-  });
-
-  it("reports a 400 as an error without retrying", async () => {
-    const h = harness({ "0.500-0.100-10": [{ status: 400 }] });
-    expect((await runSeed(h.opts)).errors).toBe(1);
-    expect(h.calls).toHaveLength(1);
+    await runSeed(h.opts);
+    expect(h.sleeps).not.toContain(60_000);
   });
 });

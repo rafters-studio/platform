@@ -6,13 +6,15 @@
 //
 // Options:
 //   --url <base>          deployed worker (or SEED_URL)
-//   --concurrency <n>     parallel requests, default 4
+//   --rate <n>            most requests per minute, default 30 (the gateway
+//                         allows 50 per minute in total)
 //   --limit <n>           only the first n listed colors
 //   --state <file>        resume file, default seed/.state-<host>.jsonl
-//   --generated-ms <ms>   a found response at least this slow counts as
-//                         generated, default 1500
 //
-// Interrupt with Ctrl-C and run the same command again: colors already found
+// After an error response that says the service is busy, it waits 60 seconds.
+// Other errors are not recorded as done, so a later run tries them again.
+//
+// Interrupt with Ctrl-C and run the same command again: colors already finished
 // are read from the state file and skipped.
 import { appendFileSync, existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -26,10 +28,9 @@ const seedDir = join(dirname(fileURLToPath(import.meta.url)), "..", "seed");
 const { values } = parseArgs({
   options: {
     url: { type: "string" },
-    concurrency: { type: "string", default: "4" },
+    rate: { type: "string", default: "30" },
     limit: { type: "string" },
     state: { type: "string" },
-    "generated-ms": { type: "string", default: "1500" },
   },
 });
 
@@ -49,9 +50,8 @@ function positiveInt(raw: string | undefined, name: string): number | undefined 
   return n;
 }
 
-const concurrency = positiveInt(values.concurrency, "concurrency") ?? 4;
+const perMinute = positiveInt(values.rate, "rate") ?? 30;
 const limit = positiveInt(values.limit, "limit");
-const generatedMs = positiveInt(values["generated-ms"], "generated-ms") ?? 1500;
 const statePath =
   values.state ?? join(seedDir, `.state-${new URL(baseUrl).host.replace(/[^\w.-]/g, "_")}.jsonl`);
 
@@ -77,7 +77,10 @@ function readDone(): Set<string> {
     try {
       const row: unknown = JSON.parse(line);
       if (typeof row === "object" && row !== null && "key" in row && "outcome" in row) {
-        if (typeof row.key === "string" && (row.outcome === "found" || row.outcome === "generated"))
+        if (
+          typeof row.key === "string" &&
+          (row.outcome === "found" || row.outcome === "generated" || row.outcome === "near")
+        )
           done.add(row.key);
       }
     } catch {
@@ -97,7 +100,7 @@ process.on("SIGINT", () => {
 });
 
 console.log(
-  `seeding ${keys.length} colors into ${baseUrl} (${done.size} already found, state ${statePath})`,
+  `seeding ${keys.length} colors into ${baseUrl} (${done.size} already done, state ${statePath})`,
 );
 
 let settled = 0;
@@ -106,9 +109,8 @@ const stats = await runSeed({
   baseUrl,
   keys,
   done,
-  concurrency,
-  attempts: 4,
-  generatedMs,
+  perMinute,
+  busyWaitMs: 60_000,
   fetch: (url) => fetch(url),
   now: () => Date.now(),
   sleep: (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
