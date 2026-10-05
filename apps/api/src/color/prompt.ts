@@ -34,8 +34,9 @@ ${cultureReference}`;
 
 export const LABEL_RULES = `Label candidates: exactly three, ranked best first. Each is one to three real words pairing a color anchor (a real thing this tone is like) with one evocative word, the kind a designer would put in Figma ("Aged Terracotta", not "Red"). Prefer the specific and unexpected over the common. Do not reuse or closely echo a label from the nearby list. Never put a nationality or region in a label.`;
 
+// Explicit forms rather than prefixes, so "skinny" or "goreng" stay allowed.
 const BANNED_PROSE =
-  /\b(skin|flesh|complexion|blood|bloody|oxblood|gore|corpse|injur\w*|bruis\w*)\b/i;
+  /\b(skins?|flesh|fleshy|fleshed|complexions?|blood|bloods|bloody|bloodied|bloodred|oxblood|gore|gory|corpses?|injur\w*|bruis\w*)\b/i;
 
 // Returns why generated text breaks a writing rule, or null when it is clean.
 export function proseProblem(fields: Record<string, string>): string | null {

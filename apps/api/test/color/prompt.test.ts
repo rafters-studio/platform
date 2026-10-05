@@ -29,6 +29,14 @@ describe("proseProblem", () => {
     );
   });
 
+  it("rejects inflected forms of banned words but not unrelated words", () => {
+    expect(proseProblem({ culturalContext: "Like plum skins." })).toContain('"skins"');
+    expect(proseProblem({ culturalContext: "A fleshy pink." })).toContain('"fleshy"');
+    expect(proseProblem({ culturalContext: "Never gory." })).toContain('"gory"');
+    expect(proseProblem({ culturalContext: "Bloodied canvas." })).toContain('"Bloodied"');
+    expect(proseProblem({ usageGuidance: "Skinny tags and gorgeous banners." })).toBeNull();
+  });
+
   it("rejects a number", () => {
     expect(proseProblem({ reasoning: "Works in 2026." })).toBe("reasoning contains a number");
   });
