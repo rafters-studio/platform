@@ -44,6 +44,13 @@ The platform D1 database (binding `rafters_platform`) holds the table `color_cac
 
 The prompt carries the color's computed facts and the labels of up to 20 cached colors within deltaE-OK 0.1, and asks for exactly three ranked label candidates. The label is the first candidate that is unused and has no term from `src/color/banned-label-terms.ts`. If none pass, the model is asked once more with the rejected labels and reasons; if that fails too, the label is NULL and the failure is logged. If the insert loses a race on the label, the next passing candidate is used, else NULL.
 
+### How colors are written
+
+`.claude/agents/colorist.md` defines how every color is written: the fields, their word caps, the label rules, and the rules for every field. `docs/color-culture-reference.md` is a sourced cross-cultural reference, the only source for `culturalContext` (what a tone means across regions) and for regional conflicts in `usageGuidance` (for example red meaning "price up" in China and Taiwan). Both are the single source for two writers:
+
+- The worker imports them as text (wrangler's Text rule for `*.md`; a matching plugin in `vite.config.ts` for tests) and builds its system prompt in `src/color/prompt.ts` from the colorist's writing rules plus the reference. The system prompt is sent with prompt caching, so repeated misses read it from cache. Generated text with a banned word or a number (other than "P3") is rejected like a failed generation.
+- The `colorist` agent seeds the cache locally through Claude Code, in batches, from the same definition.
+
 ### Gateway and secrets
 
 Claude is reached through the Cloudflare AI Gateway `rafters-color-intel`, using its Anthropic passthrough and the Anthropic key stored in the gateway under the alias `claude`. The worker never holds an Anthropic key. The gateway allows 50 requests per minute. The gateway id and alias are constants in `src/color/gateway.ts`.

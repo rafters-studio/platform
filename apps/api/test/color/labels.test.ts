@@ -40,7 +40,15 @@ describe("bannedTermIn word splitting", () => {
   it("allows plain color words and established color names", () => {
     expect(bannedTermIn("Warm Brown")).toBeNull();
     expect(bannedTermIn("Soft Black")).toBeNull();
-    expect(bannedTermIn("Blood Orange")).toBeNull();
     expect(bannedTermIn("Apple Green")).toBeNull();
+  });
+});
+
+describe("bannedTermIn blood and bruise", () => {
+  it("bans blood and bruise, including Blood Orange", () => {
+    expect(bannedTermIn("Blood Orange")).toBe("blood");
+    expect(bannedTermIn("Dried Blood Velvet")).toBe("blood");
+    expect(bannedTermIn("Bruised Ruby")).toBe("bruised");
+    expect(bannedTermIn("Bruise Purple")).toBe("bruise");
   });
 });
