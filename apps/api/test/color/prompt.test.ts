@@ -34,6 +34,9 @@ describe("proseProblem", () => {
     expect(proseProblem({ culturalContext: "A fleshy pink." })).toContain('"fleshy"');
     expect(proseProblem({ culturalContext: "Never gory." })).toContain('"gory"');
     expect(proseProblem({ culturalContext: "Bloodied canvas." })).toContain('"Bloodied"');
+    expect(proseProblem({ culturalContext: "A bloodier, fleshier, gorier red." })).toContain(
+      '"bloodier"',
+    );
     expect(proseProblem({ usageGuidance: "Skinny tags and gorgeous banners." })).toBeNull();
   });
 

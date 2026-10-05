@@ -36,7 +36,7 @@ export const LABEL_RULES = `Label candidates: exactly three, ranked best first. 
 
 // Explicit forms rather than prefixes, so "skinny" or "goreng" stay allowed.
 const BANNED_PROSE =
-  /\b(skins?|flesh|fleshy|fleshed|complexions?|blood|bloods|bloody|bloodied|bloodred|oxblood|gore|gory|corpses?|injur\w*|bruis\w*)\b/i;
+  /\b(skins?|flesh|fleshy|fleshier|fleshiest|fleshed|complexions?|blood|bloods|bloody|bloodier|bloodiest|bloodily|bloodied|bloodred|oxblood|gore|gory|gorier|goriest|corpses?|injur\w*|bruis\w*)\b/i;
 
 // Returns why generated text breaks a writing rule, or null when it is clean.
 export function proseProblem(fields: Record<string, string>): string | null {
