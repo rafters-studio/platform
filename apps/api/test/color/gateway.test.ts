@@ -104,4 +104,29 @@ describe("gateway client", () => {
       "Color intelligence request was refused",
     );
   });
+
+  it("sends the colorist prompt with the culture reference, marked for caching", async () => {
+    const { seen, baseURL } = await stub({ stop_reason: "end_turn", text: GOOD });
+    await generateIntelligence(
+      createGatewayClient(ENV, baseURL),
+      OKLCH,
+      buildColorValue(OKLCH),
+      [],
+    );
+    const system = seen[0]?.body.system as Array<{
+      type: string;
+      text: string;
+      cache_control?: { type: string };
+    }>;
+    expect(system[0]?.cache_control).toEqual({ type: "ephemeral" });
+    expect(system[0]?.text).toContain("# Cross-Cultural Color Reference");
+  });
+
+  it("rejects generated text that breaks a writing rule", async () => {
+    const bad = JSON.stringify({ ...JSON.parse(GOOD), culturalContext: "Like ripe peach skin." });
+    const { baseURL } = await stub({ stop_reason: "end_turn", text: bad });
+    await expect(
+      generateIntelligence(createGatewayClient(ENV, baseURL), OKLCH, buildColorValue(OKLCH), []),
+    ).rejects.toThrow(/banned word "skin"/);
+  });
 });

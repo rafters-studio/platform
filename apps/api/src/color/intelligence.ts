@@ -4,6 +4,7 @@ import { getGamutTier } from "@rafters/color-utils";
 import { ColorIntelligenceSchema, type ColorValue, type OKLCH } from "@rafters/shared";
 import { z } from "zod";
 import type { IntelligenceText } from "./cache";
+import { LABEL_RULES, proseProblem, SYSTEM_PROMPT } from "./prompt";
 
 export const INTELLIGENCE_MODEL = "claude-sonnet-5-5";
 
@@ -33,19 +34,6 @@ export interface GeneratedIntelligence {
   candidates: string[];
 }
 
-const LABEL_RULES = `Label candidates: exactly three, ranked best first. Each is one to three real words that pair a color anchor (a real thing this tone is like, or a plain color word) with one evocative word, the kind a designer would put in Figma ("Aged Terracotta", not "Red"). Do not reuse a label from the nearby list.`;
-
-const SYSTEM_PROMPT = `You are a senior design-systems colorist writing for designers who ship production interfaces. Write like a knowledgeable colleague: specific to this exact color, opinionated, and useful. Never restate the inputs, such as the OKLCH values, as analysis. Never state contrast ratios, WCAG or APCA scores, lightness or chroma figures, or any other number the platform computes; invented figures are a production hazard.
-
-Fields:
-- reasoning: why this exact lightness, chroma, and hue works as a deliberate design choice. One or two sentences.
-- emotionalImpact: what this color does to a viewer, specific to its lightness and chroma, not its hue family in general.
-- culturalContext: associations grounded in this exact tone; skip stock symbolism when the lightness or chroma changes the read.
-- accessibilityNotes: what to watch for when using this color for text, backgrounds, and status, without any numbers.
-- usageGuidance: concrete UI surfaces and roles this color suits.
-- balancingGuidance: how to balance its visual weight in a layout: area, pairing, and placement.
-- ${LABEL_RULES}`;
-
 function describeColor(oklch: OKLCH, color: ColorValue, neighbors: readonly string[]): string {
   const lines = [
     `OKLCH: L ${oklch.l.toFixed(3)}, C ${oklch.c.toFixed(3)}, H ${Math.round(oklch.h)}`,
@@ -73,12 +61,16 @@ async function requestStructured<S extends z.ZodType>(
   schema: S,
   system: string,
   user: string,
+  cacheSystem: boolean,
 ): Promise<z.infer<S>> {
   const response = await client.messages.create({
     model: INTELLIGENCE_MODEL,
     max_tokens: MAX_TOKENS,
     output_config: { effort: "medium", format: zodOutputFormat(schema) },
-    system,
+    // The main prompt carries the culture reference, so it is cached across misses.
+    system: cacheSystem
+      ? [{ type: "text", text: system, cache_control: { type: "ephemeral" } }]
+      : system,
     messages: [{ role: "user", content: user }],
   });
 
@@ -115,7 +107,10 @@ export async function generateIntelligence(
     GeneratedSchema,
     SYSTEM_PROMPT,
     describeColor(oklch, color, neighbors),
+    true,
   );
+  const problem = proseProblem(text);
+  if (problem) throw new Error(`Color intelligence broke a writing rule: ${problem}`);
   ColorIntelligenceSchema.parse(text);
   return { text, candidates: labelCandidates };
 }
@@ -133,6 +128,12 @@ export async function generateLabelCandidates(
 Earlier candidates were rejected:
 ${rejected.map((r) => `- ${r.label}: ${r.reason}`).join("\n")}
 Write three new label candidates.`;
-  const { labelCandidates } = await requestStructured(client, LabelCandidatesSchema, system, user);
+  const { labelCandidates } = await requestStructured(
+    client,
+    LabelCandidatesSchema,
+    system,
+    user,
+    false,
+  );
   return labelCandidates;
 }

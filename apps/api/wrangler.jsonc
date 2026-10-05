@@ -13,6 +13,13 @@
       "database_id": "141cae6b-a9c7-4e0e-96a8-522c08d8b0d9",
     },
   ],
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.md"],
+      "fallthrough": true,
+    },
+  ],
   "routes": [
     {
       "pattern": "rafters.studio/api/*",

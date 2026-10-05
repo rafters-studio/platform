@@ -45,7 +45,10 @@ export const BANNED_LABEL_TERMS: readonly string[] = [
   "nude",
   // violence
   "assault",
+  "blood",
   "bloody",
+  "bruise",
+  "bruised",
   "bomb",
   "bullet",
   "corpse",
