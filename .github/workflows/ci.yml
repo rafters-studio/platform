@@ -7,9 +7,4 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      # Placeholder until the toolchain lands (#156).
-      - run: echo "No code to check yet."
+    uses: rafters-studio/toolchain/.github/workflows/ts-ci.yml@v0.1.1
