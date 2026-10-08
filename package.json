@@ -3,12 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "pnpm -r --if-present build",
     "prepare": "vp config --no-agent"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "catalog:",
+    "@rafters/toolchain": "catalog:",
     "@types/node": "catalog:",
     "typescript": "catalog:",
     "vite-plus": "catalog:"
   },
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@12.9.1"
 }

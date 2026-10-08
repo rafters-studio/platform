@@ -6,17 +6,19 @@ catalog:
   "@hono/zod-validator": ^0.9.1
   "@rafters/color-utils": 0.4.1
   "@rafters/shared": 0.4.1
-  "@types/node": ^24.19.0
+  "@rafters/toolchain": 0.1.1
   better-auth: ^1.7.7
   hono: ^4.13.12
   tsx: 4.23.15
-  typescript: ^7.0.2
-  vite-plus: ~1.0.0
-  wrangler: ^4.146.0
-  zod: ^4.6.5
 
 catalogMode: strict
 
 allowBuilds:
   esbuild: true
   workerd: true
+
+configDependencies:
+  "@rafters/toolchain": 0.1.1
+
+minimumReleaseAgeExclude:
+  - "@rafters/toolchain@0.1.1"
